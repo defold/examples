@@ -1,0 +1,13 @@
+
+.externalToolBuilders
+.DS_Store
+.lock-wscript
+build
+*.pyc
+.project
+.cproject
+builtins
+.internal
+.deps
+node_modules/
+js-web/

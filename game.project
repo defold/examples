@@ -1,0 +1,35 @@
+[project]
+title = Defold-examples
+version = 0.1
+
+[bootstrap]
+main_collection = /examples/main.collectionc
+
+[input]
+game_binding = /input/game.input_bindingc
+repeat_interval = 0.05
+
+[display]
+width = 720
+height = 720
+high_dpi = 1
+
+[physics]
+scale = 0.02
+gravity_y = -500.0
+
+[script]
+shared_state = 1
+
+[collection_proxy]
+max_count = 256
+
+[examples]
+_start = basics/follow
+
+[label]
+subpixels = 1
+
+[sprite]
+subpixels = 1
+

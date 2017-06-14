@@ -1,0 +1,152 @@
+images {
+  image: "/assets/images/logo.png"
+}
+images {
+  image: "/assets/images/grid.png"
+}
+images {
+  image: "/assets/images/spinner.png"
+}
+images {
+  image: "/assets/images/elementStone019.png"
+}
+images {
+  image: "/assets/images/elementStone023.png"
+}
+images {
+  image: "/assets/images/close.png"
+}
+images {
+  image: "/assets/images/header.png"
+}
+images {
+  image: "/assets/images/bunny1_ready.png"
+}
+images {
+  image: "/assets/images/bunny2_ready.png"
+}
+images {
+  image: "/assets/images/carrot.png"
+}
+images {
+  image: "/assets/images/red_button12.png"
+}
+animations {
+  id: "bee"
+  images {
+    image: "/assets/images/Bee01.png"
+  }
+  images {
+    image: "/assets/images/Bee02.png"
+  }
+  images {
+    image: "/assets/images/Bee03.png"
+  }
+  images {
+    image: "/assets/images/Bee04.png"
+  }
+  images {
+    image: "/assets/images/Bee05.png"
+  }
+  images {
+    image: "/assets/images/Bee06.png"
+  }
+  images {
+    image: "/assets/images/Bee07.png"
+  }
+  images {
+    image: "/assets/images/Bee08.png"
+  }
+  images {
+    image: "/assets/images/Bee09.png"
+  }
+  images {
+    image: "/assets/images/Bee10.png"
+  }
+  images {
+    image: "/assets/images/Bee11.png"
+  }
+  images {
+    image: "/assets/images/Bee12.png"
+  }
+  images {
+    image: "/assets/images/Bee13.png"
+  }
+  images {
+    image: "/assets/images/Bee14.png"
+  }
+  images {
+    image: "/assets/images/Bee15.png"
+  }
+  images {
+    image: "/assets/images/Bee16.png"
+  }
+  images {
+    image: "/assets/images/Bee17.png"
+  }
+  images {
+    image: "/assets/images/Bee18.png"
+  }
+  images {
+    image: "/assets/images/Bee19.png"
+  }
+  images {
+    image: "/assets/images/Bee20.png"
+  }
+  images {
+    image: "/assets/images/Bee21.png"
+  }
+  images {
+    image: "/assets/images/Bee22.png"
+  }
+  images {
+    image: "/assets/images/Bee23.png"
+  }
+  images {
+    image: "/assets/images/Bee24.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 30
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "bee_shot"
+  images {
+    image: "/assets/images/Bee_shot01.png"
+  }
+  images {
+    image: "/assets/images/Bee_shot02.png"
+  }
+  images {
+    image: "/assets/images/Bee_shot03.png"
+  }
+  images {
+    image: "/assets/images/Bee_shot04.png"
+  }
+  images {
+    image: "/assets/images/Bee_shot05.png"
+  }
+  images {
+    image: "/assets/images/Bee_shot06.png"
+  }
+  images {
+    image: "/assets/images/Bee_shot07.png"
+  }
+  images {
+    image: "/assets/images/Bee_shot08.png"
+  }
+  images {
+    image: "/assets/images/Bee_shot09.png"
+  }
+  images {
+    image: "/assets/images/Bee_shot10.png"
+  }
+  playback: PLAYBACK_ONCE_FORWARD
+  fps: 30
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0

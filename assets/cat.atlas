@@ -1,0 +1,66 @@
+images {
+  image: "/assets/cat_images/back_arm01.png"
+}
+images {
+  image: "/assets/cat_images/back_arm02.png"
+}
+images {
+  image: "/assets/cat_images/back_foot.png"
+}
+images {
+  image: "/assets/cat_images/back_leg01.png"
+}
+images {
+  image: "/assets/cat_images/back_leg02.png"
+}
+images {
+  image: "/assets/cat_images/back_paw.png"
+}
+images {
+  image: "/assets/cat_images/body.png"
+}
+images {
+  image: "/assets/cat_images/eyelids.png"
+}
+images {
+  image: "/assets/cat_images/front_arm01.png"
+}
+images {
+  image: "/assets/cat_images/front_arm02.png"
+}
+images {
+  image: "/assets/cat_images/front_foot.png"
+}
+images {
+  image: "/assets/cat_images/front_leg01.png"
+}
+images {
+  image: "/assets/cat_images/front_leg02.png"
+}
+images {
+  image: "/assets/cat_images/front_paw.png"
+}
+images {
+  image: "/assets/cat_images/hat.png"
+}
+images {
+  image: "/assets/cat_images/head.png"
+}
+images {
+  image: "/assets/cat_images/left_ear.png"
+}
+images {
+  image: "/assets/cat_images/lower_body.png"
+}
+images {
+  image: "/assets/cat_images/mouth_open.png"
+}
+images {
+  image: "/assets/cat_images/right_ear.png"
+}
+images {
+  image: "/assets/cat_images/tail.png"
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0
