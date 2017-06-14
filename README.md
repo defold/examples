@@ -1,6 +1,6 @@
 # Defold examples
 
-This repository includes the Defold examples application and the tools used to explode the app to the examples section on //www.defold.com/examples
+This repository includes the Defold examples application and the tools used to explode the app to the examples section on https://www.defold.com/examples
 
 ## Dependencies
 
