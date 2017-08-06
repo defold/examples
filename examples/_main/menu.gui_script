@@ -104,7 +104,7 @@ function init(self)
 	self.index["physics"] = { "dynamic", "kinematic", "trigger" }
 	self.index["animation"] = { "spinner", "flipbook", "tween", "spine" }
 	self.index["gui"] = { "button", "stencil" }
-	self.index["input"] = { "move", "text" }
+	self.index["input"] = { "move", "text", "down duration" }
 	self.index["audio"] = { "lorem ipsum" }
 	self.index["render"] = { "lorem ipsum" }
 	self.index["camera"] = { "lorem ipsum" }

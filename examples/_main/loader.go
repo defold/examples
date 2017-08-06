@@ -352,3 +352,21 @@ embedded_components {
     w: 1.0
   }
 }
+embedded_components {
+  id: "input/down duration"
+  type: "collectionproxy"
+  data: "collection: \"/examples/input/down_duration/down_duration.collection\"\n"
+  "exclude: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
