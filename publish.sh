@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 #
 
-BOB=".deps/bob.jar"
 GSUTIL=".deps/google-cloud-sdk/bin/gsutil"
-BOBURL="http://d.defold.com/archive/298b7ce75a1386a26124061dbccfa822df9bc982/bob/bob.jar"
+SHA1=$(curl -s http://d.defold.com/stable/info.json | python -c 'import json,sys;obj=json.load(sys.stdin);print obj["sha1"]')
+BOBURL="http://d.defold.com/archive/$SHA1/bob/bob.jar"
+BOB=".deps/bob_$SHA1.jar"
 
 if [ "$(uname)" == "Darwin" ]; then
     GCSDK="https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-155.0.0-darwin-x86_64.tar.gz"
@@ -11,7 +12,7 @@ fi
 
 if [ ! -f $BOB ]; then
     mkdir -p .deps
-    echo "Installing bob.jar"
+    echo "Installing bob.jar ($SHA1)"
     curl $BOBURL -o $BOB
 fi
 
