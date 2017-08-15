@@ -1,7 +1,6 @@
 function init(self)
 	self.closenode = gui.get_node("close")
 	msg.post("#", "hide")
-	msg.post("#", "acquire_input_focus")
 end
 
 function on_message(self, message_id, message, sender)

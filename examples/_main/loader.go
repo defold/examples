@@ -29,9 +29,9 @@ components {
   }
 }
 embedded_components {
-  id: "basics/simple move"
+  id: "basics/simple_move"
   type: "collectionproxy"
-  data: "collection: \"/examples/basics/simple move/simple move.collection\"\n"
+  data: "collection: \"/examples/basics/simple_move/simple_move.collection\"\n"
   "exclude: false\n"
   ""
   position {
@@ -65,9 +65,9 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "basics/message passing"
+  id: "basics/message_passing"
   type: "collectionproxy"
-  data: "collection: \"/examples/basics/message passing/message passing.collection\"\n"
+  data: "collection: \"/examples/basics/message_passing/message_passing.collection\"\n"
   "exclude: false\n"
   ""
   position {
@@ -101,9 +101,9 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "basics/parent child"
+  id: "basics/parent_child"
   type: "collectionproxy"
-  data: "collection: \"/examples/basics/parent child/parent child.collection\"\n"
+  data: "collection: \"/examples/basics/parent_child/parent_child.collection\"\n"
   "exclude: false\n"
   ""
   position {
@@ -353,7 +353,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "input/down duration"
+  id: "input/down_duration"
   type: "collectionproxy"
   data: "collection: \"/examples/input/down_duration/down_duration.collection\"\n"
   "exclude: false\n"
