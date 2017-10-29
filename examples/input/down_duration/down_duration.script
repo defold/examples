@@ -32,18 +32,18 @@ end
 
 --[[
 1. Tell the engine that this object ("." is shorthand for the current game object) wants to receive input. The function `on_input()` will be called whenever input is received.
-2. Prepare format of output included two float
-3. Create method for updating the text label
-4. Create a formatted string from the format and duration and last_duration arguments
+2. Prepare format of output including two float placeholders.
+3. Create method for updating the text label.
+4. Create a formatted string from the format and duration and last_duration arguments.
 5. Set the label component to the stored text.
 6. Check if we receive an input action named "click".
 7. Check if it is pressed then run the following.
-8. Change flag for starting a timer
+8. Change flag for starting a timer.
 9. Check if it is released then run the following.
-10. Change flag for stopping a timer
-11. Save duration as last_duration
-12. Run method for updating text
-13. Check if tamer is started
-14. Add dt (delta time from the last frame) to the duration variable
-15. Run method for updating text
+10. Change flag for stopping a timer.
+11. Save duration as last_duration.
+12. Run method for updating text.
+13. Check if timer is started.
+14. Add dt (delta time from the last frame) to the duration variable.
+15. Run method for updating text.
 --]]

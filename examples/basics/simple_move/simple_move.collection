@@ -4,7 +4,7 @@ embedded_instances {
   id: "gameobject"
   data: "components {\n"
   "  id: \"script\"\n"
-  "  component: \"/examples/basics/simple move/simple move.script\"\n"
+  "  component: \"/examples/basics/simple_move/simple_move.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
