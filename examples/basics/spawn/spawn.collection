@@ -95,6 +95,7 @@ embedded_instances {
   "  id: \"carrotfactory\"\n"
   "  type: \"factory\"\n"
   "  data: \"prototype: \\\"/examples/basics/spawn/carrot.go\\\"\\n"
+  "load_dynamically: false\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
