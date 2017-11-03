@@ -1,6 +1,5 @@
 function init(self)
 	self.current_proxy = nil
-
 	-- Need input focus so it can be trickled down the proxies
 	msg.post(".", "acquire_input_focus")
 

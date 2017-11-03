@@ -371,7 +371,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "gui/load texture"
+  id: "gui/load_texture"
   type: "collectionproxy"
   data: "collection: \"/examples/gui/load_texture/load_texture.collection\"\n"
   "exclude: false\n"

@@ -33,3 +33,6 @@ subpixels = 1
 [sprite]
 subpixels = 1
 
+[windows]
+iap_provider = 
+
