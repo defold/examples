@@ -31,6 +31,12 @@ images {
 images {
   image: "/assets/images/red_button12.png"
 }
+images {
+  image: "/assets/images/flame.png"
+}
+images {
+  image: "/assets/images/smoke.png"
+}
 animations {
   id: "bee"
   images {
@@ -143,6 +149,40 @@ animations {
     image: "/assets/images/Bee_shot10.png"
   }
   playback: PLAYBACK_ONCE_FORWARD
+  fps: 30
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "stinger"
+  images {
+    image: "/assets/images/Sting01.png"
+  }
+  images {
+    image: "/assets/images/Sting02.png"
+  }
+  images {
+    image: "/assets/images/Sting03.png"
+  }
+  images {
+    image: "/assets/images/Sting04.png"
+  }
+  images {
+    image: "/assets/images/Sting05.png"
+  }
+  images {
+    image: "/assets/images/Sting06.png"
+  }
+  images {
+    image: "/assets/images/Sting07.png"
+  }
+  images {
+    image: "/assets/images/Sting08.png"
+  }
+  images {
+    image: "/assets/images/Sting09.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
   fps: 30
   flip_horizontal: 0
   flip_vertical: 0
