@@ -406,3 +406,21 @@ embedded_components {
     w: 1.0
   }
 }
+embedded_components {
+  id: "gui/pointer_over"
+  type: "collectionproxy"
+  data: "collection: \"/examples/gui/pointer_over/pointer_over.collection\"\n"
+  "exclude: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
