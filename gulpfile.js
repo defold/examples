@@ -3,7 +3,8 @@ var gulp = require('gulp');
 var watch = require('gulp-watch');
 var plumber = require('gulp-plumber');
 var preservetime = require('gulp-preservetime');
-var gutil = require('gulp-util');
+var replaceExt = require('replace-ext');
+var log = require('fancy-log');
 var tap = require('gulp-tap');
 var jsonlint = require('gulp-jsonlint');
 var remotesrc = require('gulp-remote-src');
@@ -53,7 +54,7 @@ try {
     var lua = require(depsdir + 'lua');
     hljs.registerLanguage('lua', lua.lua);
 } catch (e) {
-    gutil.log("Missing dependency. Run 'gulp dependencies'.");
+    log("Missing dependency. Run 'gulp dependencies'.");
 }
 
 md = new markdown({
@@ -148,7 +149,7 @@ function markdownToPreviewHtml(file) {
     var foot = '</div></body></html>\n';
     var html = head + md.render(data.body + scriptmd) + foot;
     file.contents = new Buffer(html);
-    file.path = gutil.replaceExtension(file.path, '.html');
+    file.path = replaceExt(file.path, '.html');
     return;
 }
 
@@ -175,7 +176,7 @@ function markdownToJson(file) {
     data.html = md.render(data.body + scriptmd, env);
     data.toc = env.toc;
     file.contents = new Buffer(JSON.stringify(data));
-    file.path = gutil.replaceExtension(file.path, '.json');
+    file.path = replaceExt(file.path, '.json');
     return;
 }
 

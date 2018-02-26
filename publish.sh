@@ -28,9 +28,6 @@ BUILDHTML5="build/default/Defold-examples"
 echo "Building web..."
 gulp build
 
-# Remove zero size png that makes bob choke.
-rm .deps/google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/img2.png
-
 echo "Building HTML5 app..."
 java -jar "$BOB" --debug --archive --platform js-web resolve distclean build bundle
 
