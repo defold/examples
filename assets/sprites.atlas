@@ -37,6 +37,9 @@ images {
 images {
   image: "/assets/images/smoke.png"
 }
+images {
+  image: "/assets/images/rainbow.png"
+}
 animations {
   id: "bee"
   images {
