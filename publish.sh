@@ -34,3 +34,4 @@ java -jar "$BOB" --debug --archive --platform js-web resolve distclean build bun
 echo "Publishing build..."
 $GSUTIL -m rsync -rd "$BUILDWEB" gs://defold-examples
 $GSUTIL -m rsync -rd "$BUILDHTML5" gs://defold-examples/app
+$GSUTIL -m rsync -rd "assets/random_images" gs://defold-examples/random_images
