@@ -36,3 +36,12 @@ subpixels = 1
 [windows]
 iap_provider = 
 
+[android]
+package = com.defold.examples
+
+[ios]
+bundle_identifier = com.defold.examples
+
+[osx]
+bundle_identifier = com.defold.examples
+
