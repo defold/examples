@@ -65,10 +65,6 @@ md.use(md_sub)
 md.use(md_sup)
 md.use(md_katex)
 
-function slugname(str) {
-  return '_' + slugify(str, '_').toLowerCase()
-}
-
 // Images.
 md.renderer.rules.image = function (tokens, idx, options, env, self) {
   var token = tokens[idx]
@@ -134,7 +130,6 @@ function markdownToPreviewHtml(file) {
   var html = head + md.render(data.body + scriptmd) + foot
   file.contents = new Buffer(html)
   file.path = replaceExt(file.path, '.html')
-  return
 }
 
 var img_url = 'https://storage.googleapis.com/defold-examples'
@@ -161,7 +156,6 @@ function markdownToJson(file) {
   data.toc = env.toc
   file.contents = new Buffer(JSON.stringify(data))
   file.path = replaceExt(file.path, '.json')
-  return
 }
 
 function index(jsonfile) {
