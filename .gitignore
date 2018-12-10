@@ -1,13 +1,18 @@
-
-.externalToolBuilders
-.DS_Store
-.lock-wscript
-build
 *.pyc
+.deps
+.externalToolBuilders
+.internal
+.lock-wscript
 .project
 .cproject
+build
 builtins
-.internal
-.deps
-node_modules/
 js-web/
+node_modules/
+
+# IntelliJ IDEA
+/.idea
+/*.iml
+
+# Mac
+.DS_Store
