@@ -10,13 +10,13 @@ The setup consists of three game objects. The *game.project* physics *GravityY* 
 block
 : The square stone block. Contains:
   - A *Sprite* component with the stone block image.
-  - A *Collision object* component. The *Type* is set to `KINEMATIC`. A box *Shape* matching the sprite image is added to the componens.
+  - A *Collision object* component. The *Type* is set to `KINEMATIC`. A box *Shape* matching the sprite image is added to the components.
   - A script that moves the game object to where the user clicks.
 
 block2
 : The rectangular stone block. Contains:
   - A *Sprite* component with the stone block image.
-  - A *Collision object* component. Also has *Type* set to `DYNAMIC`, *Friction* set to 0 and *Restitution* to 1.0. A box *Shape* matching the sprite image is added to the componens.
+  - A *Collision object* component. Also has *Type* set to `DYNAMIC`, *Friction* set to 0 and *Restitution* to 1.0. A box *Shape* matching the sprite image is added to the components.
 
 walls
 : The outer walls. Contains:
