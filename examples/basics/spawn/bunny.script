@@ -3,7 +3,7 @@ function init(self)
 end
 
 function on_input(self, action_id, action)
-	if action_id == hash("click") and action.pressed then -- <2>
+	if action_id == hash("touch") and action.pressed then -- <2>
 		local pos = go.get_position()
 		pos.x = pos.x + 100 -- <3>
 		local carrot_id = factory.create("#carrotfactory", pos) -- <4>

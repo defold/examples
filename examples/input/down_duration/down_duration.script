@@ -11,7 +11,7 @@ local function update_text(self) -- <3>
 end
 
 function on_input(self, action_id, action)
-	if action_id == hash("click") then -- <6>
+	if action_id == hash("touch") then -- <6>
 		if action.pressed then -- <7>
 			self.is_start_timer = true -- <8>
 		elseif action.released then -- <9>
@@ -36,7 +36,7 @@ end
 3. Create method for updating the text label.
 4. Create a formatted string from the format and duration and last_duration arguments.
 5. Set the label component to the stored text.
-6. Check if we receive an input action named "click".
+6. Check if we receive an input action named "touch".
 7. Check if it is pressed then run the following.
 8. Change flag for starting a timer.
 9. Check if it is released then run the following.

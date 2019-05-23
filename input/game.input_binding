@@ -20,11 +20,11 @@ key_trigger {
 }
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT
-  action: "click"
+  action: "touch"
 }
 touch_trigger {
   input: TOUCH_MULTI
-  action: "touch"
+  action: "multitouch"
 }
 text_trigger {
   input: TEXT

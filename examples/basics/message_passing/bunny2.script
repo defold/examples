@@ -24,7 +24,7 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
-	if action_id == hash("click") and action.pressed and not self.moving then -- <3>
+	if action_id == hash("touch") and action.pressed and not self.moving then -- <3>
 		local pos = vmath.vector3(action.x, action.y, 0)
 		msg.post("#", "go to", { position = pos }) -- <4>
 	end

@@ -8,7 +8,7 @@ local function landed(self) -- <9>
 end
 
 function on_input(self, action_id, action)
-    if action_id == hash("click") and action.pressed then -- <3>
+    if action_id == hash("touch") and action.pressed then -- <3>
 		if not self.moving then -- <4>
 			msg.post("#label", "disable") -- <5>
 			self.moving = true -- <6>
@@ -21,7 +21,7 @@ end
 --[[
 1. Tell the engine that this object ("." is shorthand for the current game object) should listen to input. Any input will be received in the `on_input()` function.
 2. Store a flag in `self` (the current script component) to indicate if the game object is moving or not.
-3. If we receive an input action named "click" and it is pressed then run the following.
+3. If we receive an input action named "touch" and it is pressed then run the following.
 4. If the `moving` flag is not set.
 5. Disable (don't show) the help text label.
 6. Set the `moving` flag.
