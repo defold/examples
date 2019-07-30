@@ -1,6 +1,6 @@
 function init(self)
-	local rectangle_size = go.get("#sprite", "size") -- <1>
-	local square_size = go.get("square#sprite", "size") -- <2>
+	local rectangle_size = go.get("#stone", "size") -- <1>
+	local square_size = go.get("square#stone", "size") -- <2>
 	label.set_text("#info", "" .. rectangle_size.x .. "x" .. rectangle_size.y) -- <3>
 	label.set_text("square#info", "" .. square_size.x .. "x" .. square_size.y) -- <4>
 end
