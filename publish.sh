@@ -8,7 +8,7 @@ BOB=".deps/bob_$SHA1.jar"
 
 if [ "$(uname)" == "Darwin" ]; then
     GCSDK="https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-155.0.0-darwin-x86_64.tar.gz"
-fi        
+fi
 
 if [ ! -f $BOB ]; then
     mkdir -p .deps
@@ -29,7 +29,7 @@ echo "Building web..."
 gulp build
 
 echo "Building HTML5 app..."
-java -jar "$BOB" --debug --archive --platform js-web resolve distclean build bundle
+java -jar "$BOB" --archive --platform js-web resolve distclean build bundle
 
 echo "Publishing build..."
 $GSUTIL -m rsync -rd "$BUILDWEB" gs://defold-examples
