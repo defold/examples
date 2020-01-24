@@ -99,7 +99,7 @@ local function show_category(self, category)
 end
 
 function init(self)
-	self.index = { "basics", "physics", "animation", "gui", "input", "particles", "sound", "render", "debug", "collection", "sprite" }
+	self.index = { "basics", "physics", "animation", "gui", "input", "particles", "sound", "render", "debug", "collection", "sprite", "file" }
 	self.index["basics"] = { "simple_move", "message_passing", "follow", "parent_child", "spawn", "z_order" }
 	self.index["physics"] = { "dynamic", "kinematic", "raycast", "trigger" }
 	self.index["animation"] = { "spinner", "flipbook", "tween", "spine" }
@@ -111,7 +111,8 @@ function init(self)
 	self.index["debug"] = { "physics", "profile" }
 	self.index["collection"] = { "proxy" }
 	self.index["sprite"] = { "size" }
-			
+	self.index["file"] = { "sys_save_load" }
+
 	self.examples = {}
 	self.categories = {}
 
