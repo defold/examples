@@ -1,7 +1,7 @@
 function init(self)
-    msg.post("#music", "play_sound") -- <1>
+    sound.play("#music", { gain = 1.0, pan = 0 }) -- <1>
 end
 
 --[[
-1. Send message to component "#music" telling it to play its sound.
+1. Tell the component "#music" to start playing its sound. The sound will be played with gain 1.0 (max volume) and pan 0.0 (equal left-right channel)
 --]]
