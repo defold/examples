@@ -10,7 +10,7 @@ The tiles belonging to the two groups have been "painted" as can be seen by the 
 
 ![tilesource](tilesource.png)
 
-The example uses the tilesource to create a tilemap component:
+The tilemap component uses the tilesource:
 
 ![tilemap](tilemap.png)
 
