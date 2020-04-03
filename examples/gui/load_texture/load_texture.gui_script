@@ -27,7 +27,7 @@ local function start_load_random(self)
 	if self.texture_url then -- <4>
 		gui.delete_texture(self.texture_url) 
 	end
-	self.texture_url = "https://storage.googleapis.com/defold-examples/random_images/"..math.random(1, 10)..".png"
+	self.texture_url = "https://i.picsum.photos/id/"..math.random(1, 10).."/200/300.jpg"
 	http.request(self.texture_url, "GET", on_load_finish) -- <5>
 	gui.set_text(self.text, "Loading...") -- <6>
 end
