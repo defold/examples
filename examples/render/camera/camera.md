@@ -11,7 +11,7 @@ The setup consists of one `bee` game object that the camera can follow and one `
 bee
 : The bee. Contains:
   - A *Sprite* component with the bee image.
-  - A script that tells the camera wether it should follow the game object or not.
+  - A script that tells the camera whether it should follow the game object or not.
 
 camera
 : The camera. Contains:
