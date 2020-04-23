@@ -58,102 +58,106 @@ images {
   image: "/assets/images/enemyFloating_1.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
+images {
+  image: "/assets/images/logo-color.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
 animations {
   id: "bee"
   images {
-    image: "/assets/images/Bee01.png"
+    image: "/assets/images/bee/Bee01.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee02.png"
+    image: "/assets/images/bee/Bee02.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee03.png"
+    image: "/assets/images/bee/Bee03.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee04.png"
+    image: "/assets/images/bee/Bee04.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee05.png"
+    image: "/assets/images/bee/Bee05.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee06.png"
+    image: "/assets/images/bee/Bee06.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee07.png"
+    image: "/assets/images/bee/Bee07.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee08.png"
+    image: "/assets/images/bee/Bee08.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee09.png"
+    image: "/assets/images/bee/Bee09.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee10.png"
+    image: "/assets/images/bee/Bee10.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee11.png"
+    image: "/assets/images/bee/Bee11.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee12.png"
+    image: "/assets/images/bee/Bee12.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee13.png"
+    image: "/assets/images/bee/Bee13.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee14.png"
+    image: "/assets/images/bee/Bee14.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee15.png"
+    image: "/assets/images/bee/Bee15.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee16.png"
+    image: "/assets/images/bee/Bee16.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee17.png"
+    image: "/assets/images/bee/Bee17.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee18.png"
+    image: "/assets/images/bee/Bee18.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee19.png"
+    image: "/assets/images/bee/Bee19.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee20.png"
+    image: "/assets/images/bee/Bee20.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee21.png"
+    image: "/assets/images/bee/Bee21.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee22.png"
+    image: "/assets/images/bee/Bee22.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee23.png"
+    image: "/assets/images/bee/Bee23.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee24.png"
+    image: "/assets/images/bee/Bee24.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD
@@ -164,43 +168,43 @@ animations {
 animations {
   id: "bee_shot"
   images {
-    image: "/assets/images/Bee_shot01.png"
+    image: "/assets/images/bee/Bee_shot01.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee_shot02.png"
+    image: "/assets/images/bee/Bee_shot02.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee_shot03.png"
+    image: "/assets/images/bee/Bee_shot03.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee_shot04.png"
+    image: "/assets/images/bee/Bee_shot04.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee_shot05.png"
+    image: "/assets/images/bee/Bee_shot05.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee_shot06.png"
+    image: "/assets/images/bee/Bee_shot06.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee_shot07.png"
+    image: "/assets/images/bee/Bee_shot07.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee_shot08.png"
+    image: "/assets/images/bee/Bee_shot08.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee_shot09.png"
+    image: "/assets/images/bee/Bee_shot09.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Bee_shot10.png"
+    image: "/assets/images/bee/Bee_shot10.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_ONCE_FORWARD
@@ -211,39 +215,39 @@ animations {
 animations {
   id: "stinger"
   images {
-    image: "/assets/images/Sting01.png"
+    image: "/assets/images/bee/Sting01.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Sting02.png"
+    image: "/assets/images/bee/Sting02.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Sting03.png"
+    image: "/assets/images/bee/Sting03.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Sting04.png"
+    image: "/assets/images/bee/Sting04.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Sting05.png"
+    image: "/assets/images/bee/Sting05.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Sting06.png"
+    image: "/assets/images/bee/Sting06.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Sting07.png"
+    image: "/assets/images/bee/Sting07.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Sting08.png"
+    image: "/assets/images/bee/Sting08.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/assets/images/Sting09.png"
+    image: "/assets/images/bee/Sting09.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD

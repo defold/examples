@@ -111,7 +111,7 @@ function init(self)
 	self.index["render"] = { "camera" }
 	self.index["debug"] = { "physics", "profile" }
 	self.index["collection"] = { "proxy" }
-	self.index["sprite"] = { "size" }
+	self.index["sprite"] = { "size", "tint" }
 	self.index["file"] = { "sys_save_load" }
 	self.index["tilemap"] = { "collisions" }
 	local categories = {}
