@@ -18,7 +18,7 @@ embedded_instances {
   "  }\n"
   "}\n"
   "embedded_components {\n"
-  "  id: \"label\"\n"
+  "  id: \"Move mouse!\"\n"
   "  type: \"label\"\n"
   "  data: \"size {\\n"
   "  x: 128.0\\n"
