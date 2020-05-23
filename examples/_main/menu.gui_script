@@ -103,7 +103,7 @@ function init(self)
 	self.index = {}
 	self.index["basics"] = { "simple_move", "message_passing", "follow", "parent_child", "spawn", "z_order" }
 	self.index["physics"] = { "dynamic", "kinematic", "raycast", "trigger" }
-	self.index["animation"] = { "spinner", "flipbook", "tween", "spine" }
+	self.index["animation"] = { "spinner", "flipbook", "chained_tween", "basic_tween", "spine" }
 	self.index["gui"] = { "button", "stencil", "load_texture", "pointer_over", "color"}
 	self.index["input"] = { "move", "text", "down duration", "mouse_and_touch" }
 	self.index["particles"] = { "particlefx", "modifiers" }

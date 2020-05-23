@@ -191,9 +191,9 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "animation/tween"
+  id: "animation/basic_tween"
   type: "collectionproxy"
-  data: "collection: \"/examples/animation/tween/tween.collection\"\n"
+  data: "collection: \"/examples/animation/basic_tween/basic_tween.collection\"\n"
   "exclude: false\n"
   ""
   position {
@@ -644,6 +644,24 @@ embedded_components {
   id: "input/mouse_and_touch"
   type: "collectionproxy"
   data: "collection: \"/examples/input/mouse_and_touch/mouse_and_touch.collection\"\n"
+  "exclude: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "animation/chained_tween"
+  type: "collectionproxy"
+  data: "collection: \"/examples/animation/chained_tween/chained_tween.collection\"\n"
   "exclude: false\n"
   ""
   position {

@@ -4,7 +4,7 @@ embedded_instances {
   id: "bunny"
   data: "components {\n"
   "  id: \"script\"\n"
-  "  component: \"/examples/animation/tween/bunny.script\"\n"
+  "  component: \"/examples/animation/chained_tween/bunny.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
