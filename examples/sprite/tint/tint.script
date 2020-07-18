@@ -7,7 +7,7 @@ function init(self)
 end
 
 --[[
-1. x,y,z,w -> r,g,b,a. Keep read and alpha. Remove green and blue.
+1. x,y,z,w -> r,g,b,a. Keep red and alpha. Remove green and blue.
 2. x = red. Remove the red color component completely
 3. w = alpha. Make the sprite semi-transparent
 4. The tint property can be animated, either as a whole or each individual value

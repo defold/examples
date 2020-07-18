@@ -9,3 +9,5 @@ The example uses a script to tint (color) sprites in a couple of different ways.
 It is important to keep in mind that each tinted sprite generates a new draw call since a modified tint value will break the built in draw call batching in Defold.
 
 ![tint](tint.png)
+
+![sprite material](spritematerial.png)
