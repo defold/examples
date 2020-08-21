@@ -676,3 +676,21 @@ embedded_components {
     w: 1.0
   }
 }
+embedded_components {
+  id: "basics/movement_speed"
+  type: "collectionproxy"
+  data: "collection: \"/examples/basics/movement_speed/movement_speed.collection\"\n"
+  "exclude: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}

@@ -1,12 +1,4 @@
 images {
-  image: "/assets/images/logo.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/assets/images/grid.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
   image: "/assets/images/spinner.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
@@ -16,14 +8,6 @@ images {
 }
 images {
   image: "/assets/images/elementStone023.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/assets/images/close.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/assets/images/header.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
@@ -60,6 +44,10 @@ images {
 }
 images {
   image: "/assets/images/logo-color.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/images/shipGreen_manned.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 animations {

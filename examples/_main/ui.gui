@@ -8,8 +8,8 @@ fonts {
   font: "/assets/text64.font"
 }
 textures {
-  name: "sprites"
-  texture: "/assets/sprites.atlas"
+  name: "ui"
+  texture: "/assets/ui.atlas"
 }
 background_color {
   x: 0.0
@@ -50,7 +50,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "sprites/close"
+  texture: "ui/close"
   id: "close"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
