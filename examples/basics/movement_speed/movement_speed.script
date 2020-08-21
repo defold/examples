@@ -18,15 +18,15 @@ end
 
 function update(self, dt)
 	-- is any key pressed?
-	if vmath.length(self.input) > 0 then
-		-- adjust direction of travel based on input
-		self.direction = vmath.normalize(self.direction + self.input)
-		-- increase speed if we are moving in any direction
+	if self.input.x ~= 0 or self.input.y ~= 0 then
+		-- set direction of travel from input
+		self.direction = self.input
+		-- increase speed
 		self.speed = self.speed + self.acceleration * dt
 		-- cap speed
 		self.speed = math.min(self.speed, self.max_speed)
 	else
-		-- stop when no key is pressed
+		-- decrease speed when no key is pressed
 		self.speed = self.speed - self.deceleration * dt
 		self.speed = math.max(self.speed, 0)
 	end
