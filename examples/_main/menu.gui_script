@@ -110,7 +110,7 @@ function init(self)
 	self.index["sound"] = { "music", "fade_in_out" }
 	self.index["render"] = { "camera" }
 	self.index["debug"] = { "physics", "profile" }
-	self.index["collection"] = { "proxy" }
+	self.index["collection"] = { "proxy", "splash" }
 	self.index["sprite"] = { "size", "tint" }
 	self.index["file"] = { "sys_save_load" }
 	self.index["tilemap"] = { "collisions" }
