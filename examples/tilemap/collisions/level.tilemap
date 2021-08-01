@@ -1,4 +1,4 @@
-tile_set: "/examples/tilemap/collisions/tiles.tilesource"
+tile_set: "/assets/tiles/tiles.tilesource"
 layers {
   id: "layer1"
   z: 0.0

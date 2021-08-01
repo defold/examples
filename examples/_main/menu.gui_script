@@ -113,7 +113,7 @@ function init(self)
 	self.index["collection"] = { "proxy", "splash" }
 	self.index["sprite"] = { "size", "tint" }
 	self.index["file"] = { "sys_save_load" }
-	self.index["tilemap"] = { "collisions" }
+	self.index["tilemap"] = { "collisions", "get_set_tile" }
 	local categories = {}
 	for k,_ in pairs(self.index) do
 		categories[#categories + 1] = k

@@ -712,3 +712,21 @@ embedded_components {
     w: 1.0
   }
 }
+embedded_components {
+  id: "tilemap/get_set_tile"
+  type: "collectionproxy"
+  data: "collection: \"/examples/tilemap/get_set_tile/get_set_tile.collection\"\n"
+  "exclude: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
