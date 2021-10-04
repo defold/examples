@@ -1,15 +1,15 @@
 name: "default"
 scale_along_z: 0
 embedded_instances {
-  id: "wheel_2"
+  id: "backwheel"
   data: "embedded_components {\n"
   "  id: \"collisionobject\"\n"
   "  type: \"collisionobject\"\n"
   "  data: \"collision_shape: \\\"\\\"\\n"
   "type: COLLISION_OBJECT_TYPE_DYNAMIC\\n"
-  "mass: 1.0\\n"
-  "friction: 0.5\\n"
-  "restitution: 0.5\\n"
+  "mass: 5.0\\n"
+  "friction: 0.9\\n"
+  "restitution: 0.01\\n"
   "group: \\\"default\\\"\\n"
   "mask: \\\"default\\\"\\n"
   "embedded_collision_shape {\\n"
@@ -31,8 +31,8 @@ embedded_instances {
   "  }\\n"
   "  data: 35.0\\n"
   "}\\n"
-  "linear_damping: 0.0\\n"
-  "angular_damping: 0.0\\n"
+  "linear_damping: 0.1\\n"
+  "angular_damping: 0.1\\n"
   "locked_rotation: false\\n"
   "bullet: false\\n"
   "\"\n"
@@ -71,7 +71,7 @@ embedded_instances {
   ""
   position {
     x: 300.0
-    y: 290.0
+    y: 50.0
     z: 1.0
   }
   rotation {
@@ -95,7 +95,7 @@ embedded_instances {
   "type: COLLISION_OBJECT_TYPE_STATIC\\n"
   "mass: 0.0\\n"
   "friction: 0.9\\n"
-  "restitution: 0.1\\n"
+  "restitution: 0.5\\n"
   "group: \\\"default\\\"\\n"
   "mask: \\\"default\\\"\\n"
   "embedded_collision_shape {\\n"
@@ -212,7 +212,7 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "block"
+  id: "body"
   data: "components {\n"
   "  id: \"script\"\n"
   "  component: \"/examples/physics/joint/joint.script\"\n"
@@ -254,8 +254,8 @@ embedded_instances {
   "  data: \"collision_shape: \\\"\\\"\\n"
   "type: COLLISION_OBJECT_TYPE_DYNAMIC\\n"
   "mass: 20.0\\n"
-  "friction: 0.5\\n"
-  "restitution: 1.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.01\\n"
   "group: \\\"default\\\"\\n"
   "mask: \\\"default\\\"\\n"
   "embedded_collision_shape {\\n"
@@ -334,7 +334,7 @@ embedded_instances {
   "pivot: PIVOT_CENTER\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "line_break: false\\n"
-  "text: \\\"Click to accelerate\\\"\\n"
+  "text: \\\"Going forward\\\"\\n"
   "font: \\\"/assets/text48.font\\\"\\n"
   "material: \\\"/builtins/fonts/label.material\\\"\\n"
   "\"\n"
@@ -353,7 +353,7 @@ embedded_instances {
   ""
   position {
     x: 360.0
-    y: 360.0
+    y: 120.0
     z: 0.0
   }
   rotation {
@@ -369,15 +369,15 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "wheel_1"
+  id: "frontwheel"
   data: "embedded_components {\n"
   "  id: \"collisionobject\"\n"
   "  type: \"collisionobject\"\n"
   "  data: \"collision_shape: \\\"\\\"\\n"
   "type: COLLISION_OBJECT_TYPE_DYNAMIC\\n"
-  "mass: 1.0\\n"
-  "friction: 0.5\\n"
-  "restitution: 0.5\\n"
+  "mass: 5.0\\n"
+  "friction: 0.9\\n"
+  "restitution: 0.01\\n"
   "group: \\\"default\\\"\\n"
   "mask: \\\"default\\\"\\n"
   "embedded_collision_shape {\\n"
@@ -399,8 +399,8 @@ embedded_instances {
   "  }\\n"
   "  data: 35.0\\n"
   "}\\n"
-  "linear_damping: 0.0\\n"
-  "angular_damping: 0.0\\n"
+  "linear_damping: 0.1\\n"
+  "angular_damping: 0.1\\n"
   "locked_rotation: false\\n"
   "bullet: false\\n"
   "\"\n"
@@ -439,7 +439,7 @@ embedded_instances {
   ""
   position {
     x: 420.0
-    y: 290.0
+    y: 50.0
     z: 1.0
   }
   rotation {
