@@ -50,6 +50,10 @@ images {
   image: "/assets/images/shipGreen_manned.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
+images {
+  image: "/assets/images/elementMetal001.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
 animations {
   id: "bee"
   images {
