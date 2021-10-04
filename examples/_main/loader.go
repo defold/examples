@@ -731,7 +731,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "physics/joint"
+  id: "physics/hinge_joint"
   type: "collectionproxy"
   data: "collection: \"/examples/physics/hinge_joint/hinge_joint.collection\"\n"
   "exclude: false\n"
