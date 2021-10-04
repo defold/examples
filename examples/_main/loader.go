@@ -733,7 +733,7 @@ embedded_components {
 embedded_components {
   id: "physics/joint"
   type: "collectionproxy"
-  data: "collection: \"/examples/physics/joint/joint.collection\"\n"
+  data: "collection: \"/examples/physics/hinge_joint/hinge_joint.collection\"\n"
   "exclude: false\n"
   ""
   position {
