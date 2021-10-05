@@ -6,7 +6,7 @@ local center_anchor = vmath.vector3(0, 0, 0)
 local frontwheel_anchor = vmath.vector3(60, -60, 0)
 local backwheel_anchor = vmath.vector3(-60, -60, 0)
 
-local hinge_props = { enable_motor = true, enable_limit = false, max_motor_torque = 60, motor_speed = 5 * 2 * math.pi}
+local hinge_props = { enable_motor = true, enable_limit = false, max_motor_torque = 3000, motor_speed = 1 * 2 * math.pi}
 
 function init(self)
 	msg.post(".", "acquire_input_focus") -- <2>
@@ -23,10 +23,8 @@ function on_input(self, action_id, action)
 		else  -- <9>
 			hinge_props.motor_speed = -5 * 2 * math.pi -- <10>
 		end
-		physics.destroy_joint(frontwheel, "frontwheel") -- <11>
-		physics.destroy_joint(backwheel, "backwheel")
-		physics.create_joint(physics.JOINT_TYPE_HINGE, frontwheel, "frontwheel", center_anchor, body, frontwheel_anchor, hinge_props) -- <12>
-		physics.create_joint(physics.JOINT_TYPE_HINGE, backwheel, "backwheel", center_anchor, body, backwheel_anchor, hinge_props)
+		physics.set_joint_properties(frontwheel, "frontwheel", hinge_props) -- <11>
+		physics.set_joint_properties(backwheel, "backwheel", hinge_props)
 	end
 end
 
@@ -41,6 +39,5 @@ end
 8. Set the motor_speed property to 5 revolutions per second in clockwise direction.
 9. If the direction flag is false, we are going backward.
 10. Set the motor_speed property to 5 revolutions per second in counter-clockwise direction.
-11. Destroy a current joint for frontwheel and backwheel.
-12. Recreate the joints with new properties.
+11. Set the new properties with changed speed for the joints.
 --]]
