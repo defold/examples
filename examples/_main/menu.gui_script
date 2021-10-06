@@ -107,7 +107,7 @@ function init(self)
 	self.index["gui"] = { "button", "stencil", "load_texture", "pointer_over", "color"}
 	self.index["input"] = { "move", "text", "down_duration", "mouse_and_touch" }
 	self.index["particles"] = { "particlefx", "modifiers" }
-	self.index["sound"] = { "music", "fade_in_out" }
+	self.index["sound"] = { "music", "fade_in_out", "panning" }
 	self.index["render"] = { "camera" }
 	self.index["debug"] = { "physics", "profile" }
 	self.index["collection"] = { "proxy", "splash" }
