@@ -22,20 +22,26 @@ end
 
 --[[
 
-	1. - Local variable to represent the minimum x position value. 
+1. - Local variable to represent the minimum x position value. 
 
-	2. - Local variable to represent the maximum x position value. window.get_size(width) to get screen width used for maximum x position value.
+2. - Local variable to represent the maximum x position value. window.get_size(width) to get 
+	screen width used for maximum x position value.
 
-	3. - This function uses the screen x position min & max local variables that is set at the top of the script to get an average and range then 
-		pass in the coin objects x position into result to get a normalized value and the function returns that value. note: in range if we divide by 2.0
-		we would get range -1.0 to 1.0 full 45 degree pan at min/max positions, instead use 1.8 to get around a 40 deg pan that way we always get a little
-		bit of sound in both left and right channel outputs no matter the min/max position.
+3. - This function uses the screen x position min & max local variables that is set at the top
+	of the script to get an average and range then pass in the coin objects x position into 
+	result to get a normalized value and the function returns that value. note: in range if we 
+	divide by 2.0 we would get range -1.0 to 1.0 full 45 degree pan at min/max positions, instead 
+	use 1.8 to get around a 40 deg pan that way we always get a little bit of sound in both 
+	left and right channel outputs no matter the min/max position.
 
-	4. - In the initialize function we set gravity to 0 and apply some force to the dynamic coin object giving it movement.
+4. - In the initialize function we set gravity to 0 and apply some force to the dynamic coin 
+	object giving it movement.
 
-	5. - When a collision_response is received we pass in the coin objects x position into the normalize_position function and set the results to the local variable 
-		coin_pos. Then play a sound and pass in coin_pos into the sounds pan property.
+	5. - When a collision_response is received we pass in the coin objects x position into the 
+	normalize_position function and set the results to the local variable coin_pos. Then play 
+	a sound and pass in coin_pos into the sounds pan property.
 
-	Now we have simple sound localization using the pan property. If you close your eyes, you should be able to gauge which direction the collisions are occurring.(as long as you are using stereo sound) 
+Now we have simple sound localization using the pan property. If you close your eyes, you should
+be able to gauge which direction the collisions are occurring.(as long as you are using stereo sound) 
 
 --]]
