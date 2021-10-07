@@ -33,7 +33,7 @@ end
 2. Tell the engine that this object ("." is shorthand for the current game object) should listen to input. Any input will be received in the `on_input()` function.
 3. Set a flag self.forward used to define the direction of the rotation of the joined wheels.
 4. Create a joint of type "hinge" (a revolute joint, a pin or an axle) between a center of frontwheel collision object and an anchor ((-60,-60) from the center) on body collision object with provided properties. Do the same for the second wheel.
-5. If we receive input (touch or mouse movement) we switch the direction of rotation of the wheels.
+5. If we receive input (touch or mouse click) we switch the direction of rotation of the wheels.
 6. Negate the current flag defining the direction.
 7. If the direction flag is true, we are going forward.
 8. Set the motor_speed property to 5 revolutions per second in clockwise direction.
