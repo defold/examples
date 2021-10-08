@@ -767,9 +767,9 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "sprite/cursor"
+  id: "animation/cursor"
   type: "collectionproxy"
-  data: "collection: \"/examples/sprite/cursor/cursor.collection\"\n"
+  data: "collection: \"/examples/animation/cursor/cursor.collection\"\n"
   "exclude: false\n"
   ""
   position {

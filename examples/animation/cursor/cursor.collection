@@ -4,7 +4,7 @@ embedded_instances {
   id: "bee"
   data: "components {\n"
   "  id: \"cursor\"\n"
-  "  component: \"/examples/sprite/cursor/cursor.script\"\n"
+  "  component: \"/examples/animation/cursor/cursor.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
