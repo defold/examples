@@ -785,6 +785,24 @@ embedded_components {
   }
 }
 embedded_components {
+  id: "physics/pendulum"
+  type: "collectionproxy"
+  data: "collection: \"/examples/physics/pendulum/pendulum.collection\"\n"
+  "exclude: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
   id: "gui/slice9"
   type: "collectionproxy"
   data: "collection: \"/examples/gui/slice9/slice9.collection\"\n"
@@ -802,3 +820,4 @@ embedded_components {
     w: 1.0
   }
 }
+
