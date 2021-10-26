@@ -24,7 +24,7 @@ embedded_instances {
   "default_animation: \\\"idle\\\"\\n"
   "skin: \\\"\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
-  "material: \\\"/builtins/materials/spine.material\\\"\\n"
+  "material: \\\"/defold-spine/assets/spine.material\\\"\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
