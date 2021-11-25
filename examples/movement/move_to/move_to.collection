@@ -4,7 +4,7 @@ embedded_instances {
   id: "go"
   data: "components {\n"
   "  id: \"move_to\"\n"
-  "  component: \"/examples/basics/move_to/move_to.script\"\n"
+  "  component: \"/examples/movement/move_to/move_to.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"

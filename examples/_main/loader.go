@@ -29,9 +29,9 @@ components {
   }
 }
 embedded_components {
-  id: "basics/simple_move"
+  id: "movement/simple_move"
   type: "collectionproxy"
-  data: "collection: \"/examples/basics/simple_move/simple_move.collection\"\n"
+  data: "collection: \"/examples/movement/simple_move/simple_move.collection\"\n"
   "exclude: false\n"
   ""
   position {
@@ -83,9 +83,9 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "basics/follow"
+  id: "movement/follow"
   type: "collectionproxy"
-  data: "collection: \"/examples/basics/follow/follow.collection\"\n"
+  data: "collection: \"/examples/movement/follow/follow.collection\"\n"
   "exclude: false\n"
   ""
   position {
@@ -677,9 +677,9 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "basics/movement_speed"
+  id: "movement/movement_speed"
   type: "collectionproxy"
-  data: "collection: \"/examples/basics/movement_speed/movement_speed.collection\"\n"
+  data: "collection: \"/examples/movement/movement_speed/movement_speed.collection\"\n"
   "exclude: false\n"
   ""
   position {
@@ -839,9 +839,27 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "basics/move_to"
+  id: "movement/move_to"
   type: "collectionproxy"
-  data: "collection: \"/examples/basics/move_to/move_to.collection\"\n"
+  data: "collection: \"/examples/movement/move_to/move_to.collection\"\n"
+  "exclude: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "movement/move_forward"
+  type: "collectionproxy"
+  data: "collection: \"/examples/movement/move_forward/move_forward.collection\"\n"
   "exclude: false\n"
   ""
   position {

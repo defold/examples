@@ -1,10 +1,10 @@
-name: "movement_speed"
+name: "default"
 scale_along_z: 0
 embedded_instances {
-  id: "go"
+  id: "gameobject"
   data: "components {\n"
-  "  id: \"movement_speed\"\n"
-  "  component: \"/examples/basics/movement_speed/movement_speed.script\"\n"
+  "  id: \"script\"\n"
+  "  component: \"/examples/movement/simple_move/simple_move.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -21,7 +21,7 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/sprites.atlas\\\"\\n"
-  "default_animation: \\\"shipGreen_manned\\\"\\n"
+  "default_animation: \\\"bunny2_ready\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -39,8 +39,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 360.0
-    y: 360.0
+    x: 335.192
+    y: 316.802
     z: 0.0
   }
   rotation {
