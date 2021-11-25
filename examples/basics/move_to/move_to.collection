@@ -1,10 +1,10 @@
-name: "default"
+name: "move_to"
 scale_along_z: 0
 embedded_instances {
-  id: "gameobject"
+  id: "go"
   data: "components {\n"
-  "  id: \"script\"\n"
-  "  component: \"/examples/basics/follow/follow.script\"\n"
+  "  id: \"move_to\"\n"
+  "  component: \"/examples/basics/move_to/move_to.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -21,7 +21,7 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/sprites.atlas\\\"\\n"
-  "default_animation: \\\"bunny2_ready\\\"\\n"
+  "default_animation: \\\"bunny1_ready\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -37,27 +37,7 @@ embedded_instances {
   "    w: 1.0\n"
   "  }\n"
   "}\n"
-  ""
-  position {
-    x: 335.192
-    y: 316.802
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-embedded_instances {
-  id: "instructions"
-  data: "embedded_components {\n"
+  "embedded_components {\n"
   "  id: \"label\"\n"
   "  type: \"label\"\n"
   "  data: \"size {\\n"
@@ -95,13 +75,13 @@ embedded_instances {
   "pivot: PIVOT_CENTER\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "line_break: false\\n"
-  "text: \\\"I will follow the mouse/touch position\\\"\\n"
+  "text: \\\"Click and I will move...\\\"\\n"
   "font: \\\"/assets/text48.font\\\"\\n"
   "material: \\\"/builtins/fonts/label.material\\\"\\n"
   "\"\n"
   "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
+  "    x: 156.84\n"
+  "    y: 118.002\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -113,8 +93,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 350.0
-    y: 38.0
+    x: 335.0
+    y: 335.0
     z: 0.0
   }
   rotation {

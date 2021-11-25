@@ -1,33 +1,26 @@
-function init(self)
-    msg.post(".", "acquire_input_focus") -- <1>
-    self.moving = false -- <2>
-end
+go.property("speed", 350) -- <1>
 
-local function landed(self) -- <9>
-    self.moving = false
+function init(self)
+    msg.post(".", "acquire_input_focus") -- <2>
 end
 
 function on_input(self, action_id, action)
-    if action_id == hash("touch") and action.pressed then -- <3>
-		if not self.moving then -- <4>
-			msg.post("#label", "disable") -- <5>
-			self.moving = true -- <6>
-			pos = vmath.vector3(action.x, action.y, 0) -- <7>
-			go.animate(".", "position", go.PLAYBACK_ONCE_FORWARD, pos, go.EASING_LINEAR, 0.5, 0, landed) -- <8>
-		end
+	if action_id == hash("touch") or not action_id then -- <3>
+		local current_pos = go.get_position() -- <4>
+		local target_pos = vmath.vector3(action.x, action.y, 0) -- <5>
+		local distance = vmath.length(target_pos - current_pos) -- <6>
+		local duration = distance / self.speed -- <7>
+		go.animate(".", "position", go.PLAYBACK_ONCE_FORWARD, target_pos, go.EASING_LINEAR, duration, 0) -- <8>
 	end
 end
 
 --[[
-1. Tell the engine that this game object ("." is shorthand for the current game object) should listen to input. Any input will be received in the `on_input()` function.
-2. Store a flag in `self` (the current script component) to indicate if the game object is moving or not.
-3. If we receive an input action named "touch" and it is pressed then run the following.
-4. If the `moving` flag is not set.
-5. Disable (don't show) the help text label.
-6. Set the `moving` flag.
-7. Create a new position called `pos` (of type `vector3`) where the user clicked.
-8. Animate the game object's ("." is shorthand for the current game object) position to `pos`.
-   When the animation is done, call the function `landed()`.
-9. The function `landed()` is called when the animation is done. It just resets the `moving` flag
-   so subsequent clicks will result in a new movement.
+1. The speed of the game object in pixels/second
+2. Tell the engine that this game object ("." is shorthand for the current game object) should listen to input. Any input will be received in the `on_input()` function.
+3. Check if we received mouse movement (no action id) or an input action named "touch" (touch or mouse click)
+4. Get the current position of the game object.
+5. Set the target position to the position of the mouse or touch.
+6. Calculate the distance (length) between the current and target position.
+7. Calculate the time it takes to travel the distance given the speed of the game object.
+8. Animate the game object's ("." is shorthand for the current game object) position to `target_pos`.
 --]]
