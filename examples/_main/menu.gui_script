@@ -99,7 +99,6 @@ local function show_category(self, category)
 end
 
 function init(self)
-	self.index = { "basics", "physics", "animation", "gui", "input", "particles", "sound", "render", "debug", "collection", "sprite", "file", "tilemap" }
 	self.index = {}
 	self.index["basics"] = { "message_passing", "parent_child", "spawn", "z_order" }
 	self.index["movement"] = { "simple_move", "follow", "move_to", "move_forward", "movement_speed" }
