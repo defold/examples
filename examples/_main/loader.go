@@ -874,3 +874,21 @@ embedded_components {
     w: 1.0
   }
 }
+embedded_components {
+  id: "movement/look_at"
+  type: "collectionproxy"
+  data: "collection: \"/examples/movement/look_at/look_at.collection\"\n"
+  "exclude: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}

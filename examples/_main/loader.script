@@ -5,6 +5,7 @@ function init(self)
 
 	-- Start from specific example config or menu
 	local example = sys.get_config("examples.start", nil)
+	print("examples.start", example)
 	if example then
 		msg.post("#", "load_example", { example = hash(example), nomenu = true })
 	else
@@ -14,6 +15,7 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("load_example") then
+		print("load_example", message.example)
 		self.current_proxy = msg.url(nil, "loader", message.example)
 		msg.post(self.current_proxy, "load")
 		self.nomenu = message.nomenu

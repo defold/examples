@@ -58,6 +58,10 @@ images {
   image: "/assets/images/plank_slice.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
+images {
+  image: "/assets/images/hitman1_machine.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
 animations {
   id: "bee"
   images {
