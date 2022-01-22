@@ -51,3 +51,6 @@ show_fullscreen_button = 0
 show_made_with_defold = 0
 scale_mode = no_scale
 
+[graphics]
+texture_profiles = /all.texture_profiles
+
