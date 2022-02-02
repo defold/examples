@@ -18,6 +18,10 @@ key_trigger {
   input: KEY_BACKSPACE
   action: "backspace"
 }
+key_trigger {
+  input: KEY_SPACE
+  action: "action"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT
   action: "touch"

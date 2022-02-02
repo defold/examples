@@ -1,44 +1,9 @@
 name: "default"
 scale_along_z: 0
 embedded_instances {
-  id: "bunny"
-  data: "components {\n"
-  "  id: \"script\"\n"
-  "  component: \"/examples/basics/spawn/bunny.script\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "}\n"
-  "embedded_components {\n"
-  "  id: \"sprite\"\n"
-  "  type: \"sprite\"\n"
-  "  data: \"tile_set: \\\"/assets/sprites.atlas\\\"\\n"
-  "default_animation: \\\"bunny1_ready\\\"\\n"
-  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
-  "blend_mode: BLEND_MODE_ALPHA\\n"
-  "\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "}\n"
-  "embedded_components {\n"
-  "  id: \"label\"\n"
+  id: "go"
+  data: "embedded_components {\n"
+  "  id: \"label1\"\n"
   "  type: \"label\"\n"
   "  data: \"size {\\n"
   "  x: 128.0\\n"
@@ -75,13 +40,48 @@ embedded_instances {
   "pivot: PIVOT_CENTER\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "line_break: false\\n"
-  "text: \\\"Click to spawn...\\\"\\n"
+  "text: \\\"Click/spacebar to pew pew!\\\"\\n"
   "font: \\\"/assets/text48.font\\\"\\n"
   "material: \\\"/builtins/fonts/label.material\\\"\\n"
   "\"\n"
   "  position {\n"
-  "    x: 132.731\n"
-  "    y: 94.744\n"
+  "    x: 360.0\n"
+  "    y: 20.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "player"
+  data: "components {\n"
+  "  id: \"player\"\n"
+  "  component: \"/examples/factory/bullets/player.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -92,10 +92,30 @@ embedded_instances {
   "  }\n"
   "}\n"
   "embedded_components {\n"
-  "  id: \"carrotfactory\"\n"
+  "  id: \"bulletfactory\"\n"
   "  type: \"factory\"\n"
-  "  data: \"prototype: \\\"/examples/basics/spawn/carrot.go\\\"\\n"
+  "  data: \"prototype: \\\"/examples/factory/bullets/bullet.go\\\"\\n"
   "load_dynamically: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/sprites.atlas\\\"\\n"
+  "default_animation: \\\"playerShip1_red\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
@@ -111,8 +131,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 120.0
-    y: 360.0
+    x: 360.0
+    y: 100.0
     z: 0.0
   }
   rotation {

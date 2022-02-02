@@ -209,9 +209,9 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "basics/spawn"
+  id: "factory/basic"
   type: "collectionproxy"
-  data: "collection: \"/examples/basics/spawn/spawn.collection\"\n"
+  data: "collection: \"/examples/factory/basic/basicfactory.collection\"\n"
   "exclude: false\n"
   ""
   position {
@@ -896,6 +896,42 @@ embedded_components {
   id: "gui/progress"
   type: "collectionproxy"
   data: "collection: \"/examples/gui/progress/progress.collection\"\n"
+  "exclude: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "factory/bullets"
+  type: "collectionproxy"
+  data: "collection: \"/examples/factory/bullets/bullets.collection\"\n"
+  "exclude: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "physics/knockback"
+  type: "collectionproxy"
+  data: "collection: \"/examples/physics/knockback/knockback.collection\"\n"
   "exclude: false\n"
   ""
   position {

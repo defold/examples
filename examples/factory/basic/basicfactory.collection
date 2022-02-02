@@ -1,10 +1,10 @@
-name: "look_at"
+name: "default"
 scale_along_z: 0
 embedded_instances {
-  id: "go"
+  id: "bunny"
   data: "components {\n"
-  "  id: \"look_at\"\n"
-  "  component: \"/examples/movement/look_at/look_at.script\"\n"
+  "  id: \"script\"\n"
+  "  component: \"/examples/factory/basic/bunny.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -21,7 +21,7 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/sprites.atlas\\\"\\n"
-  "default_animation: \\\"hitman1_machine\\\"\\n"
+  "default_animation: \\\"bunny1_ready\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -37,27 +37,7 @@ embedded_instances {
   "    w: 1.0\n"
   "  }\n"
   "}\n"
-  ""
-  position {
-    x: 350.0
-    y: 350.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-embedded_instances {
-  id: "instructions"
-  data: "embedded_components {\n"
+  "embedded_components {\n"
   "  id: \"label\"\n"
   "  type: \"label\"\n"
   "  data: \"size {\\n"
@@ -85,9 +65,9 @@ embedded_instances {
   "  w: 1.0\\n"
   "}\\n"
   "shadow {\\n"
-  "  x: 1.0\\n"
-  "  y: 1.0\\n"
-  "  z: 1.0\\n"
+  "  x: 0.0\\n"
+  "  y: 0.0\\n"
+  "  z: 0.0\\n"
   "  w: 1.0\\n"
   "}\\n"
   "leading: 1.0\\n"
@@ -95,9 +75,27 @@ embedded_instances {
   "pivot: PIVOT_CENTER\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "line_break: false\\n"
-  "text: \\\"I will always look at  the mouse pointer\\\"\\n"
+  "text: \\\"Click to spawn...\\\"\\n"
   "font: \\\"/assets/text48.font\\\"\\n"
   "material: \\\"/builtins/fonts/label.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 132.731\n"
+  "    y: 94.744\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"carrotfactory\"\n"
+  "  type: \"factory\"\n"
+  "  data: \"prototype: \\\"/examples/factory/basic/carrot.go\\\"\\n"
+  "load_dynamically: false\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
@@ -113,8 +111,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 350.0
-    y: 38.0
+    x: 120.0
+    y: 360.0
     z: 0.0
   }
   rotation {
