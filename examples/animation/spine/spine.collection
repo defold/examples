@@ -1,7 +1,7 @@
 name: "default"
 scale_along_z: 0
 embedded_instances {
-  id: "cat"
+  id: "spineboy"
   data: "components {\n"
   "  id: \"script\"\n"
   "  component: \"/examples/animation/spine/spine.script\"\n"
@@ -20,7 +20,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"spinemodel\"\n"
   "  type: \"spinemodel\"\n"
-  "  data: \"spine_scene: \\\"/assets/cat.spinescene\\\"\\n"
+  "  data: \"spine_scene: \\\"/assets/spineboy/spineboy.spinescene\\\"\\n"
   "default_animation: \\\"idle\\\"\\n"
   "skin: \\\"\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
@@ -81,8 +81,8 @@ embedded_instances {
   "material: \\\"/builtins/fonts/label.material\\\"\\n"
   "\"\n"
   "  position {\n"
-  "    x: -14.709\n"
-  "    y: 1410.971\n"
+  "    x: -174.709\n"
+  "    y: 820.971\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"

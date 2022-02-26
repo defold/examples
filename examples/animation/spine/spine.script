@@ -5,8 +5,8 @@ end
 
 function on_input(self, action_id, action)
 	if action_id == hash("touch") and action.pressed then
-    	local properties = { blend_duration = 0.3 } -- <3>
-    	if self.state == "idle" then -- <4>
+		local properties = { blend_duration = 0.3 } -- <3>
+		if self.state == "idle" then -- <4>
 			spine.play_anim("#spinemodel", hash("run"), go.PLAYBACK_LOOP_FORWARD, properties)
 			label.set_text("#label", "Click to idle...")
 			self.state = "run"
