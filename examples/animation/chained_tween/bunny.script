@@ -25,6 +25,6 @@ end
 3. This function animates the game object position's x component,
    then calls the function `up_down()` on completion.
 4. Start by calling the `up_down()` function.
-5. In parallell, tween the scale y component.
+5. In parallel, tween the scale y component.
 6. And the sprite's tint x component (which is the red value).
 --]]
