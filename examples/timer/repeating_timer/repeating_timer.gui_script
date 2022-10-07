@@ -18,7 +18,7 @@ function init(self)
 
 	timer.delay(interval, repeating, function()		-- <4>
 		self.count = self.count + 1					-- <5>
-		local p = self.time % 60					-- <6>
+		local p = self.count % 60					-- <6>
 		update_numeric(p)							-- <7>
 		update_radial(p)							-- <8>
 	end)
