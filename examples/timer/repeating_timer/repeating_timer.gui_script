@@ -1,0 +1,30 @@
+-- set value of numeric time indicator (in percent from 0 to 60s)
+local function update_numeric(p)
+	local node = gui.get_node("numeric")
+	local percent = math.floor(p)
+	gui.set_text(node, tostring(percent) .. "s")
+end
+
+-- update radial/circle time indicator by changing the fill angle
+local function update_radial(p)
+	local node = gui.get_node("radial")
+	local angle = p * 6
+	gui.set_fill_angle(node, angle)
+end
+
+function init(self)
+	self.time = 0
+
+	-- create a timer delay with 1s interval, repeating
+	local interval = 1
+	local repeating = true
+	timer.delay(interval, repeating, function()
+		-- each second this function will be called
+		self.time = self.time + 1
+		-- take modulo out of time elapsed from the beginning for 60s periods:
+		local p = self.time % 60
+
+		update_numeric(p)
+		update_radial(p)
+	end)
+end
