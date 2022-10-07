@@ -3,7 +3,7 @@ scale_along_z: 0
 embedded_instances {
   id: "go"
   data: "components {\n"
-  "  id: \"progress\"\n"
+  "  id: \"repeating_timer\"\n"
   "  component: \"/examples/timer/repeating_timer/repeating_timer.gui\"\n"
   "  position {\n"
   "    x: 0.0\n"
