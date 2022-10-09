@@ -115,6 +115,7 @@ function init(self)
 	self.index["sprite"] = { "size", "tint", "flip" }
 	self.index["file"] = { "sys_save_load" }
 	self.index["tilemap"] = { "collisions", "get_set_tile" }
+	self.index["timer"] = { "repeating_timer", "trigger_timer" }
 	local categories = {}
 	for k,_ in pairs(self.index) do
 		categories[#categories + 1] = k

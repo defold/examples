@@ -964,3 +964,39 @@ embedded_components {
     w: 1.0
   }
 }
+embedded_components {
+  id: "timer/repeating_timer"
+  type: "collectionproxy"
+  data: "collection: \"/examples/timer/repeating_timer/repeating_timer.collection\"\n"
+  "exclude: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "timer/trigger_timer"
+  type: "collectionproxy"
+  data: "collection: \"/examples/timer/trigger_timer/trigger_timer.collection\"\n"
+  "exclude: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
