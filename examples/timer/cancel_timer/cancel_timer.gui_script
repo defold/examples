@@ -19,7 +19,7 @@ function on_input(self, action_id, action)
 end
 
 --[[
-1. We will use interval of 1 [s].
+1. We will use interval of 1 (s).
 2. We will be repeating the timer endlessly.
 3. Start the timer with interval (1s) and repeating (true) and pass a callback function.
 	Store the handle to the timer in self.timer.
