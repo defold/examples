@@ -443,6 +443,24 @@ embedded_components {
   }
 }
 embedded_components {
+  id: "particles/fire_and_smoke"
+  type: "collectionproxy"
+  data: "collection: \"/examples/particles/fire_and_smoke/fire_and_smoke.collection\"\n"
+  "exclude: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
   id: "sound/music"
   type: "collectionproxy"
   data: "collection: \"/examples/sound/music/music.collection\"\n"
