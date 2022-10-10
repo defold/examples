@@ -965,6 +965,24 @@ embedded_components {
   }
 }
 embedded_components {
+  id: "timer/cancel_timer"
+  type: "collectionproxy"
+  data: "collection: \"/examples/timer/cancel_timer/cancel_timer.collection\"\n"
+  "exclude: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
   id: "timer/trigger_timer"
   type: "collectionproxy"
   data: "collection: \"/examples/timer/trigger_timer/trigger_timer.collection\"\n"
