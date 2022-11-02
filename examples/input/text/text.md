@@ -4,6 +4,7 @@ brief: Listens to text input trigger "type" and modifies the game object label w
 scripts: text.script
 ---
 
-![input bindings](input_bindings.png)
+![input bindings text](input_bindings.png)
+![input bindings keys](input_bindings2.png)
 
 ![text](text.png)
