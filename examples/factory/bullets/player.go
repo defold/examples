@@ -38,6 +38,7 @@ embedded_components {
   type: "factory"
   data: "prototype: \"/examples/factory/bullets/bullet.go\"\n"
   "load_dynamically: false\n"
+  "dynamic_prototype: false\n"
   ""
   position {
     x: 0.0
