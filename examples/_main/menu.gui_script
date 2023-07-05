@@ -112,7 +112,7 @@ function init(self)
 	self.index["render"] = { "camera" }
 	self.index["debug"] = { "physics", "profile" }
 	self.index["collection"] = { "proxy", "splash" }
-	self.index["sprite"] = { "size", "tint", "flip" }
+	self.index["sprite"] = { "size", "tint", "flip", "bunnymark" }
 	self.index["file"] = { "sys_save_load" }
 	self.index["tilemap"] = { "collisions", "get_set_tile" }
 	self.index["timer"] = { "repeating_timer", "trigger_timer", "cancel_timer" }

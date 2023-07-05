@@ -1,7 +1,7 @@
 [project]
 title = Defold-examples
 version = 0.1
-dependencies#0 = https://github.com/defold/extension-spine/archive/refs/tags/2.10.3.zip
+dependencies#0 = https://github.com/defold/extension-spine/archive/refs/tags/2.10.6.zip
 
 [bootstrap]
 main_collection = /examples/main.collectionc
@@ -33,6 +33,7 @@ subpixels = 1
 
 [sprite]
 subpixels = 1
+max_count = 32765
 
 [windows]
 iap_provider = 
@@ -53,4 +54,7 @@ scale_mode = no_scale
 
 [graphics]
 texture_profiles = /all.texture_profiles
+
+[collection]
+max_instances = 32765
 

@@ -1,0 +1,53 @@
+images {
+  image: "/examples/sprite/bunnymark/images/rabbitv3.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/examples/sprite/bunnymark/images/rabbitv3_ash.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/examples/sprite/bunnymark/images/rabbitv3_bb8.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/examples/sprite/bunnymark/images/rabbitv3_neo.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/examples/sprite/bunnymark/images/rabbitv3_tron.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/examples/sprite/bunnymark/images/rabbitv3_batman.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/examples/sprite/bunnymark/images/rabbitv3_sonic.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/examples/sprite/bunnymark/images/rabbitv3_spidey.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/examples/sprite/bunnymark/images/rabbitv3_superman.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/examples/sprite/bunnymark/images/rabbitv3_wolverine.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/examples/sprite/bunnymark/images/rabbitv3_frankenstein.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/examples/sprite/bunnymark/images/rabbitv3_stormtrooper.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+margin: 0
+extrude_borders: 1
+inner_padding: 0
+max_page_width: 0
+max_page_height: 0
