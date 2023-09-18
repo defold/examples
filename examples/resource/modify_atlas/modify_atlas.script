@@ -51,10 +51,10 @@ local function replace_atlas_image()
 	print(x, y)
 	print(width, height)
 	local texture_info = {
-		type = texture.type, -- resource.TEXTURE_TYPE_2D,
+		type = resource.TEXTURE_TYPE_2D,
 		width = width,
 		height = height,
-		format = resource.TEXTURE_FORMAT_RGBA, -- why is there no texture.format?
+		format = resource.TEXTURE_FORMAT_RGBA,
 		x = x,
 		y = y,
 		compression_type = resource.COMPRESSION_TYPE_DEFAULT,
