@@ -66,7 +66,6 @@ end
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
-	replace_atlas_image()
 end
 
 function on_input(self, action_id, action)
