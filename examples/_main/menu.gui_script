@@ -116,6 +116,8 @@ function init(self)
 	self.index["file"] = { "sys_save_load" }
 	self.index["tilemap"] = { "collisions", "get_set_tile" }
 	self.index["timer"] = { "repeating_timer", "trigger_timer", "cancel_timer" }
+	self.index["resource"] = { "modify_atlas" }
+
 	local categories = {}
 	for k,_ in pairs(self.index) do
 		categories[#categories + 1] = k
