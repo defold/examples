@@ -2,7 +2,7 @@
 title = Defold-examples
 version = 0.1
 custom_resources = examples/resource/modify_atlas/resources
-dependencies#0 = https://github.com/defold/extension-spine/archive/refs/tags/2.11.3.zip
+dependencies#0 = https://github.com/defold/extension-spine/archive/refs/tags/2.12.0.zip
 
 [bootstrap]
 main_collection = /examples/main.collectionc
@@ -58,4 +58,5 @@ texture_profiles = /all.texture_profiles
 
 [collection]
 max_instances = 32765
+
 
