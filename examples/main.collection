@@ -46,7 +46,7 @@ embedded_instances {
   position {
     x: 360.0
     y: 360.0
-    z: -1.0
+    z: -0.9
   }
   rotation {
     x: 0.0
@@ -75,6 +75,8 @@ embedded_instances {
   "    y: 0.0\n"
   "    z: 0.0\n"
   "    w: 1.0\n"
+  "  }\n"
+  "  property_decls {\n"
   "  }\n"
   "}\n"
   ""
