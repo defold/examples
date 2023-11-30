@@ -23,20 +23,19 @@ function init(self)
 end
 
 function on_input(self, action_id, action)
-	if action_id == hash("action") then
-		if action.pressed then
-			-- next bullet prototype, wrap around to the first
-			self.bullet_index = self.bullet_index + 1
-			if self.bullet_index > #self.bullets then
-				self.bullet_index = 1
-			end
-
-			-- unload current prototype
-			factory.unload("#bulletfactory")
-
-			-- set a new prototype
-			local prototype = self.bullets[self.bullet_index]
-			factory.set_prototype("#bulletfactory", prototype)
+	-- mouse or spacebar
+	if (action_id == hash("touch") or action_id == hash("action")) and action.pressed then
+		-- next bullet prototype, wrap around to the first
+		self.bullet_index = self.bullet_index + 1
+		if self.bullet_index > #self.bullets then
+			self.bullet_index = 1
 		end
+
+		-- unload current prototype
+		factory.unload("#bulletfactory")
+
+		-- set a new prototype
+		local prototype = self.bullets[self.bullet_index]
+		factory.set_prototype("#bulletfactory", prototype)
 	end
 end
