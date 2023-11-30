@@ -50,7 +50,7 @@ embedded_components {
   id: "animation/spinner"
   type: "collectionproxy"
   data: "collection: \"/examples/animation/spinner/spinner.collection\"\n"
-  "exclude: false\n"
+  "exclude: true\n"
   ""
   position {
     x: 0.0
@@ -68,7 +68,7 @@ embedded_components {
   id: "basics/message_passing"
   type: "collectionproxy"
   data: "collection: \"/examples/basics/message_passing/message_passing.collection\"\n"
-  "exclude: false\n"
+  "exclude: true\n"
   ""
   position {
     x: 0.0
@@ -104,7 +104,7 @@ embedded_components {
   id: "basics/parent_child"
   type: "collectionproxy"
   data: "collection: \"/examples/basics/parent_child/parent_child.collection\"\n"
-  "exclude: false\n"
+  "exclude: true\n"
   ""
   position {
     x: 0.0
@@ -299,24 +299,6 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "animation/spine"
-  type: "collectionproxy"
-  data: "collection: \"/examples/animation/spine/spine.collection\"\n"
-  "exclude: false\n"
-  ""
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-}
-embedded_components {
   id: "debug/physics"
   type: "collectionproxy"
   data: "collection: \"/examples/debug/physics/physics.collection\"\n"
@@ -482,7 +464,7 @@ embedded_components {
   id: "basics/z_order"
   type: "collectionproxy"
   data: "collection: \"/examples/basics/z_order/z_order.collection\"\n"
-  "exclude: false\n"
+  "exclude: true\n"
   ""
   position {
     x: 0.0
@@ -1058,6 +1040,24 @@ embedded_components {
   id: "resource/modify_atlas"
   type: "collectionproxy"
   data: "collection: \"/examples/resource/modify_atlas/modify_atlas.collection\"\n"
+  "exclude: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "factory/dynamic"
+  type: "collectionproxy"
+  data: "collection: \"/examples/factory/dynamic/dynamic.collection\"\n"
   "exclude: false\n"
   ""
   position {
