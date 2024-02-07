@@ -15,5 +15,5 @@ bee
 
 camera
 : The camera. Contains:
-  - A *Camera* component.
+  - A *Camera* component. The camera component has Orthographic Projection enabled.
   - A script that controls the camera component.
