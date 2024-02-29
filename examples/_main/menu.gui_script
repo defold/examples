@@ -109,7 +109,7 @@ function init(self)
 	self.index["input"] = { "move", "text", "down_duration", "mouse_and_touch" }
 	self.index["particles"] = { "particlefx", "modifiers", "fire_and_smoke" }
 	self.index["sound"] = { "music", "fade_in_out", "panning" }
-	self.index["render"] = { "camera" }
+	self.index["render"] = { "camera", "screen_to_world" }
 	self.index["debug"] = { "physics", "profile" }
 	self.index["collection"] = { "proxy", "splash" }
 	self.index["sprite"] = { "size", "tint", "flip", "bunnymark" }
