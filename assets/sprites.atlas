@@ -82,6 +82,10 @@ images {
   image: "/assets/images/particle_brown.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
+images {
+  image: "/assets/images/crosshair010.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
 animations {
   id: "bee"
   images {
