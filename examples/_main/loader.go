@@ -1127,20 +1127,38 @@ embedded_components {
   }
 }
 embedded_components {
-    id: "material/vertexcolor"
-    type: "collectionproxy"
-    data: "collection: \"/examples/material/vertexcolor/vertexcolor.collection\"\n"
-    "exclude: false\n"
-    ""
-    position {
-      x: 0.0
-      y: 0.0
-      z: 0.0
-    }
-    rotation {
-      x: 0.0
-      y: 0.0
-      z: 0.0
-      w: 1.0
-    }
+  id: "material/vertexcolor"
+  type: "collectionproxy"
+  data: "collection: \"/examples/material/vertexcolor/vertexcolor.collection\"\n"
+  "exclude: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
   }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "gui/drag"
+  type: "collectionproxy"
+  data: "collection: \"/examples/gui/drag/drag.collection\"\n"
+  "exclude: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
