@@ -1,6 +1,6 @@
 # Defold examples
 
-This repository includes the Defold examples application used in the examples section on https://defold.com/examples/basics/simple_move/
+This repository includes the Defold examples application used in the examples section on https://defold.com/examples
 
 ## Adding more examples
 Examples are grouped by category, for instance "physics", "sprite" or "collection". Each group of examples has a folder in /examples. Here's how to add a new example named "foobar" to the "sprite" category:
