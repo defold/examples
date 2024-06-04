@@ -70,7 +70,7 @@ local function show_categories(self)
 	
 	for i, cat in ipairs(self.categories) do
 		gui.set_enabled(cat.node, true)
-		gui.set_position(cat.node, cat.pos)		
+		gui.set_position(cat.node, cat.pos)
 	end
 end
 
@@ -93,7 +93,7 @@ local function show_category(self, category)
 			pos.x = pos.x + cat.size.x / 2 + 20
 			gui.animate(cat.node, "position", pos, gui.EASING_INOUTQUAD, 0.3, 0, cat_expand)
 		else
-			gui.set_enabled(cat.node, false)			
+			gui.set_enabled(cat.node, false)
 		end
 	end	
 end
@@ -105,7 +105,7 @@ function init(self)
 	self.index["movement"] = { "simple_move", "follow", "move_to", "move_forward", "movement_speed", "look_at" }
 	self.index["physics"] = { "dynamic", "kinematic", "raycast", "trigger", "hinge_joint", "pendulum", "knockback"}
 	self.index["animation"] = { "spinner", "flipbook", "chained_tween", "basic_tween", "spine", "cursor", "easing" }
-	self.index["gui"] = { "button", "stencil", "load_texture", "progress", "pointer_over", "color", "slice9", "drag" }
+	self.index["gui"] = { "button", "stencil", "load_texture", "progress", "pointer_over", "color", "slice9", "drag", "layouts" }
 	self.index["input"] = { "move", "text", "down_duration", "mouse_and_touch" }
 	self.index["material"] = { "vertexcolor" }
 	self.index["particles"] = { "particlefx", "modifiers", "fire_and_smoke" }
