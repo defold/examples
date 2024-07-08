@@ -2,7 +2,7 @@
 title = Defold-examples
 version = 0.1
 custom_resources = examples/resource/modify_atlas/resources
-dependencies#0 = https://github.com/defold/extension-spine/archive/refs/tags/3.1.1.zip
+dependencies#0 = https://github.com/defold/extension-spine/archive/refs/tags/3.5.0.zip
 
 [bootstrap]
 main_collection = /examples/main.collectionc
