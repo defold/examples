@@ -1,22 +1,22 @@
 local position_min = 0  -- <1>
-local position_max = window.get_size(width)  -- <2>
+local position_max = sys.get_config_int("display.width")  -- <2>
 
 local function normalize_position(x_position)  -- <3>
-	local average = (position_min + position_max) / 2;
-	local range = (position_max - position_min) / 1.8;
-	local result = (x_position - average) / range;
-	return result;
+	local average = (position_min + position_max) / 2
+	local range = (position_max - position_min) / 1.8
+	local result = (x_position - average) / range
+	return result
 end
 
 function init(self)  -- <4>
 	physics.set_gravity(vmath.vector3(0, 0, 0))
-	msg.post("pan:/coin#collision", "apply_force", {force = vmath.vector3(1200, 1300, 0), position = go.get_world_position()})
+	msg.post("#collision", "apply_force", {force = vmath.vector3(1200, 1300, 0), position = go.get_world_position()})
 end
 
 function on_message(self, message_id, message, sender)  -- <5>
 	if message_id == hash("collision_response") then
-		local coin_pos = normalize_position(go.get_position("pan:/coin").x)
-		sound.play("pan:/coin#coin", { gain = 0.6, pan = coin_pos } )
+		local coin_pos = normalize_position(go.get_position().x)
+		sound.play("#coin", { gain = 0.6, pan = coin_pos } )
 	end
 end
 
@@ -24,7 +24,7 @@ end
 
 1. - Local variable to represent the minimum x position value. 
 
-2. - Local variable to represent the maximum x position value. window.get_size(width) to get 
+2. - Local variable to represent the maximum x position value. sys.get_config_int("display.width") to get 
 	screen width used for maximum x position value.
 
 3. - This function uses the screen x position min & max local variables that is set at the top
