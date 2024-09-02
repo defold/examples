@@ -1,0 +1,11 @@
+images {
+  image: "/builtins/assets/images/logo/logo_blue_256.png"
+}
+animations {
+  id: "logo-color"
+  images {
+    image: "/builtins/assets/images/logo/logo_blue_256.png"
+  }
+  playback: PLAYBACK_NONE
+}
+extrude_borders: 2

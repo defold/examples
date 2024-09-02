@@ -1,0 +1,14 @@
+name: "get_set_font"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"gui\"\n"
+  "  component: \"/examples/gui/get_set_font/get_set_font.gui\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"script\"\n"
+  "  component: \"/examples/gui/get_set_font/get_set_font.script\"\n"
+  "}\n"
+  ""
+}

@@ -1,0 +1,14 @@
+name: "get_set_texture"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"script\"\n"
+  "  component: \"/examples/gui/get_set_texture/get_set_texture.script\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"gui\"\n"
+  "  component: \"/examples/gui/get_set_texture/get_set_texture.gui\"\n"
+  "}\n"
+  ""
+}
