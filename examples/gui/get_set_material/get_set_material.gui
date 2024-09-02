@@ -37,7 +37,7 @@ nodes {
     z: 0.702
   }
   type: TYPE_TEXT
-  text: "CLICK TO CHANGE TEXTURE"
+  text: "CLICK TO CHANGE MATERIAL"
   font: "text24"
   id: "text"
   inherit_alpha: true
