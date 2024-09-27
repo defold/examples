@@ -1,0 +1,30 @@
+name: "noise"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"drawtoquad\"\n"
+  "  component: \"/examples/material/noise/noise.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/builtins/assets/meshes/quad.dae\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"default\\\"\\n"
+  "  material: \\\"/examples/material/noise/noise.material\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 360.0
+    y: 360.0
+  }
+  scale3 {
+    x: 720.0
+    y: 720.0
+    z: 50.0
+  }
+}

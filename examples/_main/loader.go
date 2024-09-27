@@ -412,3 +412,15 @@ embedded_components {
   data: "collection: \"/examples/gui/get_set_texture/get_set_texture.collection\"\n"
   ""
 }
+embedded_components {
+  id: "material/uvgradient"
+  type: "collectionproxy"
+  data: "collection: \"/examples/material/uvgradient/uvgradient.collection\"\n"
+  ""
+}
+embedded_components {
+  id: "material/noise"
+  type: "collectionproxy"
+  data: "collection: \"/examples/material/noise/noise.collection\"\n"
+  ""
+}

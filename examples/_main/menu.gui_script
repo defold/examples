@@ -112,7 +112,7 @@ function init(self)
 		"get_set_font", "get_set_texture", "get_set_material",
 	}
 	self.index["input"] = { "move", "text", "down_duration", "mouse_and_touch" }
-	self.index["material"] = { "vertexcolor" }
+	self.index["material"] = { "vertexcolor", "uvgradient", "noise" }
 	self.index["particles"] = { "particlefx", "modifiers", "fire_and_smoke" }
 	self.index["sound"] = { "music", "fade_in_out", "panning" }
 	self.index["render"] = { "camera", "screen_to_world" }
