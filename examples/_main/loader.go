@@ -424,3 +424,9 @@ embedded_components {
   data: "collection: \"/examples/material/noise/noise.collection\"\n"
   ""
 }
+embedded_components {
+  id: "animation/euler_rotation"
+  type: "collectionproxy"
+  data: "collection: \"/examples/animation/euler_rotation/euler_rotation.collection\"\n"
+  ""
+}
