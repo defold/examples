@@ -16,6 +16,9 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("load_example") then
 		print("load_example", message.example)
+		if message.nobg then
+			msg.post("/background", "disable")
+		end
 		self.current_proxy = msg.url(nil, "loader", message.example)
 		msg.post(self.current_proxy, "load")
 		self.nomenu = message.nomenu
@@ -38,6 +41,7 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == hash("proxy_unloaded") then
 		msg.post("#gui", "hide")
 		msg.post("menu#gui", "show")
+		msg.post("/background", "enable")
 		
 	elseif message_id == hash("set_time_step") then
 		msg.post(self.current_proxy, "set_time_step", message)
