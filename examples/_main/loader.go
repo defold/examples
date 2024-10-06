@@ -430,3 +430,9 @@ embedded_components {
   data: "collection: \"/examples/animation/euler_rotation/euler_rotation.collection\"\n"
   ""
 }
+embedded_components {
+  id: "material/unlit"
+  type: "collectionproxy"
+  data: "collection: \"/examples/material/unlit/unlit.collection\"\n"
+  ""
+}
