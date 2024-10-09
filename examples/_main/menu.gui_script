@@ -44,16 +44,18 @@ local function create_example_nodes(self, category, layout)
 	self.examples = {}
 	local c = 1
 	for t, ex in ipairs(self.index[category]) do
+		local name = type(ex) == "table" and ex.name or ex
+		local nobg = type(ex) == "table" and ex.nobg or false
 		local p = layout[c]
-		local n = gui.new_text_node(p, ex)
+		local n = gui.new_text_node(p, name)
 		gui.set_color(n, vmath.vector4(0.2, 0.2, 0.2, 1.0))
 		gui.set_font(n, "text48")
 		gui.set_scale(n, vmath.vector3(0.5, 0.5, 1.0))
 		local m = gui.get_text_metrics_from_node(n)
 		local size = vmath.vector3(m.width, m.height, 1)
 		gui.set_size(n, size)
-		local example = hash(category .. "/" .. ex)
-		table.insert(self.examples, { node = n, example = example })
+		local example = hash(category .. "/" .. name)
+		table.insert(self.examples, { node = n, example = example, nobg = nobg })
 		c = c + 1
 	end
 end
@@ -112,7 +114,7 @@ function init(self)
 		"get_set_font", "get_set_texture", "get_set_material",
 	}
 	self.index["input"] = { "move", "text", "down_duration", "mouse_and_touch" }
-	self.index["material"] = { "vertexcolor", "uvgradient", "noise" }
+	self.index["material"] = { "vertexcolor", { name = "unlit", nobg = true }, "uvgradient", "noise" }
 	self.index["particles"] = { "particlefx", "modifiers", "fire_and_smoke" }
 	self.index["sound"] = { "music", "fade_in_out", "panning" }
 	self.index["render"] = { "camera", "screen_to_world" }
@@ -175,7 +177,7 @@ function on_input(self, action_id, action)
 			
 			for i, ex in ipairs(self.examples) do
 				if gui.pick_node(ex.node, action.x, action.y) then
-					msg.post("/loader#script", "load_example", { example = ex.example })
+					msg.post("/loader#script", "load_example", { example = ex.example, nobg = ex.nobg })
 				end
 			end			
 		end
