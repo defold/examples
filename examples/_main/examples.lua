@@ -42,7 +42,7 @@ end
 local examples_lookup = {}
 for category,examples_in_category in pairs(examples) do
 	for id,example in pairs(examples_in_category) do
-		examples_lookup[category .. "/" .. id] = example
+		examples_lookup[category .. "/" .. example.name] = example
 	end
 end
 
