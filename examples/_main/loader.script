@@ -1,13 +1,16 @@
+local examples = require("examples._main.examples")
+
 function init(self)
 	self.current_proxy = nil
 	-- Need input focus so it can be trickled down the proxies
 	msg.post(".", "acquire_input_focus")
 
 	-- Start from specific example config or menu
-	local example = sys.get_config("examples.start", nil)
-	print("examples.start", example)
-	if example then
-		msg.post("#", "load_example", { example = hash(example), nomenu = true })
+	local start = sys.get_config("examples.start", nil)
+	if start then
+		local example = examples.example(start)
+		pprint(example)
+		msg.post("#", "load_example", { example = hash(start), nomenu = true, nobg = example.nobg })
 	else
 		msg.post("menu#gui", "show")
 	end

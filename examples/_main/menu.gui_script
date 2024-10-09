@@ -1,3 +1,5 @@
+local examples = require("examples._main.examples")
+
 local function create_layout(items, bl, tr, max_dy)
 	local xi = math.ceil(math.sqrt(items) / 1.5)
 	local yi = math.ceil(items / xi)
@@ -25,7 +27,7 @@ local function create_cat_nodes(self, layout)
 	-- create category nodes
 	self.categories = {}
 	local c = 1
-	for t, cat in ipairs(self.index) do
+	for t, cat in ipairs(examples.categories()) do
 		local p = layout[c]
 		local n = gui.new_text_node(p, cat)
 		gui.set_color(n, vmath.vector4(0.2, 0.2, 0.2, 1.0))
@@ -43,9 +45,9 @@ local function create_example_nodes(self, category, layout)
 	-- create example nodes
 	self.examples = {}
 	local c = 1
-	for t, ex in ipairs(self.index[category]) do
-		local name = type(ex) == "table" and ex.name or ex
-		local nobg = type(ex) == "table" and ex.nobg or false
+	for t, ex in ipairs(examples.category(category)) do
+		local name = ex.name
+		local nobg = ex.nobg
 		local p = layout[c]
 		local n = gui.new_text_node(p, name)
 		gui.set_color(n, vmath.vector4(0.2, 0.2, 0.2, 1.0))
@@ -80,7 +82,7 @@ local function cat_expand(self)
 	local closenode = gui.get_node("close")
 	gui.set_enabled(closenode, true)
 	
-	local ex = self.index[self.current_category]
+	local ex = examples.category(self.current_category)
 	local layout = create_layout(#ex, self.bl, self.tr, 100)
 	create_example_nodes(self, self.current_category, layout)
 end
@@ -101,46 +103,13 @@ local function show_category(self, category)
 end
 
 function init(self)
-	self.index = {}
-	self.index["basics"] = { "message_passing", "parent_child", "z_order" }
-	self.index["factory"] = { "basic", "bullets", "dynamic" }
-	self.index["movement"] = { "simple_move", "follow", "move_to", "move_forward", "movement_speed", "look_at" }
-	self.index["physics"] = { "dynamic", "kinematic", "raycast", "trigger", "hinge_joint", "pendulum", "knockback"}
-	self.index["animation"] = { "euler_rotation", "spinner", "flipbook", "chained_tween", "basic_tween", "spine", "cursor", "easing" }
-	self.index["gui"] = {
-		"button", "stencil", "load_texture",
-		"progress", "pointer_over", "color",
-		"slice9", "drag", "layouts",
-		"get_set_font", "get_set_texture", "get_set_material",
-	}
-	self.index["input"] = { "move", "text", "down_duration", "mouse_and_touch" }
-	self.index["material"] = { "vertexcolor", { name = "unlit", nobg = true }, "uvgradient", "noise" }
-	self.index["particles"] = { "particlefx", "modifiers", "fire_and_smoke" }
-	self.index["sound"] = { "music", "fade_in_out", "panning" }
-	self.index["render"] = { "camera", "screen_to_world" }
-	self.index["debug"] = { "physics", "profile" }
-	self.index["collection"] = { "proxy", "splash", "timestep" }
-	self.index["sprite"] = { "size", "tint", "flip", "bunnymark" }
-	self.index["file"] = { "sys_save_load" }
-	self.index["tilemap"] = { "collisions", "get_set_tile" }
-	self.index["timer"] = { "repeating_timer", "trigger_timer", "cancel_timer" }
-	self.index["resource"] = { "modify_atlas" }
-
-	local categories = {}
-	for k,_ in pairs(self.index) do
-		categories[#categories + 1] = k
-	end
-	for _,category in ipairs(categories) do
-		self.index[#self.index + 1] = category
-	end
-	
 	self.examples = {}
 	self.categories = {}
 
 	self.bl = vmath.vector3(50, 50, 0)
 	self.tr = vmath.vector3(670, 560, 0)
-	
-	local cat_layout = create_layout(#self.index, self.bl, self.tr, 100)
+
+	local cat_layout = create_layout(#examples.categories(), self.bl, self.tr, 100)
 	create_cat_nodes(self, cat_layout)
 	
 	show_categories(self)
@@ -179,7 +148,7 @@ function on_input(self, action_id, action)
 				if gui.pick_node(ex.node, action.x, action.y) then
 					msg.post("/loader#script", "load_example", { example = ex.example, nobg = ex.nobg })
 				end
-			end			
+			end
 		end
 	end
 end
