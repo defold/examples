@@ -436,3 +436,9 @@ embedded_components {
   data: "collection: \"/examples/material/unlit/unlit.collection\"\n"
   ""
 }
+embedded_components {
+  id: "particles/confetti"
+  type: "collectionproxy"
+  data: "collection: \"/examples/particles/confetti/confetti.collection\"\n"
+  ""
+}
