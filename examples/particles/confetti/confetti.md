@@ -4,6 +4,8 @@ brief: This example shows a simple particle effect to imitate confetti.
 scripts: confetti.script
 ---
 
+In this example we create a confetti fireworks effect. It is usually used on final screens to congratulate the player on successful completion of a level or game.
+
 The particlefx consists of 6 emitters. They are all the same, but with different images and RGB colors.
 
 It has two modifiers:
