@@ -60,3 +60,6 @@ texture_profiles = /all.texture_profiles
 [collection]
 max_instances = 32765
 
+[particle_fx]
+max_emitter_count = 1024
+
