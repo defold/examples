@@ -60,6 +60,13 @@ emitters {
       y: 1.0
     }
   }
+  properties {
+    key: EMITTER_KEY_PARTICLE_ROTATION
+    points {
+      y: 0.0
+    }
+    spread: 180.0
+  }
   particle_properties {
     key: PARTICLE_KEY_SCALE
     points {
@@ -110,14 +117,14 @@ emitters {
       y: 0.0
     }
     points {
-      x: 0.3516129
-      y: 306.76465
+      x: 0.37419355
+      y: 296.951
       t_x: 0.06656629
       t_y: 0.997782
     }
     points {
       x: 1.0
-      y: 102.57265
+      y: 99.76242
     }
   }
   particle_properties {
@@ -213,6 +220,13 @@ emitters {
     points {
       y: 1.0
     }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_ROTATION
+    points {
+      y: 0.0
+    }
+    spread: 180.0
   }
   particle_properties {
     key: PARTICLE_KEY_SCALE
@@ -362,6 +376,13 @@ emitters {
       y: 1.0
     }
   }
+  properties {
+    key: EMITTER_KEY_PARTICLE_ROTATION
+    points {
+      y: 0.0
+    }
+    spread: 180.0
+  }
   particle_properties {
     key: PARTICLE_KEY_SCALE
     points {
@@ -413,13 +434,13 @@ emitters {
     }
     points {
       x: 0.37419355
-      y: -296.951
+      y: 296.951
       t_x: 0.06656629
       t_y: 0.997782
     }
     points {
       x: 1.0
-      y: -99.76242
+      y: 99.76242
     }
   }
   particle_properties {
@@ -515,6 +536,13 @@ emitters {
     points {
       y: 1.0
     }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_ROTATION
+    points {
+      y: 0.0
+    }
+    spread: 180.0
   }
   particle_properties {
     key: PARTICLE_KEY_SCALE
@@ -670,6 +698,13 @@ emitters {
       y: 1.0
     }
   }
+  properties {
+    key: EMITTER_KEY_PARTICLE_ROTATION
+    points {
+      y: 0.0
+    }
+    spread: 180.0
+  }
   particle_properties {
     key: PARTICLE_KEY_SCALE
     points {
@@ -721,13 +756,13 @@ emitters {
     }
     points {
       x: 0.37419355
-      y: -296.951
+      y: 296.951
       t_x: 0.06656629
       t_y: 0.997782
     }
     points {
       x: 1.0
-      y: -99.76242
+      y: 99.76242
     }
   }
   particle_properties {
@@ -823,6 +858,13 @@ emitters {
     points {
       y: 1.0
     }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_ROTATION
+    points {
+      y: 0.0
+    }
+    spread: 180.0
   }
   particle_properties {
     key: PARTICLE_KEY_SCALE
