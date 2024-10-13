@@ -442,3 +442,9 @@ embedded_components {
   data: "collection: \"/examples/particles/confetti/confetti.collection\"\n"
   ""
 }
+embedded_components {
+  id: "particles/fireworks"
+  type: "collectionproxy"
+  data: "collection: \"/examples/particles/fireworks/fireworks.collection\"\n"
+  ""
+}

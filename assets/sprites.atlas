@@ -73,6 +73,21 @@ images {
 images {
   image: "/assets/images/confetti/confetti_rectangle.png"
 }
+images {
+  image: "/assets/images/fireworks/fw_star_01.png"
+}
+images {
+  image: "/assets/images/fireworks/fw_circle_01.png"
+}
+images {
+  image: "/assets/images/fireworks/fw_light_01.png"
+}
+images {
+  image: "/assets/images/fireworks/fw_trace_01.png"
+}
+images {
+  image: "/assets/images/fireworks/fw_trace_02.png"
+}
 animations {
   id: "bee"
   images {
