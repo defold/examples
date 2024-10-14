@@ -7,7 +7,7 @@ emitters {
   }
   tile_source: "/assets/sprites.atlas"
   animation: "fw_trace_01"
-  material: "/builtins/materials/gui.material"
+  material: "/builtins/materials/particlefx.material"
   particle_orientation: PARTICLE_ORIENTATION_MOVEMENT_DIRECTION
   max_particle_count: 150
   type: EMITTER_TYPE_CIRCLE
@@ -233,7 +233,7 @@ emitters {
   }
   tile_source: "/assets/sprites.atlas"
   animation: "fw_star_01"
-  material: "/builtins/materials/gui.material"
+  material: "/builtins/materials/particlefx.material"
   particle_orientation: PARTICLE_ORIENTATION_ANGULAR_VELOCITY
   max_particle_count: 30
   type: EMITTER_TYPE_CIRCLE
@@ -447,7 +447,7 @@ emitters {
   }
   tile_source: "/assets/sprites.atlas"
   animation: "fw_trace_01"
-  material: "/builtins/materials/gui.material"
+  material: "/builtins/materials/particlefx.material"
   blend_mode: BLEND_MODE_ADD
   particle_orientation: PARTICLE_ORIENTATION_MOVEMENT_DIRECTION
   max_particle_count: 150
@@ -679,7 +679,7 @@ emitters {
   }
   tile_source: "/assets/sprites.atlas"
   animation: "fw_circle_01"
-  material: "/builtins/materials/gui.material"
+  material: "/builtins/materials/particlefx.material"
   blend_mode: BLEND_MODE_ADD
   max_particle_count: 2
   type: EMITTER_TYPE_CIRCLE
@@ -811,7 +811,7 @@ emitters {
   }
   tile_source: "/assets/sprites.atlas"
   animation: "fw_light_01"
-  material: "/builtins/materials/gui.material"
+  material: "/builtins/materials/particlefx.material"
   max_particle_count: 1
   type: EMITTER_TYPE_CIRCLE
   properties {

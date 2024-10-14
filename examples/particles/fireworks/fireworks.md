@@ -1,8 +1,7 @@
 ---
 title: Particle effect example - fireworks
-brief: This example shows a foreworks effect made with particles.
+brief: This example shows a fireworks effect made with particles.
 scripts: fireworks.script
-modules: fireworks.lua
 ---
 
 This effect consists of two particle effects: trail and bang. In this example there are three different colors, which could be easily changed in particle emitters settings.
