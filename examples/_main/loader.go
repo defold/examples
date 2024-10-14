@@ -442,3 +442,9 @@ embedded_components {
   data: "collection: \"/examples/particles/confetti/confetti.collection\"\n"
   ""
 }
+embedded_components {
+  id: "gui/healthbar"
+  type: "collectionproxy"
+  data: "collection: \"/examples/gui/healthbar/healthbar.collection\"\n"
+  ""
+}

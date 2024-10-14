@@ -1,0 +1,7 @@
+images {
+  image: "/main/bar_round_large.png"
+}
+images {
+  image: "/main/bar_round_large_copy.png"
+}
+extrude_borders: 2

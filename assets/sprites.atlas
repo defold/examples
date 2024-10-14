@@ -73,6 +73,12 @@ images {
 images {
   image: "/assets/images/confetti/confetti_rectangle.png"
 }
+images {
+  image: "/assets/images/bar_round_large_grey.png"
+}
+images {
+  image: "/assets/images/bar_round_large_red.png"
+}
 animations {
   id: "bee"
   images {
