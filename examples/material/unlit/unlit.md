@@ -10,4 +10,4 @@ This example contains a game object with a model that has an `unlit` material ap
 
 The unlit shader is very simple and just transfers the texture color to the model. This is an excellent starting point for creating new materials and for creating effects that do not depend on lighting. The shaders are written in GLSL 1.40, which is available from Defold 1.9.2.
 
-The model used in this example is from Kenney's [Train Pack](https://kenney.itch.io/train-pack), licensed under CC0.
+The model used in this example is from Kenney's [Train Pack](https://kenney.nl/assets/train-kit), licensed under CC0.
