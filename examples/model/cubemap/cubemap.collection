@@ -1,0 +1,45 @@
+name: "cubemap"
+scale_along_z: 0
+embedded_instances {
+  id: "logo"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/examples/model/cubemap/graphics/defold_logo.gltf\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"Material\\\"\\n"
+  "  material: \\\"/examples/model/cubemap/cubemap_model.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"envMap\\\"\\n"
+  "    texture: \\\"/examples/model/cubemap/graphics/env.cubemap\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  scale3 {
+    x: 0.5
+    y: 0.5
+    z: 0.5
+  }
+}
+embedded_instances {
+  id: "camera"
+  data: "components {\n"
+  "  id: \"main\"\n"
+  "  component: \"/examples/model/cubemap/cubemap.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.0\\n"
+  "fov: 0.7854\\n"
+  "near_z: 1.0\\n"
+  "far_z: 1500.0\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    z: 10.0
+  }
+}

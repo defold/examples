@@ -448,3 +448,9 @@ embedded_components {
   data: "collection: \"/examples/gui/healthbar/healthbar.collection\"\n"
   ""
 }
+embedded_components {
+  id: "model/cubemap"
+  type: "collectionproxy"
+  data: "collection: \"/examples/model/cubemap/cubemap.collection\"\n"
+  ""
+}
