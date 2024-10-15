@@ -4,16 +4,11 @@ local instances = {} -- list of active fireworks instances
 local _tension = 0.9 -- emulation of air tension. More value leads to faster deceleration
 local _gravity = 980 -- gravity, measuring in mm/sq.s.
 
-local function start_fireworks(trail_id, bang_id, start_pos, speed, time, delay, gravity, tension)
+local function start_fireworks(trail_id, bang_id, start_pos, speed, time, gravity, tension)
+	go.set_position(self.start_pos, self.trail)
+	particlefx.play(self.trail)
 	local m = {
 		update = function(self, dt)
-			if self.delay > 0 then
-				self.delay = self.delay - dt
-				return
-			elseif self.delay <= 0 and not self.is_started then
-				particlefx.play(self.trail)
-				self.is_started = true
-			end
 			if self.time > 0 then
 				local prev_pos = vmath.vector3(self.start_pos)
 				self.start_pos.x = self.start_pos.x + self.speed.x*dt
@@ -44,7 +39,6 @@ local function start_fireworks(trail_id, bang_id, start_pos, speed, time, delay,
 		start_pos = start_pos,
 		time = time,
 		speed = speed,
-		delay = delay or 0,
 		gravity = gravity or _gravity,
 		tension = tension or _tension,
 		trail = trail_id,
@@ -62,12 +56,14 @@ local function single_shot()
 	local splat = factory.create("#"..color.."_splat_factory")
 	local trail = factory.create("#"..color.."_trail_factory")
 
-	local strength = 1000+math.random()*600
-	local angle = (-0.2+math.random()*0.4)*math.pi
+	local strength = 1000+math.random()*600 		-- scalar value of speed
+	local angle = (-0.2+math.random()*0.4)*math.pi	-- angle beetween central vertical line and trail
+	
+	local pos = vmath.vector3(360-math.sin(angle)*350, 0, 0)
+	local speed = vmath.vector3(strength*math.sin(angle), strength*math.cos(angle), 0)
 	table.insert(instances, 
 		start_fireworks(trail, splat, 
-		vmath.vector3(360-math.sin(angle)*350, 0, 0), 
-		vmath.vector3(srtength*math.sin(angle), strength*math.cos(angle), 0), 
+			pos, speed, 
 			1.2+math.random()*0.5
 		)
 	)
