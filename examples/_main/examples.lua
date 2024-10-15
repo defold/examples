@@ -15,6 +15,7 @@ examples["gui"] = {
 	"healthbar"
 }
 examples["input"] = { "move", "text", "down_duration", "mouse_and_touch" }
+examples["model"] = { { name = "cubemap", nobg = true } }
 examples["material"] = { "vertexcolor", { name = "unlit", nobg = true }, "uvgradient", "noise" }
 examples["particles"] = { "confetti", "particlefx", "modifiers", "fire_and_smoke" }
 examples["sound"] = { "music", "fade_in_out", "panning" }
