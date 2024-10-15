@@ -5,8 +5,8 @@ local _tension = 0.9 -- emulation of air tension. More value leads to faster dec
 local _gravity = 980 -- gravity, measuring in mm/sq.s.
 
 local function start_fireworks(trail_id, bang_id, start_pos, speed, time, gravity, tension)
-	go.set_position(self.start_pos, self.trail)
-	particlefx.play(self.trail)
+	go.set_position(start_pos, trail_id)
+	particlefx.play(trail_id)
 	local m = {
 		update = function(self, dt)
 			if self.time > 0 then
