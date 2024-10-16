@@ -2,7 +2,11 @@ name: "screenspace"
 scale_along_z: 1
 embedded_instances {
   id: "camera"
-  data: "embedded_components {\n"
+  data: "components {\n"
+  "  id: \"main\"\n"
+  "  component: \"/examples/material/screenspace/screenspace.script\"\n"
+  "}\n"
+  "embedded_components {\n"
   "  id: \"camera\"\n"
   "  type: \"camera\"\n"
   "  data: \"aspect_ratio: 1.0\\n"
@@ -14,21 +18,12 @@ embedded_instances {
   "}\n"
   ""
   position {
-    y: 2.0
-    z: 3.0
+    y: 0.25
   }
   rotation {
     x: -0.25881904
     w: 0.9659258
   }
-}
-embedded_instances {
-  id: "main"
-  data: "components {\n"
-  "  id: \"screenspace\"\n"
-  "  component: \"/examples/material/screenspace/screenspace.script\"\n"
-  "}\n"
-  ""
 }
 embedded_instances {
   id: "root"
