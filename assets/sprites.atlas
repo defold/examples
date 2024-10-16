@@ -88,6 +88,12 @@ images {
 images {
   image: "/assets/images/fireworks/fw_trace_02.png"
 }
+images {
+  image: "/assets/images/bar_round_large_grey.png"
+}
+images {
+  image: "/assets/images/bar_round_large_red.png"
+}
 animations {
   id: "bee"
   images {

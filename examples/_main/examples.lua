@@ -12,6 +12,7 @@ examples["gui"] = {
 	"progress", "pointer_over", "color",
 	"slice9", "drag", "layouts",
 	"get_set_font", "get_set_texture", "get_set_material",
+	"healthbar"
 }
 examples["input"] = { "move", "text", "down_duration", "mouse_and_touch" }
 examples["material"] = { "vertexcolor", { name = "unlit", nobg = true }, "uvgradient", "noise" }

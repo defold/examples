@@ -1,0 +1,140 @@
+script: "/examples/gui/healthbar/healthbar.gui_script"
+textures {
+  name: "texture"
+  texture: "/assets/sprites.atlas"
+}
+nodes {
+  position {
+    x: 360.0
+    y: 500.0
+  }
+  size {
+    x: 200.0
+    y: 60.0
+  }
+  type: TYPE_BOX
+  texture: "texture/bar_round_large_grey"
+  id: "left_healthbar"
+  inherit_alpha: true
+  slice9 {
+    x: 24.0
+    y: 24.0
+    z: 24.0
+    w: 24.0
+  }
+}
+nodes {
+  position {
+    x: -94.0
+  }
+  scale {
+    x: 0.8
+    y: 0.8
+  }
+  size {
+    x: 150.0
+    y: 60.0
+  }
+  type: TYPE_BOX
+  texture: "texture/bar_round_large_red"
+  id: "left_health"
+  xanchor: XANCHOR_LEFT
+  pivot: PIVOT_W
+  parent: "left_healthbar"
+  inherit_alpha: true
+  slice9 {
+    x: 24.0
+    y: 24.0
+    z: 24.0
+    w: 24.0
+  }
+}
+nodes {
+  position {
+    x: 360.0
+    y: 350.0
+  }
+  size {
+    x: 200.0
+    y: 60.0
+  }
+  type: TYPE_BOX
+  texture: "texture/bar_round_large_grey"
+  id: "right_healthbar"
+  inherit_alpha: true
+  slice9 {
+    x: 24.0
+    y: 24.0
+    z: 24.0
+    w: 24.0
+  }
+}
+nodes {
+  position {
+    x: 94.0
+  }
+  scale {
+    x: 0.8
+    y: 0.8
+  }
+  size {
+    x: 150.0
+    y: 60.0
+  }
+  type: TYPE_BOX
+  texture: "texture/bar_round_large_red"
+  id: "right_health"
+  xanchor: XANCHOR_RIGHT
+  pivot: PIVOT_E
+  parent: "right_healthbar"
+  inherit_alpha: true
+  slice9 {
+    x: 24.0
+    y: 24.0
+    z: 24.0
+    w: 24.0
+  }
+}
+nodes {
+  position {
+    x: 360.0
+    y: 200.0
+  }
+  size {
+    x: 200.0
+    y: 60.0
+  }
+  type: TYPE_BOX
+  texture: "texture/bar_round_large_grey"
+  id: "center_healthbar"
+  inherit_alpha: true
+  slice9 {
+    x: 24.0
+    y: 24.0
+    z: 24.0
+    w: 24.0
+  }
+}
+nodes {
+  scale {
+    x: 0.8
+    y: 0.8
+  }
+  size {
+    x: 150.0
+    y: 60.0
+  }
+  type: TYPE_BOX
+  texture: "texture/bar_round_large_red"
+  id: "center_health"
+  parent: "center_healthbar"
+  inherit_alpha: true
+  slice9 {
+    x: 24.0
+    y: 24.0
+    z: 24.0
+    w: 24.0
+  }
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
