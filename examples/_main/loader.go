@@ -448,3 +448,9 @@ embedded_components {
   data: "collection: \"/examples/gui/healthbar/healthbar.collection\"\n"
   ""
 }
+embedded_components {
+  id: "material/screenspace"
+  type: "collectionproxy"
+  data: "collection: \"/examples/material/screenspace/screenspace.collection\"\n"
+  ""
+}
