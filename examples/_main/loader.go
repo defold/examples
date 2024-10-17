@@ -443,6 +443,12 @@ embedded_components {
   ""
 }
 embedded_components {
+  id: "particles/fireworks"
+  type: "collectionproxy"
+  data: "collection: \"/examples/particles/fireworks/fireworks.collection\"\n"
+  ""
+}
+embedded_components {
   id: "gui/healthbar"
   type: "collectionproxy"
   data: "collection: \"/examples/gui/healthbar/healthbar.collection\"\n"
