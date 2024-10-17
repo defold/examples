@@ -18,7 +18,7 @@ examples["input"] = { "move", "text", "down_duration", "mouse_and_touch" }
 examples["material"] = { "vertexcolor", { name = "unlit", nobg = true }, "uvgradient", "noise", { name = "screenspace", nobg = true } }
 examples["particles"] = { "confetti", "particlefx", "modifiers", "fire_and_smoke" }
 examples["sound"] = { "music", "fade_in_out", "panning" }
-examples["render"] = { "camera", "screen_to_world" }
+examples["render"] = { "camera", { name = "orbit_camera", nobg = true }, "screen_to_world" }
 examples["debug"] = { "physics", "profile" }
 examples["collection"] = { "proxy", "splash", "timestep" }
 examples["sprite"] = { "size", "tint", "flip", "bunnymark" }
