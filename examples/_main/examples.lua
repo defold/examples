@@ -15,8 +15,8 @@ examples["gui"] = {
 	"healthbar"
 }
 examples["input"] = { "move", "text", "down_duration", "mouse_and_touch" }
-examples["material"] = { "vertexcolor", { name = "unlit", nobg = true }, "uvgradient", "noise" }
-examples["particles"] = { "fireworks", "confetti", "particlefx", "modifiers", "fire_and_smoke" }
+examples["material"] = { "vertexcolor", { name = "unlit", nobg = true }, "uvgradient", "noise", { name = "screenspace", nobg = true } }
+examples["particles"] = { "confetti", "particlefx", "modifiers", "fire_and_smoke", "fireworks" }
 examples["sound"] = { "music", "fade_in_out", "panning" }
 examples["render"] = { "camera", "screen_to_world" }
 examples["debug"] = { "physics", "profile" }
