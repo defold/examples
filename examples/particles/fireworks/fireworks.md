@@ -10,8 +10,7 @@ This effect consists of two particle effects: trail and bang. In this example th
 The main script `fireworks.script` spawns the fireworks trail particlefx on startup or when any key is pressed or the mouse button is clicked. It also has a timer that spawns the particlefx in a loop with a 3 second delay. 
 
 To start effect:
-- include "fireworks.lua" module into target script;
 - add factories for splat and trail particles;
-- call "fireworks.start_fireworks" method with parameters (time, delay, start point, speed vector).
+- call "start_fireworks" method with parameters (time, delay, start point, speed vector).
 
 Images for particles are taken from Kenney Particle Pack.
