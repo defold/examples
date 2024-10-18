@@ -12,11 +12,13 @@ We added two game objects and two models to which we assigned our new `screenspa
 - fragment shader: we added sampling the color based on screenspace coordinates and blending into the final output color.
 - material properties: we added a new sampler to set a second texture to be used as a pattern, and user-defined uniforms to control the fragment shader.
 
-Then the script setups a perspective camera, activates it with the `acquire_camera_focus` message. The last important thing is to pass the screen size to the shader to adjust the aspect ratio:
+The last important thing is to pass the screen size to the shader to adjust the aspect ratio:
 
 ```lua
 local w, h = window.get_size()
 go.set("#model", "screen_size", vmath.vector4(w, h, 0, 0))
 ```
+
+To activate a perspective camera and to have camera controls, we added the `orbit_camera.script` script from the [Orbit Camera (3D)](/examples/render/orbit_camera/orbit_camera/) example.
 
 The shaders are written in GLSL 1.40, which is available from Defold 1.9.2. The model used in this example is from Kenney's [Prototype Pack](https://kenney.nl/assets/prototype-kit), licensed under CC0.

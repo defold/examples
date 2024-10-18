@@ -454,3 +454,9 @@ embedded_components {
   data: "collection: \"/examples/material/screenspace/screenspace.collection\"\n"
   ""
 }
+embedded_components {
+  id: "render/orbit_camera"
+  type: "collectionproxy"
+  data: "collection: \"/examples/render/orbit_camera/orbit_camera.collection\"\n"
+  ""
+}

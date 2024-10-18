@@ -1,39 +1,32 @@
-name: "unlit"
+name: "orbit_camera"
 scale_along_z: 1
 embedded_instances {
-  id: "train"
+  id: "crate"
   data: "embedded_components {\n"
   "  id: \"model\"\n"
   "  type: \"model\"\n"
-  "  data: \"mesh: \\\"/assets/models/kenney_train-kit/train-locomotive-b.glb\\\"\\n"
+  "  data: \"mesh: \\\"/assets/models/kenney_prototype-kit/crate.glb\\\"\\n"
   "name: \\\"{{NAME}}\\\"\\n"
   "materials {\\n"
   "  name: \\\"colormap\\\"\\n"
   "  material: \\\"/examples/material/unlit/unlit.material\\\"\\n"
   "  textures {\\n"
   "    sampler: \\\"texture0\\\"\\n"
-  "    texture: \\\"/assets/models/kenney_train-kit/Textures/colormap.png\\\"\\n"
+  "    texture: \\\"/assets/models/kenney_prototype-kit/Textures/colormap.png\\\"\\n"
   "  }\\n"
   "}\\n"
   "\"\n"
   "}\n"
   ""
+  position {
+    y: -0.25
+  }
 }
 embedded_instances {
   id: "camera"
   data: "components {\n"
-  "  id: \"orbit_camera\"\n"
+  "  id: \"main\"\n"
   "  component: \"/examples/render/orbit_camera/orbit_camera.script\"\n"
-  "  properties {\n"
-  "    id: \"zoom\"\n"
-  "    value: \"7.0\"\n"
-  "    type: PROPERTY_TYPE_NUMBER\n"
-  "  }\n"
-  "  properties {\n"
-  "    id: \"offset\"\n"
-  "    value: \"0.0, 0.5, 0.0\"\n"
-  "    type: PROPERTY_TYPE_VECTOR3\n"
-  "  }\n"
   "}\n"
   "embedded_components {\n"
   "  id: \"camera\"\n"
@@ -46,10 +39,15 @@ embedded_instances {
   "\"\n"
   "}\n"
   ""
+  position {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
   rotation {
-    x: -0.26769933
-    y: 0.3956773
-    z: 0.12174567
-    w: 0.8700313
+    x: -0.27781594
+    y: 0.36497167
+    z: 0.11507513
+    w: 0.88111955
   }
 }
