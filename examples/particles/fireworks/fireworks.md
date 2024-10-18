@@ -11,6 +11,6 @@ The main script `fireworks.script` spawns the fireworks trail particlefx on star
 
 To start effect:
 - add factories for splat and trail particles;
-- call "start_fireworks" method with parameters (time, delay, start point, speed vector).
+- call "start_fireworks" method with parameters (time, start point, speed vector).
 
 Images for particles are taken from Kenney Particle Pack.
