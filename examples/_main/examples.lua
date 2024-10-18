@@ -31,6 +31,7 @@ local categories = {}
 for category,_ in pairs(examples) do
 	categories[#categories + 1] = category
 end
+table.sort(categories)
 
 for category,examples_in_category in pairs(examples) do
 	for id,example in pairs(examples_in_category) do
