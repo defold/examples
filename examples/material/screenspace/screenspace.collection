@@ -6,6 +6,15 @@ embedded_instances {
   "  id: \"main\"\n"
   "  component: \"/examples/material/screenspace/screenspace.script\"\n"
   "}\n"
+  "components {\n"
+  "  id: \"orbit_camera\"\n"
+  "  component: \"/examples/render/orbit_camera/orbit_camera.script\"\n"
+  "  properties {\n"
+  "    id: \"offset\"\n"
+  "    value: \"0.0, 0.25, 0.0\"\n"
+  "    type: PROPERTY_TYPE_VECTOR3\n"
+  "  }\n"
+  "}\n"
   "embedded_components {\n"
   "  id: \"camera\"\n"
   "  type: \"camera\"\n"
@@ -17,9 +26,6 @@ embedded_instances {
   "\"\n"
   "}\n"
   ""
-  position {
-    y: 0.25
-  }
   rotation {
     x: -0.25881904
     w: 0.9659258
