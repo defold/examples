@@ -4,7 +4,7 @@ local examples = {}
 
 examples["basics"] = { "message_passing", "parent_child", "z_order" }
 examples["factory"] = { "basic", "bullets", "dynamic" }
-examples["movement"] = { "simple_move", "follow", "move_to", "move_forward", "movement_speed", "look_at" }
+examples["movement"] = { "simple_move", "follow", "move_to", "move_forward", "movement_speed", "look_at", "look_rotation" }
 examples["physics"] = { "dynamic", "kinematic", "raycast", "trigger", "hinge_joint", "pendulum", "knockback"}
 examples["animation"] = { "euler_rotation", "spinner", "flipbook", "chained_tween", "basic_tween", "spine", "cursor", "easing" }
 examples["gui"] = {
