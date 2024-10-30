@@ -466,3 +466,9 @@ embedded_components {
   data: "collection: \"/examples/render/orbit_camera/orbit_camera.collection\"\n"
   ""
 }
+embedded_components {
+  id: "movement/look_rotation"
+  type: "collectionproxy"
+  data: "collection: \"/examples/movement/look_rotation/look_rotation.collection\"\n"
+  ""
+}
