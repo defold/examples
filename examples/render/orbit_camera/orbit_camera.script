@@ -40,7 +40,7 @@ function update(self, dt)
 end
 
 function on_input(self, action_id, action)
-	if action_id == hash("touch") then
+	if action_id == hash("touch") and not action.pressed then
 		self.yaw   = self.yaw   - action.dx * self.rotation_speed
 		self.pitch = self.pitch + action.dy * self.rotation_speed
 	elseif action_id == hash("wheel_up") then
