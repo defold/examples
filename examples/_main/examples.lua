@@ -4,7 +4,7 @@ local examples = {}
 
 examples["basics"] = { "message_passing", "parent_child", "z_order" }
 examples["factory"] = { "basic", "bullets", "dynamic" }
-examples["movement"] = { "simple_move", "follow", "move_to", "move_forward", "movement_speed", "look_at" }
+examples["movement"] = { "simple_move", "follow", "move_to", "move_forward", "movement_speed", "look_at", { name = "look_rotation", nobg = true } }
 examples["physics"] = { "dynamic", "kinematic", "raycast", "trigger", "hinge_joint", "pendulum", "knockback"}
 examples["animation"] = { "euler_rotation", "spinner", "flipbook", "chained_tween", "basic_tween", "spine", "cursor", "easing" }
 examples["gui"] = {
@@ -16,10 +16,10 @@ examples["gui"] = {
 }
 examples["input"] = { "move", "text", "down_duration", "mouse_and_touch" }
 examples["model"] = { { name = "cubemap", nobg = true } }
-examples["material"] = { "vertexcolor", { name = "unlit", nobg = true }, "uvgradient", "noise" }
-examples["particles"] = { "confetti", "particlefx", "modifiers", "fire_and_smoke" }
+examples["material"] = { "vertexcolor", { name = "unlit", nobg = true }, "uvgradient", "noise", { name = "screenspace", nobg = true } }
+examples["particles"] = { "confetti", "particlefx", "modifiers", "fire_and_smoke", "fireworks" }
 examples["sound"] = { "music", "fade_in_out", "panning" }
-examples["render"] = { "camera", "screen_to_world" }
+examples["render"] = { "camera", { name = "orbit_camera", nobg = true }, "screen_to_world" }
 examples["debug"] = { "physics", "profile" }
 examples["collection"] = { "proxy", "splash", "timestep" }
 examples["sprite"] = { "size", "tint", "flip", "bunnymark" }
@@ -32,6 +32,7 @@ local categories = {}
 for category,_ in pairs(examples) do
 	categories[#categories + 1] = category
 end
+table.sort(categories)
 
 for category,examples_in_category in pairs(examples) do
 	for id,example in pairs(examples_in_category) do
