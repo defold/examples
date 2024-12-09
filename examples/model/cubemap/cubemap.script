@@ -1,5 +1,5 @@
 local ZOOM_SPEED = 0.1
-local ROTATION_SPEED = 2
+local ROTATION_SPEED = 1
 
 function init(self)
 	msg.post("@render:", "use_camera_projection")
