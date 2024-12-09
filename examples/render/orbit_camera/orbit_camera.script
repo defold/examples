@@ -8,8 +8,6 @@ go.property("rotation_speed", 0.5)
 go.property("offset", vmath.vector3(0, 0, 0))
 
 function init(self)
-	-- Set the camera projection to be used
-	msg.post("@render:", "use_camera_projection")
 	-- Acquire input focus to receive input events
 	msg.post(".", "acquire_input_focus")
 

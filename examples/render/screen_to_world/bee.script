@@ -5,9 +5,9 @@ local DISPLAY_HEIGHT = sys.get_config_int("display.height")
 -- world coordinates given a camera component
 -- this function will use the camera view and projection to
 -- translate the screen coordinates into world coordinates
-local function screen_to_world(x, y, z, camera)
-	local projection = go.get(camera, "projection")
-	local view = go.get(camera, "view")
+local function screen_to_world(x, y, z, camera_id)
+	local projection = camera.get_projection(camera_id)
+	local view = camera.get_view(camera_id)
 	local w, h = window.get_size()
 	-- The window.get_size() function will return the scaled window size,
 	-- ie taking into account display scaling (Retina screens on macOS for
@@ -27,11 +27,6 @@ local function screen_to_world(x, y, z, camera)
 end
 
 function init(self)
-	-- activate the camera
-	msg.post("#camera", "acquire_camera_focus")
-	-- make sure the render script uses both the view and
-	-- the camera projection when rendering the world
-	msg.post("@render:", "use_camera_projection")
 	-- send input events to this script
 	msg.post(".", "acquire_input_focus")
 end
