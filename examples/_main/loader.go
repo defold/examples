@@ -455,9 +455,9 @@ embedded_components {
   ""
 }
 embedded_components {
-  id: "material/screenspace"
+  id: "model/cubemap"
   type: "collectionproxy"
-  data: "collection: \"/examples/material/screenspace/screenspace.collection\"\n"
+  data: "collection: \"/examples/model/cubemap/cubemap.collection\"\n"
   ""
 }
 embedded_components {
@@ -470,5 +470,11 @@ embedded_components {
   id: "movement/look_rotation"
   type: "collectionproxy"
   data: "collection: \"/examples/movement/look_rotation/look_rotation.collection\"\n"
+  ""
+}
+embedded_components {
+  id: "material/screenspace"
+  type: "collectionproxy"
+  data: "collection: \"/examples/material/screenspace/screenspace.collection\"\n"
   ""
 }
