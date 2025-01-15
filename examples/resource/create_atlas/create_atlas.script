@@ -17,8 +17,8 @@ local function create_texture(width, height)
 		for x=1, width do
 			local index = (y-1) * width * 4 + (x-1) * 4 + 1
 			stream[index + 0] = x > half_width and 0xFF or 0x00
-			stream[index + 1] = x > half_width and 0x80 or 0xFF
-			stream[index + 2] = x > half_width and 0x00 or 0x80
+			stream[index + 1] = x > half_width and 0x00 or 0xFF
+			stream[index + 2] = x > half_width and 0x00 or 0x00
 			stream[index + 3] = 0xFF
 		end
 	end
@@ -94,7 +94,7 @@ function init(self)
 
 	go.set("#sprite", "image", my_atlas_id)
 	timer.delay(1, false, function()
-		sprite.play_flipbook("#sprite", "my_animation_right")
+		sprite.play_flipbook("#sprite", "my_animation_left")
 	end)
 
 	go.set("gui#gui", "textures", my_atlas_id, { key = "fooatlas" })
