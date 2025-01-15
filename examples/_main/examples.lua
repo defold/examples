@@ -26,7 +26,7 @@ examples["sprite"] = { "size", "tint", "flip", "bunnymark" }
 examples["file"] = { "sys_save_load" }
 examples["tilemap"] = { "collisions", "get_set_tile" }
 examples["timer"] = { "repeating_timer", "trigger_timer", "cancel_timer" }
-examples["resource"] = { "modify_atlas" }
+examples["resource"] = { "modify_atlas", "create_atlas" }
 
 local categories = {}
 for category,_ in pairs(examples) do

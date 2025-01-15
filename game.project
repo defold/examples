@@ -5,7 +5,7 @@ custom_resources = examples/resource/modify_atlas/resources
 dependencies#0 = https://github.com/defold/extension-spine/archive/refs/tags/3.6.2.zip
 
 [bootstrap]
-main_collection = /examples/main.collectionc
+main_collection = /examples/resource/create_atlas/create_atlas.collectionc
 
 [input]
 game_binding = /input/game.input_bindingc

@@ -1,0 +1,11 @@
+function on_message(self, message_id, message, sender)
+	if message_id == hash("use_atlas") then
+		local box = gui.get_node("box")
+		gui.set_texture(box, message.texture)
+		gui.set_size_mode(box, gui.SIZE_MODE_MANUAL)
+		gui.set_size(box, vmath.vector3(64, 128, 0))
+		timer.delay(1, false, function()
+			gui.play_flipbook(box, message.animation)
+		end)
+	end
+end
