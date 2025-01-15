@@ -51,32 +51,40 @@ local function create_atlas(texture_id, width, height)
 		},
 		geometries = {
 			{
+				width = width / 2,
+				height = height,
+				pivot_x = 0.5,
+				pivot_y = 0.5,
 				vertices  = {
-					0,         0,
 					0,         height,
-					width / 2, height,
-					width / 2, 0
+					0,         0,
+					width / 2, 0,
+					width / 2, height
 				},
 				uvs = {
-					0,         0,
 					0,         height,
-					width / 2, height,
-					width / 2, 0
+					0,         0,
+					width / 2, 0,
+					width / 2, height
 				},
 				indices = {0,1,2,0,2,3}
 			},
 			{
+				width = width / 2,
+				height = height,
+				pivot_x = 0.5,
+				pivot_y = 0.5,
 				vertices  = {
+					0,         height,
+					0,         0,
 					width / 2, 0,
-					width / 2, height,
-					width,     height,
-					width,     0
+					width / 2, height
 				},
 				uvs = {
-					width / 2, 0,
-					width / 2, height,
-					width,     height,
-					width,     0
+					width / 2,  height,
+					width / 2,  0,
+					width,      0,
+					width,      height
 				},
 				indices = {0,1,2,0,2,3}
 			}
@@ -93,10 +101,8 @@ function init(self)
 	local my_atlas_id = create_atlas(my_texture_id, width, height)
 
 	go.set("#sprite", "image", my_atlas_id)
-	timer.delay(1, false, function()
-		sprite.play_flipbook("#sprite", "my_animation_left")
-	end)
+	sprite.play_flipbook("#sprite", "my_animation_left")
 
-	go.set("gui#gui", "textures", my_atlas_id, { key = "fooatlas" })
-	msg.post("gui#gui", "use_atlas", { texture = "fooatlas", animation = "my_animation_right" })
+	go.set("gui#gui", "textures", my_atlas_id, { key = "my_atlas" })
+	msg.post("gui#gui", "use_atlas", { texture = "my_atlas", animation = "my_animation_right" })
 end

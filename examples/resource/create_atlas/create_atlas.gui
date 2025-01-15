@@ -1,15 +1,14 @@
 script: "/examples/resource/create_atlas/create_atlas.gui_script"
-textures {
-  name: "sprites"
-  texture: "/assets/sprites.atlas"
-}
 nodes {
   position {
     x: 360.0
-    y: 360.0
+    y: 502.0
+  }
+  size {
+    x: 50.0
+    y: 50.0
   }
   type: TYPE_BOX
-  texture: "sprites/coin"
   id: "box"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
