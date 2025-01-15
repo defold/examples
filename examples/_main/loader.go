@@ -478,3 +478,9 @@ embedded_components {
   data: "collection: \"/examples/material/screenspace/screenspace.collection\"\n"
   ""
 }
+embedded_components {
+  id: "resource/create_atlas"
+  type: "collectionproxy"
+  data: "collection: \"/examples/resource/create_atlas/create_atlas.collection\"\n"
+  ""
+}
