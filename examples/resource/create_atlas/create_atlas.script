@@ -100,9 +100,11 @@ function init(self)
 	local my_texture_id = create_texture(width, height)
 	local my_atlas_id = create_atlas(my_texture_id, width, height)
 
+	-- set the new atlas on the sprite and show one image
 	go.set("#sprite", "image", my_atlas_id)
 	sprite.play_flipbook("#sprite", "my_animation_left")
 
+	-- set the new atlas on the gui component and use on a node from the gui script
 	go.set("gui#gui", "textures", my_atlas_id, { key = "my_atlas" })
 	msg.post("gui#gui", "use_atlas", { texture = "my_atlas", animation = "my_animation_right" })
 end
