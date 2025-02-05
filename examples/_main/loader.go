@@ -484,3 +484,9 @@ embedded_components {
   data: "collection: \"/examples/resource/create_atlas/create_atlas.collection\"\n"
   ""
 }
+embedded_components {
+  id: "mesh/triangle"
+  type: "collectionproxy"
+  data: "collection: \"/examples/mesh/triangle/triangle.collection\"\n"
+  ""
+}

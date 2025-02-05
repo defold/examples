@@ -1,0 +1,13 @@
+name: "mesh"
+tags: "model"
+vertex_program: "/examples/mesh/triangle/mesh.vp"
+fragment_program: "/examples/mesh/triangle/mesh.fp"
+vertex_space: VERTEX_SPACE_LOCAL
+vertex_constants {
+  name: "mtx_proj"
+  type: CONSTANT_TYPE_PROJECTION
+}
+vertex_constants {
+  name: "mtx_worldview"
+  type: CONSTANT_TYPE_WORLDVIEW
+}
