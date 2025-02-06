@@ -1,0 +1,25 @@
+name: "cubemap_model"
+tags: "model"
+vertex_program: "/example/cubemap_model.vp"
+fragment_program: "/example/cubemap_model.fp"
+vertex_constants {
+  name: "view_proj"
+  type: CONSTANT_TYPE_VIEWPROJ
+}
+vertex_constants {
+  name: "world"
+  type: CONSTANT_TYPE_WORLD
+}
+vertex_constants {
+  name: "cameraPosition"
+  type: CONSTANT_TYPE_USER
+  value {
+  }
+}
+samplers {
+  name: "envMap"
+  wrap_u: WRAP_MODE_CLAMP_TO_EDGE
+  wrap_v: WRAP_MODE_CLAMP_TO_EDGE
+  filter_min: FILTER_MODE_MIN_LINEAR
+  filter_mag: FILTER_MODE_MAG_LINEAR
+}
