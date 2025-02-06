@@ -1,5 +1,6 @@
 ---
 tags: material
+category: material
 title: Noise shader
 brief: This example shows how to use a noise function to generate clouds, smoke or similar effect using a shader.
 scripts: noise.script, noise.fp

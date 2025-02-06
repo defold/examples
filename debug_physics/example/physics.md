@@ -1,5 +1,6 @@
 ---
 tags: debug
+category: debug
 title: Physics debug
 brief: This example allows you to toggle physics debug visualization as well as changing the time step so the simulation runs at one tenth of the speed.
 scripts: physics.script

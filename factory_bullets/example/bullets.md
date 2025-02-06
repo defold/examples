@@ -1,5 +1,6 @@
 ---
 tags: factory
+category: factory
 title: Shoot bullets
 brief: This example shows how to dynamically spawn bullet game objects using a factory component.
 scripts: player.script

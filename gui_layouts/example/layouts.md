@@ -1,5 +1,6 @@
 ---
 tags: gui
+category: gui
 title: Layouts
 brief: This example demonstrates the use of layouts.
 scripts: layouts.gui_script

@@ -1,5 +1,6 @@
 ---
 tags: gui
+category: gui
 title: Button
 brief: A GUI box node with an image texture and a script to make it act as a button.
 scripts: button.gui_script

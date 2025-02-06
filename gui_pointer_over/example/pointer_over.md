@@ -1,5 +1,6 @@
 ---
 tags: gui
+category: gui
 title: Pointer over
 brief: A GUI box node with an image texture and a script that react when pointer over this node.
 scripts: pointer_over.gui_script

@@ -1,5 +1,6 @@
 ---
 tags: animation
+category: animation
 title: Easing functions (tweens)
 brief: This example demonstrates different easing functions available in Defold.
 ---

@@ -1,5 +1,6 @@
 ---
 tags: particles
+category: particles
 title: Particle effect example - fire and smoke
 brief: This example shows a simple particle effect for imitating fire and smoke.
 scripts: fire_and_smoke.script

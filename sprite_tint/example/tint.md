@@ -1,5 +1,6 @@
 ---
 tags: sprite
+category: sprite
 title: Sprite tint
 brief: This example shows how tint a sprite at run-time
 scripts: tint.script

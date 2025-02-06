@@ -1,5 +1,6 @@
 ---
 tags: sprite
+category: sprite
 title: Flip
 brief: This example demonstrates flipping a sprite animation vertically and horizontally.
 scripts: flip.script

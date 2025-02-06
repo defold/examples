@@ -1,5 +1,6 @@
 ---
 tags: tilemap
+category: tilemap
 title: Get and set tiles
 brief: This example shows how to get and set tiles of a tilemap
 scripts: get_set_tile.script

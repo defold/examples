@@ -1,5 +1,6 @@
 ---
 tags: debug
+category: debug
 title: Visual profiler
 brief: This example shows the on-screen profiler. It displays useful runtime information.
 scripts: profile.script

@@ -1,5 +1,6 @@
 ---
 tags: resource
+category: resource
 title: Modify atlas
 brief: This example shows how to replace an image in an atlas
 scripts: modify_atlas.script
