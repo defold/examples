@@ -7,7 +7,6 @@ embedded_instances {
   "  type: \"mesh\"\n"
   "  data: \"material: \\\"/example/mesh.material\\\"\\n"
   "vertices: \\\"/example/triangle.buffer\\\"\\n"
-  "textures: \\\"/assets/images/logo.png\\\"\\n"
   "position_stream: \\\"position\\\"\\n"
   "normal_stream: \\\"position\\\"\\n"
   "\"\n"
