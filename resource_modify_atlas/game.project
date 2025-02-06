@@ -1,6 +1,7 @@
 [project]
 title = Defold-examples
 version = 0.1
+custom_resources = /example/resources/
 
 [bootstrap]
 main_collection = /example/modify_atlas.collectionc
