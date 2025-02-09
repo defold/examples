@@ -1,7 +1,7 @@
 script: ""
 fonts {
   name: "text24"
-  font: "/assets/text24.font"
+  font: "/assets/text48.font"
 }
 textures {
   name: "ui"
