@@ -8,7 +8,7 @@ embedded_instances {
   "}\n"
   "components {\n"
   "  id: \"orbit_camera\"\n"
-  "  component: \"/examples/render/orbit_camera/orbit_camera.script\"\n"
+  "  component: \"/example/orbit_camera.script\"\n"
   "  properties {\n"
   "    id: \"offset\"\n"
   "    value: \"0.0, 0.25, 0.0\"\n"

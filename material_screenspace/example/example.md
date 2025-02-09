@@ -21,6 +21,4 @@ local w, h = window.get_size()
 go.set("#model", "screen_size", vmath.vector4(w, h, 0, 0))
 ```
 
-To activate a perspective camera and to have camera controls, we added the `orbit_camera.script` script from the [Orbit Camera (3D)](/examples/render/orbit_camera/orbit_camera/) example.
-
 The shaders are written in GLSL 1.40, which is available from Defold 1.9.2. The model used in this example is from Kenney's [Prototype Pack](https://kenney.nl/assets/prototype-kit), licensed under CC0.

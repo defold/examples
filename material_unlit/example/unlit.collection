@@ -23,7 +23,7 @@ embedded_instances {
   id: "camera"
   data: "components {\n"
   "  id: \"orbit_camera\"\n"
-  "  component: \"/examples/render/orbit_camera/orbit_camera.script\"\n"
+  "  component: \"/example/orbit_camera.script\"\n"
   "  properties {\n"
   "    id: \"zoom\"\n"
   "    value: \"7.0\"\n"
