@@ -5,7 +5,7 @@ embedded_instances {
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
-  "  data: \"tile_set: \\\"/assets/sprites.atlas\\\"\\n"
+  "  data: \"tile_set: \\\"/assets/bee.atlas\\\"\\n"
   "default_animation: \\\"bee\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"

@@ -371,7 +371,7 @@ embedded_instances {
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "textures {\\n"
   "  sampler: \\\"texture_sampler\\\"\\n"
-  "  texture: \\\"/assets/sprites.atlas\\\"\\n"
+  "  texture: \\\"/assets/bee.atlas\\\"\\n"
   "}\\n"
   "\"\n"
   "  position {\n"
