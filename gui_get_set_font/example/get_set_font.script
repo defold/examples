@@ -1,5 +1,5 @@
 -- create a script resource property 'myfont' referencing a font file
-go.property("myfont", resource.font("/assets/text64.font"))
+go.property("myfont", resource.font("/assets/text48.font"))
 
 function init(self)
 	msg.post(".", "acquire_input_focus")

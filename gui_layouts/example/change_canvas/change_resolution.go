@@ -46,7 +46,7 @@ embedded_components {
   "blend_mode: BLEND_MODE_ALPHA\n"
   "line_break: false\n"
   "text: \"Click me to change layout\"\n"
-  "font: \"/assets/text64.font\"\n"
+  "font: \"/assets/text48.font\"\n"
   "material: \"/builtins/fonts/label.material\"\n"
   ""
   position {
