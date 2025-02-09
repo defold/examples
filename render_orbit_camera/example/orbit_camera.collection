@@ -9,7 +9,7 @@ embedded_instances {
   "name: \\\"{{NAME}}\\\"\\n"
   "materials {\\n"
   "  name: \\\"colormap\\\"\\n"
-  "  material: \\\"/examples/material/unlit/unlit.material\\\"\\n"
+  "  material: \\\"/example/unlit.material\\\"\\n"
   "  textures {\\n"
   "    sampler: \\\"texture0\\\"\\n"
   "    texture: \\\"/assets/models/kenney_prototype-kit/Textures/colormap.png\\\"\\n"
