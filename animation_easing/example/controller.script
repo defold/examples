@@ -1,4 +1,4 @@
-local lookup = require "examples.animation.easing.easing_functions"
+local lookup = require "example.easing_functions"
 
 local PREVIOUS = -1; local NEXT = 1
 
