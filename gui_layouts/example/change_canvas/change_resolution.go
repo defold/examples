@@ -1,6 +1,6 @@
 components {
   id: "change_resolution"
-  component: "/examples/gui/layouts/change_canvas/change_resolution.script"
+  component: "/example/change_canvas/change_resolution.script"
   position {
     x: 0.0
     y: 0.0

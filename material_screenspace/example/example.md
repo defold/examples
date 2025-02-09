@@ -9,7 +9,7 @@ scripts: screenspace.script, screenspace.vp, screenspace.fp
 
 In this example, we create a new material for 3D models in which we convert vertex coordinates to screenspace to get a special effect. It may be called "surface fill", "screenspace fill" and is used, most often in combination with outlines, to highlight objects in 3D games or indicate their status. 
 
-We added two game objects and two models to which we assigned our new `screenspace` material. The material is based on [`unlit`](/examples/material/unlit/), but in it:
+We added two game objects and two models to which we assigned our new `screenspace` material. The material is based on [`unlit`](/examples/material_unlit/), but in it:
 - vertex shader: we added a conversion of the clip space position to the screen position to pass that value to the fragment shader.
 - fragment shader: we added sampling the color based on screenspace coordinates and blending into the final output color.
 - material properties: we added a new sampler to set a second texture to be used as a pattern, and user-defined uniforms to control the fragment shader.
