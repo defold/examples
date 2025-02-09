@@ -94,7 +94,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"music\"\n"
   "  type: \"sound\"\n"
-  "  data: \"sound: \\\"/examples/sound/music/bunny_tears.ogg\\\"\\n"
+  "  data: \"sound: \\\"/example/bunny_tears.ogg\\\"\\n"
   "looping: 1\\n"
   "group: \\\"master\\\"\\n"
   "gain: 1.0\\n"
