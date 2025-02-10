@@ -1,6 +1,5 @@
 ---
 tags: physics
-category: physics
 title: Dynamic physics
 brief: This example shows a simple setup with dynamic physics objects.
 ---

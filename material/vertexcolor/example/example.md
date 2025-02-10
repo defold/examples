@@ -1,6 +1,5 @@
 ---
 tags: material
-category: material
 title: Sprite Vertex Color Attribute
 brief: This example shows how to set and animate a vertex attribute
 scripts: vertexcolor.script, vertexcolor.vp, vertexcolor.fp

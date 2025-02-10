@@ -1,6 +1,5 @@
 ---
 tags: tilemap
-category: tilemap
 title: Tilemap collisions
 brief: This example shows how to detect collisions on tilemaps
 scripts: collisions.script

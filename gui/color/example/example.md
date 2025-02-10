@@ -1,6 +1,5 @@
 ---
 tags: gui
-category: gui
 title: GUI color
 brief: This example shows how change the color of GUI nodes at run-time
 scripts: color.gui_script

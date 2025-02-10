@@ -1,7 +1,6 @@
 ---
 name: Unlit (3D)
 tags: material
-category: material
 title: Unlit
 brief: This example demonstrates how to create and apply an custom non-lit material to a 3D model.
 scripts: unlit.vp, unlit.fp

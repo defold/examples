@@ -1,6 +1,5 @@
 ---
 tags: material
-category: material
 title: UV Gradient
 brief: This example shows how to apply a basic shader to a full screen quad.
 scripts: uvgradient.fp

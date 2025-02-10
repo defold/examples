@@ -1,6 +1,5 @@
 ---
 tags: gui
-category: gui
 title: GUI progress indicators
 brief: This example shows how to create various types of progress indicators
 scripts: progress.gui_script

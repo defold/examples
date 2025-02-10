@@ -1,6 +1,5 @@
 ---
 tags: particles
-category: particles
 title: Particle effect example - confetti
 brief: This example shows a simple particle effect to imitate confetti.
 scripts: confetti.script

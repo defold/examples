@@ -1,6 +1,5 @@
 ---
 tags: physics
-category: physics
 title: Raycast
 brief: This example shows how to use physics raycasts to detect collisions along a straight line from a start point to an end point.
 scripts: raycast.script

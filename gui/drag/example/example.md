@@ -1,6 +1,5 @@
 ---
 tags: gui
-category: gui
 title: Drag
 brief: This example shows how to drag a GUI box node.
 scripts: drag.gui_script

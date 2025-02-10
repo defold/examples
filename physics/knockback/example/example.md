@@ -1,6 +1,5 @@
 ---
 tags: physics
-category: physics
 title: Knockback
 brief: This example shows how to create a knockback effect when hit.
 scripts: enemy.script

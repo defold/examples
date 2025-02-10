@@ -1,6 +1,5 @@
 ---
 tags: basics
-category: basics
 title: Parent/child
 brief: This example shows how to child a game object to a parent.
 scripts: parent.script,child.script

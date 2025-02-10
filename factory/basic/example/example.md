@@ -1,6 +1,5 @@
 ---
 tags: factory
-category: factory
 title: Spawn game object
 brief: This example shows how to dynamically spawn game objects with a factory component.
 scripts: bunny.script,carrot.script

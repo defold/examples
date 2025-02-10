@@ -1,6 +1,5 @@
 ---
 tags: particles
-category: particles
 title: Modifiers
 brief: This example shows particle effect modifiers. Modifiers are used to alter the path of emitted particles.
 scripts: modifiers.script

@@ -1,6 +1,5 @@
 ---
 tags: gui
-category: gui
 title: Slice-9
 brief: This example demonstrates slice-9 scaling gui box node.
 scripts: slice9.gui_script

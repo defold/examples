@@ -1,6 +1,5 @@
 ---
 tags: sprite
-category: sprite
 title: Bunnymark
 brief: This is a performance test for sprites
 scripts: bunnymark.script

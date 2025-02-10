@@ -1,6 +1,5 @@
 ---
 tags: particles
-category: particles
 title: Particle effect example - fireworks
 brief: This example shows a fireworks effect made with particles.
 scripts: fireworks.script

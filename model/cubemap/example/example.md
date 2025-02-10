@@ -1,6 +1,5 @@
 ---
 tags: model
-category: model
 title: Cubemap Reflection
 brief: This example shows how to use a cubemap to draw environment reflections on a model.
 scripts: cubemap.script, cubemap_model.fp, cubemap_model.vp

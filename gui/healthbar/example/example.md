@@ -1,6 +1,5 @@
 ---
 tags: gui
-category: gui
 title: Health Bar
 brief: This example demonstrates how to add different health bars.
 scripts: healthbar.script, healthbar.gui_script

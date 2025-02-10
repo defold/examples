@@ -1,6 +1,5 @@
 ---
 tags: timer
-category: timer
 title: Cancel timer example
 brief: This example shows how to create timer and cancel it anytime, using built-in timer API.
 scripts: cancel_timer.gui_script

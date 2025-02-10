@@ -1,6 +1,5 @@
 ---
 tags: sprite
-category: sprite
 title: Sprite size
 brief: This example shows how to get the size of a sprite at run-time
 scripts: size.script

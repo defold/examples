@@ -1,6 +1,5 @@
 ---
 tags: basics
-category: basics
 title: Z-order
 brief: This example shows how to put one sprite in front of another
 scripts: z_order.script
