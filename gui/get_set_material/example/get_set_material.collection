@@ -1,0 +1,14 @@
+name: "get_set_material"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"gui\"\n"
+  "  component: \"/example/get_set_material.gui\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"script\"\n"
+  "  component: \"/example/get_set_material.script\"\n"
+  "}\n"
+  ""
+}

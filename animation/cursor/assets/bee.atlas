@@ -1,0 +1,141 @@
+animations {
+  id: "bee"
+  images {
+    image: "/assets/images/bee/Bee01.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee02.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee03.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee04.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee05.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee06.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee07.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee08.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee09.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee10.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee11.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee12.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee13.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee14.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee15.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee16.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee17.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee18.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee19.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee20.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee21.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee22.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee23.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee24.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+}
+animations {
+  id: "bee_shot"
+  images {
+    image: "/assets/images/bee/Bee_shot01.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee_shot02.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee_shot03.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee_shot04.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee_shot05.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee_shot06.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee_shot07.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee_shot08.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee_shot09.png"
+  }
+  images {
+    image: "/assets/images/bee/Bee_shot10.png"
+  }
+}
+animations {
+  id: "stinger"
+  images {
+    image: "/assets/images/bee/Sting01.png"
+  }
+  images {
+    image: "/assets/images/bee/Sting02.png"
+  }
+  images {
+    image: "/assets/images/bee/Sting03.png"
+  }
+  images {
+    image: "/assets/images/bee/Sting04.png"
+  }
+  images {
+    image: "/assets/images/bee/Sting05.png"
+  }
+  images {
+    image: "/assets/images/bee/Sting06.png"
+  }
+  images {
+    image: "/assets/images/bee/Sting07.png"
+  }
+  images {
+    image: "/assets/images/bee/Sting08.png"
+  }
+  images {
+    image: "/assets/images/bee/Sting09.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+}
+extrude_borders: 2

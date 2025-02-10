@@ -1,0 +1,55 @@
+name: "unlit"
+scale_along_z: 1
+embedded_instances {
+  id: "train"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/assets/models/kenney_train-kit/train-locomotive-b.glb\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"colormap\\\"\\n"
+  "  material: \\\"/example/unlit.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"texture0\\\"\\n"
+  "    texture: \\\"/assets/models/kenney_train-kit/Textures/colormap.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "camera"
+  data: "components {\n"
+  "  id: \"orbit_camera\"\n"
+  "  component: \"/example/orbit_camera.script\"\n"
+  "  properties {\n"
+  "    id: \"zoom\"\n"
+  "    value: \"7.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"offset\"\n"
+  "    value: \"0.0, 0.5, 0.0\"\n"
+  "    type: PROPERTY_TYPE_VECTOR3\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.0\\n"
+  "fov: 0.7854\\n"
+  "near_z: 0.1\\n"
+  "far_z: 1000.0\\n"
+  "auto_aspect_ratio: 1\\n"
+  "\"\n"
+  "}\n"
+  ""
+  rotation {
+    x: -0.26769933
+    y: 0.3956773
+    z: 0.12174567
+    w: 0.8700313
+  }
+}

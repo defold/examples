@@ -1,0 +1,53 @@
+name: "orbit_camera"
+scale_along_z: 1
+embedded_instances {
+  id: "crate"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/assets/models/kenney_prototype-kit/crate.glb\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"colormap\\\"\\n"
+  "  material: \\\"/example/unlit.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"texture0\\\"\\n"
+  "    texture: \\\"/assets/models/kenney_prototype-kit/Textures/colormap.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    y: -0.25
+  }
+}
+embedded_instances {
+  id: "camera"
+  data: "components {\n"
+  "  id: \"main\"\n"
+  "  component: \"/example/orbit_camera.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.0\\n"
+  "fov: 0.7854\\n"
+  "near_z: 0.1\\n"
+  "far_z: 1000.0\\n"
+  "auto_aspect_ratio: 1\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 2.0
+    y: 2.0
+    z: 2.0
+  }
+  rotation {
+    x: -0.27781594
+    y: 0.36497167
+    z: 0.11507513
+    w: 0.88111955
+  }
+}

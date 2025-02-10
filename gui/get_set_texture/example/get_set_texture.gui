@@ -1,0 +1,42 @@
+script: ""
+fonts {
+  name: "text24"
+  font: "/assets/text48.font"
+}
+textures {
+  name: "ui"
+  texture: "/assets/ui.atlas"
+}
+nodes {
+  position {
+    x: 360.0
+    y: 360.0
+  }
+  type: TYPE_BOX
+  texture: "ui/logo-color"
+  id: "box"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 360.0
+    y: 100.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.2
+    y: 0.302
+    z: 0.702
+  }
+  type: TYPE_TEXT
+  text: "CLICK TO CHANGE TEXTURE"
+  font: "text24"
+  id: "text"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
