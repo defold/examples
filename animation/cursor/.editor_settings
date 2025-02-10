@@ -1,0 +1,73 @@
+{
+  :bundle {
+    :android {
+      :architecture {
+        :arm64-android true
+        :armv7-android false
+      }
+      :format "apk"
+      :install false
+      :keystore "/Users/bjornritzl/projects/certificates-defold/android/defold.keystore"
+      :keystore-pass "/Users/bjornritzl/projects/certificates-defold/android/defold.keystore.pass.txt"
+      :launch false
+    }
+    :build-report true
+    :contentless false
+    :debug-symbols true
+    :html5 {
+      :architecture {
+        :js-web false
+        :wasm-web true
+      }
+    }
+    :ios {
+      :architecture {
+        :arm64-ios true
+        :x86_64-ios false
+      }
+      :code-signing-identity "Apple Development: Bjoern Ritzl (5HXMA7P46L)"
+      :install false
+      :launch false
+      :provisioning-profile "/Users/bjornritzl/projects/certificates-defold/apple/BR_Foobar.mobileprovision"
+      :sign true
+    }
+    :liveupdate false
+    :macos {
+      :architecture {
+        :arm64-macos true
+        :x86_64-macos true
+      }
+    }
+    :texture-compression "enabled"
+    :variant "release"
+    :windows {
+      :platform "x86_64-win32"
+    }
+  }
+  :code {
+    :find {
+      :case-sensitive true
+      :term "self.jump_timer"
+    }
+  }
+  :open-assets {
+    :term "game.p"
+  }
+  :search-in-files {
+    :exts "*.script, *.lua"
+    :include-libraries false
+    :term "ads_wrapper"
+  }
+  :workflow {
+    :recent-files [
+      [
+        "/example/cursor.script"
+        :code
+      ]
+      [
+        "/example/cursor.collection"
+        :scene
+      ]
+    ]
+  }
+}
