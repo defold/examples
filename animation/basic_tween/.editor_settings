@@ -65,6 +65,10 @@
         :scene
       ]
       [
+        "/example/basic_tween.collection"
+        :scene
+      ]
+      [
         "/assets/sprites.atlas"
         :scene
       ]
