@@ -13,3 +13,11 @@ ship
   - A *Factory* component to spawn bullet game objects. This component has the *Dynamic Protoype* option checked.
   - A *Collection Proxy* component referencing a collection containing all bullet types
   - A *Script* component to handle spawning of bullets.
+
+All bullets are added in the bullets.collection:
+
+![](bullets_collection.png)
+
+The bullets.collection is referenced from the dynamic.collection as a collection proxy:
+
+![](bullets_collection.png)
