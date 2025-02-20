@@ -1,7 +1,7 @@
 name: "sprite"
 tags: "tile"
 vertex_program: "/builtins/materials/sprite.vp"
-fragment_program: "/example/multi_sprite.fp"
+fragment_program: "/example/multi_sample_sprite.fp"
 vertex_constants {
   name: "view_proj"
   type: CONSTANT_TYPE_VIEWPROJ

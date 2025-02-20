@@ -10,7 +10,7 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"default_animation: \\\"logo_256\\\"\\n"
-  "material: \\\"/example/multi_sprite.material\\\"\\n"
+  "material: \\\"/example/multi_sample_sprite.material\\\"\\n"
   "textures {\\n"
   "  sampler: \\\"texture1_sampler\\\"\\n"
   "  texture: \\\"/example/one.atlas\\\"\\n"
