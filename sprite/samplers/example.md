@@ -7,17 +7,17 @@ scripts: multi_sample.script, multi_sample_sprite.fp
 
 The example uses a sprite with a material with two samplers:
 
-![](example/multi_sample_sprite_material.png)
+![](multi_sample_sprite_material.png)
 
 The samplers are assigned to two atlases, `one.atlas` and `two.atlas`:
 
-![](example/multi_sample_collection.png)
+![](multi_sample_collection.png)
 
 Each atlas contains a Defold logo:
 
-![](example/one_atlas.png)
+![](one_atlas.png)
 
-![](example/two_atlas.png)
+![](two_atlas.png)
 
 Note the rename pattern in `two.atlas`. The rename pattern is required so that it is possible to sample from the same location in both atlases. 
 
