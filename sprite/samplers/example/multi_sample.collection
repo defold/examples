@@ -1,0 +1,29 @@
+name: "multi_sample"
+scale_along_z: 0
+embedded_instances {
+  id: "logo"
+  data: "components {\n"
+  "  id: \"multi_sample\"\n"
+  "  component: \"/example/multi_sample.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"logo_256\\\"\\n"
+  "material: \\\"/example/multi_sprite.material\\\"\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture1_sampler\\\"\\n"
+  "  texture: \\\"/example/one.atlas\\\"\\n"
+  "}\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture2_sampler\\\"\\n"
+  "  texture: \\\"/example/two.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 360.0
+    y: 360.0
+  }
+}

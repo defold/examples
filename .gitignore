@@ -18,3 +18,4 @@ node_modules/
 .DS_Store
 /.editor_settings
 factory/bullets/.editor_settings
+sprite/samplers/.editor_settings
