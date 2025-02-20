@@ -2,7 +2,7 @@
 tags: sprite
 title: Multiple Sprite Samplers
 brief: This example shows how to sample from more than one image when drawing a sprite
-scripts: multi_sample.script, multi_sample_prite.fp
+scripts: multi_sample.script, multi_sample_sprite.fp
 ---
 
 The example uses a sprite with a material with two samplers:
