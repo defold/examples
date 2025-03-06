@@ -19,3 +19,5 @@ node_modules/
 /.editor_settings
 factory/bullets/.editor_settings
 sprite/samplers/.editor_settings
+render/orbit_camera/manifest.public.der
+render/orbit_camera/manifest.private.der
