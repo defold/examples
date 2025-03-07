@@ -15,7 +15,7 @@ package = com.defold.example.basic3d
 
 [project]
 dependencies = 
-title = character
+title = Defold-examples
 
 [physics]
 type = 3D
