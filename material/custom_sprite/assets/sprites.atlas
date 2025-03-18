@@ -1,0 +1,4 @@
+images {
+  image: "/assets/Alchemy_vial.png"
+}
+extrude_borders: 2
