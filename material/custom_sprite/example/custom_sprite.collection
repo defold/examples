@@ -1,0 +1,33 @@
+name: "main"
+scale_along_z: 0
+embedded_instances {
+  id: "new"
+  data: "components {\n"
+  "  id: \"set_color\"\n"
+  "  component: \"/example/set_color.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"Alchemy_vial\\\"\\n"
+  "material: \\\"/example/recolor.material\\\"\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/sprites.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 360.0
+    y: 360.0
+  }
+}
+embedded_instances {
+  id: "ui"
+  data: "components {\n"
+  "  id: \"buttons\"\n"
+  "  component: \"/example/buttons.gui\"\n"
+  "}\n"
+  ""
+}
