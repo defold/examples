@@ -1,16 +1,16 @@
 local up_down -- <1>
 local left_right
-	
+
 function up_down(self) -- <2>
-	go.animate(".", "position.y", go.PLAYBACK_ONCE_PINGPONG, 624, go.EASING_INOUTSINE, 2, 0, left_right)
+    go.animate(".", "position.y", go.PLAYBACK_ONCE_PINGPONG, 624, go.EASING_INOUTSINE, 2, 0, left_right)
 end
 
 function left_right(self) -- <3>
-	go.animate(".", "position.x", go.PLAYBACK_ONCE_PINGPONG, 660, go.EASING_INOUTSINE, 2, 0, up_down)	
+    go.animate(".", "position.x", go.PLAYBACK_ONCE_PINGPONG, 660, go.EASING_INOUTSINE, 2, 0, up_down)	
 end
 
 function init(self)
-	up_down(self) -- <4>
+    up_down(self) -- <4>
     go.animate(".", "scale.y", go.PLAYBACK_LOOP_PINGPONG, 0.5, go.EASING_INOUTSINE, 1) -- <5>
     go.animate("#sprite", "tint.x", go.PLAYBACK_LOOP_PINGPONG, 0.0, go.EASING_INOUTSINE, 1.5) -- <6>
 end
