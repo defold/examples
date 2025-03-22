@@ -1,4 +1,4 @@
 images {
-  image: "/assets/images/bunny2_ready.png"
+  image: "/assets/images/shipBlue_manned.png"
 }
 extrude_borders: 2
