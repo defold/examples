@@ -10,7 +10,7 @@ local function landed(self) -- <6>
 	local opposite = vmath.vector3()
 	opposite.x = 720 - pos.x
 	opposite.y = 720 - pos.y
-	msg.post("bunny 1#script", "go to", { position = opposite })
+	msg.post("spaceship1#script", "go to", { position = opposite })
 end
 
 function on_message(self, message_id, message, sender)
@@ -32,8 +32,8 @@ end
 
 --[[
 1. Tell the engine that we want to receive input.
-2. Store a flag in the current script component instance that tells us if the bunny is moving or not.
-3. If user clicked and the bunny is not moving.
+2. Store a flag in the current script component instance that tells us if the spaceship is moving or not.
+3. If user clicked and the spaceship is not moving.
 4. Send a message to this script component ("#" is shorthand for that) saying "go to" and the clicked position
    as part of the message data.
 5. If a "go to" message is received, set the speech label text and then animate the position of the current 
@@ -41,6 +41,6 @@ end
    done the function `landed()` is called.
 6. When `landed()` is called on animation complete, set the label text, then calculate a position on the
    opposite of the screen and send a message called "go to" to the component "script" in the game object
-   "bunny 1". Supplied with the message is the opposite position as message data.
+   "spaceship11". Supplied with the message is the opposite position as message data.
 7. If someone sends us a message called "i'm there" we react by just changing the speech label text.   
 --]] 
