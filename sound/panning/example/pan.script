@@ -8,12 +8,7 @@ local function normalize_position(x_position)  -- <3>
 	return result
 end
 
-function init(self)  -- <4>
-	physics.set_gravity(vmath.vector3(0, 0, 0))
-	msg.post("#collision", "apply_force", {force = vmath.vector3(1200, 1300, 0), position = go.get_world_position()})
-end
-
-function on_message(self, message_id, message, sender)  -- <5>
+function on_message(self, message_id, message, sender)  -- <4>
 	if message_id == hash("collision_response") then
 		local coin_pos = normalize_position(go.get_position().x)
 		sound.play("#coin", { gain = 0.6, pan = coin_pos } )
@@ -34,10 +29,7 @@ end
 	use 1.8 to get around a 40 deg pan that way we always get a little bit of sound in both 
 	left and right channel outputs no matter the min/max position.
 
-4. - In the initialize function we set gravity to 0 and apply some force to the dynamic coin 
-	object giving it movement.
-
-	5. - When a collision_response is received we pass in the coin objects x position into the 
+4. - When a collision_response is received we pass in the coin objects x position into the 
 	normalize_position function and set the results to the local variable coin_pos. Then play 
 	a sound and pass in coin_pos into the sounds pan property.
 
