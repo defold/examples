@@ -20,4 +20,6 @@ All bullets are added in the bullets.collection:
 
 The bullets.collection is referenced from the dynamic.collection as a collection proxy:
 
+-- The second image below is the same as the one above. Shouldn't it reference something else?
+
 ![](bullets_collection.png)
