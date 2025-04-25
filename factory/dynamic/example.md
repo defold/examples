@@ -20,4 +20,4 @@ All bullets are added in the bullets.collection:
 
 The bullets.collection is referenced from the dynamic.collection as a collection proxy:
 
-![](bullets_collection.png)
+![](dynamic_collection.png)
