@@ -5,7 +5,7 @@ end
 
 function on_input(self, action_id, action)
 	-- mouse or spacebar
-	if (action_id == hash("touch") or action_id == hash("action")) and action.pressed then
+	if (action_id == hash("touch") or action_id == hash("key_space")) and action.pressed then
 		-- position bullet somewhat offset from the player position
 		local pos = go.get_position()
 		pos.y = pos.y + 50

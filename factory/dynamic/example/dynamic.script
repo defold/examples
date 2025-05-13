@@ -24,7 +24,7 @@ end
 
 function on_input(self, action_id, action)
 	-- mouse or spacebar
-	if (action_id == hash("touch") or action_id == hash("action")) and action.pressed then
+	if (action_id == hash("touch") or action_id == hash("key_space")) and action.pressed then
 		-- next bullet prototype, wrap around to the first
 		self.bullet_index = self.bullet_index + 1
 		if self.bullet_index > #self.bullets then

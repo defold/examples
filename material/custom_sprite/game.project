@@ -1,6 +1,10 @@
 [bootstrap]
 main_collection = /example/custom_sprite.collectionc
 
+[input]
+game_binding = /builtins/input/all.input_bindingc
+repeat_interval = 0.05
+
 [script]
 shared_state = 1
 

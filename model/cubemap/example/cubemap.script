@@ -26,9 +26,9 @@ function on_input(self, action_id, action)
 	if action_id == hash("touch") then
 		self.yaw   = self.yaw   - action.dx * ROTATION_SPEED
 		self.pitch = self.pitch + action.dy * ROTATION_SPEED
-	elseif action_id == hash("wheel_up") then
+	elseif action_id == hash("mouse_wheel_up") then
 		self.zoom_offset = self.zoom_offset - ZOOM_SPEED
-	elseif action_id == hash("wheel_down") then
+	elseif action_id == hash("mouse_wheel_down") then
 		self.zoom_offset = self.zoom_offset + ZOOM_SPEED
 	end
 end
