@@ -57,6 +57,7 @@ max_instances = 32765
 
 [particle_fx]
 max_emitter_count = 1024
+max_particle_count = 8192
 
 [render]
 clear_color_blue = 1.0
