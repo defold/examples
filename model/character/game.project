@@ -2,6 +2,10 @@
 main_collection = /example/character/example.collectionc
 render = /builtins/render/default.renderc
 
+[input]
+game_binding = /builtins/input/all.input_bindingc
+repeat_interval = 0.05
+
 [script]
 shared_state = 1
 

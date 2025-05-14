@@ -52,9 +52,9 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
-	if action_id == hash("left") and action.pressed then
+	if action_id == hash("key_left") and action.pressed then
 		change_easing_demo(self, PREVIOUS)
-	elseif action_id == hash("right") and action.pressed then
+	elseif action_id == hash("key_right") and action.pressed then
 		change_easing_demo(self, NEXT)
 	end
 end

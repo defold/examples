@@ -6,7 +6,7 @@ version = 0.1
 main_collection = /example/fireworks.collectionc
 
 [input]
-game_binding = /input/game.input_bindingc
+game_binding = /builtins/input/all.input_bindingc
 repeat_interval = 0.05
 
 [display]
@@ -57,6 +57,7 @@ max_instances = 32765
 
 [particle_fx]
 max_emitter_count = 1024
+max_particle_count = 8192
 
 [render]
 clear_color_blue = 1.0

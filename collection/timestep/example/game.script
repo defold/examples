@@ -10,11 +10,11 @@ function init(self)
 end
 
 function on_input(self, action_id, action)
-	if action_id == hash("left") then
+	if action_id == hash("key_left") then
 		msg.post("timestep:/controller", "change_speed", { amount = -0.01 })
-	elseif action_id == hash("right") then
+	elseif action_id == hash("key_right") then
 		msg.post("timestep:/controller", "change_speed", { amount = 0.01 })
-	elseif action_id == hash("action") and action.pressed then
+	elseif action_id == hash("key_space") and action.pressed then
 		-- flip self.to between 0 and 3 each time
 		self.to = 3 - (self.to or 0)
 		msg.post("timestep:/controller", "animate_speed", { to = self.to })

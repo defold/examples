@@ -1,93 +1,10 @@
 images {
-  image: "/assets/images/spinner.png"
+  image: "/assets/images/confetti/confetti_curvy.png"
 }
 images {
-  image: "/assets/images/elementStone019.png"
+  image: "/assets/images/confetti/confetti_star.png"
 }
 images {
-  image: "/assets/images/elementStone023.png"
-}
-images {
-  image: "/assets/images/bunny1_ready.png"
-}
-images {
-  image: "/assets/images/bunny2_ready.png"
-}
-images {
-  image: "/assets/images/carrot.png"
-}
-images {
-  image: "/assets/images/red_button12.png"
-}
-images {
-  image: "/assets/images/flame.png"
-}
-images {
-  image: "/assets/images/smoke.png"
-}
-images {
-  image: "/assets/images/rainbow.png"
-}
-images {
-  image: "/assets/images/enemyFloating_1.png"
-}
-images {
-  image: "/assets/images/logo-color.png"
-}
-images {
-  image: "/assets/images/shipGreen_manned.png"
-}
-images {
-  image: "/assets/images/elementMetal001.png"
-}
-images {
-  image: "/assets/images/plank_slice.png"
-}
-images {
-  image: "/assets/images/hitman1_machine.png"
-}
-images {
-  image: "/assets/images/green_button03.png"
-}
-images {
-  image: "/assets/images/playerShip1_red.png"
-}
-images {
-  image: "/assets/images/enemyBlack1.png"
-}
-images {
-  image: "/assets/images/lighting_blue.png"
-}
-images {
-  image: "/assets/images/particle_brown.png"
-}
-images {
-  image: "/assets/images/crosshair010.png"
-}
-images {
-  image: "/assets/images/bar_round_large_grey.png"
-}
-images {
-  image: "/assets/images/bar_round_large_red.png"
-}
-animations {
-  id: "coin"
-  images {
-    image: "/assets/images/coin/dcoin_1.png"
-  }
-  images {
-    image: "/assets/images/coin/dcoin_2.png"
-  }
-  images {
-    image: "/assets/images/coin/dcoin_3.png"
-  }
-  images {
-    image: "/assets/images/coin/dcoin_4.png"
-  }
-  images {
-    image: "/assets/images/coin/dcoin_5.png"
-  }
-  playback: PLAYBACK_LOOP_FORWARD
-  fps: 8
+  image: "/assets/images/confetti/confetti_rectangle.png"
 }
 extrude_borders: 2

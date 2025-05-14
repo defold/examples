@@ -52,13 +52,13 @@ end
 
 function on_input(self, action_id, action)
 	-- update direction of movement based on currently pressed keys
-	if action_id == hash("up") then
+	if action_id == hash("key_up") then
 		self.input.y = 1
-	elseif action_id == hash("down") then
+	elseif action_id == hash("key_down") then
 		self.input.y = -1
-	elseif action_id == hash("left") then
+	elseif action_id == hash("key_left") then
 		self.input.x = 1
-	elseif action_id == hash("right") then
+	elseif action_id == hash("key_right") then
 		self.input.x = -1
 	end
 end
