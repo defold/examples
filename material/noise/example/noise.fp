@@ -1,5 +1,13 @@
-varying mediump vec2 var_texcoord0;
-uniform lowp vec4 time;
+#version 140
+
+in mediump vec2 var_texcoord0;
+
+uniform fs_uniforms
+{
+    mediump vec4 time;
+};
+
+out mediump vec4 out_fragColor;
 
 // noise shader from https://www.shadertoy.com/view/XXBcDz
 
@@ -42,6 +50,6 @@ float fbm( vec2 p )
 void main()
 {  
     float n = fbm(var_texcoord0.xy);
-    gl_FragColor = vec4(n, n, n, 1.0);
+    out_fragColor = vec4(n, n, n, 1.0);
 }
 
