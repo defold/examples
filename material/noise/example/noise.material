@@ -8,16 +8,8 @@ vertex_constants {
   type: CONSTANT_TYPE_WORLDVIEW
 }
 vertex_constants {
-  name: "mtx_view"
-  type: CONSTANT_TYPE_VIEW
-}
-vertex_constants {
   name: "mtx_proj"
   type: CONSTANT_TYPE_PROJECTION
-}
-vertex_constants {
-  name: "mtx_normal"
-  type: CONSTANT_TYPE_NORMAL
 }
 fragment_constants {
   name: "time"
