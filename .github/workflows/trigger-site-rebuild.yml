@@ -1,13 +1,27 @@
 name: Trigger site rebuild
 
-on: [push]
+on:
+  push:
+    branches:
+      - 'master'
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
-    steps: [{
+    if: "!contains(github.event.head_commit.message, 'skip-ci')"
+    steps: [
+      { name: 'Checkout', uses: actions/checkout@v4, with: { fetch-depth: 1 } },
+      { name: 'Install Python', uses: actions/setup-python@v4, with: { python-version: 3.10.5, architecture: x64 } },
+      {
+        name: 'Create archives',
+        run: 'python create_archives.py'
+      },
+      {
+        name: 'Release',
+        uses: softprops/action-gh-release@v2,
+        with: { files: "*.zip", make_latest: true }
+      },
+      {
         name: 'Repository dispatch',
         uses: defold/repository-dispatch@1.2.1,
         with: {
@@ -16,4 +30,5 @@ jobs:
             user: 'services@defold.se',
             action: 'examples'
         }
-    }]
+      }
+    ]
