@@ -17,6 +17,14 @@ jobs:
         run: 'python create_archives.py'
       },
       {
+        name: "Create tag",
+        run: 'git tag v${{ steps.git_short_hash.outputs.hash }}'
+      },
+      {
+        name: "Push to tag",
+        run: 'git push origin v${{ steps.git_short_hash.outputs.hash }}'
+      },
+      {
         name: 'Release',
         uses: softprops/action-gh-release@v2,
         with: { files: "*.zip", make_latest: true }
