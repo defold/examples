@@ -2,6 +2,7 @@
 tags: render
 title: Camera
 brief: This example shows how to use a camera component and have it follow a game object. Click to toggle between following the game object and staying stationary.
+author: Defold Foundation
 scripts: bee.script, camera.script
 ---
 

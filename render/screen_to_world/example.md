@@ -2,6 +2,7 @@
 tags: render
 title: Screen to World
 brief: This example shows how to convert from screen to world cooridnates while using a camera.
+author: Defold Foundation
 scripts: bee.script
 ---
 

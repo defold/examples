@@ -2,6 +2,7 @@
 tags: gui
 title: Drag
 brief: This example shows how to drag a GUI box node.
+author: Defold Foundation
 scripts: drag.gui_script
 ---
 

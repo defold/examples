@@ -2,6 +2,7 @@
 tags: gui
 title: GUI color
 brief: This example shows how change the color of GUI nodes at run-time
+author: Defold Foundation
 scripts: color.gui_script
 ---
 

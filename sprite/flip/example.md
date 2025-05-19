@@ -2,6 +2,7 @@
 tags: sprite
 title: Flip
 brief: This example demonstrates flipping a sprite animation vertically and horizontally.
+author: FlexYourBrain
 scripts: flip.script
 ---
 

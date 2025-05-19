@@ -2,6 +2,7 @@
 tags: model
 title: Cubemap Reflection
 brief: This example shows how to use a cubemap to draw environment reflections on a model.
+author: Defold Foundation
 scripts: cubemap.script, cubemap_model.fp, cubemap_model.vp
 ---
 

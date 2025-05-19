@@ -13,6 +13,7 @@ Examples are grouped by category, for instance "physics", "sprite" or "collectio
 ---
 title: Foobar
 brief: This example shows how to use foobar.
+author: Defold Foundation
 scripts: foobar.script
 ---
 ```

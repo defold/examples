@@ -2,6 +2,7 @@
 tags: factory
 title: Shoot bullets
 brief: This example shows how to dynamically spawn bullet game objects using a factory component.
+author: Defold Foundation
 scripts: player.script
 ---
 

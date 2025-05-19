@@ -2,6 +2,7 @@
 tags: collection
 title: Time-step
 brief: This example shows how to speed up or slow down animations in a collection proxy by changing the time step of the collection proxy.
+author: Defold Foundation
 scripts: controller.script, game.script
 ---
 

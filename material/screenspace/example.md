@@ -3,6 +3,7 @@ name: Screenspace (3D)
 tags: material
 title: Screenspace
 brief: This example shows how to create a custom material with two textures that blend together to create a pattern effect using screen space coordinates.
+author: aglitchman
 scripts: screenspace.script, screenspace.vp, screenspace.fp
 ---
 

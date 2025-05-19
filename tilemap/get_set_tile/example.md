@@ -2,6 +2,7 @@
 tags: tilemap
 title: Get and set tiles
 brief: This example shows how to get and set tiles of a tilemap
+author: Defold Foundation
 scripts: get_set_tile.script
 ---
 

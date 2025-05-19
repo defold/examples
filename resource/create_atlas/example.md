@@ -2,6 +2,7 @@
 tags: resource
 title: Create atlas
 brief: This example shows how to create an atlas with two images and use it on a sprite and in a gui
+author: Defold Foundation
 scripts: create_atlas.script, create_atlas.gui_script
 ---
 

@@ -3,6 +3,7 @@ name: Look at
 tags: movement
 title: Look at
 brief: This example shows how to rotate a game object to look at the mouse cursor
+author: Defold Foundation
 scripts: look_at.script
 ---
 

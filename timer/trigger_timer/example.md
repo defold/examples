@@ -2,6 +2,7 @@
 tags: timer
 title: Trigger timer example
 brief: This example shows how to create timer that triggers counting every 1s and can be triggered manually and asynchronously as a reaction to user input.
+author: Pawel Jarosz
 scripts: trigger_timer.gui_script
 ---
 

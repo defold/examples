@@ -2,6 +2,7 @@
 tags: particles
 title: Modifiers
 brief: This example shows particle effect modifiers. Modifiers are used to alter the path of emitted particles.
+author: Defold Foundation
 scripts: modifiers.script
 ---
 

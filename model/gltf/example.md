@@ -2,6 +2,7 @@
 tags: material
 title: GLTF
 brief: This example demonstrates how to use a glTF model.
+author: aglitchman
 scripts: gltf.script
 ---
 

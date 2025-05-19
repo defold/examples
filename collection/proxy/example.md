@@ -2,6 +2,7 @@
 tags: collection
 title: Proxy
 brief: This example shows how to use collection proxies to load and unload collections.
+author: Defold Foundation
 scripts: controller.script, menu.gui_script, level.script
 ---
 

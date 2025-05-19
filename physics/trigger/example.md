@@ -2,6 +2,7 @@
 tags: physics
 title: Trigger
 brief: This example shows how a physics trigger is used to trigger an event. In this case the bunny sprite is disabled and enabled.
+author: Defold Foundation
 scripts: bunny.script
 ---
 

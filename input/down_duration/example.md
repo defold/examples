@@ -2,6 +2,7 @@
 tags: input
 title: Down duration
 brief: Listens to input trigger "touch" and count mouse down duration in update method.
+author: AGulev
 scripts: down_duration.script
 ---
 

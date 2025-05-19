@@ -2,6 +2,7 @@
 tags: sprite
 title: Multiple Sprite Samplers
 brief: This example shows how to sample from more than one image when drawing a sprite
+author: Defold Foundation
 scripts: multi_sample.script, multi_sample_sprite.fp
 ---
 
