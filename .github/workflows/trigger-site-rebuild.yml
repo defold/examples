@@ -18,16 +18,16 @@ jobs:
       },
       {
         name: "Create tag",
-        run: 'git tag v${{ steps.git_short_hash.outputs.hash }}'
+        run: 'git tag v${{ github.sha }}'
       },
       {
         name: "Push to tag",
-        run: 'git push origin v${{ steps.git_short_hash.outputs.hash }}'
+        run: 'git push origin v${{ github.sha }}'
       },
       {
         name: 'Release',
         uses: softprops/action-gh-release@v2,
-        with: { files: "*.zip", make_latest: true }
+        with: { files: "*.zip", make_latest: true, tag_name: 'v${{ github.sha }}' }
       },
       {
         name: 'Repository dispatch',
