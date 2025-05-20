@@ -14,8 +14,10 @@ Examples are grouped by category, for instance "physics", "sprite" or "collectio
 title: Foobar
 brief: This example shows how to use foobar.
 author: Defold Foundation
-scripts: foobar.script
+scripts: foo.script, bar.script
+thumbnail: myimage.png
 ---
 ```
 
 * List any scripts your example uses in the `scripts` field of the file header
+* The thumbnail image will be used on https://defold.com/examples 
