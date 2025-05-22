@@ -1,12 +1,8 @@
 name: "unlit"
 tags: "model"
-vertex_program: "/example/unlit.vp"
-fragment_program: "/example/unlit.fp"
+vertex_program: "/assets/materials/unlit.vp"
+fragment_program: "/assets/materials/unlit.fp"
 vertex_space: VERTEX_SPACE_LOCAL
-vertex_constants {
-  name: "mtx_world"
-  type: CONSTANT_TYPE_WORLD
-}
 vertex_constants {
   name: "mtx_view"
   type: CONSTANT_TYPE_VIEW
@@ -14,6 +10,16 @@ vertex_constants {
 vertex_constants {
   name: "mtx_proj"
   type: CONSTANT_TYPE_PROJECTION
+}
+fragment_constants {
+  name: "tint"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
 }
 samplers {
   name: "texture0"

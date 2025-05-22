@@ -64,6 +64,18 @@
         "/example/orbit_camera.collection"
         :scene
       ]
+      [
+        "/assets/materials/unlit.fp"
+        :code
+      ]
+      [
+        "/assets/materials/unlit.vp"
+        :code
+      ]
+      [
+        "/assets/materials/unlit.material"
+        :cljfx-form-view
+      ]
     ]
   }
 }
