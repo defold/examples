@@ -4,10 +4,12 @@
 in vec4 position;
 in vec2 texcoord0;
 
-// The projection, view and world matrices.
+// The model's world matrix.
+in mat4 mtx_world;
+
+// The projection and view matrices.
 uniform general_vp
 {
-    mat4 mtx_world;
     mat4 mtx_view;
     mat4 mtx_proj;
 };
