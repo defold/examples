@@ -1,0 +1,227 @@
+name: "gltf"
+instances {
+  id: "target17"
+  prototype: "/example/target_square.go"
+  position {
+    x: -0.786375
+    y: 0.886167
+  }
+}
+instances {
+  id: "target1"
+  prototype: "/example/target_round.go"
+  position {
+    x: -1.01983
+    y: -0.513669
+  }
+}
+instances {
+  id: "target2"
+  prototype: "/example/target_round.go"
+  position {
+    x: 0.626642
+    y: 0.509664
+  }
+}
+instances {
+  id: "target3"
+  prototype: "/example/target_square.go"
+  position {
+    x: 0.491484
+    y: -1.008233
+  }
+}
+instances {
+  id: "target4"
+  prototype: "/example/target_round.go"
+  position {
+    x: 0.712652
+    y: 1.984537
+  }
+}
+instances {
+  id: "target5"
+  prototype: "/example/target_round.go"
+  position {
+    x: -0.737226
+    y: 2.659231
+  }
+}
+instances {
+  id: "target6"
+  prototype: "/example/target_round.go"
+  position {
+    x: 2.355764
+    y: 1.031183
+  }
+}
+instances {
+  id: "target7"
+  prototype: "/example/target_round.go"
+  position {
+    x: -2.329206
+    y: 0.833912
+  }
+}
+instances {
+  id: "target8"
+  prototype: "/example/target_round.go"
+  position {
+    x: 2.151081
+    y: -1.252797
+  }
+}
+instances {
+  id: "target9"
+  prototype: "/example/target_round.go"
+  position {
+    x: -2.260979
+    y: -1.445039
+  }
+}
+instances {
+  id: "target10"
+  prototype: "/example/target_square.go"
+  position {
+    x: 3.434709
+    y: 2.304017
+  }
+}
+instances {
+  id: "target11"
+  prototype: "/example/target_round.go"
+  position {
+    x: 4.395792
+    y: -1.316082
+  }
+}
+instances {
+  id: "target12"
+  prototype: "/example/target_round.go"
+  position {
+    x: 2.700948
+    y: -3.094295
+  }
+}
+instances {
+  id: "target13"
+  prototype: "/example/target_square.go"
+  position {
+    x: -1.656999
+    y: -3.453754
+  }
+}
+instances {
+  id: "target14"
+  prototype: "/example/target_round.go"
+  position {
+    x: -4.902927
+    y: -0.680336
+  }
+}
+instances {
+  id: "target15"
+  prototype: "/example/target_square.go"
+  position {
+    x: -4.167576
+    y: 1.297699
+  }
+}
+instances {
+  id: "target16"
+  prototype: "/example/target_round.go"
+  position {
+    x: -5.324439
+    y: 2.883688
+  }
+}
+instances {
+  id: "target18"
+  prototype: "/example/target_round.go"
+  position {
+    x: -8.662141
+    y: 9.414204
+  }
+}
+instances {
+  id: "target19"
+  prototype: "/example/target_round.go"
+  position {
+    x: 5.122415
+    y: -3.5531
+  }
+}
+instances {
+  id: "target20"
+  prototype: "/example/target_square.go"
+  position {
+    x: 6.697317
+    y: -2.589896
+  }
+}
+instances {
+  id: "coin1"
+  prototype: "/example/coin.go"
+  position {
+    x: -6.128283
+    y: 3.18032
+  }
+}
+instances {
+  id: "coin2"
+  prototype: "/example/coin.go"
+  position {
+    x: 7.385525
+    y: -2.997722
+  }
+}
+scale_along_z: 1
+embedded_instances {
+  id: "camera"
+  data: "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.0\\n"
+  "fov: 0.7854\\n"
+  "near_z: 0.1\\n"
+  "far_z: 1000.0\\n"
+  "auto_aspect_ratio: 1\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    z: 5.0
+  }
+}
+embedded_instances {
+  id: "main"
+  data: "components {\n"
+  "  id: \"entity_picking\"\n"
+  "  component: \"/example/entity_picking.script\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "targets"
+  children: "target1"
+  children: "target10"
+  children: "target11"
+  children: "target12"
+  children: "target13"
+  children: "target14"
+  children: "target15"
+  children: "target16"
+  children: "target17"
+  children: "target18"
+  children: "target19"
+  children: "target2"
+  children: "target20"
+  children: "target3"
+  children: "target4"
+  children: "target5"
+  children: "target6"
+  children: "target7"
+  children: "target8"
+  children: "target9"
+  data: ""
+}
