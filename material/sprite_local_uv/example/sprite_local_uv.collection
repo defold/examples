@@ -1,0 +1,52 @@
+name: "sprite_local_uv"
+scale_along_z: 0
+embedded_instances {
+  id: "square"
+  data: "components {\n"
+  "  id: \"size\"\n"
+  "  component: \"/example/sprite_local_uv.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"elementStone023\\\"\\n"
+  "material: \\\"/example/sprite_local_uv.material\\\"\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/sprites.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 360.0
+    y: 200.0
+  }
+}
+embedded_instances {
+  id: "rectangle"
+  data: "components {\n"
+  "  id: \"size\"\n"
+  "  component: \"/example/sprite_local_uv.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"elementStone019\\\"\\n"
+  "material: \\\"/example/sprite_local_uv.material\\\"\\n"
+  "size {\\n"
+  "  x: 140.0\\n"
+  "  y: 140.0\\n"
+  "}\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/sprites.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 360.0
+    y: 500.0
+  }
+}

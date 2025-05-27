@@ -1,0 +1,7 @@
+images {
+  image: "/assets/images/elementStone019.png"
+}
+images {
+  image: "/assets/images/elementStone023.png"
+}
+extrude_borders: 2
