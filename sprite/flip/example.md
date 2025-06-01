@@ -4,6 +4,7 @@ title: Flip
 brief: This example demonstrates flipping a sprite animation vertically and horizontally.
 author: FlexYourBrain
 scripts: flip.script
+thumbnail: flip_thumb.png
 ---
 
 Overview :  [sprite.set_hflip](https://defold.com/ref/beta/sprite/#sprite.set_hflip:url-flip) & [sprite.set_vflip](https://defold.com/ref/beta/sprite/#sprite.set_vflip:url-flip) uses a boolean to set if a sprite animation should be flipped.
