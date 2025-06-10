@@ -12,7 +12,7 @@ local function quat_look_rotation(forward, upwards)
 	end
 
 	-- Handle alignment with up direction
-	if math.abs(vmath.dot(forward, upwards)) > 0.9999999999 then
+	if math.abs(vmath.dot(forward, upwards)) > 0.9999999 then
 		return vmath.quat_from_to(vmath.vector3(0, 0, 1), forward)
 	end
 
