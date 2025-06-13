@@ -1,6 +1,3 @@
-local DISPLAY_WIDTH = sys.get_config_int("display.width")
-local DISPLAY_HEIGHT = sys.get_config_int("display.height")
-
 -- function to convert screen (mouse/touch) coordinates to
 -- world coordinates given a camera component
 -- this function will use the camera view and projection to
@@ -9,11 +6,13 @@ local function screen_to_world(x, y, z, camera_id)
 	local projection = camera.get_projection(camera_id)
 	local view = camera.get_view(camera_id)
 	local w, h = window.get_size()
+
 	-- The window.get_size() function will return the scaled window size,
 	-- ie taking into account display scaling (Retina screens on macOS for
 	-- instance). We need to adjust for display scaling in our calculation.
-	w = w / (w / DISPLAY_WIDTH)
-	h = h / (h / DISPLAY_HEIGHT)
+	local scale = window.get_display_scale()
+	w = w / scale
+	h = h / scale
 
 	-- https://defold.com/manuals/camera/#converting-mouse-to-world-coordinates
 	local inv = vmath.inv(projection * view)
