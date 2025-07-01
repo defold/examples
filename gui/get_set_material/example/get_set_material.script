@@ -10,7 +10,7 @@ function init(self)
 end
 
 function on_input(self, action_id, action)
-	if action.pressed then
+	if action_id == hash("mouse_button_left") and action.pressed then
 		-- get the material file currently assigned to the material with id 'default'
 		local current_texture = go.get("#gui", "materials", { key = "default" })
 
