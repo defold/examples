@@ -1,0 +1,4 @@
+images {
+  image: "/assets/images/shipGreen_manned.png"
+}
+extrude_borders: 2

@@ -1,0 +1,32 @@
+name: "default"
+scale_along_z: 0
+embedded_instances {
+  id: "gameobject"
+  data: "components {\n"
+  "  id: \"script\"\n"
+  "  component: \"/example/get_set_sound.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"shipGreen_manned\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/sprites.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"enginesound\"\n"
+  "  type: \"sound\"\n"
+  "  data: \"sound: \\\"/sounds/spaceEngine_000.ogg\\\"\\n"
+  "looping: 1\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 335.192
+    y: 316.802
+  }
+}
