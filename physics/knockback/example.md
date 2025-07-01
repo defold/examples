@@ -4,6 +4,7 @@ title: Knockback
 brief: This example shows how to create a knockback effect when hit.
 author: Defold Foundation
 scripts: enemy.script
+thumbnail: knockback_thumb.png
 ---
 
 This example shows how to create a knockback effect when hit. The setup consists of three game objects; one for the player, one for the enemy and one for the bullet that is spawned using a factory (see example on how to spawn bullets).
