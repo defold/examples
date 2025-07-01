@@ -5,7 +5,7 @@ function init(self)
 end
 
 function on_input(self, action_id, action)
-	if action_id == hash("touch") and action.pressed then -- <3>
+	if action_id == hash("mouse_button_left") and action.pressed then -- <3>
 		self.duration = self.duration + 1 -- <4>
 		if self.duration > 3 then  -- <5>
 			self.duration = 0

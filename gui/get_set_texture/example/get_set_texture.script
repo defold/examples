@@ -10,7 +10,7 @@ function init(self)
 end
 
 function on_input(self, action_id, action)
-	if action.pressed then
+	if action_id == hash("mouse_button_left") and action.pressed then
 		-- get the atlas file currently assigned to the atlas/texture with id 'ui'
 		local current_atlas = go.get("#gui", "textures", { key = "ui" })
 

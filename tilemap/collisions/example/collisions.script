@@ -7,7 +7,7 @@ end
 
 
 function on_input(self, action_id, action)
-	if action.pressed then
+	if action_id == hash("mouse_button_left") and action.pressed then
 		factory.create("#enemyfactory", vmath.vector3(action.x, action.y, 1))  -- <3>
 	end
 end
@@ -24,7 +24,7 @@ end
 --[[
 1. Acquire input for the script
 2. Spawn 10 game objects at random positions near the top of the screen
-3. Spawn a game object when any key or mouse button (or touch) is pressed
+3. Spawn a game object when the left mouse button (or touch) is pressed
 4. Something collided with the tilemap if the received message was a `collision_response`
 5. Check if something collided with a tile belonging to the collision group "danger"
 6. Delete the game object that collided with the tilemap

@@ -10,7 +10,7 @@ function init(self)
 end
 
 function on_input(self, action_id, action)
-	if action.pressed then
+	if action_id == hash("touch") and action.pressed then
 		-- get the font file currently assigned to the font with id 'default'
 		local current_font = go.get("#gui", "fonts", { key = "default" })
 

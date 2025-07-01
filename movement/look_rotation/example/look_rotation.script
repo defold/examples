@@ -57,8 +57,8 @@ function update(self, dt)
 end
 
 function on_input(self, action_id, action)
-	-- If the action is pressed (any key or mouse button), set the next target
-	if action.pressed then
+	-- If the left mouse button (or touch) is pressed, set the next target
+	if action_id == hash("mouse_button_left") and action.pressed then
 		next_target(self)
 	end
 end

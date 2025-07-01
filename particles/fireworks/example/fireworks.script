@@ -88,7 +88,7 @@ function update(self, dt)
 end
 
 function on_input(self, action_id, action)
-	if action.pressed then 
+	if action_id == hash("mouse_button_left") and action.pressed then
 		single_shot()
 	end
 end

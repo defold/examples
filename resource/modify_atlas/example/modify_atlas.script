@@ -81,7 +81,7 @@ function init(self)
 end
 
 function on_input(self, action_id, action)
-	if action.pressed then
+	if action_id == hash("mouse_button_left") and action.pressed then
 		replace_atlas_image()
 	end
 end
