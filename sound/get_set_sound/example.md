@@ -13,3 +13,5 @@ This example shows how to change which sound a sound component plays. Additional
 The example consists of a single collection with a game object containing a Sound component, a Sprite component for visuals and a Script to control the logic:
 
 ![](get_set_sound_collection.png)
+
+Sound effects and space ship by [Kenney](https://www.kenney.nl)
