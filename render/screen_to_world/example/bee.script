@@ -7,13 +7,6 @@ local function screen_to_world(x, y, z, camera_id)
 	local view = camera.get_view(camera_id)
 	local w, h = window.get_size()
 
-	-- The window.get_size() function will return the scaled window size,
-	-- ie taking into account display scaling (Retina screens on macOS for
-	-- instance). We need to adjust for display scaling in our calculation.
-	local scale = window.get_display_scale()
-	w = w / scale
-	h = h / scale
-
 	-- https://defold.com/manuals/camera/#converting-mouse-to-world-coordinates
 	local inv = vmath.inv(projection * view)
 	x = (2 * x / w) - 1
@@ -33,8 +26,8 @@ end
 function on_input(self, action_id, action)
 	if action_id == hash("touch") and action.pressed then
 		-- convert mouse/touch screen position to world position
-		local worldx, worldy = screen_to_world(action.x, action.y, 0, "#camera")
+		local worldx, worldy = screen_to_world(action.screen_x, action.screen_y, 0, "#camera")
 		local world = vmath.vector3(worldx, worldy, 0)
-		go.animate(".", "position", go.PLAYBACK_ONCE_FORWARD, world, go.EASING_LINEAR, 0.5, 0, moved_to_position) -- <8>
+		go.animate(".", "position", go.PLAYBACK_ONCE_FORWARD, world, go.EASING_LINEAR, 0.5, 0)
 	end
 end
