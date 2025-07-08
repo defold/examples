@@ -59,8 +59,8 @@ embedded_instances {
   "}\n"
   ""
   scale3 {
-    x: 30.0
-    y: 30.0
-    z: 30.0
+    x: 20.0
+    y: 20.0
+    z: 20.0
   }
 }
