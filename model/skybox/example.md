@@ -20,4 +20,4 @@ The cubemap is projected on a sphere or a cube positioned in such a way that the
 
 ![](collection.png)
 
-Skybox texture from Babylon.js Playground (Apache 2 license)
+Skybox texture by Jockum Skoglund aka hipshot. Free to use.
