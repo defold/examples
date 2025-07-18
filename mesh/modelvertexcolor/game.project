@@ -1,0 +1,65 @@
+[project]
+title = Defold-examples
+version = 0.1
+
+[bootstrap]
+main_collection = /example/vertexcolors.collectionc
+
+[input]
+game_binding = /builtins/input/all.input_bindingc
+repeat_interval = 0.05
+
+[display]
+width = 720
+height = 720
+high_dpi = 1
+
+[physics]
+scale = 0.02
+gravity_y = -500.0
+
+[script]
+shared_state = 1
+
+[collection_proxy]
+max_count = 256
+
+[label]
+subpixels = 1
+
+[sprite]
+subpixels = 1
+max_count = 32765
+
+[windows]
+iap_provider = 
+
+[android]
+package = com.defold.examples
+
+[ios]
+bundle_identifier = com.defold.examples
+
+[osx]
+bundle_identifier = com.defold.examples
+
+[html5]
+show_fullscreen_button = 0
+show_made_with_defold = 0
+scale_mode = no_scale
+heap_size = 64
+
+[graphics]
+texture_profiles = /all.texture_profiles
+
+[collection]
+max_instances = 32765
+
+[particle_fx]
+max_emitter_count = 1024
+
+[render]
+clear_color_blue = 0.33
+clear_color_green = 0.29
+clear_color_red = 0.29
+
