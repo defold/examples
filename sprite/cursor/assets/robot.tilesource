@@ -1,0 +1,11 @@
+image: "/assets/images/character_robot_sheet.png"
+tile_width: 96
+tile_height: 128
+animations {
+  id: "walk"
+  start_tile: 37
+  end_tile: 44
+  playback: PLAYBACK_NONE
+  fps: 8
+}
+extrude_borders: 2
