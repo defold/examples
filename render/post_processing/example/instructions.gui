@@ -1,0 +1,27 @@
+fonts {
+  name: "text"
+  font: "/assets/text32.font"
+}
+nodes {
+  position {
+    x: 360.0
+    y: 5.0
+  }
+  size {
+    x: 720.0
+    y: 60.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "1 = Invert, 2 = Scanlines, 3 = Passthrough"
+  font: "text"
+  id: "text"
+  pivot: PIVOT_S
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

@@ -1,0 +1,17 @@
+#version 140
+
+in highp vec4 position;
+in mediump vec2 texcoord0;
+
+out mediump vec2 var_texcoord0;
+
+uniform vs_uniforms
+{
+    highp mat4 view_proj;
+};
+
+void main()
+{
+    gl_Position = view_proj * vec4(position.xyz, 1.0);
+    var_texcoord0 = texcoord0;
+}

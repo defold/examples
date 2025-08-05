@@ -1,0 +1,8 @@
+name: "passthrough"
+tags: "postprocess"
+vertex_program: "/example/materials/passthrough.vp"
+fragment_program: "/example/materials/passthrough.fp"
+vertex_constants {
+  name: "view_proj"
+  type: CONSTANT_TYPE_VIEWPROJ
+}
