@@ -1,0 +1,148 @@
+script: "/main/controls.gui_script"
+fonts {
+  name: "default"
+  font: "/builtins/fonts/default.font"
+}
+nodes {
+  position {
+    x: 410.0
+    y: 60.0
+  }
+  size {
+    x: 50.0
+    y: 30.0
+  }
+  color {
+    x: 0.0
+    y: 0.651
+    z: 0.243
+  }
+  type: TYPE_BOX
+  id: "add_10000"
+  inherit_alpha: true
+}
+nodes {
+  size {
+    x: 40.0
+    y: 30.0
+  }
+  type: TYPE_TEXT
+  text: "+10000"
+  font: "default"
+  id: "add_10000_text"
+  parent: "add_10000"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 477.0
+    y: 60.0
+  }
+  size {
+    x: 50.0
+    y: 30.0
+  }
+  color {
+    x: 0.0
+    y: 0.651
+    z: 0.243
+  }
+  type: TYPE_BOX
+  id: "add_1000"
+  inherit_alpha: true
+}
+nodes {
+  size {
+    x: 40.0
+    y: 30.0
+  }
+  type: TYPE_TEXT
+  text: "+1000"
+  font: "default"
+  id: "add_1000_text"
+  parent: "add_1000"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 544.0
+    y: 60.0
+  }
+  size {
+    x: 50.0
+    y: 30.0
+  }
+  color {
+    x: 0.0
+    y: 0.651
+    z: 0.243
+  }
+  type: TYPE_BOX
+  id: "add_100"
+  inherit_alpha: true
+}
+nodes {
+  size {
+    x: 40.0
+    y: 30.0
+  }
+  type: TYPE_TEXT
+  text: "+100"
+  font: "default"
+  id: "add_100_text"
+  parent: "add_100"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 613.0
+    y: 60.0
+  }
+  size {
+    x: 50.0
+    y: 30.0
+  }
+  color {
+    x: 0.961
+    y: 0.286
+    z: 0.0
+  }
+  type: TYPE_BOX
+  id: "remove_100"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 40.0
+    y: 30.0
+  }
+  type: TYPE_TEXT
+  text: "-100"
+  font: "default"
+  id: "remove_100_text"
+  parent: "remove_100"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 16.0
+    y: 572.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "CONTROLS\n"
+  "WASD - Move\n"
+  "E,Q - Up, Down\n"
+  "Mouse - Look\n"
+  ""
+  font: "default"
+  id: "text"
+  pivot: PIVOT_W
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

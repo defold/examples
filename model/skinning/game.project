@@ -1,0 +1,38 @@
+[bootstrap]
+main_collection = /main/instancing.collectionc
+render = /builtins/render/default.renderc
+
+[script]
+shared_state = 1
+
+[display]
+width = 720
+height = 720
+
+[android]
+input_method = HiddenInputField
+
+[project]
+title = Skinning
+
+[render]
+clear_color_red = 0.195
+clear_color_green = 0.321
+clear_color_blue = 0.517
+
+[collection]
+max_instances = 32765
+
+[model]
+max_count = 30000
+max_bone_matrix_texture_width = 2048
+max_bone_matrix_texture_height = 2048
+
+[html5]
+scale_mode = fit
+show_fullscreen_button = 0
+show_made_with_defold = 0
+
+[input]
+game_binding = /builtins/input/all.input_bindingc
+
