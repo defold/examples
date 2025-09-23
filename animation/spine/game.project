@@ -1,7 +1,7 @@
 [project]
 title = Defold-examples
 version = 0.1
-dependencies#0 = https://github.com/defold/extension-spine/archive/refs/tags/3.11.0.zip
+dependencies#0 = https://github.com/defold/extension-spine/archive/refs/tags/3.10.0.zip
 
 [bootstrap]
 main_collection = /example/spine.collectionc
