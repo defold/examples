@@ -1,9 +1,10 @@
 ---
 tags: factory
-title: Shoot bullets
+title: Shoot bullets with script properties
 brief: This example shows how to spawn bullet game objects using a factory component with different properties.
 author: Defold Foundation
 scripts: player.script, bullet.script
+thumbnail: thumbnail.png
 ---
 
 This example shows how to dynamically spawn bullet game objects using a factory component with different properties. The setup consists of two game objects; one for the player and one for the bullet that is spawned using a factory component wit properties definition:
