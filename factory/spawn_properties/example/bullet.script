@@ -1,0 +1,18 @@
+-- define properties of a bullet:
+go.property("speed", 800)	-- pixels per second
+go.property("animation", hash("flame"))
+
+function init(self)
+	-- play the animation based on self property
+	sprite.play_flipbook("#sprite", self.animation)
+
+	-- animate the bullet position
+	local pos = go.get_position()
+	local distance = 1000					-- distance in pixels
+	local duration = distance / self.speed	-- time in second to travel the full distance
+	local to = pos.y + distance
+	-- start animation and delete bullet when it has reached its destination
+	go.animate(".", "position.y", go.PLAYBACK_ONCE_FORWARD, to, go.EASING_LINEAR, duration, 0, function()
+		go.delete(".")
+	end)
+end

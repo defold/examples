@@ -1,0 +1,10 @@
+images {
+  image: "/assets/images/flame.png"
+}
+images {
+  image: "/assets/images/playerShip1_red.png"
+}
+images {
+  image: "/assets/images/lighting_blue.png"
+}
+extrude_borders: 2
