@@ -1,0 +1,21 @@
+[bootstrap]
+main_collection = /example/json_load.collectionc
+
+[script]
+shared_state = 1
+
+[display]
+width = 720
+height = 720
+high_dpi = 1
+
+[android]
+input_method = HiddenInputField
+
+[html5]
+scale_mode = stretch
+
+[project]
+title = json_load
+custom_resources = levels
+
