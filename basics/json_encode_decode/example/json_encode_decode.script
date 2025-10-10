@@ -1,0 +1,19 @@
+function init(self)
+	local jsonstring = '{"current_health":10}' -- <1>
+	self.player_data = json.decode(jsonstring) -- <2>
+
+	label.set_text("#label", "Player health:" .. self.player_data.current_health) -- <3>
+end
+
+function final(self)
+	local json_string = json.encode(self.player_data) -- <4>
+	pprint(json_string) -- <5>
+end
+
+--[[
+1. The data that we want to load.
+2. Decoding the json string data into a lua table. We store the data in a varibale we can easily access.
+3. We use the data in our script, in this example we display our players health. 
+4. In our final method of this script we encode the player data into a string again. 
+5. We print our json string data.
+--]]
