@@ -5,6 +5,21 @@ images {
   image: "/assets/images/playerShip1_red.png"
 }
 images {
-  image: "/assets/images/lighting_blue.png"
+  image: "/assets/images/enemyRed2.png"
+}
+images {
+  image: "/assets/images/enemyBlue4.png"
+}
+images {
+  image: "/assets/images/ufoGreen.png"
+}
+images {
+  image: "/assets/images/laserRed04.png"
+}
+images {
+  image: "/assets/images/meteorGrey_tiny1.png"
+}
+images {
+  image: "/assets/images/star2.png"
 }
 extrude_borders: 2

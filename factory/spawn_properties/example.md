@@ -1,38 +1,70 @@
 ---
 tags: factory
-title: Shoot bullets with script properties
-brief: This example shows how to spawn bullet game objects using a factory component with different properties.
+title: Spawn enemies with script properties
+brief: This example shows how to spawn enemy game objects using a factory component with different properties.
 author: Defold Foundation
-scripts: player.script, bullet.script
+scripts: ship.script, enemy.script, spawner.script
 thumbnail: thumbnail.png
 ---
 
-This example shows how to dynamically spawn bullet game objects using a factory component with different properties. The setup consists of two game objects; one for the player and one for the bullet that is spawned using a factory component wit properties definition:
+This example shows how to dynamically spawn enemy game objects using a factory component with different properties. The setup consists of three main components: a player ship, enemy spawner, and different enemy types with customizable properties.
 
+Press keys `1`, `2`, or `3` to spawn different enemy types.
+
+Example collection consists of 2 game objects:
+
+![Screenshot showing enemy types and spawner in action](collection.png)
+
+### Ship
+The red ship at the bottom that automatically moves and shoots. Consists of:
+- A *Factory* component `bulletfactory` to spawn bullet game objects
+- A *Script* `ship` that handles automatic movement (ping-pong animation) and bullet spawning every 0.25 seconds
+- A *Sprite* component with the spaceship image
+
+Bullets are simply animated upward and automatically deleted when they reach the top.
+
+### Spawner
+Controls enemy spawning with keyboard input. Consists of:
+- A *Factory* `enemyfactory` to spawn enemies with different properties
+- A *Label* `example_description` with instructions text displayed on top
+- A *Script* `spawner` that spawns enemies.
+
+
+The spawner script defines three different enemy types: `random`, `diagonal`, and `straight`.
+Uses factory to create enemies with specific properties:
+
+```lua
+local properties = ENEMY_TYPES[enemy_type]
+factory.create("#enemyfactory", position, nil, properties)
 ```
-local properties = {
-  speed = self.bullets_speed,
-  animation = self.bullets_type
-}
 
-factory.create("#bulletfactory", pos, nil, properties)
-```
+### Enemy Types
 
-player
-: The red ship at the bottom. Contains:
-  - A *Sprite* component with the spaceship image.
-  - A *Factory* component to spawn bullet game objects
-  - A script to handle spawning of bullets.
-  - An additional *sprite* to indicate what type of bullets is selected now.
+**Random Enemy** (Key 1):
+- Green UFO sprite
+- 1 health point
+- Random horizontal movement that changes every second
+- Speed: 40 horizontal, -100 vertical
 
-bullet
-: The bullet fired by the player. Contains:
-  - A *Sprite* component with a bullet image.
-  - A script to handle bullet animation and movement.
+**Diagonal Enemy** (Key 2):
+- Red enemy sprite
+- 2 health points
+- Fixed diagonal movement
+- Speed: 120 horizontal, -80 vertical
 
-Properties added to `bullet.script` define what it looks like and how fast it goes. When bullet have `go.property` defined in its script - the properties will be also visible in the *Properties* pane:
+**Straight Enemy** (Key 3):
+- Blue enemy sprite
+- 3 health points
+- Straight downward movement
+- Speed: 0 horizontal, -40 vertical
 
-![bullet script with properties](<assets/images/bullet.png>)
+### Enemy Script Properties
+Properties defined in `enemy.script` control enemy behavior:
+- `sprite` - Which sprite to display
+- `health_points` - How many hits before destruction
+- `speed` - Movement velocity vector
+- `is_random` - Whether to use random movement changes
 
+When enemies have `go.property` defined in their script, these properties are visible in the *Properties* pane and can be customized per enemy type.
 
-Combine this example with some of the examples from the movement and physics categories to create a shoot 'em up game!
+Combine this example with other movement and physics examples to create a complete shoot'em up game!

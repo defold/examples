@@ -59,7 +59,7 @@ max_instances = 32765
 max_emitter_count = 1024
 
 [render]
-clear_color_blue = 1.0
-clear_color_green = 1.0
-clear_color_red = 1.0
+clear_color_blue = 0.2
+clear_color_green = 0.1
+clear_color_red = 0.0
 
