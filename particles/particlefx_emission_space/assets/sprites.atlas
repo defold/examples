@@ -1,0 +1,7 @@
+images {
+  image: "/assets/images/spaceEffects_016.png"
+}
+images {
+  image: "/assets/images/ufoGreen.png"
+}
+extrude_borders: 2
