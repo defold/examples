@@ -43,7 +43,7 @@ end
 
 function on_message(self, message_id, message, sender)
 
-	-- React to collission with bullet:
+	-- React to collision with bullet:
 	if message_id == hash("trigger_response") and message.enter then
 
 		-- Remove one health point
