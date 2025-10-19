@@ -1,0 +1,242 @@
+script: "/example/control.gui_script"
+fonts {
+  name: "text48"
+  font: "/assets/text32.font"
+}
+nodes {
+  position {
+    x: 500.0
+    y: 150.0
+  }
+  size {
+    x: 120.0
+    y: 70.0
+  }
+  color {
+    x: 0.302
+    y: 0.4
+    z: 0.8
+  }
+  type: TYPE_BOX
+  id: "run"
+  layer: "box"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 120.0
+    y: 70.0
+  }
+  type: TYPE_TEXT
+  text: "run"
+  font: "text48"
+  id: "text"
+  parent: "run"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 200.0
+    y: 150.0
+  }
+  size {
+    x: 120.0
+    y: 70.0
+  }
+  color {
+    x: 0.302
+    y: 0.4
+    z: 0.8
+  }
+  type: TYPE_BOX
+  id: "idle"
+  layer: "box"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 120.0
+    y: 70.0
+  }
+  type: TYPE_TEXT
+  text: "idle"
+  font: "text48"
+  id: "text1"
+  parent: "idle"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 350.0
+    y: 150.0
+  }
+  size {
+    x: 120.0
+    y: 70.0
+  }
+  color {
+    x: 0.302
+    y: 0.4
+    z: 0.8
+  }
+  type: TYPE_BOX
+  id: "turn_around"
+  layer: "box"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 120.0
+    y: 70.0
+  }
+  type: TYPE_TEXT
+  text: "turn"
+  font: "text48"
+  id: "text2"
+  parent: "turn_around"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 500.0
+    y: 250.0
+  }
+  size {
+    x: 120.0
+    y: 70.0
+  }
+  color {
+    x: 0.302
+    y: 0.4
+    z: 0.8
+  }
+  type: TYPE_BOX
+  id: "jump"
+  layer: "box"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: 3.0
+  }
+  size {
+    x: 120.0
+    y: 70.0
+  }
+  type: TYPE_TEXT
+  text: "[Space]\n"
+  "jump"
+  font: "text48"
+  id: "text3"
+  parent: "jump"
+  layer: "text"
+  inherit_alpha: true
+  text_leading: 0.8
+}
+nodes {
+  position {
+    x: 200.0
+    y: 250.0
+  }
+  size {
+    x: 120.0
+    y: 70.0
+  }
+  color {
+    x: 0.302
+    y: 0.4
+    z: 0.8
+  }
+  type: TYPE_BOX
+  id: "attack"
+  layer: "box"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 120.0
+    y: 70.0
+  }
+  type: TYPE_TEXT
+  text: "[X]\n"
+  "attack"
+  font: "text48"
+  id: "text4"
+  parent: "attack"
+  layer: "text"
+  inherit_alpha: true
+  text_leading: 0.8
+}
+nodes {
+  position {
+    x: 350.0
+    y: 250.0
+  }
+  size {
+    x: 120.0
+    y: 70.0
+  }
+  color {
+    x: 0.302
+    y: 0.4
+    z: 0.8
+  }
+  type: TYPE_BOX
+  id: "crouch"
+  layer: "box"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 120.0
+    y: 70.0
+  }
+  type: TYPE_TEXT
+  text: "[C]\n"
+  "crouch"
+  font: "text48"
+  id: "text5"
+  parent: "crouch"
+  layer: "text"
+  inherit_alpha: true
+  text_leading: 0.8
+}
+nodes {
+  position {
+    x: 350.0
+    y: 50.0
+  }
+  size {
+    x: 120.0
+    y: 70.0
+  }
+  color {
+    x: 0.2
+    y: 0.302
+    z: 0.702
+  }
+  type: TYPE_TEXT
+  text: "Use arrow keys, space, X and C."
+  font: "text48"
+  id: "description"
+  layer: "text"
+  inherit_alpha: true
+  text_leading: 0.8
+}
+layers {
+  name: "box"
+}
+layers {
+  name: "text"
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
