@@ -218,9 +218,6 @@ local function update_visuals(self)
 	-- Play the animation for the current state
 	sprite.play_flipbook("#sprite", config.animation)
 
-	-- Flip the sprite horizontally if the character is facing left
-	sprite.set_hflip("#sprite", self.is_flipped)
-
 	-- Visualize the jump effect
 	-- (When jumping, we add a visual effect by moving the character up and down)
 	if self.state == "standing_jump" then
@@ -298,9 +295,15 @@ end
 --- We use it to handle messages that comes to the script when animations finish playing
 --- @param self table Script instance
 --- @param message_id hash What type of message this is
-function on_message(self, message_id)
+function on_message(self, message_id, message)
 	-- This message is sent when a non-looped animation finishes playing (like attack, jump, or turn animations)
 	if message_id == hash("animation_done") then
+
+		-- Flip the sprite horizontally when the character just finished turning
+		if message.id == hash("turn_around") then
+			sprite.set_hflip("#sprite", self.is_flipped)
+		end
+
 		-- Process state machine:
 		update_movement_state(self)       -- Update movement and direction state based on input
 		local next_state = get_next_state(self) -- Decide what state to go to next
