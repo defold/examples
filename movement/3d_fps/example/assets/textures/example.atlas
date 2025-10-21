@@ -1,0 +1,4 @@
+images {
+  image: "/example/assets/textures/larger.png"
+}
+extrude_borders: 2

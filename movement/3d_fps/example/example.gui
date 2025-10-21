@@ -1,0 +1,71 @@
+fonts {
+  name: "default"
+  font: "/example/assets/default.font"
+}
+textures {
+  name: "example"
+  texture: "/example/assets/textures/example.atlas"
+}
+nodes {
+  position {
+    x: 350.0
+    y: 100.0
+  }
+  size {
+    x: 600.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "bg"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 100.0
+    y: 100.0
+  }
+  scale {
+    x: 0.7
+    y: 0.7
+  }
+  color {
+    x: 0.2
+    y: 0.302
+    z: 0.702
+  }
+  type: TYPE_BOX
+  texture: "example/larger"
+  id: "box"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 150.0
+    y: 100.0
+  }
+  scale {
+    x: 0.4
+    y: 0.4
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.2
+    y: 0.302
+    z: 0.702
+  }
+  type: TYPE_TEXT
+  text: "Click to lock in mouse. ESC to unlock.\n"
+  "Then move mouse around to rotate camera.\n"
+  "Use WSAD keys to move around."
+  font: "default"
+  id: "text"
+  pivot: PIVOT_W
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
