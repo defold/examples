@@ -1,0 +1,10 @@
+mesh: "/builtins/assets/meshes/quad_2x2.dae"
+name: "plane"
+materials {
+  name: "default"
+  material: "/example/materials/model_instanced_floor.material"
+  textures {
+    sampler: "tex0"
+    texture: "/example/assets/textures/1024x1024_texture_white.png"
+  }
+}

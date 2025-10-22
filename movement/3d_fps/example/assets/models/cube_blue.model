@@ -1,0 +1,10 @@
+mesh: "/builtins/assets/meshes/cube.dae"
+name: "cube_white"
+materials {
+  name: "default"
+  material: "/example/materials/model_instanced_cube.material"
+  textures {
+    sampler: "tex0"
+    texture: "/example/assets/textures/1024x1024_texture_blue.png"
+  }
+}

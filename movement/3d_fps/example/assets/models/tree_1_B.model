@@ -1,0 +1,10 @@
+mesh: "/example/assets/models/Tree_1_B_Color1.gltf"
+name: "rock_L"
+materials {
+  name: "forest"
+  material: "/example/materials/model_lit.material"
+  textures {
+    sampler: "tex0"
+    texture: "/example/assets/textures/forest_texture.png"
+  }
+}
