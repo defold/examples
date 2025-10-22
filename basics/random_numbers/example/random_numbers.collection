@@ -1,0 +1,37 @@
+name: "default"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"script\"\n"
+  "  component: \"/example/random_numbers.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"label\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 600.0\\n"
+  "  y: 400.0\\n"
+  "}\\n"
+  "color {\\n"
+  "  x: 0.2\\n"
+  "  y: 0.302\\n"
+  "  z: 0.702\\n"
+  "}\\n"
+  "pivot: PIVOT_W\\n"
+  "text: \\\"Label\\\"\\n"
+  "font: \\\"/assets/text48.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label.material\\\"\\n"
+  "\"\n"
+  "  scale {\n"
+  "    x: 0.7\n"
+  "    y: 0.7\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 50.0
+    y: 360.0
+    z: 0.5
+  }
+}
