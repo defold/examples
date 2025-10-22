@@ -1,0 +1,197 @@
+animations {
+  id: "idle"
+  images {
+    image: "/assets/images/Idle1.png"
+  }
+  images {
+    image: "/assets/images/Idle10.png"
+  }
+  images {
+    image: "/assets/images/Idle2.png"
+  }
+  images {
+    image: "/assets/images/Idle3.png"
+  }
+  images {
+    image: "/assets/images/Idle4.png"
+  }
+  images {
+    image: "/assets/images/Idle5.png"
+  }
+  images {
+    image: "/assets/images/Idle6.png"
+  }
+  images {
+    image: "/assets/images/Idle7.png"
+  }
+  images {
+    image: "/assets/images/Idle8.png"
+  }
+  images {
+    image: "/assets/images/Idle9.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 15
+}
+animations {
+  id: "run"
+  images {
+    image: "/assets/images/Run1.png"
+  }
+  images {
+    image: "/assets/images/Run2.png"
+  }
+  images {
+    image: "/assets/images/Run3.png"
+  }
+  images {
+    image: "/assets/images/Run4.png"
+  }
+  images {
+    image: "/assets/images/Run5.png"
+  }
+  images {
+    image: "/assets/images/Run6.png"
+  }
+  images {
+    image: "/assets/images/Run7.png"
+  }
+  images {
+    image: "/assets/images/Run8.png"
+  }
+  images {
+    image: "/assets/images/Run9.png"
+  }
+  images {
+    image: "/assets/images/Run10.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 15
+}
+animations {
+  id: "turn_around"
+  images {
+    image: "/assets/images/TurnAround1.png"
+  }
+  images {
+    image: "/assets/images/TurnAround2.png"
+  }
+  images {
+    image: "/assets/images/TurnAround3.png"
+  }
+  fps: 15
+}
+animations {
+  id: "jump"
+  images {
+    image: "/assets/images/Jump1.png"
+  }
+  images {
+    image: "/assets/images/Jump2.png"
+  }
+  images {
+    image: "/assets/images/Jump3.png"
+  }
+  images {
+    image: "/assets/images/JumpToFall1.png"
+  }
+  images {
+    image: "/assets/images/JumpToFall2.png"
+  }
+  images {
+    image: "/assets/images/Fall1.png"
+  }
+  images {
+    image: "/assets/images/Fall2.png"
+  }
+  images {
+    image: "/assets/images/Fall3.png"
+  }
+  fps: 15
+}
+animations {
+  id: "attack"
+  images {
+    image: "/assets/images/AttackRight1.png"
+  }
+  images {
+    image: "/assets/images/AttackRight2.png"
+  }
+  images {
+    image: "/assets/images/AttackRight3.png"
+  }
+  images {
+    image: "/assets/images/AttackRight4.png"
+  }
+  fps: 15
+}
+animations {
+  id: "to_crouch"
+  images {
+    image: "/assets/images/Crouch1.png"
+  }
+  playback: PLAYBACK_ONCE_FORWARD
+  fps: 15
+}
+animations {
+  id: "crouch_attack"
+  images {
+    image: "/assets/images/CrouchAttack1.png"
+  }
+  images {
+    image: "/assets/images/CrouchAttack2.png"
+  }
+  images {
+    image: "/assets/images/CrouchAttack3.png"
+  }
+  images {
+    image: "/assets/images/CrouchAttack4.png"
+  }
+  fps: 15
+}
+animations {
+  id: "crouch_walk"
+  images {
+    image: "/assets/images/CrouchWalk1.png"
+  }
+  images {
+    image: "/assets/images/CrouchWalk2.png"
+  }
+  images {
+    image: "/assets/images/CrouchWalk3.png"
+  }
+  images {
+    image: "/assets/images/CrouchWalk4.png"
+  }
+  images {
+    image: "/assets/images/CrouchWalk5.png"
+  }
+  images {
+    image: "/assets/images/CrouchWalk6.png"
+  }
+  images {
+    image: "/assets/images/CrouchWalk7.png"
+  }
+  images {
+    image: "/assets/images/CrouchWalk8.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 15
+}
+animations {
+  id: "crouch_idle"
+  images {
+    image: "/assets/images/Crouch2.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 15
+}
+animations {
+  id: "from_crouch"
+  images {
+    image: "/assets/images/Crouch3.png"
+  }
+  playback: PLAYBACK_ONCE_FORWARD
+  fps: 15
+}
+extrude_borders: 2
