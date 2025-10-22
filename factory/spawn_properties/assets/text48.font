@@ -1,0 +1,5 @@
+font: "/assets/SourceSansPro-Semibold.ttf"
+material: "/builtins/fonts/font.material"
+size: 48
+outline_alpha: 0.0
+outline_width: 0.0
