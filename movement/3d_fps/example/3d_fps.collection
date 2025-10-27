@@ -4,7 +4,7 @@ embedded_instances {
   id: "character"
   data: "components {\n"
   "  id: \"character_controller\"\n"
-  "  component: \"/example/orbit_camera.script\"\n"
+  "  component: \"/example/character_controller.script\"\n"
   "}\n"
   "embedded_components {\n"
   "  id: \"camera\"\n"
