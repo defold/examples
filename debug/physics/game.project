@@ -3,7 +3,7 @@ title = Defold-examples
 version = 0.1
 
 [bootstrap]
-main_collection = /example/physics.collectionc
+main_collection = /example/main.collectionc
 
 [input]
 game_binding = /builtins/input/all.input_bindingc
