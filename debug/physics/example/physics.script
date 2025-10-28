@@ -7,9 +7,9 @@ function on_input(self, action_id, action)
 	if action_id == hash("touch") and action.pressed then
 		msg.post("@system:", "toggle_physics_debug") -- <3>
 		if self.show_debug then -- <4>
-			msg.post("main:/loader", "set_time_step", { factor = 1, mode = 0 })
+			msg.post("main:/loader#physicsproxy", "set_time_step", { factor = 1, mode = 0 })
 		else
-			msg.post("main:/loader", "set_time_step", { factor = 0.1, mode = 1 })
+			msg.post("main:/loader#physicsproxy", "set_time_step", { factor = 0.1, mode = 1 })
 		end
 		self.show_debug = not self.show_debug -- <5>
 	end
