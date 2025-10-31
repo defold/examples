@@ -1,0 +1,146 @@
+name: "world_to_screen"
+scale_along_z: 0
+embedded_instances {
+  id: "camera"
+  data: "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.0\\n"
+  "fov: 0.7854\\n"
+  "near_z: 0.01\\n"
+  "far_z: 100.0\\n"
+  "orthographic_mode: ORTHO_MODE_AUTO_FIT\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    y: 5.0
+    z: 5.0
+  }
+  rotation {
+    x: -0.37036422
+    w: 0.9288866
+  }
+}
+embedded_instances {
+  id: "player"
+  children: "player_shadow"
+  children: "player_ui"
+  children: "player_view"
+  data: "components {\n"
+  "  id: \"player\"\n"
+  "  component: \"/example/player.script\"\n"
+  "}\n"
+  ""
+  position {
+    y: 0.3
+    z: -2.0
+  }
+}
+embedded_instances {
+  id: "ui"
+  data: "components {\n"
+  "  id: \"hud\"\n"
+  "  component: \"/example/hud.gui\"\n"
+  "}\n"
+  ""
+  position {
+    z: -361.0
+  }
+}
+embedded_instances {
+  id: "environment"
+  data: "embedded_components {\n"
+  "  id: \"crypt\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/assets/models/crypt.glb\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"colormap\\\"\\n"
+  "  material: \\\"/assets/materials/unlit.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"texture0\\\"\\n"
+  "    texture: \\\"/assets/models/colormap.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"crypt_shadow\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"anim\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 2.5\\n"
+  "  y: 3.5\\n"
+  "}\\n"
+  "size_mode: SIZE_MODE_MANUAL\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/builtins/graphics/particle_blob.tilesource\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  rotation {\n"
+  "    x: 0.70710677\n"
+  "    w: 0.70710677\n"
+  "  }\n"
+  "}\n"
+  ""
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+embedded_instances {
+  id: "player_view"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/assets/models/character-ghost.glb\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"colormap\\\"\\n"
+  "  material: \\\"/assets/materials/unlit.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"texture0\\\"\\n"
+  "    texture: \\\"/assets/models/colormap.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "player_shadow"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"anim\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 1.2\\n"
+  "  y: 1.2\\n"
+  "}\\n"
+  "size_mode: SIZE_MODE_MANUAL\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/builtins/graphics/particle_blob.tilesource\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  rotation {\n"
+  "    x: 0.70710677\n"
+  "    w: 0.70710677\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    y: -0.3
+  }
+}
+embedded_instances {
+  id: "player_ui"
+  data: ""
+  position {
+    y: 1.0
+  }
+}
