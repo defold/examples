@@ -11,11 +11,6 @@ local function quat_look_rotation(forward, upwards)
 		return vmath.quat()
 	end
 
-	-- Handle alignment with up direction
-	if math.abs(vmath.dot(forward, upwards)) > 0.9999999 then
-		return vmath.quat_from_to(vmath.vector3(0, 0, 1), forward)
-	end
-
 	-- Create a rotation matrix from the forward and upwards vectors
 	local matrix = vmath.matrix4_look_at(vmath.vector3(0), forward, upwards)
 
