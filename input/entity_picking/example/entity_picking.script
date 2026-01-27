@@ -1,13 +1,14 @@
-local camera_math = require("example.camera_math")
+go.property("camera_url", msg.url("/camera#camera"))
 
 --- Performs a raycast from the camera through a screen position to find an entity.
+-- @param camera_url url The camera URL to use for screen-to-world conversion
 -- @param screen_x number The x-coordinate on the screen
 -- @param screen_y number The y-coordinate on the screen
 -- @param collision_groups table The collision groups to check against as array of hash values
 -- @return table|nil The first entity hit by the ray, or nil if nothing was hit
-local function pick_entity(screen_x, screen_y, collision_groups)
-	local from = camera_math.screen_to_world(screen_x, screen_y, 0, "/camera#camera")
-	local to = camera_math.screen_to_world(screen_x, screen_y, 100, "/camera#camera")
+local function pick_entity(camera_url, screen_x, screen_y, collision_groups)
+	local from = camera.screen_to_world(vmath.vector3(screen_x, screen_y, 0), camera_url)
+	local to = camera.screen_to_world(vmath.vector3(screen_x, screen_y, 100), camera_url)
 	local results = physics.raycast(from, to, collision_groups, { all = false })
 	if not results then
 		return nil
@@ -34,7 +35,7 @@ function update(self, dt)
 		return
 	end
 
-	local result = pick_entity(self.last_input.screen_x, self.last_input.screen_y, { hash("target") })
+	local result = pick_entity(self.camera_url, self.last_input.screen_x, self.last_input.screen_y, { hash("target") })
 	if result then
 		-- Store in the result table the model URL of the entity just for convenience
 		result.model_url = msg.url(nil, result.id, "model")
