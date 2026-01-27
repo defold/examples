@@ -1,10 +1,10 @@
 ---
-name: Repeating Background
 tags: material
 title: Repeating Background
 brief: Create a scrolling background using a repeating texture on a model quad.
-author: aglitchman
+author: Artsiom Trubchyk
 scripts: repeating_background.script, repeating_background.vp, repeating_background.fp
+thumbnail: thumbnail.png
 ---
 
 A repeating, scrolling texture can add visual interest to a static background. This example demonstrates how to create an infinitely tiling background using a model quad with a repeating texture. The effect is achieved by scrolling the UV coordinates over time, creating smooth, continuous motion.
