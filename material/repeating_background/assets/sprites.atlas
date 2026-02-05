@@ -1,0 +1,4 @@
+images {
+  image: "/assets/coin_06.png"
+}
+extrude_borders: 2
