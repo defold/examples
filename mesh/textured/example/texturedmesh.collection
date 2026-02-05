@@ -1,0 +1,38 @@
+name: "texturedmesh"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "embedded_components {\n"
+  "  id: \"mesh\"\n"
+  "  type: \"mesh\"\n"
+  "  data: \"material: \\\"/example/texturedmesh.material\\\"\\n"
+  "vertices: \\\"/example/quad.buffer\\\"\\n"
+  "textures: \\\"/example/floor_ground_grass.png\\\"\\n"
+  "primitive_type: PRIMITIVE_TRIANGLE_STRIP\\n"
+  "position_stream: \\\"position\\\"\\n"
+  "normal_stream: \\\"position\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "camera"
+  data: "components {\n"
+  "  id: \"orbit_camera\"\n"
+  "  component: \"/example/orbit_camera.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.0\\n"
+  "fov: 0.7854\\n"
+  "near_z: 0.01\\n"
+  "far_z: 1000.0\\n"
+  "auto_aspect_ratio: 1\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    z: 6.0
+  }
+}
