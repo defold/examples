@@ -52,8 +52,9 @@ function init(self)
 	-- Get the text for the requested language from the JSON file.
 	self.requested_text = loc.get_content_from_json(self)
 
-	-- Update the UI content with the initial language.
-	ui.update_ui_content_callback(self)
+	-- Clear texts and update after fonts are prewarmed.
+	ui.clear_text_nodes(self)
+	loc.finish_language_change(self, ui.update_ui_content_callback)
 end
 
 -- Pre-hashed message IDs.
@@ -104,6 +105,8 @@ function on_input(self, action_id, action)
 
 		-- If the requested language is different from the current language:
 		if self.requested_lang ~= self.current_lang then
+			-- Clear current texts while the new font is prepared.
+			ui.clear_text_nodes(self)
 
 			-- Get the text for the requested language from the JSON file.
 			self.requested_text = loc.get_content_from_json(self)

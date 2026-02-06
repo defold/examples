@@ -1,12 +1,12 @@
 ---
 tags: gui, font
 title: Localization (RTL/LTR)
-brief: A GUI example that swaps localized text and demonstrates Unicode layout, including RTL languages.
+brief: This example demonstrates how to handle localization in games, Unicode text layout, RTL rendering, and runtime font switching for localization.
 author: Defold Foundation
 scripts: main.gui_script, localization_helper.lua, ui_helper.lua
 ---
 
-This example shows a GUI sample that demonstrates Unicode text layout and RTL rendering, and demonstrates runtime font switching for localization.
+This example demonstrates how to handle localization in games, Unicode text layout, RTL rendering, and runtime font switching for localization.
 
 Click the buttons (EN, AR, PT, JA) to switch between 4 languages.
 
@@ -40,7 +40,7 @@ To recreate such an example:
 3. Then, also in the `game.project` file in the `Font` section enable the `Runtime Generation` setting.
 ![runtimefont](runtimefont.png)
 
-Project setup used by this sample:
+Project setup used by this example:
 
 - `game.project` with runtime font generation enabled and custom app manifest `main.appmanifest`.
 - `main.collection` with:

@@ -51,11 +51,8 @@ function M.process_language_change(self, callback_on_font_ready)
 
 	-- If the requested language font is the same as the current:
 	if requested_language_proxy == current_language_proxy then
-
-		self.current_lang = self.requested_lang
-
-		-- Finish the language change in UI.
-		callback_on_font_ready(self)
+		-- Finish the language change with prewarm.
+		M.finish_language_change(self, callback_on_font_ready)
 
 		-- And skip the rest of the language change process.
 		return

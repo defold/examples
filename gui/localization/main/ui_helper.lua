@@ -99,6 +99,13 @@ function M.update_ui_content_callback(self)
 	msg.post(".", "acquire_input_focus")
 end
 
+-- Clear text nodes while a language change is in progress.
+-- @param self The self table from the GUI script.
+function M.clear_text_nodes(self)
+	gui.set_text(self.text_node, "")
+	gui.set_text(self.language_name_node, "")
+end
+
 -- Input handling -----------------------------------------------
 
 -- Handle pointer move event.
