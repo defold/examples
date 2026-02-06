@@ -1,0 +1,111 @@
+platforms:
+  armv7-ios:
+    context:
+      excludeLibs: [font]
+      excludeSymbols: []
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi]
+      frameworks: []
+      linkFlags: []
+  arm64-ios:
+    context:
+      excludeLibs: [font]
+      excludeSymbols: []
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi]
+      frameworks: []
+      linkFlags: []
+  x86_64-ios:
+    context:
+      excludeLibs: [font]
+      excludeSymbols: []
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi]
+      frameworks: []
+      linkFlags: []
+  armv7-android:
+    context:
+      excludeLibs: [font]
+      excludeJars: []
+      excludeSymbols: []
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi]
+      linkFlags: []
+      jetifier: true
+  arm64-android:
+    context:
+      excludeLibs: [font]
+      excludeJars: []
+      excludeSymbols: []
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi]
+      linkFlags: []
+      jetifier: true
+  arm64-osx:
+    context:
+      excludeLibs: [font]
+      excludeSymbols: []
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi]
+      frameworks: []
+      linkFlags: []
+  x86_64-osx:
+    context:
+      excludeLibs: [font]
+      excludeSymbols: []
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi]
+      frameworks: []
+      linkFlags: []
+  x86_64-linux:
+    context:
+      excludeLibs: [font]
+      excludeSymbols: []
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi]
+      linkFlags: []
+  arm64-linux:
+    context:
+      excludeLibs: [font]
+      excludeSymbols: []
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi]
+      linkFlags: []
+  x86-win32:
+    context:
+      excludeLibs: [libfont]
+      excludeSymbols: []
+      symbols: []
+      libs: [libfont_skribidi.lib, libharfbuzz.lib, libsheenbidi.lib, libunibreak.lib, libskribidi.lib]
+      linkFlags: []
+  x86_64-win32:
+    context:
+      excludeLibs: [libfont]
+      excludeSymbols: []
+      symbols: []
+      libs: [libfont_skribidi.lib, libharfbuzz.lib, libsheenbidi.lib, libunibreak.lib, libskribidi.lib]
+      linkFlags: []
+  js-web:
+    context:
+      excludeLibs: [font]
+      excludeJsLibs: []
+      excludeSymbols: []
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi]
+      linkFlags: []
+  wasm-web:
+    context:
+      excludeLibs: [font]
+      excludeJsLibs: []
+      excludeSymbols: []
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi]
+      linkFlags: []
+  wasm_pthread-web:
+    context:
+      excludeLibs: [font]
+      excludeJsLibs: []
+      excludeSymbols: []
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi]
+      linkFlags: []
