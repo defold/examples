@@ -1,0 +1,249 @@
+script: "/main/main.gui_script"
+fonts {
+  name: "latin"
+  font: "/assets/fonts/latin_small.font"
+}
+textures {
+  name: "main"
+  texture: "/assets/img/main.atlas"
+}
+nodes {
+  position {
+    x: 480.0
+    y: 320.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "center"
+  adjust_mode: ADJUST_MODE_STRETCH
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    y: 100.0
+  }
+  size {
+    x: 800.0
+    y: 200.0
+  }
+  type: TYPE_BOX
+  texture: "main/panel"
+  id: "panel_text"
+  parent: "center"
+  layer: "box"
+  inherit_alpha: true
+  slice9 {
+    x: 24.0
+    y: 24.0
+    z: 24.0
+    w: 24.0
+  }
+}
+nodes {
+  position {
+    x: -380.0
+  }
+  size {
+    x: 760.0
+    y: 160.0
+  }
+  type: TYPE_TEXT
+  text: "Text"
+  font: "latin"
+  id: "text"
+  pivot: PIVOT_W
+  line_break: true
+  parent: "panel_text"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 250.0
+  }
+  size {
+    x: 800.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Language"
+  font: "latin"
+  id: "language_name"
+  line_break: true
+  parent: "center"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -300.0
+    y: -200.0
+  }
+  size {
+    x: 144.0
+    y: 96.0
+  }
+  type: TYPE_BOX
+  texture: "main/button"
+  id: "btn_en"
+  parent: "center"
+  layer: "box"
+  inherit_alpha: true
+  slice9 {
+    x: 24.0
+    y: 24.0
+    z: 24.0
+    w: 24.0
+  }
+}
+nodes {
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "EN"
+  font: "latin"
+  id: "btn_en_label"
+  parent: "btn_en"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -100.0
+    y: -200.0
+  }
+  size {
+    x: 144.0
+    y: 96.0
+  }
+  type: TYPE_BOX
+  texture: "main/button"
+  id: "btn_ar"
+  parent: "center"
+  layer: "box"
+  inherit_alpha: true
+  slice9 {
+    x: 24.0
+    y: 24.0
+    z: 24.0
+    w: 24.0
+  }
+}
+nodes {
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "AR"
+  font: "latin"
+  id: "btn_ar_label"
+  parent: "btn_ar"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 100.0
+    y: -200.0
+  }
+  size {
+    x: 144.0
+    y: 96.0
+  }
+  type: TYPE_BOX
+  texture: "main/button"
+  id: "btn_pt"
+  parent: "center"
+  layer: "box"
+  inherit_alpha: true
+  slice9 {
+    x: 24.0
+    y: 24.0
+    z: 24.0
+    w: 24.0
+  }
+}
+nodes {
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "PT"
+  font: "latin"
+  id: "btn_pt_label"
+  parent: "btn_pt"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 300.0
+    y: -200.0
+  }
+  size {
+    x: 144.0
+    y: 96.0
+  }
+  type: TYPE_BOX
+  texture: "main/button"
+  id: "btn_ja"
+  parent: "center"
+  layer: "box"
+  inherit_alpha: true
+  slice9 {
+    x: 24.0
+    y: 24.0
+    z: 24.0
+    w: 24.0
+  }
+}
+nodes {
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "JA"
+  font: "latin"
+  id: "btn_ja_label"
+  parent: "btn_ja"
+  layer: "text"
+  inherit_alpha: true
+}
+layers {
+  name: "box"
+}
+layers {
+  name: "text"
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

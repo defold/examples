@@ -1,0 +1,15 @@
+animations {
+  id: "button"
+  images {
+    image: "/assets/img/panel-transparent-border-029.png"
+  }
+  playback: PLAYBACK_NONE
+}
+animations {
+  id: "panel"
+  images {
+    image: "/assets/img/panel-transparent-center-025.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+}
+extrude_borders: 2

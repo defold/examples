@@ -1,0 +1,5 @@
+font: "/assets/fonts/NotoSansJP-Regular.ttf"
+material: "/builtins/fonts/font-df.material"
+size: 24
+output_format: TYPE_DISTANCE_FIELD
+characters: " !\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
