@@ -1,9 +1,9 @@
 -- Helper module for UI operations
 -- Separated in order not to clutter the example.
-local ui = require "main.ui_helper"
+local ui = require "example.ui_helper"
 
 -- Helper module for localization operations
-local loc = require "main.localization_helper"
+local loc = require "example.localization_helper"
 
 
 function init(self)
