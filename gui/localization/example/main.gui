@@ -1,4 +1,4 @@
-script: "/main/main.gui_script"
+script: "/example/main.gui_script"
 fonts {
   name: "latin"
   font: "/assets/fonts/latin_small.font"

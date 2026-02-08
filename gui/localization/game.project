@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /main/main.collectionc
+main_collection = /example/main.collectionc
 
 [input]
 game_binding = /input/game.input_bindingc
@@ -30,5 +30,5 @@ custom_resources = assets/texts
 runtime_generation = 1
 
 [native_extension]
-app_manifest = /main/main.appmanifest
+app_manifest = /example/main.appmanifest
 
