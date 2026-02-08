@@ -41,6 +41,9 @@ To recreate such an example:
 3. Then, also in the `game.project` file in the `Font` section enable the `Runtime Generation` setting.
 ![runtimefont](runtimefont.png)
 
+4. In the end, add the localization of the used JSON files in the `Project` section in the `Custom Resources` setting.
+![customresources](customresources.png)
+
 Project setup used by this example:
 
 - `game.project` with runtime font generation enabled and custom app manifest `main.appmanifest`.

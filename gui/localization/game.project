@@ -24,7 +24,7 @@ scale_mode = stretch
 
 [project]
 title = localization
-custom_resources = assets, assets/fonts
+custom_resources = assets/texts
 
 [font]
 runtime_generation = 1
