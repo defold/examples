@@ -1,0 +1,15 @@
+images {
+  image: "/assets/images/elementStone019.png"
+}
+images {
+  image: "/assets/images/elementStone023.png"
+}
+images {
+  image: "/assets/images/elementMetal001.png"
+}
+animations {
+  id: "coin"
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 8
+}
+extrude_borders: 2
