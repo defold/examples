@@ -18,8 +18,7 @@ high_dpi = 1
 scale = 0.02
 gravity_y = -500.0
 use_fixed_timestep = 1
-max_fixed_timesteps = 60
-allow_dynamic_transforms = 1
+velocity_threshold = 50.0
 
 [script]
 shared_state = 1

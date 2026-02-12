@@ -19,13 +19,13 @@ The key idea is to separate physics simulation from rendering:
 ## Setup
 
 In `game.project`:
-1. In the `Physics` section set `Use_Fixed_Timestep` enabled and `Max Fixed Timesteps` to e.g. 60.
+1. In the `Physics` section set `Use_Fixed_Timestep` enabled and `Velocity Threshold` to 50 (It is necessary for 2D physics, because velocity threshold is scaled with the scale option, and in the end it should be 1.0 internally in Box2D, so if Scale is set to 0.02, the velocity threshold should be 50 = 1.0 / 0.02). Gravity is set arbitraly for this example to -500.
 
-![fixed_timestep](fixed_timestep.png)
+![physics](physics.png)
 
 2. In the `Engine` section set `Fixed Update Frequency` to a low value, e.g. 20, so the difference is easy to see.
 
-![fixed_frequency](fixed_freq.png)
+![engine](engine.png)
 
 
 The setup consists of 5 game objects:
@@ -64,10 +64,9 @@ The setup consists of 5 game objects:
    - `previous` = previous fixed physics sample
    - `current` = current fixed physics sample
 2. In `fixed_update()`, shifts values (`current` data becomes `previous` data) and samples a new `current` transform from the objects controlled by the dynamic collision objects.
-3. Uses quaternion sign compatibility (`vmath.dot`) so rotation interpolation stays stable across sign flips (`q` and `-q` represent the same orientation).
-4. In `update()`, computes render progress inside the current fixed interval:
+3. In `update()`, computes render progress inside the current fixed interval:
    - `alpha = render_accumulator / fixed_dt`
-5. Renders:
+4. Renders:
    - `block1_sprite` from raw `block1` transform.
    - `block2_sprite` from interpolated transform (position is interpolated using `vmath.lerp()`, and rotation is interpolated using `vmath.slerp()`).
 

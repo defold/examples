@@ -13,7 +13,7 @@ local interpolated_block = {
 }
 
 -- Store fixed update interval in seconds from game.project Fixed Update Frequency.
-local fixed_dt = 1 / tonumber(sys.get_config("engine.fixed_update_frequency")) or 20
+local fixed_dt = 1 / (sys.get_config_number("engine.fixed_update_frequency") or 20)
 
 function init(self)
 	-- Render-time remainder inside the current fixed-step interval.
@@ -29,28 +29,13 @@ function init(self)
 	self.current_fixed_rotation = self.previous_fixed_rotation
 end
 
--- Helper function to make quaternions compatible with each other
--- and prevent abrupt rotation flips when interpolating.
-local function quat_make_compatible(reference, q)
-	-- q and -q are the same orientation, but interpolation chooses different paths.
-	-- We keep quaternion sign continuous using a dot-product hemisphere check:
-	-- dot < 0 means "opposite hemisphere", so we flip sign to avoid rotation flips.
-	local reference_v4 = vmath.vector4(reference.x, reference.y, reference.z, reference.w)
-	local q_v4 = vmath.vector4(q.x, q.y, q.z, q.w)
-	if vmath.dot(reference_v4, q_v4) < 0 then
-		return vmath.quat(-q.x, -q.y, -q.z, -q.w)
-	end
-	return q
-end
-
 function fixed_update(self, dt)
 	-- Shift the transform data from current state to previous state 
 	-- and sample new fixed state from the game object with the dynamic collision object component.
 	self.previous_fixed_position = self.current_fixed_position
 	self.previous_fixed_rotation = self.current_fixed_rotation
 	self.current_fixed_position = go.get_position(interpolated_block.physics_go)
-	local sampled_rotation = go.get_rotation(interpolated_block.physics_go)
-	self.current_fixed_rotation = quat_make_compatible(self.previous_fixed_rotation, sampled_rotation)
+	self.current_fixed_rotation = go.get_rotation(interpolated_block.physics_go)
 end	
 
 function update(self, dt)
@@ -80,7 +65,7 @@ function update(self, dt)
 	-- Position interpolation is linear (lerp).
 	local interpolated_position = self.previous_fixed_position + position_difference * alpha
 
-	-- Rotation interpolation is spherical (slerp), with sign-compatible quaternions.
+	-- Rotation interpolation is spherical (slerp).
 	local interpolated_rotation = vmath.slerp(alpha, self.previous_fixed_rotation, self.current_fixed_rotation)
 
 	-- Render blended transform.
