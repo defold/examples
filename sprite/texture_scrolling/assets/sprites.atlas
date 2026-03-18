@@ -1,0 +1,7 @@
+animations {
+  id: "texture"
+  images {
+    image: "/assets/images/Texture.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+}
