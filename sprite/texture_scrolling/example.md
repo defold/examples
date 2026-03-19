@@ -17,14 +17,7 @@ Since Defold 1.12.3 also time is provided automatically to the shaders via Fragm
 
 ## Material Setup
 
-1. Create a new material: `assets/materials/scrolling.material`, with three important things set:
-
-- **Vertex attribute** `texture_transform_2d_0`
-  - Semantic Type: `Texture transform 2d`
-  - Vector Type: `Mat3`
-  - This is Defold’s standard atlas/UV transform attribute for sprites. The shaders use it to derive the tile’s origin and size in atlas UV space.
-
-![Texture scrolling example](doc/material_texture.png)
+1. Create a new material: `assets/materials/scrolling.material`, with these important things set:
 
 - **Vertex attribute** `translation` (vec2)
   - Vector Type: `Vec2` (for 2D)
@@ -58,10 +51,10 @@ To control per-sprite scroll speed/direction, **just change the `translation`** 
 
 - **Vertex shader** `assets/materials/scrolling.vp`
   - Transforms sprite vertices to clip space using `view_proj`.
-  - Forwards `texcoord0`, `texture_transform_2d_0`, and `translation` to the fragment shader.
+  - Forwards `texcoord0`, `texture_transform_2d`, and `translation` to the fragment shader.
 
 - **Fragment shader** `assets/materials/scrolling.fp`
-  - Derives the atlas tile origin (`atlas_pos`) and size (`atlas_size`) from `texture_transform_2d_0`.
+  - Derives the atlas tile origin (`atlas_pos`) and size (`atlas_size`) from `texture_transform_2d`.
   - Converts atlas UV into local tile UV (0..1).
   - Applies scrolling using `localUV += translation * time.x`.
   - Wraps inside the tile with `fract(localUV)` to keep sampling within the region.

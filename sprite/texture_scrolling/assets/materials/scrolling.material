@@ -28,11 +28,6 @@ samplers {
   filter_mag: FILTER_MODE_MAG_DEFAULT
 }
 attributes {
-  name: "texture_transform_2d_0"
-  semantic_type: SEMANTIC_TYPE_TEXTURE_TRANSFORM_2D
-  vector_type: VECTOR_TYPE_MAT3
-}
-attributes {
   name: "translation"
   double_values {
     v: 0.0

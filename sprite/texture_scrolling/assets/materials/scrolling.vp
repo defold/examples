@@ -3,7 +3,7 @@
 // Positions are in world space.
 in highp vec4 position;
 in mediump vec2 texcoord0;
-in mediump mat3 texture_transform_2d_0;
+in mediump mat3 texture_transform_2d;
 in vec2  translation;
 
 out mediump vec2 var_texcoord0;
@@ -19,6 +19,6 @@ void main()
 {
     gl_Position = view_proj * vec4(position.xyz, 1.0);
     var_texcoord0 = texcoord0;
-    var_texture_transform = texture_transform_2d_0;
+    var_texture_transform = texture_transform_2d;
     var_translation = translation;
 }
