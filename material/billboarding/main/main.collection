@@ -1,0 +1,758 @@
+name: "main"
+instances {
+  id: "rock"
+  prototype: "/assets/foliage/rock2.go"
+  position {
+    x: 0.432263
+    z: 3.164613
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "rock1"
+  prototype: "/assets/foliage/rock1.go"
+  position {
+    x: -13.111246
+    z: -1.673618
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "rock3"
+  prototype: "/assets/foliage/rock1.go"
+  position {
+    x: -17.046179
+    z: 0.093398
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "rock4"
+  prototype: "/assets/foliage/rock1.go"
+  position {
+    x: 13.691345
+    z: -1.562676
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree"
+  prototype: "/assets/foliage/tree1.go"
+  position {
+    x: -4.588924
+    z: -1.667738
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree1"
+  prototype: "/assets/foliage/tree3.go"
+  position {
+    x: -8.193815
+    z: -3.472856
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree2"
+  prototype: "/assets/foliage/tree2.go"
+  position {
+    x: -4.781005
+    z: -4.059299
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree3"
+  prototype: "/assets/foliage/tree1.go"
+  position {
+    x: 4.01992
+    z: -2.314556
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree4"
+  prototype: "/assets/foliage/tree3.go"
+  position {
+    x: 13.824522
+    z: -0.158663
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree5"
+  prototype: "/assets/foliage/tree1.go"
+  position {
+    x: 10.895699
+    z: -2.877591
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree6"
+  prototype: "/assets/foliage/tree2.go"
+  position {
+    x: 21.41241
+    z: -1.09406
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree7"
+  prototype: "/assets/foliage/tree3.go"
+  position {
+    x: 15.424907
+    z: -2.09609
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree8"
+  prototype: "/assets/foliage/tree1.go"
+  position {
+    x: 19.072544
+    z: 0.857745
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree9"
+  prototype: "/assets/foliage/tree3.go"
+  position {
+    x: -15.735243
+    z: -0.750327
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree10"
+  prototype: "/assets/foliage/tree2.go"
+  position {
+    x: -19.959873
+    z: 1.752268
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree11"
+  prototype: "/assets/foliage/tree1.go"
+  position {
+    x: -14.563937
+    z: 3.194896
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree12"
+  prototype: "/assets/foliage/tree1.go"
+  position {
+    x: -8.138005
+    z: 3.106801
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree13"
+  prototype: "/assets/foliage/tree2.go"
+  position {
+    x: 11.792633
+    z: 1.79591
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree14"
+  prototype: "/assets/foliage/tree2.go"
+  position {
+    x: 3.763824
+    z: -4.228423
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree15"
+  prototype: "/assets/foliage/tree3.go"
+  position {
+    x: -10.005765
+    z: -5.641328
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree16"
+  prototype: "/assets/foliage/tree1.go"
+  position {
+    x: -23.242922
+    z: -5.959649
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree17"
+  prototype: "/assets/foliage/tree1.go"
+  position {
+    x: -27.37914
+    z: -3.239306
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree18"
+  prototype: "/assets/foliage/tree2.go"
+  position {
+    x: -32.229473
+    z: -0.380347
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree19"
+  prototype: "/assets/foliage/tree2.go"
+  position {
+    x: -27.21813
+    z: 2.07481
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree20"
+  prototype: "/assets/foliage/tree3.go"
+  position {
+    x: -20.73465
+    z: 3.082671
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree21"
+  prototype: "/assets/foliage/tree2.go"
+  position {
+    x: -22.386904
+    z: -0.730285
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree22"
+  prototype: "/assets/foliage/tree1.go"
+  position {
+    x: -14.896446
+    z: -3.713741
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree23"
+  prototype: "/assets/foliage/tree3.go"
+  position {
+    x: -2.93736
+    z: -6.245611
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree24"
+  prototype: "/assets/foliage/tree2.go"
+  position {
+    x: 6.914761
+    z: -6.622481
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree25"
+  prototype: "/assets/foliage/tree1.go"
+  position {
+    x: 13.808848
+    z: -4.860719
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "tree26"
+  prototype: "/assets/foliage/tree2.go"
+  position {
+    x: 18.409931
+    z: -3.411976
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "rock2"
+  prototype: "/assets/foliage/rock2.go"
+  position {
+    x: 5.432263
+    z: -1.597292
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "rock5"
+  prototype: "/assets/foliage/rock2.go"
+  position {
+    x: -19.567738
+    z: -2.787768
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+instances {
+  id: "rock6"
+  prototype: "/assets/foliage/rock2.go"
+  position {
+    x: 10.432263
+    z: 3.164613
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "camera"
+  data: "components {\n"
+  "  id: \"vantage_component\"\n"
+  "  component: \"/vantage/vantage_component.script\"\n"
+  "  properties {\n"
+  "    id: \"orbital_camera\"\n"
+  "    value: \"true\"\n"
+  "    type: PROPERTY_TYPE_BOOLEAN\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"movement_speed\"\n"
+  "    value: \"0.5\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"zoom\"\n"
+  "    value: \"13.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.0\\n"
+  "fov: 0.2\\n"
+  "near_z: 0.1\\n"
+  "far_z: 100.0\\n"
+  "auto_aspect_ratio: 1\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    y: 0.899953
+    z: 4.066616
+  }
+  rotation {
+    x: -0.1644595
+    w: 0.98638386
+  }
+}
+embedded_instances {
+  id: "particlefx_player"
+  data: "components {\n"
+  "  id: \"main\"\n"
+  "  component: \"/main/main.script\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "scene"
+  children: "barrel"
+  children: "blacksmith"
+  children: "house_1"
+  children: "house_2"
+  children: "props"
+  children: "well"
+  data: ""
+  position {
+    y: -1.012604
+    z: -1.0
+  }
+}
+embedded_instances {
+  id: "house_1"
+  children: "smoke1"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/assets/models/building_home_B_red.gltf\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"hexagons_medieval\\\"\\n"
+  "  material: \\\"/builtins/materials/model.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/assets/models/hexagons_medieval.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "create_go_bones: false\\n"
+  "\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "smoke1"
+  data: "components {\n"
+  "  id: \"smoke\"\n"
+  "  component: \"/assets/smoke/smoke.particlefx\"\n"
+  "  position {\n"
+  "    x: 0.142688\n"
+  "    y: 1.203072\n"
+  "    z: -0.42048\n"
+  "  }\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "house_2"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/assets/models/building_home_A_red.gltf\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"hexagons_medieval\\\"\\n"
+  "  material: \\\"/builtins/materials/model.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/assets/models/hexagons_medieval.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: -1.431492\n"
+  "    z: 0.362928\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 3.9209325E-18\n"
+  "    y: 0.21108429\n"
+  "    z: -2.132837E-16\n"
+  "    w: 0.97746783\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -0.289875
+    z: -0.30179
+  }
+  rotation {
+    y: 0.083794415
+    w: 0.9964831
+  }
+}
+embedded_instances {
+  id: "blacksmith"
+  children: "smoke2"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/assets/models/building_blacksmith_red.gltf\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"hexagons_medieval\\\"\\n"
+  "  material: \\\"/builtins/materials/model.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/assets/models/hexagons_medieval.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 1.266859
+    z: 0.574517
+  }
+  rotation {
+    y: -0.32283542
+    w: 0.9464551
+  }
+}
+embedded_instances {
+  id: "well"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/assets/models/building_well_red.gltf\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"hexagons_medieval\\\"\\n"
+  "  material: \\\"/builtins/materials/model.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/assets/models/hexagons_medieval.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: -0.029129\n"
+  "    z: 2.064441\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -0.561101
+    z: 0.154659
+  }
+  scale3 {
+    x: 0.466311
+    y: 0.466311
+    z: 0.466311
+  }
+}
+embedded_instances {
+  id: "smoke2"
+  data: "components {\n"
+  "  id: \"smoke\"\n"
+  "  component: \"/assets/smoke/smoke.particlefx\"\n"
+  "  position {\n"
+  "    x: 0.075305\n"
+  "    z: -0.155171\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.202822
+    y: 0.931509
+    z: 0.037307
+  }
+  rotation {
+    x: 9.362507E-17
+    y: 0.22762014
+    z: -2.4149738E-16
+    w: 0.97375
+  }
+}
+embedded_instances {
+  id: "barrel"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/assets/models/barrel.gltf\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"hexagons_medieval\\\"\\n"
+  "  material: \\\"/builtins/materials/model_instanced.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/assets/models/hexagons_medieval.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"model1\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/assets/models/barrel.gltf\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"hexagons_medieval\\\"\\n"
+  "  material: \\\"/builtins/materials/model_instanced.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/assets/models/hexagons_medieval.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.090307\n"
+  "    z: -0.1848\n"
+  "  }\n"
+  "  rotation {\n"
+  "    y: -0.33322972\n"
+  "    w: 0.94284564\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"model2\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/assets/models/barrel.gltf\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"hexagons_medieval\\\"\\n"
+  "  material: \\\"/builtins/materials/model.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/assets/models/hexagons_medieval.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.191963\n"
+  "    z: -0.012871\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"model3\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/assets/models/barrel.gltf\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"hexagons_medieval\\\"\\n"
+  "  material: \\\"/builtins/materials/model.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/assets/models/hexagons_medieval.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.089854\n"
+  "    y: 0.210653\n"
+  "    z: -0.037494\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -1.006165
+    z: -0.006542
+  }
+}
+embedded_instances {
+  id: "props"
+  children: "rock"
+  children: "rock1"
+  children: "rock2"
+  children: "rock3"
+  children: "rock4"
+  children: "rock5"
+  children: "rock6"
+  children: "tree"
+  children: "tree1"
+  children: "tree10"
+  children: "tree11"
+  children: "tree12"
+  children: "tree13"
+  children: "tree14"
+  children: "tree15"
+  children: "tree16"
+  children: "tree17"
+  children: "tree18"
+  children: "tree19"
+  children: "tree2"
+  children: "tree20"
+  children: "tree21"
+  children: "tree22"
+  children: "tree23"
+  children: "tree24"
+  children: "tree25"
+  children: "tree26"
+  children: "tree3"
+  children: "tree4"
+  children: "tree5"
+  children: "tree6"
+  children: "tree7"
+  children: "tree8"
+  children: "tree9"
+  data: ""
+  position {
+    y: 0.052984
+  }
+  scale3 {
+    x: 0.2
+    y: 0.2
+    z: 0.84
+  }
+}

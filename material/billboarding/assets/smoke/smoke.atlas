@@ -1,0 +1,7 @@
+animations {
+  id: "smoke"
+  images {
+    image: "/assets/smoke/Smoke_single_stylized_fx.png"
+  }
+  playback: PLAYBACK_NONE
+}
