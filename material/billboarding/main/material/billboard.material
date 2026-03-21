@@ -1,0 +1,60 @@
+name: "billboard"
+tags: "tile"
+vertex_program: "/main/material/billboard.vp"
+fragment_program: "/builtins/materials/particlefx.fp"
+vertex_constants {
+  name: "view_proj"
+  type: CONSTANT_TYPE_VIEWPROJ
+}
+vertex_constants {
+  name: "proj"
+  type: CONSTANT_TYPE_PROJECTION
+}
+vertex_constants {
+  name: "view"
+  type: CONSTANT_TYPE_VIEW
+}
+fragment_constants {
+  name: "tint"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+}
+samplers {
+  name: "texture_sampler"
+  wrap_u: WRAP_MODE_CLAMP_TO_EDGE
+  wrap_v: WRAP_MODE_CLAMP_TO_EDGE
+  filter_min: FILTER_MODE_MIN_NEAREST_MIPMAP_LINEAR
+  filter_mag: FILTER_MODE_MAG_LINEAR
+}
+attributes {
+  name: "position"
+  semantic_type: SEMANTIC_TYPE_POSITION
+}
+attributes {
+  name: "mtx_world"
+  semantic_type: SEMANTIC_TYPE_WORLD_MATRIX
+  coordinate_space: COORDINATE_SPACE_WORLD
+  vector_type: VECTOR_TYPE_MAT4
+}
+attributes {
+  name: "color"
+  semantic_type: SEMANTIC_TYPE_COLOR
+  double_values {
+    v: 1.0
+    v: 1.0
+    v: 1.0
+    v: 1.0
+  }
+}
+attributes {
+  name: "billboard_mode"
+  double_values {
+    v: 0.0
+  }
+  vector_type: VECTOR_TYPE_SCALAR
+}

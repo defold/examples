@@ -1,0 +1,36 @@
+animations {
+  id: "tree1"
+  images {
+    image: "/assets/foliage/Tree_stylized.png"
+  }
+  playback: PLAYBACK_NONE
+}
+animations {
+  id: "tree2"
+  images {
+    image: "/assets/foliage/Tree2_stylized.png"
+  }
+  playback: PLAYBACK_NONE
+}
+animations {
+  id: "tree3"
+  images {
+    image: "/assets/foliage/Tree3_stylized.png"
+  }
+  playback: PLAYBACK_NONE
+}
+animations {
+  id: "rock1"
+  images {
+    image: "/assets/foliage/Rock_stylized.png"
+  }
+  playback: PLAYBACK_NONE
+}
+animations {
+  id: "rock2"
+  images {
+    image: "/assets/foliage/Rock2_stylized.png"
+  }
+  playback: PLAYBACK_NONE
+}
+extrude_borders: 2
