@@ -20,12 +20,6 @@ This example shows how to create a responsive character animation system using a
 
 **Input Priority**: A system that determines which actions take precedence when multiple keys are pressed simultaneously.
 
-**Animation Transitions**: Smooth changes between different animations, often with intermediate "transition" animations.## Key Concepts
-
-**State Machine**: A design pattern where an object can be in only one state at a time, with clear rules for transitioning between states.
-
-**Input Priority**: A system that determines which actions take precedence when multiple keys are pressed simultaneously.
-
 **Animation Transitions**: Smooth changes between different animations, often with intermediate "transition" animations.
 - How to create smooth transitions between animation states
 - How to make sprites flip direction based on movement
