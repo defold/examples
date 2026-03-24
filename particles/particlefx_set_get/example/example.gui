@@ -1,0 +1,385 @@
+script: "/example/example.gui_script"
+fonts {
+  name: "always_on_top"
+  font: "/assets/text24.font"
+}
+nodes {
+  position {
+    x: 360.0
+    y: 120.0
+  }
+  size {
+    x: 680.0
+    y: 200.0
+  }
+  color {
+    x: 0.1254902
+    y: 0.15294118
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "options"
+  layer: "box"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -200.0
+    y: 10.0
+  }
+  size {
+    x: 180.0
+    y: 50.0
+  }
+  type: TYPE_BOX
+  id: "image_1"
+  parent: "options"
+  layer: "box"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  scale {
+    x: 0.5
+    y: 0.5
+  }
+  size {
+    x: 360.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "particles"
+  font: "always_on_top"
+  id: "image_text_1"
+  parent: "image_1"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -200.0
+    y: -60.0
+  }
+  size {
+    x: 180.0
+    y: 50.0
+  }
+  type: TYPE_BOX
+  id: "image_2"
+  parent: "options"
+  layer: "box"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  scale {
+    x: 0.5
+    y: 0.5
+  }
+  size {
+    x: 360.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "particles"
+  font: "always_on_top"
+  id: "image_text_2"
+  parent: "image_2"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 10.0
+  }
+  size {
+    x: 180.0
+    y: 50.0
+  }
+  type: TYPE_BOX
+  id: "animation_1"
+  parent: "options"
+  layer: "box"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  scale {
+    x: 0.5
+    y: 0.5
+  }
+  size {
+    x: 360.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "flame"
+  font: "always_on_top"
+  id: "animation_text_1"
+  parent: "animation_1"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: -60.0
+  }
+  size {
+    x: 180.0
+    y: 50.0
+  }
+  type: TYPE_BOX
+  id: "animation_2"
+  parent: "options"
+  layer: "box"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  scale {
+    x: 0.5
+    y: 0.5
+  }
+  size {
+    x: 360.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "smoke"
+  font: "always_on_top"
+  id: "animation_text_2"
+  parent: "animation_2"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 200.0
+    y: 10.0
+  }
+  size {
+    x: 180.0
+    y: 50.0
+  }
+  type: TYPE_BOX
+  id: "material_1"
+  parent: "options"
+  layer: "box"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  scale {
+    x: 0.5
+    y: 0.5
+  }
+  size {
+    x: 360.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "default"
+  font: "always_on_top"
+  id: "material_text_1"
+  parent: "material_1"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 200.0
+    y: -60.0
+  }
+  size {
+    x: 180.0
+    y: 50.0
+  }
+  type: TYPE_BOX
+  id: "material_2"
+  parent: "options"
+  layer: "box"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  scale {
+    x: 0.5
+    y: 0.5
+  }
+  size {
+    x: 360.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "default"
+  font: "always_on_top"
+  id: "material_text_2"
+  parent: "material_2"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -200.0
+    y: 75.0
+  }
+  scale {
+    x: 0.5
+    y: 0.5
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Image"
+  font: "always_on_top"
+  id: "label_1"
+  parent: "options"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 75.0
+  }
+  scale {
+    x: 0.5
+    y: 0.5
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Animation"
+  font: "always_on_top"
+  id: "label_2"
+  parent: "options"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 200.0
+    y: 75.0
+  }
+  scale {
+    x: 0.5
+    y: 0.5
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Material"
+  font: "always_on_top"
+  id: "label_3"
+  parent: "options"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 360.0
+    y: 650.0
+  }
+  size {
+    x: 680.0
+    y: 100.0
+  }
+  color {
+    x: 0.1254902
+    y: 0.15294118
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "description"
+  layer: "box"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: 20.0
+  }
+  scale {
+    x: 0.7
+    y: 0.7
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    y: 0.9019608
+    z: 0.6
+  }
+  type: TYPE_TEXT
+  text: "ParticleFX - Set and Get Properties"
+  font: "always_on_top"
+  id: "description_title"
+  parent: "description"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: -20.0
+  }
+  scale {
+    x: 0.5
+    y: 0.5
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Click options below to change properties of the ParticleFX"
+  font: "always_on_top"
+  id: "description_text"
+  parent: "description"
+  layer: "text"
+  inherit_alpha: true
+}
+layers {
+  name: "box"
+}
+layers {
+  name: "text"
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
