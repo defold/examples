@@ -1,0 +1,42 @@
+animations {
+  id: "coin"
+  images {
+    image: "/assets/images/coin/dcoin_1.png"
+  }
+  images {
+    image: "/assets/images/coin/dcoin_2.png"
+  }
+  images {
+    image: "/assets/images/coin/dcoin_3.png"
+  }
+  images {
+    image: "/assets/images/coin/dcoin_4.png"
+  }
+  images {
+    image: "/assets/images/coin/dcoin_5.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 8
+}
+animations {
+  id: "ship_red"
+  images {
+    image: "/assets/images/coin/dcoin_1.png"
+  }
+  playback: PLAYBACK_NONE
+}
+animations {
+  id: "smoke"
+  images {
+    image: "/assets/images/smoke.png"
+  }
+  playback: PLAYBACK_NONE
+}
+animations {
+  id: "ship_dark"
+  images {
+    image: "/assets/images/smoke.png"
+  }
+  playback: PLAYBACK_NONE
+}
+extrude_borders: 2
