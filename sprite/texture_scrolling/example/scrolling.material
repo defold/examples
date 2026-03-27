@@ -1,7 +1,7 @@
 name: "sprite"
 tags: "tile"
-vertex_program: "/assets/materials/scrolling.vp"
-fragment_program: "/assets/materials/scrolling.fp"
+vertex_program: "/example/scrolling.vp"
+fragment_program: "/example/scrolling.fp"
 vertex_constants {
   name: "view_proj"
   type: CONSTANT_TYPE_VIEWPROJ
