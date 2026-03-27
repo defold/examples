@@ -3,7 +3,7 @@ tags: particlefx, sprite, material, 3d
 title: Billboarding
 brief: This example shows how to make sprites and particle sprites face the camera using a custom vertex shader.
 author: Defold Foundation
-scripts: main/material/billboard.vp
+scripts: main/billboard.vp
 thumbnail: thumbnail.png
 ---
 

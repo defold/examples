@@ -453,7 +453,7 @@ embedded_instances {
   id: "particlefx_player"
   data: "components {\n"
   "  id: \"main\"\n"
-  "  component: \"/main/main.script\"\n"
+  "  component: \"/example/main.script\"\n"
   "}\n"
   ""
 }
@@ -755,4 +755,12 @@ embedded_instances {
     y: 0.2
     z: 0.84
   }
+}
+embedded_instances {
+  id: "gui"
+  data: "components {\n"
+  "  id: \"main\"\n"
+  "  component: \"/example/main.gui\"\n"
+  "}\n"
+  ""
 }

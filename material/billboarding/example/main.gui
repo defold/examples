@@ -1,0 +1,30 @@
+fonts {
+  name: "always_on_top"
+  font: "/builtins/fonts/debug/always_on_top.font"
+}
+nodes {
+  position {
+    x: 360.0
+    y: 700.0
+  }
+  scale {
+    x: 1.5
+    y: 1.5
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Left mouse button - click and drag to rotate\n"
+  "Scroll - to zoom in and out"
+  font: "always_on_top"
+  id: "text"
+  pivot: PIVOT_N
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

@@ -2,7 +2,7 @@ embedded_components {
   id: "sprite"
   type: "sprite"
   data: "default_animation: \"rock1\"\n"
-  "material: \"/main/material/billboard.material\"\n"
+  "material: \"/example/billboard.material\"\n"
   "attributes {\n"
   "  name: \"billboard_mode\"\n"
   "  double_values {\n"

@@ -1,12 +1,12 @@
 [bootstrap]
-main_collection = /main/main.collectionc
+main_collection = /example/main.collectionc
 
 [script]
 shared_state = 1
 
 [display]
-width = 960
-height = 640
+width = 720
+height = 720
 high_dpi = 1
 
 [android]

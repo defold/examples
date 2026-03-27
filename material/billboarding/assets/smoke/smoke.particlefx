@@ -7,7 +7,7 @@ emitters {
   }
   tile_source: "/assets/smoke/smoke.atlas"
   animation: "smoke"
-  material: "/main/material/billboard.material"
+  material: "/example/billboard.material"
   max_particle_count: 128
   type: EMITTER_TYPE_2DCONE
   properties {
