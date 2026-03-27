@@ -3,7 +3,7 @@ tags: particlefx, sprite, material, 3d
 title: Billboarding
 brief: This example shows how to make sprites and particle sprites face the camera using a custom vertex shader.
 author: Defold Foundation
-scripts: main/billboard.vp
+scripts: example/billboard.vp
 thumbnail: thumbnail.png
 ---
 
@@ -16,9 +16,9 @@ The effect is used in two places:
 
 ## Material setup
 
-Create a custom material for billboarding (for example `main/material/billboard.material`) and set it up like this:
+Create a custom material for billboarding (for example `example/billboard.material`) and set it up like this:
 
-- **Vertex program:** `main/material/billboard.vp`
+- **Vertex program:** `example/billboard.vp`
 - **Fragment program:** `/builtins/materials/particlefx.fp`
   - This keeps standard particle/sprite sampling, tinting and alpha handling.
 
@@ -57,7 +57,7 @@ The material must provide these shader inputs:
 The foliage and rock game objects (for example `assets/foliage/tree1.go` and `assets/foliage/rock1.go`) each contain:
 
 1. A **Sprite** component using the atlas `assets/foliage/foliage.atlas`
-2. The material `main/material/billboard.material`
+2. The material `example/billboard.material`
 3. A per-sprite vertex attribute:
    - `billboard_mode = 1.0` (axis-locked billboard; see below)
 
@@ -65,11 +65,11 @@ This is enough to make each sprite face the camera without changing the sprite's
 
 ![Sprite setup](doc/setup_sprite.png)
 
-## ParticleFX setup (smoke)w
+## ParticleFX setup (smoke)
 
-The smoke effect is defined in `main/smoke.particlefx`. The relevant settings are:
+The smoke effect is defined in `assets/smoke/smoke.particlefx`. The relevant settings are:
 
-1. **Emitter material:** `main/material/billboard.material`
+1. **Emitter material:** `example/billboard.material`
 2. **Emitter attribute:** `billboard_mode = 0.0` (screen-aligned billboard; see below)
 3. **Emission space:** `World`
    - This ensures particles exist in world space, while still being oriented towards the camera by the vertex shader.
