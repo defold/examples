@@ -70,4 +70,4 @@ go.set("#particles", "material", material, { keys = { "emitter_top" } })
 
 The helper function `get_emitter_properties()` uses the same `keys` pattern with `go.get()` and writes the result into the labels, so the example shows which values are currently active for each emitter.
 
-One important limitation: **emitter property changes only affect the next play**. That is why the script stops and plays the ParticleFX around each property update.
+One important limitation: **emitter property changes only affect the next play**. The script therefore stops the ParticleFX, clears any already spawned particles, applies the new emitter overrides, and then plays it again. Clearing matters here because the example swaps between atlases with different animation layouts, and keeping old particles alive while changing the emitter image/material can crash HTML5 rendering.

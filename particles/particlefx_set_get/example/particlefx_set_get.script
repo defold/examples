@@ -38,7 +38,12 @@ end
 -- Toggle between the two hardcoded setups:
 -- particles atlas + glow material, or sprites atlas + default material.
 local function change_particlefx_properties(self)
-	particlefx.stop(PARTICLEFX)
+	-- Clear active particles before swapping atlas/material overrides.
+	-- Otherwise the currently alive particles can keep rendering while the
+	-- emitter points at a different texture layout on the next frame.
+	if self.started then
+		particlefx.stop(PARTICLEFX, { clear = true })
+	end
 
 	local core_animation = ANIMATIONS["particles_atlas"][1]
 	local spark_animation = ANIMATIONS["particles_atlas"][2]
@@ -64,6 +69,7 @@ local function change_particlefx_properties(self)
 	get_emitter_properties("emitter_bottom", "#label_spark")
 
 	particlefx.play(PARTICLEFX)
+	self.started = true
 end
 
 function init(self)
@@ -72,6 +78,7 @@ function init(self)
 	-- Start with sprites/default so the first click flips to particles/glow.
 	self.atlas = self.sprites_atlas
 	self.material = self.default_material
+	self.started = false
 
 	change_particlefx_properties(self)
 end
