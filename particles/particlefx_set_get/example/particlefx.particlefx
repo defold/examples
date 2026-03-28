@@ -1,14 +1,14 @@
 emitters {
   id: "emitter_top"
   mode: PLAY_MODE_LOOP
-  duration: 0.18
+  duration: 1.0
   space: EMISSION_SPACE_WORLD
   position {
     y: 150.0
   }
-  tile_source: "/assets/particles.atlas"
-  animation: "coin"
-  material: "/example/particlefx_glow.material"
+  tile_source: "/assets/sprites.atlas"
+  animation: "ship_red"
+  material: "/builtins/materials/particlefx.material"
   particle_orientation: PARTICLE_ORIENTATION_MOVEMENT_DIRECTION
   max_particle_count: 128
   type: EMITTER_TYPE_CIRCLE
@@ -162,14 +162,14 @@ emitters {
 emitters {
   id: "emitter_bottom"
   mode: PLAY_MODE_LOOP
-  duration: 0.18
+  duration: 1.0
   space: EMISSION_SPACE_WORLD
   position {
     y: -150.0
   }
-  tile_source: "/assets/particles.atlas"
-  animation: "coin"
-  material: "/example/particlefx_glow.material"
+  tile_source: "/assets/sprites.atlas"
+  animation: "ship_dark"
+  material: "/builtins/materials/particlefx.material"
   particle_orientation: PARTICLE_ORIENTATION_MOVEMENT_DIRECTION
   max_particle_count: 128
   type: EMITTER_TYPE_CIRCLE
