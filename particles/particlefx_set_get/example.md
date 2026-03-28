@@ -18,12 +18,12 @@ This example focuses on this feature. It toggles a ParticleFX between two setups
    - script `particlefx_set_get.script`
    - ParticleFX component named `#particles`
    - 2 label components: `#label_core` and `#label_spark`
-   ![Outline](doc/outline.png)
+   ![Outline](outline.png)
 
 2. The ParticleFX:
 
    - has two emitters: `emitter_top` and `emitter_bottom`
-   ![ParticleFX](doc/particlefx.png)
+   ![ParticleFX](particlefx.png)
 
 3. The script has the resources exposed as properties:
 

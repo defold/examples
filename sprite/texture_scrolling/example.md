@@ -23,14 +23,14 @@ Since Defold 1.12.3 also time is provided automatically to the shaders via Fragm
   - Vector Type: `Vec2` (for 2D)
   - This is the UV scroll vector - defining direction and speed, meaning: `translation = (vx, vy)` where positive `vx` scrolls towards +U, and positive `vy` scrolls towards +V.
 
-![Texture scrolling example](doc/material_translation.png)
+![Texture scrolling example](material_translation.png)
 
 - **Fragment constant** `time` of type `Time`
   - A material constant filled automatically by Defold.
   - In this example the fragment shader uses `time.x` as “time in seconds”, which is enough for simple scrolling.
   - Tint is left as is, as it's based on the built-in Sprite material.
 
-![Texture scrolling example](doc/material_rest.png)
+![Texture scrolling example](material_rest.png)
 
 ## Sprite setup
 
@@ -45,7 +45,7 @@ Notice, that visually it looks like the texture is moving in the **opposite** di
 
 To control per-sprite scroll speed/direction, **just change the `translation`** on that sprite in the editor (Vertex Attributes for Sprite components).
 
-![Texture scrolling example](doc/setup.png)
+![Texture scrolling example](setup.png)
 
 ## Shaders overview
 

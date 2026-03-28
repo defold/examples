@@ -22,7 +22,7 @@ Create a custom material for billboarding (for example `example/billboard.materi
 - **Fragment program:** `/builtins/materials/particlefx.fp`
   - This keeps standard particle/sprite sampling, tinting and alpha handling.
 
-![Material setup](doc/material.png)
+![Material setup](material.png)
 
 The material must provide these shader inputs:
 
@@ -35,13 +35,13 @@ The material must provide these shader inputs:
   | `color`         | Color          | Vector      | Forwarded to the fragment shader (for particlefx)              |
   | `billboard_mode`| None           | Scalar      | Selects the billboarding mode per instance/emitter             |
 
-![Vertex attribute: position](doc/position.png)
+![Vertex attribute: position](position.png)
 
-![Vertex attribute: mtx_world](doc/mtx_world.png)
+![Vertex attribute: mtx_world](mtx_world.png)
 
-![Vertex attribute: color](doc/color.png)
+![Vertex attribute: color](color.png)
 
-![Vertex attribute: billboard_mode](doc/billboard_mode.png)
+![Vertex attribute: billboard_mode](billboard_mode.png)
 
 - **Vertex constants**
 
@@ -50,7 +50,7 @@ The material must provide these shader inputs:
   | `view_proj` | `ViewProj` | Transforms world position to clip space          |
   | `view`      | `View`     | Used to derive camera right/up vectors in world  |
 
-![Vertex attribute: rest](doc/material_rest.png)
+![Vertex attribute: rest](material_rest.png)
 
 ## Sprite setup (foliage/rocks)
 
@@ -63,7 +63,7 @@ The foliage and rock game objects (for example `assets/foliage/tree1.go` and `as
 
 This is enough to make each sprite face the camera without changing the sprite's transform in the game logic.
 
-![Sprite setup](doc/setup_sprite.png)
+![Sprite setup](setup_sprite.png)
 
 ## ParticleFX setup (smoke)
 
@@ -74,7 +74,7 @@ The smoke effect is defined in `assets/smoke/smoke.particlefx`. The relevant set
 3. **Emission space:** `World`
    - This ensures particles exist in world space, while still being oriented towards the camera by the vertex shader.
 
-![ParticleFX setup](doc/setup_particle.png)
+![ParticleFX setup](setup_particle.png)
 
 ## Billboard modes
 

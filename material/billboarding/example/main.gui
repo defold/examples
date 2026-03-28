@@ -5,7 +5,7 @@ fonts {
 nodes {
   position {
     x: 360.0
-    y: 700.0
+    y: 50.0
   }
   scale {
     x: 1.5
@@ -23,7 +23,7 @@ nodes {
   "Scroll - to zoom in and out"
   font: "always_on_top"
   id: "text"
-  pivot: PIVOT_N
+  pivot: PIVOT_S
   inherit_alpha: true
 }
 material: "/builtins/materials/gui.material"

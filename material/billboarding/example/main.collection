@@ -425,7 +425,7 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"zoom\"\n"
-  "    value: \"13.0\"\n"
+  "    value: \"18.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "}\n"
