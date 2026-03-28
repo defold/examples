@@ -39,7 +39,7 @@ This example focuses on this feature. It toggles a ParticleFX between two setups
    - the `particles.atlas` with `coin` and `smoke` animations
    - the `sprites.atlas` with `ship_red` and `ship_dark` animations
 
-The atlases are set up to contain the animation ids used by the script, so the example can switch between the two setups without extra transition logic.
+The atlases are set up to contain the animation ids used by the script, so the example can switch between the two setups without extra transition logic. It would also be possible to read the animations from `resource.get_atlas()`, but this example keeps a small hardcoded `ANIMATIONS` table to stay as simple as possible.
 
 ## How it works
 
