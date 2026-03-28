@@ -3,7 +3,7 @@ tags: particlefx, sprite, material, 3d
 title: Billboarding
 brief: This example shows how to make sprites and particle sprites face the camera using a custom vertex shader.
 author: Defold Foundation
-scripts: example/billboard.vp
+scripts: billboard.vp
 thumbnail: thumbnail.png
 ---
 
@@ -18,7 +18,7 @@ The effect is used in two places:
 
 Create a custom material for billboarding (for example `example/billboard.material`) and set it up like this:
 
-- **Vertex program:** `example/billboard.vp`
+- **Vertex program:** `billboard.vp`
 - **Fragment program:** `/builtins/materials/particlefx.fp`
   - This keeps standard particle/sprite sampling, tinting and alpha handling.
 

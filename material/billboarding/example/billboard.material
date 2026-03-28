@@ -1,6 +1,6 @@
 name: "billboard"
 tags: "tile"
-vertex_program: "/example/billboard.vp"
+vertex_program: "/billboard.vp"
 fragment_program: "/builtins/materials/particlefx.fp"
 vertex_constants {
   name: "view_proj"
