@@ -1,0 +1,74 @@
+name: "orthographic_zoom"
+scale_along_z: 0
+embedded_instances {
+  id: "camera"
+  data: "components {\n"
+  "  id: \"zoom\"\n"
+  "  component: \"/example/zoom.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.0\\n"
+  "fov: 0.7854\\n"
+  "near_z: -1.0\\n"
+  "far_z: 1.0\\n"
+  "orthographic_projection: 1\\n"
+  "\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"zoom_label\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 320.0\\n"
+  "  y: 32.0\\n"
+  "}\\n"
+  "outline {\\n"
+  "  x: 1.0\\n"
+  "  y: 1.0\\n"
+  "  z: 1.0\\n"
+  "}\\n"
+  "shadow {\\n"
+  "  x: 1.0\\n"
+  "  y: 1.0\\n"
+  "  z: 1.0\\n"
+  "}\\n"
+  "text: \\\"Orthographic Zoom: 1.00\\\"\\n"
+  "font: \\\"/assets/text48.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    y: 61.0\n"
+  "  }\n"
+  "  scale {\n"
+  "    x: 0.4\n"
+  "    y: 0.4\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 360.0
+    y: 360.0
+    z: 0.01
+  }
+}
+embedded_instances {
+  id: "tilemap"
+  data: "components {\n"
+  "  id: \"level\"\n"
+  "  component: \"/assets/tiles/level.tilemap\"\n"
+  "}\n"
+  ""
+  position {
+    x: 42.0
+    y: 160.0
+  }
+}
+embedded_instances {
+  id: "gui"
+  data: "components {\n"
+  "  id: \"instructions\"\n"
+  "  component: \"/example/instructions.gui\"\n"
+  "}\n"
+  ""
+}
