@@ -1,7 +1,7 @@
 ---
 tags: sprite
 title: Texture scrolling
-brief: This example shows how tint a sprite at run-time
+brief: This example shows how scroll the texture in the runtime using Texture Transform 2D Vertex Attribute, without using the sprite in the world space.
 author: Defold Foundation
 scripts: scrolling.vp, scrolling.fp
 thumbnail: thumbnail.png
