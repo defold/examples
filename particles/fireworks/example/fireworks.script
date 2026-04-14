@@ -1,94 +1,96 @@
-local colors = {"red", "green", "blue"} -- list of existing fireworks colors
-local instances = {} -- list of active fireworks instances
+local COLORS = { "red", "green", "blue" }
+local MAX_ACTIVE_FIREWORKS = 6
+local AUTO_LAUNCH_DELAY = 3
+local BURST_CLEANUP_DELAY = 1.5
 
-local _tension = 0.9 -- emulation of air tension. More value leads to faster deceleration
-local _gravity = 980 -- gravity, measuring in mm/sq.s.
+local active_fireworks = 0 -- <1>
 
-local function start_fireworks(trail_id, bang_id, start_pos, speed, time, gravity, tension)
-	go.set_position(start_pos, trail_id)
-	particlefx.play(trail_id)
-	local m = {
-		update = function(self, dt)
-			if self.time > 0 then
-				local prev_pos = vmath.vector3(self.start_pos)
-				self.start_pos.x = self.start_pos.x + self.speed.x*dt
-				self.start_pos.y = self.start_pos.y + self.speed.y*dt
-
-				local triangle = vmath.vector3(prev_pos.x - start_pos.x, prev_pos.y - start_pos.y, 0)
-				local angle = math.atan2(triangle.y, triangle.x)
-				self.speed.x = self.speed.x - self.speed.x * self.tension*dt
-				self.speed.y = self.speed.y - self.speed.y * self.tension*dt - self.gravity*dt
-
-				go.set_position(self.start_pos, self.trail)
-				go.set_rotation(vmath.quat_rotation_z(angle+math.pi/2), self.trail)
-				if self.time > 0 then
-					go.set_scale(self.time, self.trail)
-				end
-
-			elseif self.time <= 0 and not self.is_stopped then
-				self.is_stopped = true
-				particlefx.stop(self.trail, { clear = true })
-				go.set_position(self.start_pos, self.bang)
-				particlefx.play(self.bang)
-			elseif self.time <= -1.5 and self.bang  then
-				go.delete(self.bang)
-				self.bang = nil
-			end
-			self.time = self.time - dt
-		end,
-		start_pos = start_pos,
-		time = time,
-		speed = speed,
-		gravity = gravity or _gravity,
-		tension = tension or _tension,
-		trail = trail_id,
-		bang = bang_id
-	}
-
-	return m
+local function delete_burst(burst_id)
+	go.delete(burst_id) -- <2>
+	active_fireworks = active_fireworks - 1 -- <3>
 end
 
-local function single_shot()
-	if #instances > 5 then
+local function burst_firework(trail_id, burst_id)
+	local position = go.get_position(trail_id) -- <4>
+	particlefx.stop(trail_id, { clear = true }) -- <5>
+	go.delete(trail_id) -- <6>
+	go.set_position(position, burst_id) -- <7>
+	particlefx.play(burst_id) -- <8>
+
+	timer.delay(BURST_CLEANUP_DELAY, false, function() -- <9>
+		delete_burst(burst_id)
+	end)
+end
+
+local function spawn_firework()
+	if active_fireworks >= MAX_ACTIVE_FIREWORKS then -- <10>
 		return
 	end
-	local color = colors[math.random(1, #colors)]
-	local splat = factory.create("#"..color.."_splat_factory")
-	local trail = factory.create("#"..color.."_trail_factory")
 
-	local strength = 1000+math.random()*600 		-- scalar value of speed
-	local angle = (-0.2+math.random()*0.4)*math.pi	-- angle beetween central vertical line and trail
-	
-	local pos = vmath.vector3(360-math.sin(angle)*350, 0, 0)
-	local speed = vmath.vector3(strength*math.sin(angle), strength*math.cos(angle), 0)
-	table.insert(instances, 
-		start_fireworks(trail, splat, 
-			pos, speed, 
-			1.2+math.random()*0.5
-		)
-	)
+	local color = COLORS[math.random(#COLORS)] -- <11>
+	local trail_id = factory.create("#" .. color .. "_trail_factory") -- <12>
+	local burst_id = factory.create("#" .. color .. "_splat_factory") -- <13>
+
+	local launch_strength = 400 + math.random() * 300 -- <14>
+	local launch_angle = (-0.28 + math.random() * 0.56) * math.pi -- <15>
+	local start_position = vmath.vector3(360 - math.sin(launch_angle) * 350, 0, 0) -- <16>
+	local flight_time = 1.2 + math.random() * 0.5 -- <17>
+	local velocity = vmath.vector3(launch_strength * math.sin(launch_angle), launch_strength * math.cos(launch_angle), 0)
+	local end_position = start_position + velocity * flight_time * 0.55 -- <18>
+
+	go.set_position(start_position, trail_id) -- <19>
+	go.set_rotation(vmath.quat_rotation_z(math.atan2(velocity.y, velocity.x) - math.pi / 2), trail_id) -- <20>
+	particlefx.play(trail_id) -- <21>
+	active_fireworks = active_fireworks + 1 -- <22>
+
+	go.animate(trail_id, "position.x", go.PLAYBACK_ONCE_FORWARD, end_position.x, go.EASING_LINEAR, flight_time) -- <23>
+	go.animate(trail_id, "position.y", go.PLAYBACK_ONCE_FORWARD, end_position.y, go.EASING_OUTQUAD, flight_time, 0, function() -- <24>
+		burst_firework(trail_id, burst_id) -- <25>
+	end)
+	go.animate(trail_id, "scale", go.PLAYBACK_ONCE_FORWARD, 0.2, go.EASING_INQUAD, flight_time) -- <26>
 end
 
 function init(self)
-	single_shot()
-
-	timer.delay(3, true, single_shot) 
-
-	msg.post(".", "acquire_input_focus")
-end
-
-function update(self, dt)
-	for i, val in ipairs(instances) do
-		if not val.bang then
-			table.remove(instances, i)
-		else
-			val:update(dt)
-		end
-	end
+	spawn_firework() -- <27>
+	timer.delay(AUTO_LAUNCH_DELAY, true, spawn_firework) -- <28>
+	msg.post(".", "acquire_input_focus") -- <29>
 end
 
 function on_input(self, action_id, action)
 	if action_id == hash("mouse_button_left") and action.pressed then
-		single_shot()
+		spawn_firework() -- <30>
 	end
 end
+
+--[[
+1. Keep a count of active fireworks so no more than 6 are running at once.
+2. Delete the burst game object after its cleanup delay has finished.
+3. Free one active firework slot when the burst object is removed.
+4. Read the trail object's current position so the burst can be played there.
+5. Stop the trail particle effect and clear already emitted particles when the flight ends.
+6. Delete the trail game object once it has finished flying.
+7. Move the burst object to the trail object's last position.
+8. Play the burst particle effect at that position.
+9. Start a one-shot timer that cleans up the burst after a short delay.
+10. Stop spawning if the maximum number of active fireworks is already on screen.
+11. Pick one of the available firework colors.
+12. Create the trail game object for that color.
+13. Create the burst game object for that color.
+14. Randomize the launch strength so different rockets travel different distances.
+15. Randomize the launch angle so the fireworks spread out across the screen.
+16. Compute a start position near the bottom edge, offset by the launch angle.
+17. Randomize how long the rocket flight lasts before it bursts.
+18. Compute a target position for the rocket so the animation ends near the burst point.
+19. Place the trail object at the launch position.
+20. Rotate the trail object to match the initial launch direction.
+21. Start the trail particle effect.
+22. Reserve one active firework slot for this spawned rocket.
+23. Animate the rocket horizontally with linear easing.
+24. Animate the rocket vertically with `go.EASING_OUTQUAD` to get a simple arc.
+25. Start the burst effect when the flight animation finishes.
+26. Animate the rocket scale down over time so the trail looks like it is burning out.
+27. Launch one firework immediately when the example starts.
+28. Start a repeating timer that spawns another firework every 3 seconds.
+29. Acquire input focus so the script can react to click or tap input.
+30. Launch another firework when the left mouse button or a touch press is detected.
+]]
