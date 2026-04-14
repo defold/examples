@@ -133,25 +133,6 @@ emitters {
       y: 1.0
     }
   }
-  modifiers {
-    type: MODIFIER_TYPE_DRAG
-    properties {
-      key: MODIFIER_KEY_MAGNITUDE
-      points {
-        y: 1.1
-      }
-    }
-  }
-  modifiers {
-    type: MODIFIER_TYPE_ACCELERATION
-    properties {
-      key: MODIFIER_KEY_MAGNITUDE
-      points {
-        y: -1200.0
-      }
-      spread: 100.0
-    }
-  }
 }
 emitters {
   id: "emitter2"
@@ -294,25 +275,6 @@ emitters {
       y: 1.0
     }
   }
-  modifiers {
-    type: MODIFIER_TYPE_ACCELERATION
-    properties {
-      key: MODIFIER_KEY_MAGNITUDE
-      points {
-        y: -1200.0
-      }
-      spread: 100.0
-    }
-  }
-  modifiers {
-    type: MODIFIER_TYPE_DRAG
-    properties {
-      key: MODIFIER_KEY_MAGNITUDE
-      points {
-        y: 1.1
-      }
-    }
-  }
 }
 emitters {
   id: "emitter3"
@@ -447,25 +409,6 @@ emitters {
     key: PARTICLE_KEY_ANGULAR_VELOCITY
     points {
       y: 1.0
-    }
-  }
-  modifiers {
-    type: MODIFIER_TYPE_ACCELERATION
-    properties {
-      key: MODIFIER_KEY_MAGNITUDE
-      points {
-        y: -1200.0
-      }
-      spread: 100.0
-    }
-  }
-  modifiers {
-    type: MODIFIER_TYPE_DRAG
-    properties {
-      key: MODIFIER_KEY_MAGNITUDE
-      points {
-        y: 1.1
-      }
     }
   }
 }
@@ -610,25 +553,6 @@ emitters {
       y: 1.0
     }
   }
-  modifiers {
-    type: MODIFIER_TYPE_ACCELERATION
-    properties {
-      key: MODIFIER_KEY_MAGNITUDE
-      points {
-        y: -1200.0
-      }
-      spread: 100.0
-    }
-  }
-  modifiers {
-    type: MODIFIER_TYPE_DRAG
-    properties {
-      key: MODIFIER_KEY_MAGNITUDE
-      points {
-        y: 1.1
-      }
-    }
-  }
 }
 emitters {
   id: "emitter5"
@@ -769,25 +693,6 @@ emitters {
     key: PARTICLE_KEY_ANGULAR_VELOCITY
     points {
       y: 1.0
-    }
-  }
-  modifiers {
-    type: MODIFIER_TYPE_ACCELERATION
-    properties {
-      key: MODIFIER_KEY_MAGNITUDE
-      points {
-        y: -1200.0
-      }
-      spread: 100.0
-    }
-  }
-  modifiers {
-    type: MODIFIER_TYPE_DRAG
-    properties {
-      key: MODIFIER_KEY_MAGNITUDE
-      points {
-        y: 1.1
-      }
     }
   }
 }
@@ -932,23 +837,23 @@ emitters {
       y: 1.0
     }
   }
-  modifiers {
-    type: MODIFIER_TYPE_ACCELERATION
-    properties {
-      key: MODIFIER_KEY_MAGNITUDE
-      points {
-        y: -1200.0
-      }
-      spread: 100.0
+}
+modifiers {
+  type: MODIFIER_TYPE_ACCELERATION
+  properties {
+    key: MODIFIER_KEY_MAGNITUDE
+    points {
+      y: -1200.0
     }
+    spread: 100.0
   }
-  modifiers {
-    type: MODIFIER_TYPE_DRAG
-    properties {
-      key: MODIFIER_KEY_MAGNITUDE
-      points {
-        y: 1.1
-      }
+}
+modifiers {
+  type: MODIFIER_TYPE_DRAG
+  properties {
+    key: MODIFIER_KEY_MAGNITUDE
+    points {
+      y: 1.1
     }
   }
 }
