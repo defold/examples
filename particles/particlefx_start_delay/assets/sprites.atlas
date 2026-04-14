@@ -1,0 +1,4 @@
+images {
+  image: "/assets/images/droplet.png"
+}
+extrude_borders: 2

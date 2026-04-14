@@ -1,0 +1,21 @@
+name: "default"
+scale_along_z: 0
+embedded_instances {
+  id: "fountain"
+  data: "components {\n"
+  "  id: \"fountain\"\n"
+  "  component: \"/example/fountain.particlefx\"\n"
+  "  position {\n"
+  "    x: 360.0\n"
+  "  }\n"
+  "}\n"
+  "components {\n"
+  "  id: \"script\"\n"
+  "  component: \"/example/fountain.script\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"description\"\n"
+  "  component: \"/example/description.gui\"\n"
+  "}\n"
+  ""
+}

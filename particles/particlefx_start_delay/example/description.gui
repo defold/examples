@@ -1,0 +1,23 @@
+fonts {
+  name: "text32"
+  font: "/assets/text32.font"
+}
+nodes {
+  position {
+    x: 360.0
+    y: 720.0
+  }
+  size {
+    x: 680.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "The second emitter - particles on the bottom starts with a delay. Click to restart"
+  font: "text32"
+  id: "text"
+  pivot: PIVOT_N
+  line_break: true
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
