@@ -1,6 +1,6 @@
 ---
 tags: particles
-title: ParticleFX start delay
+title: ParticleFX - Fountain - Start Delay
 brief: This example shows how the Start Delay emitter property can be used to sequence two emitters inside a single ParticleFX and create a simple fountain effect.
 author: Defold Foundation
 scripts: fountain.script

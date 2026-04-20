@@ -9,21 +9,26 @@ thumbnail: thumbnail.png
 
 This example shows how particle emission space affects particle behavior when the emitter object moves. The setup consists of two UFO objects with identical particle effects, but different emission space settings.
 
+## Setup
+
 The example collection consists of 2 game objects that differ only in the particlefx used:
 
-- particlefx on the left has Emission Space property set to "Emitter":
+- particlefx on the left has `Emission Space` property set to `Emitter`:
+
 ![Emission Space: Emitter](emitter.png)
 
-- particlefx on the right has Emission Space property set to "World":
+- particlefx on the right has `Emission Space` property set to `World`:
+
 ![Emission Space: World](world.png)
 
 Both game objects are animated up and down, so that you can see the difference between the emission space:
 
 ![Screenshot showing particle emission space comparison](thumbnail.png)
 
-Particles emitted in emitter space are "moving" with the object, so their position is always respective to the emitter actual origin.
+## How it works?
 
-Particles emitted in world space have positions respective to the world coordinates.
+Particles emitted in the **emitter** space are "moving" with the object, so their position is always respective to the emitter actual origin.
 
-Use this example to understand when to use local vs world emission space in your particle effects!
+Particles emitted in the **world** space have positions respective to the world coordinates.
 
+Use this example to understand when to use local or world emission space in your particle effects!
