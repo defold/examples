@@ -1,7 +1,7 @@
 ---
 tags: particles
 title: Spawning Fireworks ParticleFX
-brief: This example shows how to spawn and animate firework rockets with separate trail and burst particle effects.
+brief: This example shows how to spawn firework rockets with separate trail and burst particle effects, including a small dip before the burst.
 author: fysx, Defold Foundation
 scripts: fireworks.script
 thumbnail: thumbnail.png
@@ -26,32 +26,38 @@ The script does not use `update()`. It spawns the trail object, animates it with
 
 ## Trail particlefx
 
-The `trail` particlefx is a looping effect made from two cone emitters using the `fw_trace_02` sprite:
+Each `trail` particlefx file contains one looping cone emitter. The three color variants share the same setup and only differ in their base RGB values.
 
-- one main colored streak;
-- one smaller additive glow layered on top of it.
+The trail emitter uses:
 
-Both emitters use `EMISSION_SPACE_WORLD`, so emitted particles stay behind in world space instead of following the moving game object. That creates the visible rocket trail while the rocket object itself is animated separately.
+- `Emmision Space` : `World`, so emitted particles stay behind in world space instead of following the moving game object;
+- `Particle Orientation` : `Movement direction`;
+- additive blending;
+- the `fw_circle_01` sprite from `/assets/sprites.atlas`;
+- a spawn rate of `64`, particle lifetime `0.6`, and particle size around `40` with a small spread.
+
+Because the sprite is a soft circle rather than a directional streak, the trail reads more like a glowing puff stream than a sharp rocket spark. The scale and alpha curves in the emitter make each particle start fairly full, then shrink and fade out quickly.
 
 The trail game object itself is prepared by the script before the animation starts:
 
 - position is set near the bottom of the screen;
-- rotation is set to the initial launch direction;
 - scale is animated down over time so the trail feels like it is burning out before the explosion.
 
 ## Burst particlefx
 
-The `splat` particlefx is a one-shot layered effect. In the red variant it uses several circle emitters with different sprites and blend modes:
+Each `splat` particlefx file is a one-shot layered burst built from five circle emitters. The red, green and blue files use the same emitter structure and timings, with color values changed per variant.
 
-- stretched streak particles using `fw_trace_01`;
-- star particles using `fw_star_01`;
-- an additive streak layer for extra brightness;
-- a circular flash using `fw_circle_01`;
-- two soft light flashes using `fw_light_01`, including an additive glow.
+The five burst layers are:
 
-Some of these emitters use acceleration and radial modifiers. Those modifiers push particles outward, shape the burst, and add a little variation to the explosion instead of letting every particle travel in a perfectly uniform way.
+- a `fw_trace_01` streak layer with movement-direction orientation, about `64` particles, lifetime around `1.6`, speed around `200`, and velocity stretching;
+- a `fw_star_01` star layer with angular-velocity orientation, about `30` particles, lifetime around `1.6`, speed around `300`, and randomized rotation;
+- a second `fw_trace_01` streak layer with additive blending for extra brightness;
+- a `fw_light_01` flash layer that emits a single large soft light particle;
+- a second additive `fw_light_01` layer that adds a smaller glow on top of the main flash.
 
-Like the trail, the burst emitters also use `EMISSION_SPACE_WORLD`, so the explosion stays fixed at the burst position after it has been spawned.
+The moving burst layers also use modifiers. The streak layers use acceleration, and the star and additive streak layers also use radial shaping, so the burst does not expand as a perfectly uniform circle. The two `fw_light_01` emitters do not throw particles outward; they behave more like expanding flashes at the center of the explosion.
+
+Like the trail, the burst emitters also use `Emmision Space` : `World`, so the explosion stays fixed at the burst position after it has been spawned.
 
 ## Script and spawning
 
@@ -61,24 +67,32 @@ The script handles spawning in three ways:
 - it starts a repeating timer that launches another firework every 3 seconds;
 - it launches another firework when the left mouse button is pressed, which also works as click/tap input in the example.
 
-To keep the effect under control, the script allows at most 6 active fireworks at the same time.
+To keep the effect under control, the script allows at most 16 active fireworks at the same time.
 
 `spawn_firework()` first checks that limit. It then:
 
 - picks a random color from `red`, `green` and `blue`;
 - creates the matching trail and burst game objects with `factory.create()`;
 - generates a random launch angle, launch strength and flight time;
-- computes the initial position near the bottom of the screen, a launch direction, and a target end position;
+- computes the initial position near the bottom of the screen, a peak position, and a burst position slightly below that peak;
 - starts the trail particlefx;
 - starts `go.animate()` for `position.x`, `position.y` and `scale`.
+
+The values that control this motion are collected at the top of the script, including:
+
+- launch strength and angle range;
+- start position and horizontal spread;
+- flight time and flight-distance ratio;
+- how much of the total flight is used for the final dip;
+- the minimum and maximum distance of that dip.
 
 The rocket flight uses two separate property animations:
 
 - `position.x` uses linear easing;
-- `position.y` uses `go.EASING_OUTQUAD`;
+- `position.y` first uses `go.EASING_OUTQUAD` to rise to the peak, then `go.EASING_INQUAD` to dip slightly before the burst;
 - `scale` is animated down during the flight.
 
-Using different easing for X and Y gives a simple curved flight path without a manual simulation loop. When the Y animation finishes, its completion callback stops and deletes the trail object, reads its final position, and plays the burst effect there. A separate one-shot timer then deletes the burst object after a short cleanup delay.
+Using different easing for X and Y gives a simple curved flight path without a manual simulation loop. Splitting the Y animation into two phases lets the rocket rise, dip a little, and then explode. When the second Y animation finishes, its completion callback stops and deletes the trail object, reads its final position, and plays the burst effect there. A separate one-shot timer then deletes the burst object after a short cleanup delay.
 
 To reuse this setup in another project:
 
