@@ -1,0 +1,4 @@
+images {
+  image: "/assets/images/logo-color.png"
+}
+extrude_borders: 2
