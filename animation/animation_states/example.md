@@ -1,96 +1,151 @@
 ---
-tags: animation, state_machine, input
-title: Animation State Machine
-brief: This example demonstrates how to create a character animation system using a Finite State Machine (FSM) with smooth transitions between different character states.
+title: Finite State Machines
+brief: Shows how to build a small Finite State Machine module and use it to control character and animation states.
 author: The Defold Foundation
-scripts: knight.script
+scripts: knight.script, control.gui_script, fsm.lua
 thumbnail: thumbnail.png
+tags: animation, sprite, architecture, input
 ---
 
-# A simple Finite State Machine for animations.
+You can control the example in two ways:
 
-This example shows how to create a responsive character animation system using a **Finite State Machine (FSM)**. The character can smoothly transition between different states like idle, running, jumping, attacking, and crouching based on player input. This is a fundamental technique used in most 2D platformers and action games.
+- Use the keyboard: <kbd>Left</kbd>/<kbd>Right</kbd> arrow keys, <kbd>Space</kbd>, <kbd>X</kbd>, and <kbd>C</kbd>
+- Click or touch the on-screen buttons: `idle`, `run`, `turn`, `jump`, `attack`, and `crouch`
 
-## What You'll Learn?
+The keyboard `C` key is a held crouch input. The GUI `crouch` button toggles crouch on and off.
 
-- How to implement a state machine for character animations
-- How to handle complex input combinations and priorities## Key Concepts
+This example shows how to build a small **Finite State Machine** (FSM) Lua module and use it in more than one place:
 
-**State Machine**: A design pattern where an object can be in only one state at a time, with clear rules for transitioning between states.
+- animation states in `knight.script`
+- locomotion states (`idle`, `run`) in `control.gui_script`
+- posture states (`standing`, `crouching`) in `control.gui_script`
 
-**Input Priority**: A system that determines which actions take precedence when multiple keys are pressed simultaneously.
+## What You'll Learn
 
-**Animation Transitions**: Smooth changes between different animations, often with intermediate "transition" animations.
-- How to create smooth transitions between animation states
-- How to make sprites flip direction based on movement
-- How to add visual effects (like jump animations)
-- How to communicate between game objects using messages
+- What Finite State Machines are
+- How to create generic FSM logic in a reusable Lua module
+- How to use multiple smaller FSMs for different control concerns
+- How to combine several control states into one animation target
+- How to insert intermediate animation states automatically
+
+### Finite State Machines
+
+A **Finite-State Machine** is a model with a finite set of possible states, one active state at a time, and explicit rules for moving from one state to another. FSMs are used in digital logic, software, and AI because they make behavior depend on clear state and transition rules.
+
+Check also:
+- [Simplest Lua Finite State Machine on lua-users.org](http://lua-users.org/wiki/FiniteStateMachine)
+- [Lua Finite State Machine by Kyle Conroy](https://github.com/kyleconroy/lua-state-machine)
+- [Lua FSM by unindented](https://github.com/unindented/lua-fsm)
+- [Lua FSM by recih](https://github.com/recih/lua-fsm)
+- ["Simple Lua FSM" video by Mahri2D](https://www.youtube.com/watch?v=aVFMDiaQ_Qc)
+- ["How I think of state machines, coded in Defold" video by kags](https://www.youtube.com/watch?v=Hb3GEcTgkrg)
 
 ## Setup
 
-The example consists of two main game objects:
+The collection contains two game objects:
 
-knight
-: The animated character. Contains:
-  - A *Sprite* component with the knight character image and animations.
-  - A *Script* component (`knight.script`) that implements the state machine logic, handles input, and manages animation transitions.
+<kbd>gui</kbd>
+: Contains `control.gui` and `control.gui_script`. This script owns input focus, handles keyboard and pointer input, and uses two FSMs: one for locomotion (`idle` / `run`) and one for posture (`standing` / `crouching`).
 
-gui
-: The user interface. Contains:
-  - A *GUI* component (`control.gui`) that has 6 nodes displaying states and text description for the example.
-  - A *GUI Script* component (`control.gui_script`) that receives messages from the knight and updates the visual state indicators.
+<kbd>knight</kbd>
+: Contains the sprite and `knight.script`. This script owns the animation FSM. It stores the current animation state, validates transitions with the reusable FSM module, plays flipbooks, and notifies the GUI whenever the active animation changes.
 
-> **Note:**  
-> The GUI in this example is not required for understanding the state machine logic, it only visually shows the active animation state. You can view the GUI source in the project files on Github still though.
 
-![animation_states_collection](animation_states_collection.png)
+![animation_states_collection](setup.png)
 
-## Animation Atlas
+## Input
 
-The sprite component uses a flipbook animation that is set up in an atlas:
+The GUI stores raw input intent, then the locomotion and posture FSMs turn that intent into stable control states:
 
-> For this example we used the Free Knight Character by Nauris 'aamatniekss' available here: https://aamatniekss.itch.io/fantasy-knight-free-pixelart-animated-character
+- locomotion FSM: `idle` or `run`
+- posture FSM: `standing` or `crouching`
 
-![atlas](atlas.png)
+For keyboard movement, the most recently pressed direction key wins. That lets the turn animation finish and continue into a run as long as one movement key is still held.
 
-The atlas contains multiple animations for different character states:
-- **idle**: Standing still animation
-- **run**: Running animation (looped)
-- **jump**: Jumping animation (plays once)
-- **attack**: Attacking animation (plays once)
-- **turn_around**: Turning animation (plays once)
-- **crouch_idle**: Crouching idle anim **Note:** ation
-- **crouch_walk**: Crouch walking animation
-- **crouch_attack**: Crouch attacking animation
-- **to_crouch**: Transition from standing to crouching
-- **from_crouch**: Transition from crouching to standing
+The example uses these input bindings:
 
-## Input Bindings
+Key Triggers:
 
-| Key             | Action                         |
-|-----------------|--------------------------------|
-| **Left Arrow / Right Arrow** | Move left/right   |
-| **Space**       | Jump                           |
-| **X**           | Attack                         |
-| **C**           | Crouch (hold to stay crouched) |
+- <kbd>Space</kbd> - jump
+- <kbd>C</kbd> - crouch
+- <kbd>X</kbd> - attack
+- <kbd>Right</kbd> - right
+- <kbd>Left</kbd> - left
+
+Mouse Triggers:
+
+- <kbd>Button left</kbd> -touch (for left mouse clicks and touch input)
 
 ![input_bindings](input_bindings.png)
 
+## How It Works
 
-## How It Works?
+The example separates three different jobs:
 
-The character uses a **finite state machine** - a programming pattern where the character can only be in one "state" at a time. Each state can define certain things like:
-- Which animation to play
-- Whether the animation loops or plays once
-- What happens when different keys are pressed
-- What state to go to when the animation finishes
+### Reusable FSM module
 
-The system processes input with **priorities**: Attack > Jump > Movement > Crouch/Stand > Turning. This ensures that important actions (like attacking) can interrupt less important ones (like walking).
+`fsm.lua` contains the generic part:
 
-## Key Concepts
+- create a machine with `new()`
+- read state with `get_state_name()` and `get_state()`
+- perform direct transitions with `set_state()`
+- find multi-step routes with `find_path()`
 
-**State Machine**: A design pattern where an object can be in only one state at a time, with clear rules for transitioning between states.
+This keeps the reusable code small and focused.
 
-**Input Priority**: A system that determines which actions take precedence when multiple keys are pressed simultaneously.
+### Animation FSM
 
-**Animation Transitions**: Smooth changes between different animations, often with intermediate "transition" animations.
+The knight owns one animation FSM with states such as:
+
+- `standing_idle`
+- `standing_run`
+- `standing_jump`
+- `standing_turn`
+- `crouching_idle`
+- `crouching_run`
+- `to_crouch`
+- `to_standing`
+
+When the requested animation is not directly reachable, the knight asks `fsm.find_path()` for a legal route and automatically inserts intermediate animation states. This keeps the controller states simple while still allowing animated transitions such as standing up or crouching down.
+
+For example:
+
+- `standing_idle` → `crouching_run` becomes `standing_idle` → `to_crouch` → `crouching_run`
+- `crouching_run` → `standing_idle` becomes `crouching_run` → `to_standing` → `standing_idle`
+
+### Control FSMs
+
+The GUI owns two simpler FSMs:
+
+- locomotion FSM: `idle` / `run`
+- posture FSM: `standing` / `crouching`
+
+These smaller machines are easier to understand than one larger controller state containing every combination directly.
+
+The GUI combines them into one animation target for the knight:
+
+- `standing` + `idle` -> `standing_idle`
+- `standing` + `run` -> `standing_run`
+- `crouching` + `idle` -> `crouching_idle`
+- `crouching` + `run` -> `crouching_run`
+
+The GUI sends stable looping targets with `set_target_state`. One-shot actions such as jump, attack, and turn are sent separately with `trigger_state`.
+
+## Why Split It Like This?
+
+Using several small FSMs keeps each machine focused on one question:
+
+- locomotion asks: "idle or run?"
+- posture asks: "standing or crouching?"
+- animation asks: "which exact animation state should play now?"
+
+That is often easier to read and maintain than one large state table that tries to represent every control and animation concern at once.
+
+## Animation Atlas
+
+The sprite component uses a flipbook atlas with the standing, crouching, attack, jump, and transition animations for the knight character.
+
+> This example uses the Free Knight Character by Nauris "aamatniekss":
+> https://aamatniekss.itch.io/fantasy-knight-free-pixelart-animated-character
+
+![atlas](atlas.png)

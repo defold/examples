@@ -1,4 +1,5 @@
 font: "/assets/SourceSansPro-Semibold.ttf"
-material: "/builtins/fonts/font.material"
-size: 32
+material: "/builtins/fonts/font-df.material"
+size: 28
+output_format: TYPE_DISTANCE_FIELD
 characters: " !\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"

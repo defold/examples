@@ -1,5 +1,5 @@
 [project]
-title = Defold-examples
+title = Finite State Machine
 version = 0.1
 
 [bootstrap]
@@ -61,7 +61,7 @@ max_instances = 32765
 max_emitter_count = 1024
 
 [render]
-clear_color_blue = 1.0
-clear_color_green = 1.0
-clear_color_red = 1.0
+clear_color_blue = 0.183594
+clear_color_green = 0.164063
+clear_color_red = 0.160156
 

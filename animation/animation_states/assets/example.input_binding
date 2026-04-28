@@ -18,3 +18,7 @@ key_trigger {
   input: KEY_LEFT
   action: "left"
 }
+mouse_trigger {
+  input: MOUSE_BUTTON_LEFT
+  action: "touch"
+}
