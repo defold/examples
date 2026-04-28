@@ -22,9 +22,26 @@ embedded_instances {
     x: 360.0
     y: 360.0
   }
-  scale3 {
-    x: 0.5
-    y: 0.5
-    z: 0.5
+}
+embedded_instances {
+  id: "description"
+  data: "embedded_components {\n"
+  "  id: \"label\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 680.0\\n"
+  "  y: 70.0\\n"
+  "}\\n"
+  "pivot: PIVOT_S\\n"
+  "line_break: true\\n"
+  "text: \\\"Animating euler.z rotates the game object around the Z axis.\\\"\\n"
+  "font: \\\"/assets/text32.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 360.0
+    y: 36.0
   }
 }
