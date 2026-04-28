@@ -1,5 +1,5 @@
 [project]
-title = Defold-examples
+title = Euler Rotations
 version = 0.1
 
 [bootstrap]
@@ -62,3 +62,4 @@ max_emitter_count = 1024
 clear_color_blue = 0.183594
 clear_color_green = 0.164063
 clear_color_red = 0.160156
+
