@@ -1,12 +1,12 @@
 script: "/example/control.gui_script"
 fonts {
   name: "text48"
-  font: "/assets/text32.font"
+  font: "/assets/text28.font"
 }
 nodes {
   position {
     x: 500.0
-    y: 150.0
+    y: 170.0
   }
   size {
     x: 120.0
@@ -39,7 +39,7 @@ nodes {
 nodes {
   position {
     x: 200.0
-    y: 150.0
+    y: 170.0
   }
   size {
     x: 120.0
@@ -72,7 +72,7 @@ nodes {
 nodes {
   position {
     x: 350.0
-    y: 150.0
+    y: 170.0
   }
   size {
     x: 120.0
@@ -105,7 +105,7 @@ nodes {
 nodes {
   position {
     x: 500.0
-    y: 250.0
+    y: 270.0
   }
   size {
     x: 120.0
@@ -123,9 +123,6 @@ nodes {
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
-  position {
-    y: 3.0
-  }
   size {
     x: 120.0
     y: 70.0
@@ -143,7 +140,7 @@ nodes {
 nodes {
   position {
     x: 200.0
-    y: 250.0
+    y: 270.0
   }
   size {
     x: 120.0
@@ -178,7 +175,7 @@ nodes {
 nodes {
   position {
     x: 350.0
-    y: 250.0
+    y: 270.0
   }
   size {
     x: 120.0
@@ -213,19 +210,15 @@ nodes {
 nodes {
   position {
     x: 350.0
-    y: 50.0
-  }
-  size {
-    x: 120.0
     y: 70.0
   }
-  color {
-    x: 0.2
-    y: 0.302
-    z: 0.702
+  size {
+    x: 550.0
+    y: 70.0
   }
   type: TYPE_TEXT
-  text: "Use arrow keys, space, X and C."
+  text: "Use keys left, right, space, X and C\n"
+  "or click/touch buttons to change state."
   font: "text48"
   id: "description"
   layer: "text"
