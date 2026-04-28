@@ -1,0 +1,46 @@
+name: "default"
+scale_along_z: 0
+embedded_instances {
+  id: "ship"
+  data: "components {\n"
+  "  id: \"script\"\n"
+  "  component: \"/example/cancel_animation.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"shipBlue_manned\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/sprites.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 80.0
+    y: 360.0
+  }
+}
+embedded_instances {
+  id: "description"
+  data: "embedded_components {\n"
+  "  id: \"label\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 600.0\\n"
+  "  y: 32.0\\n"
+  "}\\n"
+  "line_break: true\\n"
+  "text: \\\"Click or touch anywhere to cancel current animation and move to the cursor position\\\"\\n"
+  "font: \\\"/assets/text32.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 360.0\n"
+  "    y: 60.0\n"
+  "  }\n"
+  "}\n"
+  ""
+}
