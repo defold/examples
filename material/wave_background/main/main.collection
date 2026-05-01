@@ -1,0 +1,26 @@
+name: "main"
+scale_along_z: 0
+embedded_instances {
+  id: "wave_background"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"anim\\\"\\n"
+  "material: \\\"/main/wave_background.material\\\"\\n"
+  "size {\\n"
+  "  x: 960.0\\n"
+  "  y: 640.0\\n"
+  "}\\n"
+  "size_mode: SIZE_MODE_MANUAL\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/builtins/graphics/particle_blob.tilesource\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 480.0
+    y: 320.0
+  }
+}
