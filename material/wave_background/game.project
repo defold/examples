@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /main/main.collectionc
+main_collection = /example/wave_background.collectionc
 
 [script]
 shared_state = 1
@@ -22,3 +22,7 @@ scale_mode = stretch
 [project]
 title = wave_background
 
+[render]
+clear_color_red = 0.160156
+clear_color_green = 0.164063
+clear_color_blue = 0.183594

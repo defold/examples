@@ -18,7 +18,7 @@ void main()
 	// 1. Adjust coordinate scaling and tilt
 	// Rotating or offsetting the UV coordinates can create a diagonal effect
 	// We add time to both X and Y to create motion toward the lower-right corner
-	vec2 uv = var_texcoord0 * 8.0; 
+	vec2 uv = var_texcoord0 * 8.0;
 
 	float speed = t * 2.0;
 
