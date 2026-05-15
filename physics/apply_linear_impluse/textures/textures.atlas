@@ -1,0 +1,4 @@
+images {
+  image: "/textures/pixel.png"
+}
+extrude_borders: 2
