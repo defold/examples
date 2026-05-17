@@ -1,4 +1,10 @@
 images {
   image: "/textures/pixel.png"
 }
+images {
+  image: "/textures/elementStone011.png"
+}
+images {
+  image: "/textures/elementStone013.png"
+}
 extrude_borders: 2

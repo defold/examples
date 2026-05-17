@@ -23,3 +23,8 @@ scale_mode = stretch
 [project]
 title = defold-apply_linear_impluse-example
 
+[render]
+clear_color_red = 0.160156
+clear_color_green = 0.164063
+clear_color_blue = 0.183594
+
