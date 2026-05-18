@@ -115,7 +115,7 @@ embedded_instances {
   "  x: 128.0\\n"
   "  y: 32.0\\n"
   "}\\n"
-  "text: \\\"Click to apply linear impluse to the cube\\\"\\n"
+  "text: \\\"Click to apply linear impulse to the cube\\\"\\n"
   "font: \\\"/fonts/text32.font\\\"\\n"
   "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
   "\"\n"
