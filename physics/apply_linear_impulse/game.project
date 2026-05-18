@@ -21,7 +21,7 @@ use_fixed_timestep = 1
 scale_mode = stretch
 
 [project]
-title = defold-apply_linear_impluse-example
+title = defold-apply_linear_impulse-example
 
 [render]
 clear_color_red = 0.160156
