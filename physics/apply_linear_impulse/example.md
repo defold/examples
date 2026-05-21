@@ -11,3 +11,6 @@ The cube contains a dynamic collisionobject component.
 
 ![image](image.png)
 
+The below script applies a vertical linear impulse to the dynamic collisionobject on click/touch using the `b2d` API functions.
+
+Read more about the [Box2D API here](https://defold.com/ref/stable/b2d-lua/).
