@@ -1,14 +1,18 @@
-uniform mediump mat4 view_proj;
-uniform mediump mat4 world;
-uniform mediump mat4 normal_transform;
-uniform mediump mat4 world_view;
-uniform mediump vec4 cameraPosition;
+#version 140
 
-attribute mediump vec3 position;
-attribute mediump vec3 normal;
-attribute mediump vec2 texcoord0;
+uniform vs_uniforms {
+	mediump mat4 view_proj;
+	mediump mat4 world;
+	mediump mat4 normal_transform;
+	mediump mat4 world_view;
+	mediump vec4 cameraPosition;
+};
 
-varying mediump vec3 vReflect;
+in mediump vec3 position;
+in mediump vec3 normal;
+in mediump vec2 texcoord0;
+
+out mediump vec3 vReflect;
 
 void main()
 {

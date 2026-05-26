@@ -1,4 +1,4 @@
-mesh: "/builtins/assets/meshes/quad_2x2.dae"
+mesh: "/builtins/assets/gltf/quad_2x2.gltf"
 name: "plane"
 materials {
   name: "default"

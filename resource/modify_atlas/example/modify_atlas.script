@@ -62,13 +62,13 @@ local function replace_atlas_image()
 	-- we want to update only a sub region of the atlas starting at a
 	-- certain position and with a certain size
 	local texture_info = {
-		type = resource.TEXTURE_TYPE_2D,
+		type = graphics.TEXTURE_TYPE_2D,
 		width = width,
 		height = height,
-		format = resource.TEXTURE_FORMAT_RGBA,
+		format = graphics.TEXTURE_FORMAT_RGBA,
 		x = x,
 		y = y,
-		compression_type = resource.COMPRESSION_TYPE_DEFAULT,
+		compression_type = graphics.COMPRESSION_TYPE_DEFAULT,
 		num_mip_maps = texture.mipmaps,
 	}
 	-- update the atlas texture with the pixels from the provided buffer

@@ -9,6 +9,7 @@ build
 builtins
 js-web/
 node_modules/
+.editor_settings
 
 # IntelliJ IDEA
 /.idea

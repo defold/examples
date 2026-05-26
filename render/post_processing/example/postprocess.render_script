@@ -174,17 +174,17 @@ local function create_postprocess_rt(self, width, height)
         format = graphics.TEXTURE_FORMAT_RGBA,
         width = width,
         height = height,
-        min_filter = render.FILTER_LINEAR,
-        mag_filter = render.FILTER_LINEAR,
-        u_wrap = render.WRAP_CLAMP_TO_EDGE,
-        v_wrap = render.WRAP_CLAMP_TO_EDGE
+        min_filter = graphics.TEXTURE_FILTER_LINEAR,
+        mag_filter = graphics.TEXTURE_FILTER_LINEAR,
+        u_wrap = graphics.TEXTURE_WRAP_CLAMP_TO_EDGE,
+        v_wrap = graphics.TEXTURE_WRAP_CLAMP_TO_EDGE
     }
     local depth_params = {
         format = graphics.TEXTURE_FORMAT_DEPTH,
         width = width,
         height = height,
     }
-    self.postprocess_rt =  render.render_target("postprocess_rt", { [render.BUFFER_COLOR_BIT] = color_params, [render.BUFFER_DEPTH_BIT] = depth_params } )
+    self.postprocess_rt =  render.render_target("postprocess_rt", { [graphics.BUFFER_TYPE_COLOR0_BIT] = color_params, [graphics.BUFFER_TYPE_DEPTH_BIT] = depth_params } )
     self.postprocess_rt_width = width
     self.postprocess_rt_height = height
 end
@@ -298,7 +298,7 @@ function update(self)
     --
     render.set_view(vmath.matrix4())
     render.set_projection(vmath.matrix4())
-    render.enable_texture(0, self.postprocess_rt, render.BUFFER_COLOR_BIT)
+    render.enable_texture(0, self.postprocess_rt, graphics.BUFFER_TYPE_COLOR0_BIT)
     render.draw(predicates.postprocess)
     render.disable_texture(0)
     
