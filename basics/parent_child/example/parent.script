@@ -1,5 +1,5 @@
 function init(self)
-    msg.post(".", "acquire_input_focus") -- <1>
+	msg.post(".", "acquire_input_focus") -- <1>
 
 	local pos = go.get_position() -- <2>
 	go.animate(".", "position.y", go.PLAYBACK_LOOP_PINGPONG, pos.y + 300, go.EASING_INOUTSINE, 3) -- <3>
@@ -9,8 +9,8 @@ end
 
 
 function on_input(self, action_id, action)
-    if action_id == hash("touch") and action.pressed then
-    	if self.has_child then
+	if action_id == hash("touch") and action.pressed then
+		if self.has_child then
 			msg.post("child", "set_parent", { keep_world_transform = 1 }) -- <5>
 			label.set_text("#label", "Click to child...") -- <6>
 		else
@@ -18,7 +18,7 @@ function on_input(self, action_id, action)
 			label.set_text("#label", "Click to detach...") -- <8>
 		end
 		self.has_child = not self.has_child -- <9>
-    end 
+	end 
 end
 
 --[[

@@ -1,10 +1,14 @@
-uniform mediump mat4 mtx_worldview;
-uniform mediump mat4 mtx_proj;
+#version 140
 
-attribute mediump vec4 position;
-attribute mediump vec4 color0;
+uniform vs_uniforms {
+	mediump mat4 mtx_worldview;
+	mediump mat4 mtx_proj;
+};
 
-varying mediump vec4 var_color;
+in mediump vec4 position;
+in mediump vec4 color0;
+
+out mediump vec4 var_color;
 
 void main()
 {

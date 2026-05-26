@@ -3,8 +3,8 @@ local function create_texture(width, height)
 	local create_texture_params = {
 		width  = width,
 		height = height,
-		type   = resource.TEXTURE_TYPE_2D,
-		format = resource.TEXTURE_FORMAT_RGBA,
+		type   = graphics.TEXTURE_TYPE_2D,
+		format = graphics.TEXTURE_FORMAT_RGBA,
 	}
 	local my_texture_id = resource.create_texture("/my_custom_texture.texturec", create_texture_params)
 
@@ -24,7 +24,7 @@ local function create_texture(width, height)
 	end
 
 	-- set the pixels on the texture
-	local set_texture_params = { width=width, height=height, x=0, y=0, type=resource.TEXTURE_TYPE_2D, format=resource.TEXTURE_FORMAT_RGBA, num_mip_maps=1 }
+	local set_texture_params = { width=width, height=height, x=0, y=0, type=graphics.TEXTURE_TYPE_2D, format=graphics.TEXTURE_FORMAT_RGBA, num_mip_maps=1 }
 	resource.set_texture(my_texture_id, set_texture_params, buf)
 	
 	return my_texture_id

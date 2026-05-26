@@ -19,7 +19,7 @@ function on_message(self, message_id, message, sender)
 		label.set_text("#speech", "I'm going...")
 		go.animate(".", "position", go.PLAYBACK_ONCE_FORWARD, message.position, go.EASING_INOUTCUBIC, 1.5, 0, landed)
 	elseif message_id == hash("i'm there") then -- <7>
-		label.set_text("#speech", "Great!")		
+		label.set_text("#speech", "Great!")
 	end
 end
 

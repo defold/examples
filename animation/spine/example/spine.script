@@ -14,7 +14,7 @@ function on_input(self, action_id, action)
 			spine.play_anim("#spinemodel", hash("idle"), go.PLAYBACK_LOOP_FORWARD, properties)	
 			label.set_text("#label", "Click to run...")
 			self.state = "idle"
-		end			
+		end
 	end	
 end
 
