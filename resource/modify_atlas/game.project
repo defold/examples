@@ -1,5 +1,5 @@
 [project]
-title = Defold-examples
+title = Resource Modify Atlas
 version = 0.1
 custom_resources = /example/resources/
 
