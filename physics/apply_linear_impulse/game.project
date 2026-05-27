@@ -5,8 +5,8 @@ main_collection = /example/apply_linear_impulse.collectionc
 shared_state = 1
 
 [display]
-width = 960
-height = 640
+width = 720
+height = 720
 high_dpi = 1
 
 [android]
@@ -27,3 +27,4 @@ title = defold-apply-linear-impulse-example
 clear_color_red = 0.160156
 clear_color_green = 0.164063
 clear_color_blue = 0.183594
+
