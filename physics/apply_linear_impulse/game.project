@@ -20,6 +20,9 @@ use_fixed_timestep = 1
 [html5]
 scale_mode = stretch
 
+[input]
+game_binding = /input/game.input_bindingc
+
 [project]
 title = defold-apply-linear-impulse-example
 
@@ -27,4 +30,3 @@ title = defold-apply-linear-impulse-example
 clear_color_red = 0.160156
 clear_color_green = 0.164063
 clear_color_blue = 0.183594
-
