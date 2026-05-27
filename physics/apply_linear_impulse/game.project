@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /scenes/main.collectionc
+main_collection = /example/apply_linear_impulse.collectionc
 
 [script]
 shared_state = 1
@@ -21,10 +21,9 @@ use_fixed_timestep = 1
 scale_mode = stretch
 
 [project]
-title = defold-apply_linear_impulse-example
+title = defold-apply-linear-impulse-example
 
 [render]
 clear_color_red = 0.160156
 clear_color_green = 0.164063
 clear_color_blue = 0.183594
-
