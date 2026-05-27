@@ -1,5 +1,5 @@
 [project]
-title = render-world_to_screen
+title = Render World to Screen
 version = 0.1
 
 [bootstrap]
