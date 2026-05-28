@@ -1,0 +1,78 @@
+#version 140
+
+in highp vec4 position;
+in mediump vec2 texcoord0;
+in mediump vec3 normal;
+
+out highp vec4 var_position;
+out mediump vec3 var_normal;
+out mediump vec2 var_texcoord0;
+out mediump vec4 var_light;
+
+uniform vs_uniforms
+{
+    mediump mat4 mtx_worldview;
+    mediump mat4 mtx_view;
+    mediump mat4 mtx_proj;
+    mediump mat4 mtx_normal;
+    mediump vec4 light;
+    mediump vec4 morph_targets_weights[2];
+};
+
+uniform sampler2DArray morph_targets;
+
+vec2 GetMorphUV(int index, int width, int height)
+{
+    int x = index % width;
+    int y = index / width;
+
+    return vec2(
+        (float(x) + 0.5) / float(width),
+        (float(y) + 0.5) / float(height)
+    );
+}
+
+void ApplyWeightedMorphTarget(in vec2 uv, in float weight, inout vec3 p, inout vec3 n, in int target)
+{
+    if (weight == 0.0) return;
+    int posLayer = target * 3 + 0;
+    int norLayer = target * 3 + 1;
+    p += weight * texture(morph_targets, vec3(uv, posLayer)).xyz;
+    n += weight * texture(morph_targets, vec3(uv, norLayer)).xyz;
+}
+
+void GetMorphTargetData(int vertexIndex, out vec3 posDelta, out vec3 normalDelta)
+{
+    posDelta     = vec3(0.0);
+    normalDelta  = vec3(0.0);
+
+#ifndef EDITOR
+    ivec3 morph_texture_size = textureSize(morph_targets, 0);
+    vec2 uv = GetMorphUV(vertexIndex, morph_texture_size.x, morph_texture_size.y);
+
+    ApplyWeightedMorphTarget(uv, morph_targets_weights[0].x, posDelta, normalDelta, 0);
+    ApplyWeightedMorphTarget(uv, morph_targets_weights[0].y, posDelta, normalDelta, 1);
+    ApplyWeightedMorphTarget(uv, morph_targets_weights[0].z, posDelta, normalDelta, 2);
+    ApplyWeightedMorphTarget(uv, morph_targets_weights[0].w, posDelta, normalDelta, 3);
+
+    ApplyWeightedMorphTarget(uv, morph_targets_weights[1].x, posDelta, normalDelta, 4);
+    ApplyWeightedMorphTarget(uv, morph_targets_weights[1].y, posDelta, normalDelta, 5);
+    ApplyWeightedMorphTarget(uv, morph_targets_weights[1].z, posDelta, normalDelta, 6);
+    ApplyWeightedMorphTarget(uv, morph_targets_weights[1].w, posDelta, normalDelta, 7);
+#endif
+}
+
+void main()
+{
+    vec3 posDelta, normDelta;
+    GetMorphTargetData(gl_VertexIndex, posDelta, normDelta);
+    vec3 morphed_p = position.xyz + posDelta;
+    vec3 morphed_n = normalize(normal + normDelta);
+
+    vec4 p = mtx_worldview * vec4(morphed_p, 1.0);
+    var_light = mtx_view * vec4(light.xyz, 1.0);
+    var_position = p;
+    var_texcoord0 = texcoord0;
+    var_normal = normalize((mtx_normal * vec4(morphed_n, 0.0)).xyz);
+    gl_Position = mtx_proj * p;
+}

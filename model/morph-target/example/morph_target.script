@@ -1,0 +1,7 @@
+function init(self)
+	model.play_anim("#model", "TheWave", go.PLAYBACK_LOOP_FORWARD) -- <1>
+end
+
+--[[
+1. Play the morph target animation named "TheWave" from the glTF file in a loop.
+]]

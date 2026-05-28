@@ -1,0 +1,65 @@
+name: "morph_target"
+scale_along_z: 1
+embedded_instances {
+  id: "morph_target"
+  data: "components {\n"
+  "  id: \"script\"\n"
+  "  component: \"/example/morph_target.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/assets/models/MorphStressTest.glb\\\"\\n"
+  "animations: \\\"/assets/models/MorphStressTest.glb\\\"\\n"
+  "default_animation: \\\"TheWave\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"Base\\\"\\n"
+  "  material: \\\"/builtins/materials/model.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/assets/textures/defold_blue.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "materials {\\n"
+  "  name: \\\"TestMaterial\\\"\\n"
+  "  material: \\\"/assets/materials/morph_target.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/assets/textures/defold_orange.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "  rotation {\n"
+  "    y: -0.70710677\n"
+  "    w: 0.70710677\n"
+  "  }\n"
+  "}\n"
+  ""
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+embedded_instances {
+  id: "camera"
+  data: "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.0\\n"
+  "fov: 0.7854\\n"
+  "near_z: 0.1\\n"
+  "far_z: 10.0\\n"
+  "auto_aspect_ratio: 1\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    y: 2.5
+    z: 5.0
+  }
+  rotation {
+    x: -0.17364818
+    w: 0.9848077
+  }
+}
