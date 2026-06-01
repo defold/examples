@@ -1,6 +1,6 @@
 name: "morph_target"
 tags: "model"
-vertex_program: "/assets/materials/morph_target.vp"
+vertex_program: "/example/morph_target.vp"
 fragment_program: "/builtins/materials/model.fp"
 vertex_space: VERTEX_SPACE_LOCAL
 vertex_constants {
