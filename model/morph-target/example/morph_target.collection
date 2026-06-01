@@ -6,10 +6,6 @@ embedded_instances {
   "  id: \"script\"\n"
   "  component: \"/example/morph_target.script\"\n"
   "}\n"
-  "components {\n"
-  "  id: \"info\"\n"
-  "  component: \"/example/info.gui\"\n"
-  "}\n"
   "embedded_components {\n"
   "  id: \"model\"\n"
   "  type: \"model\"\n"
@@ -20,7 +16,7 @@ embedded_instances {
   "name: \\\"{{NAME}}\\\"\\n"
   "materials {\\n"
   "  name: \\\"Base\\\"\\n"
-  "  material: \\\"/builtins/materials/model.material\\\"\\n"
+  "  material: \\\"/assets/materials/morph_target.material\\\"\\n"
   "  textures {\\n"
   "    sampler: \\\"tex0\\\"\\n"
   "    texture: \\\"/assets/textures/defold_blue.png\\\"\\n"
@@ -28,7 +24,7 @@ embedded_instances {
   "}\\n"
   "materials {\\n"
   "  name: \\\"TestMaterial\\\"\\n"
-  "  material: \\\"/builtins/materials/model.material\\\"\\n"
+  "  material: \\\"/assets/materials/morph_target.material\\\"\\n"
   "  textures {\\n"
   "    sampler: \\\"tex0\\\"\\n"
   "    texture: \\\"/assets/textures/defold_orange.png\\\"\\n"
@@ -67,4 +63,12 @@ embedded_instances {
     x: -0.17364818
     w: 0.9848077
   }
+}
+embedded_instances {
+  id: "info"
+  data: "components {\n"
+  "  id: \"info\"\n"
+  "  component: \"/example/info.gui\"\n"
+  "}\n"
+  ""
 }
