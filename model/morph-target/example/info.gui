@@ -1,0 +1,21 @@
+fonts {
+  name: "main"
+  font: "/assets/fonts/text28.font"
+}
+nodes {
+  position {
+    x: 360.0
+    y: 660.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Click/touch to play next animation"
+  font: "main"
+  id: "text"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

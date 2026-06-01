@@ -31,7 +31,7 @@ The model has two material slots. `Base` uses the built-in model material, while
 
 ## How It Works
 
-`morph_target.script` starts the `TheWave` animation in a loop. The glTF animation changes the model's morph target weights, and Defold makes those weights available to the custom material through the `morph_targets_weights` shader constant.
+`morph_target.script` starts the `TheWave` animation in a loop, and you can cycle through other animations for the model by clicking or touching anywhere. The glTF animation changes the model's morph target weights, and Defold makes those weights available to the custom material through the `morph_targets_weights` shader constant.
 
 The vertex shader samples the `morph_targets` texture array, combines the active target offsets, and adds the result to each vertex position before the model is transformed by the camera matrices.
 
