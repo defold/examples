@@ -28,7 +28,7 @@ embedded_instances {
   "}\\n"
   "materials {\\n"
   "  name: \\\"TestMaterial\\\"\\n"
-  "  material: \\\"/assets/materials/morph_target.material\\\"\\n"
+  "  material: \\\"/builtins/materials/model.material\\\"\\n"
   "  textures {\\n"
   "    sampler: \\\"tex0\\\"\\n"
   "    texture: \\\"/assets/textures/defold_orange.png\\\"\\n"
