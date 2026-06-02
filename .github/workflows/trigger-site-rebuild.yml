@@ -13,6 +13,10 @@ jobs:
       { name: 'Checkout', uses: actions/checkout@v4, with: { fetch-depth: 1 } },
       { name: 'Install Python', uses: actions/setup-python@v4, with: { python-version: 3.10.5, architecture: x64 } },
       {
+        name: 'Validate examples',
+        run: 'python validate_examples.py'
+      },
+      {
         name: 'Create archives',
         run: 'python create_archives.py'
       },
