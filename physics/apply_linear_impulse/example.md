@@ -19,7 +19,7 @@ This example shows how a Box2D body can be pushed instantly with a linear impuls
 
 The collection contains a cube game object with a sprite, a dynamic collision object, and `/example/apply_linear_impulse.script`. A static platform collision object catches the cube after the impulse. The project enables fixed-step physics and uses Box2D through Defold's built-in `b2d` API.
 
-![setup](setup.webp)
+![setup](setup.png)
 
 ## How It Works
 
