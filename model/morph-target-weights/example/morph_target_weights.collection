@@ -1,0 +1,65 @@
+name: "morph_target_weights"
+scale_along_z: 1
+embedded_instances {
+  id: "model"
+  data: "components {\n"
+  "  id: \"script\"\n"
+  "  component: \"/example/morph_target_set_weight.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/assets/models/cube_to_sphere.gltf\\\"\\n"
+  "skeleton: \\\"/assets/models/cube_to_sphere.gltf\\\"\\n"
+  "animations: \\\"/assets/models/cube_to_sphere.gltf\\\"\\n"
+  "default_animation: \\\"Cube_to_Sphere\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"Mat_Checker_Texture\\\"\\n"
+  "  material: \\\"/example/morph_target.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/builtins/assets/images/logo/logo_256.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    z: -0.5\n"
+  "  }\n"
+  "  rotation {\n"
+  "    y: -0.70710677\n"
+  "    w: 0.70710677\n"
+  "  }\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "camera"
+  data: "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.0\\n"
+  "fov: 0.7854\\n"
+  "near_z: 0.1\\n"
+  "far_z: 10.0\\n"
+  "auto_aspect_ratio: 1\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    y: 2.0
+    z: 5.0
+  }
+  rotation {
+    x: -0.17364818
+    w: 0.9848077
+  }
+}
+embedded_instances {
+  id: "info"
+  data: "components {\n"
+  "  id: \"info\"\n"
+  "  component: \"/example/info.gui\"\n"
+  "}\n"
+  ""
+}
