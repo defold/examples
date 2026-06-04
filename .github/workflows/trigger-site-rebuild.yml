@@ -4,6 +4,14 @@ on:
   push:
     branches:
       - 'master'
+    paths:
+      - '*/*/**'
+      - '.github/workflows/validate-examples.yml'
+      - '.github/workflows/trigger-site-rebuild.yml'
+      - 'validate_examples.py'
+      - 'build_examples.py'
+      - 'download_bob.py'
+      - 'create_archives.py'
 
 jobs:
   validate:
@@ -14,7 +22,7 @@ jobs:
       { name: 'Install Python', uses: actions/setup-python@v4, with: { python-version: 3.10.5, architecture: x64 } },
       {
         name: 'Validate examples',
-        run: 'python validate_examples.py'
+        run: 'python validate_examples.py --changed-from "${{ github.event.before }}" --changed-to "${{ github.sha }}"'
       }
     ]
 

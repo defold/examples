@@ -29,22 +29,23 @@ def touched_example_projects(base_ref: str, head_ref: str) -> list[Path]:
 		return tracked_example_projects()
 
 	output = subprocess.check_output(
-		["git", "diff", "--name-only", base_ref, head_ref],
+		["git", "diff", "--name-status", "--find-renames", base_ref, head_ref],
 		text=True,
 		stderr=subprocess.DEVNULL,
 	)
 	projects: set[Path] = set()
 
 	for line in output.splitlines():
-		if not line.strip():
-			continue
+		parts = line.split("\t")
+		for candidate in parts[1:]:
+			if not candidate:
+				continue
 
-		path = Path(line)
-		if len(path.parts) < 2:
-			continue
+			path = Path(candidate)
+			if len(path.parts) < 2:
+				continue
 
-		project_dir = Path(path.parts[0]) / path.parts[1]
-		if (project_dir / "game.project").is_file():
+			project_dir = Path(path.parts[0]) / path.parts[1]
 			projects.add(project_dir)
 
 	return sorted(projects)
@@ -80,7 +81,8 @@ def main() -> int:
 		return 0
 
 	for project_dir in projects:
-		build_project(args.bob_jar, project_dir)
+		if (project_dir / "game.project").is_file():
+			build_project(args.bob_jar, project_dir)
 
 	print("Example builds passed.")
 	return 0
