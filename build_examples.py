@@ -30,6 +30,10 @@ def tracked_example_projects() -> list[Path]:
 	return sorted(path.parent for path in Path(".").glob("*/*/game.project"))
 
 
+def is_example_project_dir(project_dir: Path) -> bool:
+	return len(project_dir.parts) == 2 and not project_dir.parts[0].startswith(".")
+
+
 def touched_example_projects(base_ref: str, head_ref: str) -> list[Path]:
 	if not base_ref or base_ref == "0000000000000000000000000000000000000000":
 		return tracked_example_projects()
@@ -51,7 +55,9 @@ def touched_example_projects(base_ref: str, head_ref: str) -> list[Path]:
 			if len(path.parts) < 2:
 				continue
 
-			projects.add(Path(path.parts[0]) / path.parts[1])
+			project_dir = Path(path.parts[0]) / path.parts[1]
+			if is_example_project_dir(project_dir):
+				projects.add(project_dir)
 
 	return sorted(projects)
 
