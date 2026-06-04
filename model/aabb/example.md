@@ -9,7 +9,7 @@ thumbnail: thumbnail.webp
 
 An axis-aligned bounding box, or AABB, is the smallest box aligned to the world X, Y, and Z axes that contains an object. Because it is described by only two corners, `min` and `max`, it is cheap to compare, combine, and use for visibility or spatial tests.
 
-This example spawns falling crate models and keeps the camera focused on all visible crates. Each crate reports its local AABB, and the script combines those bounds into one scene-sized box used for camera placement.
+This example spawns falling crate models with an unlit material and keeps the camera focused on all visible crates. Each crate reports its local AABB, and the script combines those bounds into one scene-sized box used for camera placement.
 
 Press SPACE, click, or touch the screen to spawn another crate.
 
@@ -28,12 +28,14 @@ The collection contains three game objects: `camera`, `main`, and `ground`.
 : Contains a perspective Camera component. `aabb.script` reads its field of view and orientation, then moves it each frame so the combined bounds stay visible.
 
 <kbd>main</kbd>
-: Contains `aabb.script` and two Factory components. The factories spawn `/example/box1.go` and `/example/box2.go`, which are crate model game objects using two Kenney crate glTF assets.
+: Contains `aabb.script` and two Factory components. The factories spawn `/example/box1.go` and `/example/box2.go`, which are crate model game objects using two Kenney crate glTF assets and the shared unlit material.
 
 <kbd>ground</kbd>
 : Contains a static 3D collision object and a simple sprite plane. The crates fall onto this surface so the tracked bounds keep changing as new crates are added.
 
-![setup](setup.webp)
+![setup](setup.png)
+
+The models use an unlit material so the texture colors stay clear and even without setting up lights. For the material and shaders details, see the [Unlit material example](https://defold.com/examples/material/unlit/).
 
 ## How It Works
 
