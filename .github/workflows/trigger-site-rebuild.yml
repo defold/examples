@@ -32,6 +32,7 @@ jobs:
     if: "!contains(github.event.head_commit.message, 'skip-ci')"
     outputs:
       example_count: ${{ steps.count.outputs.example_count }}
+      changed_examples: ${{ steps.count.outputs.changed_examples }}
     steps: [
       { name: 'Checkout', uses: actions/checkout@v4, with: { fetch-depth: 0 } },
       { name: 'Install Python', uses: actions/setup-python@v4, with: { python-version: 3.10.5, architecture: x64 } },
@@ -47,7 +48,7 @@ jobs:
       {
         id: 'count',
         name: 'Count touched examples',
-        run: 'echo "example_count=$(python build_examples.py --changed-from \"${{ github.event.before }}\" --changed-to \"${{ github.sha }}\" --dry-run)" >> "$GITHUB_OUTPUT"'
+        run: 'echo "example_count=$(python build_examples.py --changed-from \"${{ github.event.before }}\" --changed-to \"${{ github.sha }}\" --dry-run)" >> "$GITHUB_OUTPUT"; echo "changed_examples=$(python build_examples.py --changed-from \"${{ github.event.before }}\" --changed-to \"${{ github.sha }}\" --list-json)" >> "$GITHUB_OUTPUT"'
       },
       {
         name: 'Build touched examples',
@@ -82,12 +83,10 @@ jobs:
       },
       {
         name: 'Repository dispatch',
-        uses: defold/repository-dispatch@1.2.1,
-        with: {
-            repo: 'defold/defold.github.io',
-            token: '${{ secrets.SERVICES_GITHUB_TOKEN }}',
-            user: 'services@defold.se',
-            action: 'examples'
-        }
+        env: {
+          DISPATCH_TOKEN: '${{ secrets.SERVICES_GITHUB_TOKEN }}',
+          CHANGED_EXAMPLES: '${{ needs.build.outputs.changed_examples }}'
+        },
+        run: 'python -c ''import json, os; print(json.dumps({"event_type":"examples","client_payload":{"examples_sha":os.environ["GITHUB_SHA"],"changed_examples":json.loads(os.environ.get("CHANGED_EXAMPLES") or "[]")}}))'' > dispatch.json && curl --fail --request POST --url https://api.github.com/repos/defold/defold.github.io/dispatches --header "Accept: application/vnd.github+json" --header "Authorization: Bearer ${DISPATCH_TOKEN}" --header "X-GitHub-Api-Version: 2022-11-28" --data @dispatch.json'
       }
     ]

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import shutil
 import subprocess
 import sys
@@ -61,6 +62,7 @@ def parse_args() -> argparse.Namespace:
 	parser.add_argument("--changed-from", default="")
 	parser.add_argument("--changed-to", default="")
 	parser.add_argument("--dry-run", action="store_true")
+	parser.add_argument("--list-json", action="store_true")
 	return parser.parse_args()
 
 
@@ -126,6 +128,10 @@ def main() -> int:
 
 	if args.dry_run:
 		print(len(projects))
+		return 0
+
+	if args.list_json:
+		print(json.dumps([str(project) for project in projects]))
 		return 0
 
 	for project_dir in projects:
