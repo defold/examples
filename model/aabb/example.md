@@ -1,6 +1,6 @@
 ---
 tags: model
-title: AABB - framing objects with a camera
+title: AABB to frame objects with a camera
 brief: This example shows how to use `model.get_aabb()` to frame moving 3D objects with a camera.
 scripts: aabb.script
 author: Artsiom Trubchyk

@@ -1,5 +1,5 @@
 [project]
-title = model_aabb
+title = AABB to frame camera
 version = 1.0.0
 
 [bootstrap]
