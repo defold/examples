@@ -78,7 +78,6 @@ embedded_instances {
 }
 embedded_instances {
   id: "camera"
-  children: "instructions"
   data: "components {\n"
   "  id: \"orbit_camera\"\n"
   "  component: \"/example/orbit_camera.script\"\n"
@@ -87,6 +86,16 @@ embedded_instances {
   "    value: \"13.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
+  "  properties {\n"
+  "    id: \"min_zoom\"\n"
+  "    value: \"8.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"offset\"\n"
+  "    value: \"0.0, 1.0, 0.0\"\n"
+  "    type: PROPERTY_TYPE_VECTOR3\n"
+  "  }\n"
   "}\n"
   "embedded_components {\n"
   "  id: \"camera\"\n"
@@ -94,7 +103,7 @@ embedded_instances {
   "  data: \"aspect_ratio: 1.0\\n"
   "fov: 0.7854\\n"
   "near_z: 0.1\\n"
-  "far_z: 1000.0\\n"
+  "far_z: 30.0\\n"
   "auto_aspect_ratio: 1\\n"
   "\"\n"
   "}\n"
@@ -109,27 +118,10 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "instructions"
-  data: "embedded_components {\n"
-  "  id: \"label\"\n"
-  "  type: \"label\"\n"
-  "  data: \"size {\\n"
-  "  x: 128.0\\n"
-  "  y: 32.0\\n"
-  "}\\n"
-  "text: \\\"1-5 to play animations\\\"\\n"
-  "font: \\\"/assets/text48.font\\\"\\n"
-  "material: \\\"/builtins/fonts/label.material\\\"\\n"
-  "\"\n"
+  id: "gui"
+  data: "components {\n"
+  "  id: \"example\"\n"
+  "  component: \"/example/example.gui\"\n"
   "}\n"
   ""
-  position {
-    y: -3.930587
-    z: -12.866642
-  }
-  scale3 {
-    x: 0.01
-    y: 0.01
-    z: 0.01
-  }
 }
