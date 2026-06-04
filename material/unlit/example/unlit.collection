@@ -21,35 +21,43 @@ embedded_instances {
 }
 embedded_instances {
   id: "camera"
+  children: "offset"
   data: "components {\n"
   "  id: \"orbit_camera\"\n"
   "  component: \"/example/orbit_camera.script\"\n"
   "  properties {\n"
   "    id: \"zoom\"\n"
-  "    value: \"7.0\"\n"
+  "    value: \"1.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"
   "    id: \"offset\"\n"
-  "    value: \"0.0, 0.5, 0.0\"\n"
+  "    value: \"0.0, 1.0, 0.0\"\n"
   "    type: PROPERTY_TYPE_VECTOR3\n"
   "  }\n"
   "}\n"
-  "embedded_components {\n"
+  ""
+  rotation {
+    x: -0.27781594
+    y: 0.36497167
+    z: 0.11507513
+    w: 0.88111955
+  }
+}
+embedded_instances {
+  id: "offset"
+  data: "embedded_components {\n"
   "  id: \"camera\"\n"
   "  type: \"camera\"\n"
   "  data: \"aspect_ratio: 1.0\\n"
   "fov: 0.7854\\n"
   "near_z: 0.1\\n"
-  "far_z: 1000.0\\n"
+  "far_z: 10.0\\n"
   "auto_aspect_ratio: 1\\n"
   "\"\n"
   "}\n"
   ""
-  rotation {
-    x: -0.26769933
-    y: 0.3956773
-    z: 0.12174567
-    w: 0.8700313
+  position {
+    z: 6.0
   }
 }
