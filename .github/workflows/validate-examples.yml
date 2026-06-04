@@ -2,15 +2,35 @@ name: Validate examples
 
 on:
   pull_request:
+    paths:
+      - '*/*/**'
+      - '.github/workflows/validate-examples.yml'
+      - '.github/workflows/trigger-site-rebuild.yml'
+      - 'validate_examples.py'
+      - 'build_examples.py'
+      - 'download_bob.py'
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps: [
-      { name: 'Checkout', uses: actions/checkout@v4, with: { fetch-depth: 1 } },
+      { name: 'Checkout', uses: actions/checkout@v4, with: { fetch-depth: 0 } },
       { name: 'Install Python', uses: actions/setup-python@v4, with: { python-version: 3.10.5, architecture: x64 } },
       {
         name: 'Validate examples',
-        run: 'python validate_examples.py'
+        run: 'python validate_examples.py --changed-from "${{ github.event.pull_request.base.sha }}" --changed-to "${{ github.event.pull_request.head.sha }}"'
+      },
+      {
+        name: 'Install Java',
+        uses: actions/setup-java@v4,
+        with: { distribution: 'temurin', java-version: '25' }
+      },
+      {
+        name: 'Download Bob',
+        run: 'python download_bob.py --channel beta --output bob.jar'
+      },
+      {
+        name: 'Build touched examples',
+        run: 'python build_examples.py --bob-jar bob.jar --changed-from "${{ github.event.pull_request.base.sha }}" --changed-to "${{ github.event.pull_request.head.sha }}"'
       }
     ]
