@@ -61,6 +61,10 @@ def touched_example_dirs(base_ref: str, head_ref: str) -> list[Path]:
 	return sorted(directories)
 
 
+def normalize_ref(value: str) -> str:
+	return value.strip().strip("\"'")
+
+
 def frontmatter_value(markdown_file: Path, key: str) -> str | None:
 	lines = markdown_file.read_text(encoding="utf-8").splitlines()
 	if not lines or lines[0] != "---":
@@ -108,12 +112,14 @@ def parse_args() -> argparse.Namespace:
 
 def validate() -> int:
 	args = parse_args()
+	changed_from = normalize_ref(args.changed_from)
+	changed_to = normalize_ref(args.changed_to)
 
 	errors: list[str] = []
 
 	example_dirs = (
-		touched_example_dirs(args.changed_from, args.changed_to)
-		if args.changed_from and args.changed_to
+		touched_example_dirs(changed_from, changed_to)
+		if changed_from and changed_to
 		else tracked_example_dirs()
 	)
 

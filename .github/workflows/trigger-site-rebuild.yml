@@ -48,7 +48,11 @@ jobs:
       {
         id: 'count',
         name: 'Count touched examples',
-        run: 'echo "example_count=$(python build_examples.py --changed-from \"${{ github.event.before }}\" --changed-to \"${{ github.sha }}\" --dry-run)" >> "$GITHUB_OUTPUT"; echo "changed_examples=$(python build_examples.py --changed-from \"${{ github.event.before }}\" --changed-to \"${{ github.sha }}\" --list-json)" >> "$GITHUB_OUTPUT"'
+        env: {
+          BEFORE_SHA: '${{ github.event.before }}',
+          AFTER_SHA: '${{ github.sha }}'
+        },
+        run: 'echo "example_count=$(python build_examples.py --changed-from "$BEFORE_SHA" --changed-to "$AFTER_SHA" --dry-run)" >> "$GITHUB_OUTPUT"; echo "changed_examples=$(python build_examples.py --changed-from "$BEFORE_SHA" --changed-to "$AFTER_SHA" --list-json)" >> "$GITHUB_OUTPUT"'
       },
       {
         name: 'Build touched examples',

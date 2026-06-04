@@ -56,6 +56,10 @@ def touched_example_projects(base_ref: str, head_ref: str) -> list[Path]:
 	return sorted(projects)
 
 
+def normalize_ref(value: str) -> str:
+	return value.strip().strip("\"'")
+
+
 def parse_args() -> argparse.Namespace:
 	parser = argparse.ArgumentParser()
 	parser.add_argument("--bob-jar", default="bob.jar")
@@ -121,8 +125,11 @@ def build_project(bob_jar: str, project_dir: Path) -> None:
 def main() -> int:
 	args = parse_args()
 
-	if args.changed_from and args.changed_to:
-		projects = touched_example_projects(args.changed_from, args.changed_to)
+	changed_from = normalize_ref(args.changed_from)
+	changed_to = normalize_ref(args.changed_to)
+
+	if changed_from and changed_to:
+		projects = touched_example_projects(changed_from, changed_to)
 	else:
 		projects = tracked_example_projects()
 
