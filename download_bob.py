@@ -8,7 +8,8 @@ import urllib.request
 from pathlib import Path
 
 
-GITHUB_RELEASES_URL = "https://api.github.com/repos/defold/defold/releases?per_page=100"
+INFO_URL_TEMPLATE = "https://d.defold.com/{channel}/info.json"
+BOB_URL_TEMPLATE = "https://d.defold.com/archive/{sha1}/bob/bob.jar"
 
 
 def parse_args() -> argparse.Namespace:
@@ -18,32 +19,21 @@ def parse_args() -> argparse.Namespace:
 	return parser.parse_args()
 
 
-def fetch_releases() -> list[dict[str, object]]:
+def fetch_json(url: str) -> dict[str, object]:
 	request = urllib.request.Request(
-		GITHUB_RELEASES_URL,
+		url,
 		headers={"User-Agent": "codex-defold-examples"},
 	)
 	with urllib.request.urlopen(request) as response:
 		return json.loads(response.read().decode("utf-8"))
 
 
-def find_release(releases: list[dict[str, object]], channel: str) -> dict[str, object]:
-	channel = channel.lower()
-	for release in releases:
-		name = str(release.get("name", "")).lower()
-		tag_name = str(release.get("tag_name", "")).lower()
-		if release.get("prerelease") and (channel in name or channel in tag_name):
-			return release
-
-	raise SystemExit(f"Could not find a {channel} release for defold/defold.")
-
-
-def find_bob_asset(release: dict[str, object]) -> dict[str, object]:
-	for asset in release.get("assets", []):
-		if isinstance(asset, dict) and asset.get("name") == "bob.jar":
-			return asset
-
-	raise SystemExit("Could not find bob.jar in the selected Defold release.")
+def fetch_sha1(channel: str) -> str:
+	info = fetch_json(INFO_URL_TEMPLATE.format(channel=channel))
+	sha1 = str(info.get("sha1", "")).strip()
+	if not sha1:
+		raise SystemExit(f"Could not find sha1 for Defold channel '{channel}'.")
+	return sha1
 
 
 def download_asset(url: str, output: Path) -> None:
@@ -57,9 +47,8 @@ def download_asset(url: str, output: Path) -> None:
 
 def main() -> int:
 	args = parse_args()
-	release = find_release(fetch_releases(), args.channel)
-	asset = find_bob_asset(release)
-	download_asset(str(asset["browser_download_url"]), Path(args.output))
+	sha1 = fetch_sha1(args.channel)
+	download_asset(BOB_URL_TEMPLATE.format(sha1=sha1), Path(args.output))
 	print(args.output)
 	return 0
 

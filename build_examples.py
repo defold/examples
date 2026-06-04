@@ -3,9 +3,14 @@
 from __future__ import annotations
 
 import argparse
+import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
+
+
+BUILD_SERVER_URL = "https://build-stage.defold.com/"
 
 
 def tracked_example_projects() -> list[Path]:
@@ -45,8 +50,7 @@ def touched_example_projects(base_ref: str, head_ref: str) -> list[Path]:
 			if len(path.parts) < 2:
 				continue
 
-			project_dir = Path(path.parts[0]) / path.parts[1]
-			projects.add(project_dir)
+			projects.add(Path(path.parts[0]) / path.parts[1])
 
 	return sorted(projects)
 
@@ -60,12 +64,56 @@ def parse_args() -> argparse.Namespace:
 	return parser.parse_args()
 
 
+def prepare_project_copy(project_dir: Path) -> Path:
+	temp_dir = Path(tempfile.mkdtemp(prefix="defold-example-build-"))
+	project_copy = temp_dir / project_dir.name
+	shutil.copytree(project_dir, project_copy)
+
+	game_project = project_copy / "game.project"
+	lines = game_project.read_text(encoding="utf-8").splitlines()
+	updated_lines = []
+	replaced = False
+	for line in lines:
+		if line.startswith("title = "):
+			updated_lines.append("title = Defold-examples")
+			replaced = True
+		else:
+			updated_lines.append(line)
+	if not replaced:
+		updated_lines.append("title = Defold-examples")
+	game_project.write_text("\n".join(updated_lines) + "\n", encoding="utf-8")
+
+	return project_copy
+
+
 def build_project(bob_jar: str, project_dir: Path) -> None:
 	print(f"Building {project_dir}")
-	subprocess.run(
-		["java", "-jar", bob_jar, "--root", str(project_dir), "distclean", "build"],
-		check=True,
-	)
+	bob_jar_path = Path(bob_jar).resolve()
+	project_copy = prepare_project_copy(project_dir)
+	try:
+		subprocess.run(
+			[
+				"java",
+				"-jar",
+				str(bob_jar_path),
+				"--archive",
+				"--platform",
+				"wasm-web",
+				"--architectures",
+				"wasm-web",
+				"--variant",
+				"debug",
+				"--build-server",
+				BUILD_SERVER_URL,
+				"resolve",
+				"build",
+				"bundle",
+			],
+			check=True,
+			cwd=project_copy,
+		)
+	finally:
+		shutil.rmtree(project_copy.parent)
 
 
 def main() -> int:
