@@ -42,6 +42,6 @@ scale_mode = no_scale
 heap_size = 64
 
 [render]
-clear_color_blue = 0.9
-clear_color_green = 0.9
-clear_color_red = 0.9
+clear_color_blue = 0.183594
+clear_color_green = 0.164063
+clear_color_red = 0.160156
