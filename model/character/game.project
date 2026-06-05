@@ -10,8 +10,9 @@ repeat_interval = 0.05
 shared_state = 1
 
 [display]
-width = 960
-height = 640
+width = 720
+height = 720
+high_dpi = 1
 
 [android]
 input_method = HiddenInputField
@@ -19,7 +20,7 @@ package = com.defold.example.basic3d
 
 [project]
 dependencies = 
-title = Character
+title = Character - Skeletal Animation
 
 [physics]
 type = 3D
@@ -31,7 +32,6 @@ bundle_identifier = com.defold.example.basic3d
 bundle_identifier = com.defold.example.basic3d
 
 [render]
-clear_color_red = 0.1
-clear_color_green = 0.1
-clear_color_blue = 0.1
-
+clear_color_red = 0.160156
+clear_color_green = 0.164063
+clear_color_blue = 0.183594
