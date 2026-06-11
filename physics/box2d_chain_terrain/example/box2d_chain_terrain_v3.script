@@ -1,6 +1,6 @@
 local BALL_START = vmath.vector3(650, 545, 0)
 local BALL_VELOCITY = vmath.vector3(-140, 0, 0)
-local CHAIN_COLOR = vmath.vector4(0.0, 0.9, 0.88, 1.0)
+local CHAIN_COLOR = vmath.vector4(0.1, 0.8, 0.9, 1.0)
 local PREV_GHOST_VERTEX = vmath.vector3(715, 505, 0)
 local NEXT_GHOST_VERTEX = vmath.vector3(35, 235, 0)
 
