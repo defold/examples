@@ -26,7 +26,11 @@ game_binding = /builtins/input/all.input_bindingc
 [project]
 title = Box2D Chain Terrain
 
+[native_extension]
+app_manifest = /box2D_V3.appmanifest
+
 [render]
 clear_color_red = 0.160156
 clear_color_green = 0.164063
 clear_color_blue = 0.183594
+
