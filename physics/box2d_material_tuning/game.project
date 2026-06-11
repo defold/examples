@@ -26,6 +26,9 @@ game_binding = /builtins/input/all.input_bindingc
 [project]
 title = Box2D Material Tuning
 
+[native_extension]
+app_manifest = /box2d_v3.appmanifest
+
 [render]
 clear_color_red = 0.160156
 clear_color_green = 0.164063
