@@ -1,0 +1,4 @@
+images {
+  image: "/textures/ball.png"
+}
+extrude_borders: 2
