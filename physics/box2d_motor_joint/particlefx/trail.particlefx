@@ -6,12 +6,12 @@ emitters {
   animation: "anim"
   material: "/builtins/materials/particlefx.material"
   blend_mode: BLEND_MODE_ADD
-  max_particle_count: 64
+  max_particle_count: 128
   type: EMITTER_TYPE_CIRCLE
   properties {
     key: EMITTER_KEY_SPAWN_RATE
     points {
-      y: 32.0
+      y: 60.0
     }
   }
   properties {

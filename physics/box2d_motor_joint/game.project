@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /example/box2d_joints.collectionc
+main_collection = /example/box2d_motor_joint.collectionc
 
 [script]
 shared_state = 1
@@ -24,7 +24,7 @@ scale_mode = no_scale
 game_binding = /builtins/input/all.input_bindingc
 
 [project]
-title = Box2D Joints
+title = Box2D Motor Joint
 
 [native_extension]
 app_manifest = /box2D_V3.appmanifest
