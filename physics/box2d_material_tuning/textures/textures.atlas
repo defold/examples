@@ -1,0 +1,16 @@
+images {
+  image: "/textures/pixel_white.png"
+}
+images {
+  image: "/textures/ball.png"
+}
+images {
+  image: "/textures/pixel_blue.png"
+}
+images {
+  image: "/textures/pixel_gold.png"
+}
+images {
+  image: "/textures/pixel_orange.png"
+}
+extrude_borders: 2
