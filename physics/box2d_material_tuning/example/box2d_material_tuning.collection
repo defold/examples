@@ -17,7 +17,7 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"friction\"\n"
-  "    value: \"0.01\"\n"
+  "    value: \"0.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"
@@ -27,12 +27,12 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"velocity\"\n"
-  "    value: \"-75.0, 0.0, 0.0\"\n"
+  "    value: \"0.0, 0.0, 0.0\"\n"
   "    type: PROPERTY_TYPE_VECTOR3\n"
   "  }\n"
   "  properties {\n"
   "    id: \"spin\"\n"
-  "    value: \"6.0\"\n"
+  "    value: \"0.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"
@@ -56,7 +56,7 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"friction\"\n"
-  "    value: \"0.01\"\n"
+  "    value: \"0.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"
@@ -66,12 +66,12 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"velocity\"\n"
-  "    value: \"-75.0, 0.0, 0.0\"\n"
+  "    value: \"0.0, 0.0, 0.0\"\n"
   "    type: PROPERTY_TYPE_VECTOR3\n"
   "  }\n"
   "  properties {\n"
   "    id: \"spin\"\n"
-  "    value: \"6.0\"\n"
+  "    value: \"0.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"
@@ -92,6 +92,7 @@ embedded_instances {
   "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
   "\"\n"
   "  position {\n"
+  "    x: 60.0\n"
   "    y: -420.0\n"
   "  }\n"
   "}\n"
@@ -103,7 +104,7 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 160.0
+    x: 100.0
     y: 580.0
   }
 }
@@ -134,12 +135,12 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"velocity\"\n"
-  "    value: \"25.0, 0.0, 0.0\"\n"
+  "    value: \"0.0, 0.0, 0.0\"\n"
   "    type: PROPERTY_TYPE_VECTOR3\n"
   "  }\n"
   "  properties {\n"
   "    id: \"spin\"\n"
-  "    value: \"1.0\"\n"
+  "    value: \"0.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"
@@ -173,12 +174,12 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"velocity\"\n"
-  "    value: \"25.0, 0.0, 0.0\"\n"
+  "    value: \"0.0, 0.0, 0.0\"\n"
   "    type: PROPERTY_TYPE_VECTOR3\n"
   "  }\n"
   "  properties {\n"
   "    id: \"spin\"\n"
-  "    value: \"1.0\"\n"
+  "    value: \"0.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"
@@ -199,6 +200,7 @@ embedded_instances {
   "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
   "\"\n"
   "  position {\n"
+  "    x: 60.0\n"
   "    y: -420.0\n"
   "  }\n"
   "}\n"
@@ -210,7 +212,7 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 360.0
+    x: 300.0
     y: 580.0
   }
 }
@@ -246,7 +248,7 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"spin\"\n"
-  "    value: \"-1.0\"\n"
+  "    value: \"0.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"
@@ -285,7 +287,7 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"spin\"\n"
-  "    value: \"-1.0\"\n"
+  "    value: \"0.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"
@@ -306,6 +308,7 @@ embedded_instances {
   "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
   "\"\n"
   "  position {\n"
+  "    x: 60.0\n"
   "    y: -420.0\n"
   "  }\n"
   "}\n"
@@ -317,7 +320,7 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 560.0
+    x: 500.0
     y: 580.0
   }
 }

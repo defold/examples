@@ -6,21 +6,11 @@ go.property("velocity", vmath.vector3())
 go.property("spin", 0.0)
 go.property("tint", vmath.vector4(1, 1, 1, 1))
 
-local TOUCH = hash("touch")
-
 local MATERIAL_NAMES = {
 	[hash("Ice")] = "Ice",
 	[hash("Rubber")] = "Rubber",
 	[hash("Gold")] = "Gold",
 }
-
-local function get_major_version()
-	local version = b2d.get_version() -- <2>
-	if type(version) == "table" then
-		return version.major
-	end
-	return tonumber(string.match(version, "^(%d+)"))
-end
 
 local function label_text(self, density, friction, restitution)
 	local name = MATERIAL_NAMES[self.material] or "Material"
@@ -28,84 +18,94 @@ local function label_text(self, density, friction, restitution)
 end
 
 local function configure_material(self)
-	local body = b2d.get_body(msg.url(nil, self.ball_id, "collisionobject")) -- <3>
-	local shape = b2d.body.get_shapes(body)[1] -- <4>
-	b2d.shape.set_density(body, shape.index, self.density) -- <5>
-	b2d.body.reset_mass_data(body)
+	local body = b2d.get_body(msg.url(nil, self.ball_id, "collisionobject")) -- <2>
+	local shape = b2d.body.get_shapes(body)[1] -- <3>
+	b2d.shape.set_density(body, shape.index, self.density) -- <4>
+	b2d.body.reset_mass_data(body) -- <5>
 	b2d.shape.set_friction(body, shape.index, self.friction) -- <6>
 	b2d.shape.set_restitution(body, shape.index, self.restitution) -- <7>
 
-	local density = b2d.shape.get_density(body, shape.index)
-	local friction = b2d.shape.get_friction(body, shape.index)
-	local restitution = b2d.shape.get_restitution(body, shape.index)
-	label.set_text("#label", label_text(self, density, friction, restitution)) -- <8>
+	local density = b2d.shape.get_density(body, shape.index) -- <8>
+	local friction = b2d.shape.get_friction(body, shape.index) -- <9>
+	local restitution = b2d.shape.get_restitution(body, shape.index) -- <10>
+	label.set_text("#label", label_text(self, density, friction, restitution)) -- <11>
 
 	return body
 end
 
 local function delete_ball(self)
-	if self.ball_id then
+	if self.ball_id then -- <12>
 		go.delete(self.ball_id)
+		self.ball_id = nil
 	end
 end
 
 local function respawn_ball(self)
-	delete_ball(self)
-	self.ball_id = factory.create("#ball_factory", go.get_position()) -- <9>
-	go.set(msg.url(nil, self.ball_id, "sprite"), "tint", self.tint) -- <10>
+	delete_ball(self) -- <13>
+
+	self.ball_id = factory.create("#ball_factory", go.get_position()) -- <14>
+	go.set(msg.url(nil, self.ball_id, "sprite"), "tint", self.tint) -- <15>
 
 	local body = configure_material(self)
-	if b2d.body.set_active then
-		b2d.body.set_active(body, true) -- <11>
+	if b2d.body.set_active then -- <16>
+		b2d.body.set_active(body, true) -- <17>
 	end
-	b2d.body.set_linear_velocity(body, self.velocity) -- <12>
-	b2d.body.set_angular_velocity(body, self.spin)
+	b2d.body.set_linear_velocity(body, self.velocity) -- <18>
+	b2d.body.set_angular_velocity(body, self.spin) -- <19>
 end
 
 function init(self)
-	self.active = get_major_version() == 3 -- <13>
-	if not self.active then -- <14>
+	local b2d_version = b2d.get_version() -- <20>
+	self.active = b2d_version.major == 3 -- <21>
+
+	if not self.active then -- <22>
 		return
 	end
 
-	msg.post(".", "acquire_input_focus") -- <15>
+	msg.post(".", "acquire_input_focus") -- <23>
 	respawn_ball(self)
 end
 
+-------------------
+-- Input handling:
+
+local TOUCH = hash("touch")
+
 function on_input(self, action_id, action)
-	if not self.active then
+	if not self.active then -- <24>
 		return
 	end
 
-	if action_id == TOUCH and action.pressed then -- <16>
-		respawn_ball(self)
+	if action_id == TOUCH and action.pressed then -- <25>
+		respawn_ball(self) -- <26>
 	end
-end
-
-function final(self)
-	if not self.active then
-		return
-	end
-
-	delete_ball(self)
-	msg.post(".", "release_input_focus")
 end
 
 --[[
-1. Expose the material settings as script properties so each spawner instance can be configured in the editor.
-2. Read the active Box2D backend. The helper accepts both table and string version formats.
-3. Get the Box2D body from this spawner's current factory-created ball.
-4. Read the body's first shape. Shape functions use the 1-based shape index returned here.
-5. Set the shape density and then reset body mass data so the new density is applied immediately.
-6. Set the shape friction. Low values slide; high values grip.
-7. Set the shape restitution. Low values absorb impact; high values bounce.
-8. Read the values back and show them on the label component attached to the same game object as this script.
-9. Spawn one ball from the factory attached to this game object at the position of this game object.
-10. Tint only the spawned ball sprite from this spawner's `tint` property.
-11. Explicitly activate the spawned body on backends that expose body activation.
-12. Give the new ball a starting velocity and spin from the script properties.
-13. Detect whether the running engine uses the Box2D V3 backend.
-14. Leave this script as a no-op when the project uses another backend.
-15. Enable input for manual respawn.
-16. The built-in touch action is sent for clicks and taps, so each spawner respawns its own ball.
+1. Exposes the material settings as script properties. Each spawner overrides these values in the collection.
+2. Gets the Box2D body from this spawner's current factory-created ball.
+3. Gets the first shape from the ball body. Box2D V3 uses shapes instead of the V2 fixture API.
+4. Sets the shape density through the Box2D V3 shape API.
+5. Recalculates the body mass so the new density affects the ball immediately.
+6. Sets the shape friction. Low values slide more; high values grip more.
+7. Sets the shape restitution. Low values absorb impact; high values bounce more.
+8. Reads the applied density back from the V3 shape.
+9. Reads the applied friction back from the V3 shape.
+10. Reads the applied restitution back from the V3 shape.
+11. Updates the label with the values currently applied to this ball.
+12. Checks whether a previously spawned ball exists before deleting it.
+13. Removes the previous ball before spawning a new one, so each spawner controls one active ball.
+14. Spawns a new ball from the local factory at the spawner's position.
+15. Applies this spawner's tint to the spawned ball sprite.
+16. Checks whether this Box2D build exposes explicit body activation.
+17. Activates the spawned body through the Box2D body API when `set_active()` is available.
+18. Sets the ball's linear velocity through the Box2D body API.
+19. Sets the ball's angular velocity through the Box2D body API.
+20. Reads the active Box2D backend version.
+21. Enables this script only when the project is running the Box2D V3 backend.
+22. Stops the script early when Box2D V3 is not active, because the example uses V3 shape API calls.
+23. Acquires input focus so this script can receive click or touch input.
+24. Skips input handling if this script is inactive.
+25. Handles a click or touch press and uses it as a manual reset for the ball.
+26. Respawns the ball and reapplies the V3 material settings.
 ]]
