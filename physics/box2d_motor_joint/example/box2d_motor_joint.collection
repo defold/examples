@@ -1,0 +1,47 @@
+name: "box2d_motor_joint"
+instances {
+  id: "pivot"
+  prototype: "/example/pivot.go"
+  position {
+    x: 360.0
+    y: 360.0
+    z: 0.5
+  }
+}
+instances {
+  id: "arm"
+  prototype: "/example/arm.go"
+  position {
+    x: 480.0
+    y: 360.0
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "controller"
+  data: "components {\n"
+  "  id: \"box2d_v2\"\n"
+  "  component: \"/example/box2d_motor_joint_v2.script\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"box2d_v3\"\n"
+  "  component: \"/example/box2d_motor_joint_v3.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"label\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 640.0\\n"
+  "  y: 96.0\\n"
+  "}\\n"
+  "text: \\\"Box2D motor joint\\\"\\n"
+  "font: \\\"/fonts/text28.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 360.0\n"
+  "    y: 60.0\n"
+  "  }\n"
+  "}\n"
+  ""
+}
