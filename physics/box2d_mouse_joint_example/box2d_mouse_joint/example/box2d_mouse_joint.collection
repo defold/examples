@@ -1,0 +1,123 @@
+name: "box2d_mouse_joint"
+instances {
+  id: "controller"
+  prototype: "/example/controller.go"
+}
+instances {
+  id: "target"
+  prototype: "/example/target.go"
+  position {
+    x: 360.0
+    y: 420.0
+    z: 0.2
+  }
+}
+instances {
+  id: "soft_body"
+  prototype: "/example/soft_body.go"
+  position {
+    x: 270.0
+    y: 310.0
+    z: 0.1
+  }
+}
+instances {
+  id: "tight_body"
+  prototype: "/example/tight_body.go"
+  position {
+    x: 450.0
+    y: 310.0
+    z: 0.1
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "info"
+  data: "embedded_components {\n"
+  "  id: \"label\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 210.0\\n"
+  "  y: 74.0\\n"
+  "}\\n"
+  "color {\\n"
+  "  x: 0.99215686\\n"
+  "  y: 0.4\\n"
+  "  z: 0.13725491\\n"
+  "}\\n"
+  "line_break: true\\n"
+  "text: \\\"SOFT\\\\n"
+  "\\\"\\n"
+  "  \\\"low frequency\\\\n"
+  "\\\"\\n"
+  "  \\\"damping\\\"\\n"
+  "font: \\\"/assets/fonts/text28.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 120.0\n"
+  "    y: 360.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"label1\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 210.0\\n"
+  "  y: 74.0\\n"
+  "}\\n"
+  "color {\\n"
+  "  x: 0.0\\n"
+  "  y: 0.9019608\\n"
+  "  z: 0.88235295\\n"
+  "}\\n"
+  "line_break: true\\n"
+  "text: \\\"TIGHT\\\\n"
+  "\\\"\\n"
+  "  \\\"high frequency\\\\n"
+  "\\\"\\n"
+  "  \\\"damping\\\"\\n"
+  "font: \\\"/assets/fonts/text28.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 600.0\n"
+  "    y: 360.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"label2\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 680.0\\n"
+  "  y: 46.0\\n"
+  "}\\n"
+  "line_break: true\\n"
+  "text: \\\"Move the mouse or drag touch\\\"\\n"
+  "font: \\\"/assets/fonts/text28.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 360.0\n"
+  "    y: 600.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"version_label\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 640.0\\n"
+  "  y: 42.0\\n"
+  "}\\n"
+  "line_break: true\\n"
+  "text: \\\"Box2D mouse joint\\\"\\n"
+  "font: \\\"/assets/fonts/text28.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 360.0\n"
+  "    y: 650.0\n"
+  "  }\n"
+  "}\n"
+  ""
+}
