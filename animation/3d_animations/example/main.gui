@@ -1,0 +1,1506 @@
+script: "/example/main.gui_script"
+fonts {
+  name: "always_on_top"
+  font: "/builtins/fonts/debug/always_on_top.font"
+}
+nodes {
+  position {
+    x: 85.0
+    y: 700.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_01"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "A_TPose"
+  font: "always_on_top"
+  id: "button_text_01"
+  parent: "button_01"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 670.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_02"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Crouch_Fwd_Loop"
+  font: "always_on_top"
+  id: "button_text_02"
+  parent: "button_02"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 640.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_03"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Crouch_Idle_Loop"
+  font: "always_on_top"
+  id: "button_text_03"
+  parent: "button_03"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 610.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_04"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Dance_Loop"
+  font: "always_on_top"
+  id: "button_text_04"
+  parent: "button_04"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 580.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_05"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Death01"
+  font: "always_on_top"
+  id: "button_text_05"
+  parent: "button_05"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 550.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_06"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Driving_Loop"
+  font: "always_on_top"
+  id: "button_text_06"
+  parent: "button_06"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 520.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_07"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Fixing_Kneeling"
+  font: "always_on_top"
+  id: "button_text_07"
+  parent: "button_07"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 490.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_08"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Hit_Chest"
+  font: "always_on_top"
+  id: "button_text_08"
+  parent: "button_08"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 460.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_09"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Hit_Head"
+  font: "always_on_top"
+  id: "button_text_09"
+  parent: "button_09"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 430.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_10"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Idle_Loop"
+  font: "always_on_top"
+  id: "button_text_10"
+  parent: "button_10"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 400.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_11"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Idle_Talking_Loop"
+  font: "always_on_top"
+  id: "button_text_11"
+  parent: "button_11"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 370.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_12"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Idle_Torch_Loop"
+  font: "always_on_top"
+  id: "button_text_12"
+  parent: "button_12"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 340.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_13"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Interact"
+  font: "always_on_top"
+  id: "button_text_13"
+  parent: "button_13"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 310.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_14"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Jog_Fwd_Loop"
+  font: "always_on_top"
+  id: "button_text_14"
+  parent: "button_14"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 280.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_15"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Jump_Land"
+  font: "always_on_top"
+  id: "button_text_15"
+  parent: "button_15"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 250.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_16"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Jump_Loop"
+  font: "always_on_top"
+  id: "button_text_16"
+  parent: "button_16"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 220.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_17"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Jump_Start"
+  font: "always_on_top"
+  id: "button_text_17"
+  parent: "button_17"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 190.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_18"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "PickUp_Table"
+  font: "always_on_top"
+  id: "button_text_18"
+  parent: "button_18"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 160.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_19"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Pistol_Aim_Down"
+  font: "always_on_top"
+  id: "button_text_19"
+  parent: "button_19"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 130.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_20"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Pistol_Aim_Neutral"
+  font: "always_on_top"
+  id: "button_text_20"
+  parent: "button_20"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 100.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_21"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Pistol_Aim_Up"
+  font: "always_on_top"
+  id: "button_text_21"
+  parent: "button_21"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 70.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_22"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Pistol_Idle_Loop"
+  font: "always_on_top"
+  id: "button_text_22"
+  parent: "button_22"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 85.0
+    y: 40.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_23"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Pistol_Reload"
+  font: "always_on_top"
+  id: "button_text_23"
+  parent: "button_23"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 700.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_24"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Pistol_Shoot"
+  font: "always_on_top"
+  id: "button_text_24"
+  parent: "button_24"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 670.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_25"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Punch_Cross"
+  font: "always_on_top"
+  id: "button_text_25"
+  parent: "button_25"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 640.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_26"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Punch_Jab"
+  font: "always_on_top"
+  id: "button_text_26"
+  parent: "button_26"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 610.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_27"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Push_Loop"
+  font: "always_on_top"
+  id: "button_text_27"
+  parent: "button_27"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 580.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_28"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Roll"
+  font: "always_on_top"
+  id: "button_text_28"
+  parent: "button_28"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 550.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_29"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Roll_RM"
+  font: "always_on_top"
+  id: "button_text_29"
+  parent: "button_29"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 520.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_30"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Sitting_Enter"
+  font: "always_on_top"
+  id: "button_text_30"
+  parent: "button_30"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 490.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_31"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Sitting_Exit"
+  font: "always_on_top"
+  id: "button_text_31"
+  parent: "button_31"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 460.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_32"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Sitting_Idle_Loop"
+  font: "always_on_top"
+  id: "button_text_32"
+  parent: "button_32"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 430.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_33"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  scale {
+    x: 0.9
+    y: 0.9
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Sitting_Talking_Loop"
+  font: "always_on_top"
+  id: "button_text_33"
+  parent: "button_33"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 400.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_34"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Spell_Simple_Enter"
+  font: "always_on_top"
+  id: "button_text_34"
+  parent: "button_34"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 370.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_35"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Spell_Simple_Exit"
+  font: "always_on_top"
+  id: "button_text_35"
+  parent: "button_35"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 340.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_36"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  scale {
+    x: 0.85
+    y: 0.85
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Spell_Simple_Idle_Loop"
+  font: "always_on_top"
+  id: "button_text_36"
+  parent: "button_36"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 310.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_37"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Spell_Simple_Shoot"
+  font: "always_on_top"
+  id: "button_text_37"
+  parent: "button_37"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 280.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_38"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Sprint_Loop"
+  font: "always_on_top"
+  id: "button_text_38"
+  parent: "button_38"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 250.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_39"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Swim_Fwd_Loop"
+  font: "always_on_top"
+  id: "button_text_39"
+  parent: "button_39"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 220.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_40"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Swim_Idle_Loop"
+  font: "always_on_top"
+  id: "button_text_40"
+  parent: "button_40"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 190.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_41"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Sword_Attack"
+  font: "always_on_top"
+  id: "button_text_41"
+  parent: "button_41"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 160.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_42"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Sword_Attack_RM"
+  font: "always_on_top"
+  id: "button_text_42"
+  parent: "button_42"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 130.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_43"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Sword_Idle"
+  font: "always_on_top"
+  id: "button_text_43"
+  parent: "button_43"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 100.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_44"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Walk_Formal_Loop"
+  font: "always_on_top"
+  id: "button_text_44"
+  parent: "button_44"
+  layer: "texts"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 70.0
+  }
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  type: TYPE_BOX
+  id: "button_45"
+  layer: "boxes"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 150.0
+    y: 24.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Walk_Loop"
+  font: "always_on_top"
+  id: "button_text_45"
+  parent: "button_45"
+  layer: "texts"
+  inherit_alpha: true
+}
+layers {
+  name: "boxes"
+}
+layers {
+  name: "texts"
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
