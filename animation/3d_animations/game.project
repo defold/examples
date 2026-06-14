@@ -29,7 +29,7 @@ bundle_identifier = com.defold.example.basic3d
 bundle_identifier = com.defold.example.basic3d
 
 [html5]
-scale_mode = stretch
+scale_mode = no_scale
 
 [render]
 clear_color_red = 0.160156
