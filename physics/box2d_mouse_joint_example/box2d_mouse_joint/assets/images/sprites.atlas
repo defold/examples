@@ -1,0 +1,10 @@
+images {
+  image: "/assets/images/body_soft.png"
+}
+images {
+  image: "/assets/images/body_tight.png"
+}
+images {
+  image: "/assets/images/target.png"
+}
+extrude_borders: 2
