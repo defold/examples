@@ -43,7 +43,7 @@ jobs:
       },
       {
         name: 'Download Bob',
-        run: 'python download_bob.py --channel beta --output bob.jar'
+        run: 'python download_bob.py --channel alpha --output bob.jar'
       },
       {
         id: 'count',
