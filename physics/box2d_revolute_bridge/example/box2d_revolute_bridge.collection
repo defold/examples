@@ -1,0 +1,180 @@
+name: "box2d_revolute_bridge"
+instances {
+  id: "left_anchor"
+  prototype: "/example/anchor.go"
+  position {
+    x: 120.0
+    y: 300.0
+  }
+}
+instances {
+  id: "right_anchor"
+  prototype: "/example/anchor.go"
+  position {
+    x: 600.0
+    y: 300.0
+  }
+}
+instances {
+  id: "segment_01"
+  prototype: "/example/segment.go"
+  position {
+    x: 144.0
+    y: 300.0
+  }
+}
+instances {
+  id: "segment_02"
+  prototype: "/example/segment.go"
+  position {
+    x: 192.0
+    y: 300.0
+  }
+}
+instances {
+  id: "segment_03"
+  prototype: "/example/segment.go"
+  position {
+    x: 240.0
+    y: 300.0
+  }
+}
+instances {
+  id: "segment_04"
+  prototype: "/example/segment.go"
+  position {
+    x: 288.0
+    y: 300.0
+  }
+}
+instances {
+  id: "segment_05"
+  prototype: "/example/segment.go"
+  position {
+    x: 336.0
+    y: 300.0
+  }
+}
+instances {
+  id: "segment_06"
+  prototype: "/example/segment.go"
+  position {
+    x: 384.0
+    y: 300.0
+  }
+}
+instances {
+  id: "segment_07"
+  prototype: "/example/segment.go"
+  position {
+    x: 432.0
+    y: 300.0
+  }
+}
+instances {
+  id: "segment_08"
+  prototype: "/example/segment.go"
+  position {
+    x: 480.0
+    y: 300.0
+  }
+}
+instances {
+  id: "segment_09"
+  prototype: "/example/segment.go"
+  position {
+    x: 528.0
+    y: 300.0
+  }
+}
+instances {
+  id: "segment_10"
+  prototype: "/example/segment.go"
+  position {
+    x: 576.0
+    y: 300.0
+  }
+}
+instances {
+  id: "ball"
+  prototype: "/example/ball.go"
+  position {
+    x: 360.0
+    y: 560.0
+  }
+}
+instances {
+  id: "floor"
+  prototype: "/example/wall.go"
+  position {
+    x: 360.0
+    y: 54.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "left_wall"
+  prototype: "/example/wall.go"
+  position {
+    x: 50.0
+    y: 360.0
+  }
+}
+instances {
+  id: "right_wall"
+  prototype: "/example/wall.go"
+  position {
+    x: 670.0
+    y: 360.0
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "controller"
+  data: "components {\n"
+  "  id: \"script_v3\"\n"
+  "  component: \"/example/box2d_revolute_bridge_v3.script\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"script_v2\"\n"
+  "  component: \"/example/box2d_revolute_bridge_v2.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"title\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 640.0\\n"
+  "  y: 42.0\\n"
+  "}\\n"
+  "line_break: true\\n"
+  "text: \\\"Box2D revolute bridge\\\"\\n"
+  "font: \\\"/fonts/text28.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 360.0\n"
+  "    y: 680.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"hint\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 640.0\\n"
+  "  y: 42.0\\n"
+  "}\\n"
+  "line_break: true\\n"
+  "text: \\\"Click or touch to reset\\\"\\n"
+  "font: \\\"/fonts/text28.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 360.0\n"
+  "    y: 640.0\n"
+  "  }\n"
+  "}\n"
+  ""
+}
