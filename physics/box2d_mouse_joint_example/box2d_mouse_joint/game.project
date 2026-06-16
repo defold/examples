@@ -27,7 +27,7 @@ game_binding = /builtins/input/all.input_bindingc
 title = Box2D Mouse Joint
 
 [native_extension]
-app_manifest = /box2D_V2.appmanifest
+app_manifest = /box2D_V3.appmanifest
 
 [render]
 clear_color_red = 0.160156

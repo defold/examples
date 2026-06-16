@@ -186,7 +186,7 @@ set_target(self, START_TARGET)
 create_mouse_joints(self)
 
 -- <27> Show which backend-specific script is active.
-label.set_text("/version_label#label", "Box2D V3 mouse joint")
+label.set_text("/info#version_label", "Box2D V3 mouse joint")
 
 -- <28> Acquire input focus so this script receives mouse/touch input in
 -- on_input().
