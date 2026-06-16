@@ -18,7 +18,7 @@ scale = 0.01
 use_fixed_timestep = 1
 
 [html5]
-scale_mode = stretch
+scale_mode = no_scale
 
 [input]
 game_binding = /builtins/input/all.input_bindingc
