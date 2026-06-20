@@ -1,0 +1,252 @@
+local TOUCH = hash("touch")
+
+local START_TARGET = vmath.vector3(360, 420, 0)
+local SOFT_START = vmath.vector3(270, 310, 0)
+local TIGHT_START = vmath.vector3(450, 310, 0)
+
+local SOFT_LINE_COLOR = vmath.vector4(1.0, 0.65, 0.22, 1.0)
+local TIGHT_LINE_COLOR = vmath.vector4(0.35, 0.85, 1.0, 1.0)
+local TARGET_LINE_COLOR = vmath.vector4(0.45, 1.0, 0.65, 1.0)
+
+local function draw_line(from, to, color)
+	-- <1> Draw a debug/helper line through the render socket.
+	-- The line exists for one frame only, so it must be redrawn every update.
+	msg.post("@render:", "draw_line", {
+		start_point = from,
+		end_point = to,
+		color = color
+	})
+end
+
+local function set_target(self, position)
+	-- <2> Store the current mouse-joint target as a world-space point.
+	-- The mouse/touch pointer is not a Box2D body. It is only a target position
+	-- that the mouse joint tries to pull the dynamic body toward.
+	self.target = vmath.vector3(position.x, position.y, 0)
+
+	-- <3> Move the visible target marker so the user can see the point followed
+	-- by both mouse joints.
+	go.set_position(self.target, self.target_url)
+end
+
+local function reset_body(body, position)
+	-- <4> Set the Box2D body transform directly.
+	-- This is good for example setup/reset. Do not use this as normal per-frame
+	-- movement, because it teleports the body and can produce non-physical motion.
+	b2d.body.set_transform(body, position, 0)
+
+	-- <5> Clear previous motion so the example starts from a deterministic state.
+	b2d.body.set_linear_velocity(body, vmath.vector3())
+	b2d.body.set_angular_velocity(body, 0)
+
+	-- <6> Wake the body so it reacts immediately after reset.
+	b2d.body.set_awake(body, true)
+end
+
+local function setup_body(body)
+	-- <7> Disable gravity for this body.
+	-- This keeps the example focused on the mouse-joint spring behaviour.
+	b2d.body.set_gravity_scale(body, 0)
+
+	-- <8> Prevent the body from rotating.
+	-- Rotation would add noise to the visual explanation, while this example is
+	-- about soft versus tight positional following.
+	b2d.body.set_fixed_rotation(body, true)
+
+	-- <9> Add linear damping.
+	-- This reduces endless sliding and helps the body settle after movement.
+	b2d.body.set_linear_damping(body, 1.5)
+end
+
+local function create_mouse_joints(self)
+	-- <10> Get native Box2D body handles from Defold collision object components.
+	-- `target` acts as the static/reference body for the mouse joints.
+	local anchor_body = b2d.get_body(msg.url(nil, "target", "collisionobject"))
+	self.soft_body = b2d.get_body(msg.url(nil, "soft_body", "collisionobject"))
+	self.tight_body = b2d.get_body(msg.url(nil, "tight_body", "collisionobject"))
+
+	setup_body(self.soft_body)
+	setup_body(self.tight_body)
+
+	reset_body(self.soft_body, SOFT_START)
+	reset_body(self.tight_body, TIGHT_START)
+
+	-- <11> Create a soft V2 mouse joint.
+	-- In Box2D V2-style definitions, spring frequency is controlled by
+	-- `frequency`, not `hertz`.
+	self.soft_joint = b2d.joint.create_mouse(anchor_body, self.soft_body, {
+		-- <12> Initial world target. This value is later updated every frame.
+		target = self.target,
+
+		-- <13> Maximum force the joint can apply.
+		-- Lower max force allows more visible lag/stretch.
+		max_force = 850,
+
+		-- <14> V2 spring frequency.
+		-- Lower frequency makes the body follow more softly and slowly.
+		frequency = 1.5,
+
+		-- <15> Damping ratio.
+		-- Lower damping allows more bounce/overshoot.
+		damping_ratio = 0.35,
+
+		-- <16> The connected bodies should not collide with each other.
+		collide_connected = false,
+	})
+
+	-- <17> Create a tighter V2 mouse joint.
+	-- It follows the same target, but uses stronger/stiffer parameters.
+	self.tight_joint = b2d.joint.create_mouse(anchor_body, self.tight_body, {
+		target = self.target,
+
+		-- <18> Higher max force means the body can be pulled more aggressively.
+		max_force = 6500,
+
+		-- <19> Higher frequency means a stiffer/faster spring response.
+		frequency = 8.0,
+
+		-- <20> Higher damping removes more oscillation.
+		damping_ratio = 0.9,
+
+		collide_connected = false,
+	})
+end
+
+local function update_auto_target(self, dt)
+	if self.user_control then
+		return
+	end
+
+	-- <21> Animate the target automatically before user interaction.
+	-- This makes the example demonstrate itself on the examples website.
+	self.time = self.time + dt
+
+	set_target(self, vmath.vector3(
+	360 + math.cos(self.time * 1.35) * 170,
+	395 + math.sin(self.time * 1.10) * 95,
+	0
+))
+end
+
+local function update_joints(self)
+-- <22> Update both mouse joints with the current world target.
+-- The joints are created once, but their target can be changed every frame.
+b2d.joint.set_mouse_target(self.soft_joint, self.target)
+b2d.joint.set_mouse_target(self.tight_joint, self.target)
+
+-- <23> Keep the bodies awake while the target moves.
+-- This avoids relying on b2d.joint.wake_bodies(), which may not exist in
+-- the active V2 runtime.
+b2d.body.set_awake(self.soft_body, true)
+b2d.body.set_awake(self.tight_body, true)
+end
+
+local function draw_connections(self)
+-- <24> Read the current simulated positions from Box2D.
+-- These positions are the result of the physics step, not manually animated
+-- sprite positions.
+local soft_position = b2d.body.get_position(self.soft_body)
+local tight_position = b2d.body.get_position(self.tight_body)
+
+-- <25> Draw spring-like helper lines from the target to each body.
+-- The longer the line, the more that body is lagging/stretching.
+draw_line(self.target, soft_position, SOFT_LINE_COLOR)
+draw_line(self.target, tight_position, TIGHT_LINE_COLOR)
+
+-- <26> Draw a small cross at the target point.
+draw_line(self.target + vmath.vector3(-18, 0, 0), self.target + vmath.vector3(18, 0, 0), TARGET_LINE_COLOR)
+draw_line(self.target + vmath.vector3(0, -18, 0), self.target + vmath.vector3(0, 18, 0), TARGET_LINE_COLOR)
+end
+
+function init(self)
+-- <27> Run this script only when the active Box2D backend is V2.
+-- The same collection may contain both V2 and V3 scripts, but only the
+-- matching one should initialize.
+self.active = b2d.get_version().major == 2
+
+if not self.active then
+	return
+end
+
+self.target_url = msg.url(nil, "target", nil)
+self.time = 0
+self.user_control = false
+
+set_target(self, START_TARGET)
+create_mouse_joints(self)
+
+-- <28> Show which backend-specific script is active.
+label.set_text("/info#version_label", "Box2D V2 mouse joint")
+
+-- <29> Required before this script receives on_input() callbacks.
+msg.post(".", "acquire_input_focus")
+end
+
+function update(self, dt)
+if not self.active then
+	return
+end
+
+update_auto_target(self, dt)
+update_joints(self)
+draw_connections(self)
+end
+
+function on_input(self, action_id, action)
+if not self.active then
+	return
+end
+
+-- <30> Mouse input usually comes with action_id == nil, while touch input
+-- uses the configured "touch" binding. Both provide x/y screen coordinates.
+if (action_id == TOUCH or action_id == nil) and action.x and action.y then
+	self.user_control = true
+	set_target(self, vmath.vector3(action.x, action.y, 0))
+end
+end
+
+function final(self)
+if not self.active then
+	return
+end
+
+-- <31> Destroy scripted joints explicitly when the script is finalized.
+b2d.joint.destroy(self.soft_joint)
+b2d.joint.destroy(self.tight_joint)
+
+msg.post(".", "release_input_focus")
+end
+
+--[[
+1. `@render:` is Defold's render socket. The "draw_line" message draws a temporary helper line.
+2. A mouse joint follows a world-space target point. The pointer itself is not a physics body.
+3. The target marker is only visual. It helps show what the bodies are trying to follow.
+4. `b2d.body.set_transform()` directly changes the body's world transform. Good for setup/reset, not continuous movement.
+5. Clearing linear and angular velocity removes previous momentum.
+6. `b2d.body.set_awake()` wakes the body so it reacts immediately in the simulation.
+7. `b2d.body.set_gravity_scale(body, 0)` disables gravity for this body only.
+8. `b2d.body.set_fixed_rotation(body, true)` prevents rotation and keeps the visual demonstration clean.
+9. `b2d.body.set_linear_damping()` damps velocity over time and reduces endless drift.
+10. `b2d.get_body()` converts a Defold collision object URL into a Box2D body handle used by the b2d API.
+11. `b2d.joint.create_mouse()` creates a mouse joint between two bodies. The second body is the one visibly pulled toward the target.
+12. `target` is the initial world-space target point.
+13. `max_force` caps how strongly the joint can pull. Lower values create more visible stretch.
+14. `frequency` is the V2 spring frequency. Lower values feel softer; higher values feel tighter.
+15. `damping_ratio` controls bounce and overshoot. Lower values oscillate more; higher values settle faster.
+16. `collide_connected = false` prevents the connected bodies from colliding with each other.
+17. The tight joint uses the same mouse-joint API but different parameters.
+18. Higher `max_force` lets the joint correct the body's position more strongly.
+19. Higher `frequency` makes the spring respond faster.
+20. Higher `damping_ratio` removes more oscillation.
+21. Automatic target motion keeps the example animated before the user interacts.
+22. `b2d.joint.set_mouse_target()` updates the world target of an existing mouse joint.
+23. Waking the bodies avoids sleeping-body cases where the target changes but the body does not visibly react immediately.
+24. `b2d.body.get_position()` reads the current simulated world position of a body.
+25. The helper lines visualize how far each body stretches away from the target.
+26. The target cross is a visual helper, not part of the physics simulation.
+27. `b2d.get_version().major` selects the backend-specific script.
+28. `label.set_text()` updates the label. It uses message passing internally, so the URL must be correct.
+29. `acquire_input_focus` is needed to receive `on_input()`.
+30. Pointer input switches the example from automatic motion to direct user-controlled target movement.
+31. `b2d.joint.destroy()` removes joints created through the scripted joint API.
+]]

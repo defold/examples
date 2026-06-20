@@ -1,0 +1,7 @@
+images {
+  image: "/textures/ball.png"
+}
+images {
+  image: "/textures/path.png"
+}
+extrude_borders: 2

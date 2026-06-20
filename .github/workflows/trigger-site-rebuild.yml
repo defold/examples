@@ -1,6 +1,13 @@
 name: Trigger site rebuild
 
 on:
+  workflow_dispatch:
+    inputs:
+      full_rebuild:
+        description: 'Validate, build, archive, and publish all examples'
+        required: false
+        default: true
+        type: boolean
   push:
     branches:
       - 'master'
@@ -16,20 +23,25 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, 'skip-ci')"
+    if: "github.event_name != 'push' || !contains(github.event.head_commit.message, 'skip-ci')"
     steps: [
       { name: 'Checkout', uses: actions/checkout@v4, with: { fetch-depth: 0 } },
       { name: 'Install Python', uses: actions/setup-python@v4, with: { python-version: 3.10.5, architecture: x64 } },
       {
         name: 'Validate examples',
-        run: 'python validate_examples.py --changed-from "${{ github.event.before }}" --changed-to "${{ github.sha }}"'
+        env: {
+          BEFORE_SHA: '${{ github.event.before }}',
+          AFTER_SHA: '${{ github.sha }}',
+          FULL_REBUILD: '${{ github.event_name == ''workflow_dispatch'' && inputs.full_rebuild }}'
+        },
+        run: 'if [ "$FULL_REBUILD" = "true" ]; then python validate_examples.py; else python validate_examples.py --changed-from "$BEFORE_SHA" --changed-to "$AFTER_SHA"; fi'
       }
     ]
 
   build:
     runs-on: ubuntu-latest
     needs: validate
-    if: "!contains(github.event.head_commit.message, 'skip-ci')"
+    if: "github.event_name != 'push' || !contains(github.event.head_commit.message, 'skip-ci')"
     outputs:
       example_count: ${{ steps.count.outputs.example_count }}
       changed_examples: ${{ steps.count.outputs.changed_examples }}
@@ -43,28 +55,34 @@ jobs:
       },
       {
         name: 'Download Bob',
-        run: 'python download_bob.py --channel beta --output bob.jar'
+        run: 'python download_bob.py --channel alpha --output bob.jar'
       },
       {
         id: 'count',
         name: 'Count touched examples',
         env: {
           BEFORE_SHA: '${{ github.event.before }}',
-          AFTER_SHA: '${{ github.sha }}'
+          AFTER_SHA: '${{ github.sha }}',
+          FULL_REBUILD: '${{ github.event_name == ''workflow_dispatch'' && inputs.full_rebuild }}'
         },
-        run: 'echo "example_count=$(python build_examples.py --changed-from "$BEFORE_SHA" --changed-to "$AFTER_SHA" --dry-run)" >> "$GITHUB_OUTPUT"; echo "changed_examples=$(python build_examples.py --changed-from "$BEFORE_SHA" --changed-to "$AFTER_SHA" --list-json)" >> "$GITHUB_OUTPUT"'
+        run: 'if [ "$FULL_REBUILD" = "true" ]; then echo "example_count=$(python build_examples.py --dry-run)" >> "$GITHUB_OUTPUT"; echo "changed_examples=$(python build_examples.py --list-json)" >> "$GITHUB_OUTPUT"; else echo "example_count=$(python build_examples.py --changed-from "$BEFORE_SHA" --changed-to "$AFTER_SHA" --dry-run)" >> "$GITHUB_OUTPUT"; echo "changed_examples=$(python build_examples.py --changed-from "$BEFORE_SHA" --changed-to "$AFTER_SHA" --list-json)" >> "$GITHUB_OUTPUT"; fi'
       },
       {
         name: 'Build touched examples',
         if: steps.count.outputs.example_count != '0',
-        run: 'python build_examples.py --bob-jar bob.jar --changed-from "${{ github.event.before }}" --changed-to "${{ github.sha }}"'
+        env: {
+          BEFORE_SHA: '${{ github.event.before }}',
+          AFTER_SHA: '${{ github.sha }}',
+          FULL_REBUILD: '${{ github.event_name == ''workflow_dispatch'' && inputs.full_rebuild }}'
+        },
+        run: 'if [ "$FULL_REBUILD" = "true" ]; then python build_examples.py --bob-jar bob.jar; else python build_examples.py --bob-jar bob.jar --changed-from "$BEFORE_SHA" --changed-to "$AFTER_SHA"; fi'
       }
     ]
 
   publish:
     runs-on: ubuntu-latest
     needs: build
-    if: needs.build.outputs.example_count != '0' && !contains(github.event.head_commit.message, 'skip-ci')
+    if: "needs.build.outputs.example_count != '0' && (github.event_name != 'push' || !contains(github.event.head_commit.message, 'skip-ci'))"
     steps: [
       { name: 'Checkout', uses: actions/checkout@v4, with: { fetch-depth: 1 } },
       { name: 'Install Python', uses: actions/setup-python@v4, with: { python-version: 3.10.5, architecture: x64 } },

@@ -14,7 +14,7 @@ BOB_URL_TEMPLATE = "https://d.defold.com/archive/{sha1}/bob/bob.jar"
 
 def parse_args() -> argparse.Namespace:
 	parser = argparse.ArgumentParser()
-	parser.add_argument("--channel", default="beta")
+	parser.add_argument("--channel", default="alpha")
 	parser.add_argument("--output", default="bob.jar")
 	return parser.parse_args()
 
