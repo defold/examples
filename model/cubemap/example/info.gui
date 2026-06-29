@@ -1,0 +1,22 @@
+fonts {
+  name: "always_on_top"
+  font: "/builtins/fonts/default.font"
+}
+nodes {
+  position {
+    x: 360.0
+    y: 680.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Click/touch and move to rotate\n"
+  "Scroll to zoom"
+  font: "always_on_top"
+  id: "text"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

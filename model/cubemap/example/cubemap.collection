@@ -10,10 +10,11 @@ embedded_instances {
   "  name: \\\"Material\\\"\\n"
   "  material: \\\"/example/cubemap_model.material\\\"\\n"
   "  textures {\\n"
-  "    sampler: \\\"envMap\\\"\\n"
+  "    sampler: \\\"env_map\\\"\\n"
   "    texture: \\\"/example/assets/env.cubemap\\\"\\n"
   "  }\\n"
   "}\\n"
+  "create_go_bones: false\\n"
   "\"\n"
   "}\n"
   ""
@@ -27,7 +28,7 @@ embedded_instances {
   id: "camera"
   data: "components {\n"
   "  id: \"main\"\n"
-  "  component: \"/example/cubemap.script\"\n"
+  "  component: \"/example/orbit_camera.script\"\n"
   "}\n"
   "embedded_components {\n"
   "  id: \"camera\"\n"
@@ -35,11 +36,20 @@ embedded_instances {
   "  data: \"aspect_ratio: 1.0\\n"
   "fov: 0.7854\\n"
   "near_z: 1.0\\n"
-  "far_z: 100.0\\n"
+  "far_z: 50.0\\n"
+  "auto_aspect_ratio: 1\\n"
   "\"\n"
   "}\n"
   ""
   position {
     z: 10.0
   }
+}
+embedded_instances {
+  id: "info"
+  data: "components {\n"
+  "  id: \"info\"\n"
+  "  component: \"/example/info.gui\"\n"
+  "}\n"
+  ""
 }
