@@ -1,0 +1,13 @@
+images {
+  image: "/assets/images/pixel_white.png"
+}
+images {
+  image: "/assets/images/triangle_white.png"
+}
+images {
+  image: "/assets/images/diamond_white.png"
+}
+images {
+  image: "/assets/images/ball.png"
+}
+extrude_borders: 2
