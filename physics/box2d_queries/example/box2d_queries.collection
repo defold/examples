@@ -1,0 +1,88 @@
+name: "box2d_queries"
+instances {
+  id: "box_target"
+  prototype: "/example/box_target.go"
+  position {
+    x: 240.0
+    y: 500.0
+  }
+}
+instances {
+  id: "circle_target"
+  prototype: "/example/circle_target.go"
+  position {
+    x: 490.0
+    y: 500.0
+  }
+}
+instances {
+  id: "triangle_target"
+  prototype: "/example/triangle_target.go"
+  position {
+    x: 200.0
+    y: 230.0
+  }
+}
+instances {
+  id: "diamond_target"
+  prototype: "/example/diamond_target.go"
+  position {
+    x: 520.0
+    y: 230.0
+  }
+}
+instances {
+  id: "circle_query"
+  prototype: "/example/query_circle.go"
+}
+instances {
+  id: "aabb"
+  prototype: "/example/query_box.go"
+  position {
+    x: 360.0
+    y: 360.0
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "controller"
+  children: "aabb"
+  children: "circle_query"
+  data: "components {\n"
+  "  id: \"script\"\n"
+  "  component: \"/example/box2d_queries.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"instructions\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 680.0\\n"
+  "  y: 64.0\\n"
+  "}\\n"
+  "text: \\\"Move with mouse or touch\\\"\\n"
+  "font: \\\"/assets/fonts/text28.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 360.0\n"
+  "    y: 680.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"counts\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 680.0\\n"
+  "  y: 64.0\\n"
+  "}\\n"
+  "text: \\\"AABB: 0   Circle: 0\\\"\\n"
+  "font: \\\"/assets/fonts/text28.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 360.0\n"
+  "    y: 40.0\n"
+  "  }\n"
+  "}\n"
+  ""
+}
