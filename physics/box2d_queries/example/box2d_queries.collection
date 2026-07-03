@@ -75,7 +75,7 @@ embedded_instances {
   "  x: 680.0\\n"
   "  y: 64.0\\n"
   "}\\n"
-  "text: \\\"AABB: 0   Circle: 0\\\"\\n"
+  "text: \\\"AABB: 0   Circle: 0   Ray: 0\\\"\\n"
   "font: \\\"/assets/fonts/text28.font\\\"\\n"
   "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
   "\"\n"

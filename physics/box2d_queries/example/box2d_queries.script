@@ -13,6 +13,7 @@ local TARGETS = {
 -- Query sizes used by the pointer-controlled AABB and circle queries.
 local AABB_HALF_SIZE = vmath.vector3(66.0, 66.0, 0.0)
 local CIRCLE_RADIUS = 64.0
+local RAY_ORIGIN = vmath.vector3(360.0, 360.0, 0.0)
 
 -- Colors used for helper lines, query overlays, and hit feedback.
 local LINE_COLOR = vmath.vector4(1.0, 1.0, 1.0, 0.75)
@@ -81,11 +82,15 @@ local function draw_aabb(aabb, color)
 	draw_line(top_left, bottom_left, color)
 end
 
--- Return the Box2D body from a V2 overlap hit or a V3 overlap hit.
+-- Return the Box2D body from a V2 or V3 overlap/raycast hit.
 local function get_hit_body(hit)
 	-- Box2D V2 overlap results expose the hit body directly.
 	if hit.body then
 		return hit.body
+	elseif hit.fixture then
+		return hit.fixture.body -- Box2D V2 raycast results expose the hit body through the fixture.
+	elseif hit.shape then
+		return b2d.shape.get_body(hit.shape.shape_id) -- Box2D V3 raycast results expose a shape info table with a shape id.
 	end
 
 	-- Box2D V3 overlap results expose a shape id, so the body is resolved from the shape.
@@ -122,6 +127,8 @@ function update(self, dt)
 	local upper = self.pointer + AABB_HALF_SIZE
 	local aabb = { lower = lower, upper = upper }
 	local circle = { type = b2d.shape.SHAPE_TYPE_CIRCLE, center = self.pointer, radius = CIRCLE_RADIUS }
+	local ray_delta = self.pointer - RAY_ORIGIN
+
 	go.set_position(self.pointer, "/aabb")
 	go.set_position(self.pointer, "/circle_query")
 
@@ -131,8 +138,12 @@ function update(self, dt)
 	-- Query all fixtures or shapes overlapping the pointer-centered circle
 	local circle_hits = b2d.world.overlap_shape(self.world, circle, nil, 16)
 
+	-- Cast a ray from the scene center using a translation vector.
+	local ray_hits = b2d.world.cast_ray(self.world, RAY_ORIGIN, ray_delta, nil, 16)
+
 	local aabb_targets = collect_hit_targets(self, aabb_hits)
 	local circle_targets = collect_hit_targets(self, circle_hits)
+	local ray_targets = collect_hit_targets(self, ray_hits)
 
 	-- Change the circle shape tint to show if any overlap is detected
 	go.set("/aabb#sprite", "tint", #aabb_hits > 0 and HIT_COLOR or AABB_COLOR)
@@ -140,13 +151,15 @@ function update(self, dt)
 
 	-- Draw the current AABB query visual shape to show if any overlap is detected
 	draw_aabb(aabb, #aabb_hits > 0 and HIT_COLOR or LINE_COLOR)
+	draw_line(RAY_ORIGIN, self.pointer, #ray_hits > 0 and HIT_COLOR or LINE_COLOR) -- Draw the ray in white, or green when it hits anything.
 
 	-- Draw defined target AABBs outlines and highlight them when hit by the AABB query
 	for _, target in ipairs(self.targets) do
-		go.set("/" .. target.id .. "#sprite", "tint", circle_targets[target.id] and HIT_COLOR or target.color) -- <12>
-		draw_aabb(target.aabb, aabb_targets[target.id] and HIT_COLOR or LINE_COLOR) -- <13>
+		local shape_hit = circle_targets[target.id] or ray_targets[target.id]
+		go.set("/" .. target.id .. "#sprite", "tint", shape_hit and HIT_COLOR or target.color) -- <12> Tint target sprites when the circle shape query or raycast hits the actual target shape.
+		draw_aabb(target.aabb, aabb_targets[target.id] and HIT_COLOR or LINE_COLOR) -- <13> Highlight target AABBs only when the AABB query hits that target.
 	end
 
 	-- Show how many fixtures or shapes each query hit
-	label.set_text("#counts", string.format("AABB: %d   Circle: %d", #aabb_hits, #circle_hits)) -- <14>
+	label.set_text("#counts", string.format("AABB: %d   Circle: %d   Ray: %d", #aabb_hits, #circle_hits, #ray_hits)) -- <14>
 end
