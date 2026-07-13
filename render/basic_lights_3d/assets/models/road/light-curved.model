@@ -1,0 +1,11 @@
+mesh: "/assets/meshes/road_kenney/light-curved.glb"
+name: "light-curved-double"
+materials {
+  name: "colormap"
+  material: "/builtins/materials/model_instanced_lit.material"
+  textures {
+    sampler: "tex0"
+    texture: "/assets/textures/colormap_roads.png"
+  }
+}
+create_go_bones: false
