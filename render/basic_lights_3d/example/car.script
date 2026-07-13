@@ -1,8 +1,8 @@
 function init(self)
-	-- Start an animation to go over X axis looking like the car is driving forth and back
+	-- Start an animation to go over X axis looking like the car is driving back and forth
 	go.animate(".", "position.x", go.PLAYBACK_LOOP_PINGPONG, 2.5, go.EASING_INOUTSINE, 10)
 
-	-- Store initial car's rotation
+	-- Store car's initial rotation
 	self.rotation = go.get_rotation(".")
 
 	-- Every 5 seconds start a rotation animation
