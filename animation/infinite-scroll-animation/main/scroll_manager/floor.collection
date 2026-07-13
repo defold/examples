@@ -1,0 +1,79 @@
+name: "scroll"
+instances {
+  id: "floor_object"
+  prototype: "/main/scroll_manager/floor_object.go"
+  position {
+    x: -90.0
+    y: 40.0
+  }
+}
+instances {
+  id: "floor_object1"
+  prototype: "/main/scroll_manager/floor_object.go"
+  position {
+    x: -270.0
+    y: 40.0
+  }
+}
+instances {
+  id: "floor_object2"
+  prototype: "/main/scroll_manager/floor_object.go"
+  position {
+    x: 270.0
+    y: 40.0
+  }
+}
+instances {
+  id: "floor_object3"
+  prototype: "/main/scroll_manager/floor_object.go"
+  position {
+    x: 90.0
+    y: 40.0
+  }
+}
+instances {
+  id: "floor_object4"
+  prototype: "/main/scroll_manager/floor_object.go"
+  position {
+    x: 450.0
+    y: 40.0
+  }
+}
+instances {
+  id: "floor_object5"
+  prototype: "/main/scroll_manager/floor_object.go"
+  position {
+    x: -450.0
+    y: 40.0
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "root"
+  children: "floor_object"
+  children: "floor_object1"
+  children: "floor_object2"
+  children: "floor_object3"
+  children: "floor_object4"
+  children: "floor_object5"
+  data: "components {\n"
+  "  id: \"scroll_controller\"\n"
+  "  component: \"/main/scroll_manager/scroll_controller.script\"\n"
+  "  properties {\n"
+  "    id: \"LEFT_BOUND\"\n"
+  "    value: \"-540.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"RIGHT_BOUND\"\n"
+  "    value: \"540.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"COUNT_OBJECTS\"\n"
+  "    value: \"6.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "}\n"
+  ""
+}

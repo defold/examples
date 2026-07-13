@@ -1,0 +1,48 @@
+name: "main"
+collection_instances {
+  id: "floor"
+  collection: "/main/scroll_manager/floor.collection"
+  position {
+    x: 363.0
+    z: 0.9
+  }
+}
+collection_instances {
+  id: "foreground"
+  collection: "/main/scroll_manager/red.collection"
+  position {
+    x: 360.0
+    y: 80.0
+    z: 0.5
+  }
+  instance_properties {
+    id: "root"
+    properties {
+      id: "scroll_controller"
+      properties {
+        id: "SPEED"
+        value: "70.0"
+        type: PROPERTY_TYPE_NUMBER
+      }
+    }
+  }
+}
+collection_instances {
+  id: "middle"
+  collection: "/main/scroll_manager/green.collection"
+  position {
+    x: 358.0
+    y: 80.0
+    z: 0.9
+  }
+}
+collection_instances {
+  id: "background"
+  collection: "/main/scroll_manager/puprple.collection"
+  position {
+    x: 396.0
+    y: 80.0
+    z: 0.2
+  }
+}
+scale_along_z: 0
