@@ -14,6 +14,8 @@ and siren lights can be seen on nearby models.
 
 You can orbit the camera around the scene with the mouse or touch input.
 
+Read more about [Light components in the manual](https://defold.com/manuals/light/).
+
 ## What You'll Learn
 
 - How to add ambient, directional, point, and spot light components to a 3D scene.
