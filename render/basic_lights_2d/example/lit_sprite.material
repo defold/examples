@@ -1,0 +1,19 @@
+name: "sprite_lit_2d"
+tags: "tile"
+vertex_program: "/example/lit_sprite.vp"
+fragment_program: "/example/lit_sprite.fp"
+vertex_constants {
+  name: "view_proj"
+  type: CONSTANT_TYPE_VIEWPROJ
+}
+vertex_constants {
+  name: "mtx_view"
+  type: CONSTANT_TYPE_VIEW
+}
+samplers {
+  name: "texture_sampler"
+  wrap_u: WRAP_MODE_CLAMP_TO_EDGE
+  wrap_v: WRAP_MODE_CLAMP_TO_EDGE
+  filter_min: FILTER_MODE_MIN_DEFAULT
+  filter_mag: FILTER_MODE_MAG_DEFAULT
+}
