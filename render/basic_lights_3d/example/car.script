@@ -1,0 +1,22 @@
+function init(self)
+	-- Start an animation to go over X axis looking like the car is driving back and forth
+	go.animate(".", "position.x", go.PLAYBACK_LOOP_PINGPONG, 2.5, go.EASING_INOUTSINE, 10)
+
+	-- Store car's initial rotation
+	self.rotation = go.get_rotation(".")
+
+	-- Every 5 seconds start a rotation animation
+	timer.delay(5, true, function()
+		-- Rotate the car around its Y axis
+		self.rotation.y = - self.rotation.y
+		go.animate(".", "rotation", go.PLAYBACK_ONCE_FORWARD, self.rotation, go.EASING_INOUTSINE, 0.5)
+	end)
+
+	-- Animate the scale of the game object containing a blue light component of the police siren lights
+	go.animate("/blue_light", "scale", go.PLAYBACK_LOOP_PINGPONG, vmath.vector3(1.5), go.EASING_INOUTSINE, 1)
+
+	-- Animate the scale of the game object containing a red light component of the police siren lights
+	timer.delay(0.5, false, function()
+		go.animate("/red_light", "scale", go.PLAYBACK_LOOP_PINGPONG, vmath.vector3(1.5), go.EASING_INOUTSINE, 1)
+	end)
+end

@@ -1,0 +1,11 @@
+mesh: "/assets/meshes/city_kenney/building-type-c.glb"
+name: "building-type-c"
+create_go_bones: false
+materials {
+  name: "colormap"
+  material: "/builtins/materials/model_instanced_lit.material"
+  textures {
+    sampler: "tex0"
+    texture: "/assets/textures/colormap_city.png"
+  }
+}
