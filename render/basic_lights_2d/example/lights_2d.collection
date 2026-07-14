@@ -1,0 +1,262 @@
+name: "lights_2d"
+scale_along_z: 0
+embedded_instances {
+  id: "ambient_light"
+  data: "embedded_components {\n"
+  "  id: \"ambient_light\"\n"
+  "  type: \"ambient_light\"\n"
+  "  data: \"data {\\n"
+  "  struct {\\n"
+  "    fields {\\n"
+  "      key: \\\"color\\\"\\n"
+  "      value {\\n"
+  "        list {\\n"
+  "          values {\\n"
+  "            number: 0.16000000000000003\\n"
+  "          }\\n"
+  "          values {\\n"
+  "            number: 0.18000000000000002\\n"
+  "          }\\n"
+  "          values {\\n"
+  "            number: 0.22000000000000003\\n"
+  "          }\\n"
+  "        }\\n"
+  "      }\\n"
+  "    }\\n"
+  "    fields {\\n"
+  "      key: \\\"intensity\\\"\\n"
+  "      value {\\n"
+  "        number: 0.5\\n"
+  "      }\\n"
+  "    }\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "point_light"
+  data: "components {\n"
+  "  id: \"script\"\n"
+  "  component: \"/example/follow_cursor.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"point_light\"\n"
+  "  type: \"point_light\"\n"
+  "  data: \"data {\\n"
+  "  struct {\\n"
+  "    fields {\\n"
+  "      key: \\\"color\\\"\\n"
+  "      value {\\n"
+  "        list {\\n"
+  "          values {\\n"
+  "            number: 1.0\\n"
+  "          }\\n"
+  "          values {\\n"
+  "            number: 1.0\\n"
+  "          }\\n"
+  "          values {\\n"
+  "            number: 1.0\\n"
+  "          }\\n"
+  "        }\\n"
+  "      }\\n"
+  "    }\\n"
+  "    fields {\\n"
+  "      key: \\\"intensity\\\"\\n"
+  "      value {\\n"
+  "        number: 3.0\\n"
+  "      }\\n"
+  "    }\\n"
+  "    fields {\\n"
+  "      key: \\\"range\\\"\\n"
+  "      value {\\n"
+  "        number: 360.0\\n"
+  "      }\\n"
+  "    }\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 160.0
+    y: 390.0
+    z: 140.0
+  }
+}
+embedded_instances {
+  id: "spot_light"
+  data: "embedded_components {\n"
+  "  id: \"spot_light\"\n"
+  "  type: \"spot_light\"\n"
+  "  data: \"data {\\n"
+  "  struct {\\n"
+  "    fields {\\n"
+  "      key: \\\"color\\\"\\n"
+  "      value {\\n"
+  "        list {\\n"
+  "          values {\\n"
+  "            number: 1.0\\n"
+  "          }\\n"
+  "          values {\\n"
+  "            number: 0.0\\n"
+  "          }\\n"
+  "          values {\\n"
+  "            number: 0.0\\n"
+  "          }\\n"
+  "        }\\n"
+  "      }\\n"
+  "    }\\n"
+  "    fields {\\n"
+  "      key: \\\"inner_cone_angle\\\"\\n"
+  "      value {\\n"
+  "        number: 30.0\\n"
+  "      }\\n"
+  "    }\\n"
+  "    fields {\\n"
+  "      key: \\\"intensity\\\"\\n"
+  "      value {\\n"
+  "        number: 3.0\\n"
+  "      }\\n"
+  "    }\\n"
+  "    fields {\\n"
+  "      key: \\\"outer_cone_angle\\\"\\n"
+  "      value {\\n"
+  "        number: 50.0\\n"
+  "      }\\n"
+  "    }\\n"
+  "    fields {\\n"
+  "      key: \\\"range\\\"\\n"
+  "      value {\\n"
+  "        number: 800.0\\n"
+  "      }\\n"
+  "    }\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 348.0
+    y: 14.0
+    z: 200.0
+  }
+  rotation {
+    x: 0.38268343
+    w: 0.9238795
+  }
+}
+embedded_instances {
+  id: "scene"
+  children: "background"
+  children: "stone"
+  children: "stone1"
+  children: "stone2"
+  data: ""
+}
+embedded_instances {
+  id: "background"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"green\\\"\\n"
+  "material: \\\"/example/lit_sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 720.0\\n"
+  "  y: 720.0\\n"
+  "}\\n"
+  "size_mode: SIZE_MODE_MANUAL\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/sprites.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 360.0
+    y: 360.0
+    z: -0.2
+  }
+}
+embedded_instances {
+  id: "stone"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"elementStone019\\\"\\n"
+  "material: \\\"/example/lit_sprite.material\\\"\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/sprites.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 356.0
+    y: 494.0
+  }
+}
+embedded_instances {
+  id: "stone1"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"elementStone019\\\"\\n"
+  "material: \\\"/example/lit_sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 220.0\\n"
+  "  y: 140.0\\n"
+  "}\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/sprites.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 149.0
+    y: 278.0
+  }
+  rotation {
+    z: -0.25881904
+    w: 0.9659258
+  }
+  scale3 {
+    y: 0.8
+  }
+}
+embedded_instances {
+  id: "stone2"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"elementStone019\\\"\\n"
+  "material: \\\"/example/lit_sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 220.0\\n"
+  "  y: 140.0\\n"
+  "}\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/sprites.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 497.0
+    y: 279.0
+  }
+  rotation {
+    z: 0.17364818
+    w: 0.9848077
+  }
+  scale3 {
+    x: 0.8
+    y: 0.8
+  }
+}
