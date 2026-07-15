@@ -1,0 +1,11 @@
+mesh: "/assets/meshes/cars_kenney/kart-oopi.glb"
+name: "police"
+materials {
+  name: "colormap"
+  material: "/builtins/materials/model_instanced_lit.material"
+  textures {
+    sampler: "tex0"
+    texture: "/assets/textures/colormap_cars.png"
+  }
+}
+create_go_bones: false
