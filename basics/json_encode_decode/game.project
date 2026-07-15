@@ -1,0 +1,25 @@
+[bootstrap]
+main_collection = /example/json_encode_decode.collectionc
+
+[script]
+shared_state = 1
+
+[display]
+width = 720
+height = 720
+high_dpi = 1
+
+[android]
+input_method = HiddenInputField
+
+[html5]
+scale_mode = stretch
+
+[project]
+title = json_encode_decode
+
+[render]
+clear_color_red = 1.0
+clear_color_green = 1.0
+clear_color_blue = 1.0
+
