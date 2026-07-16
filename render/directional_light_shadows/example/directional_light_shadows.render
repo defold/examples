@@ -1,0 +1,9 @@
+script: "/example/directional_light_shadows.render_script"
+render_resources {
+  name: "directional_shadow_depth"
+  path: "/example/materials/directional_shadow_depth.material"
+}
+render_resources {
+  name: "directional_shadow_receiver"
+  path: "/example/materials/directional_shadow_receiver.material"
+}
