@@ -1,0 +1,26 @@
+components {
+  id: "prop_controller"
+  component: "/main/scroll_manager/scroll_item.script"
+}
+embedded_components {
+  id: "sprite"
+  type: "sprite"
+  data: "default_animation: \"green_body_square\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "slice9 {\n"
+  "  x: 12.0\n"
+  "  y: 12.0\n"
+  "  z: 12.0\n"
+  "  w: 12.0\n"
+  "}\n"
+  "size {\n"
+  "  x: 64.0\n"
+  "  y: 32.0\n"
+  "}\n"
+  "size_mode: SIZE_MODE_MANUAL\n"
+  "textures {\n"
+  "  sampler: \"texture_sampler\"\n"
+  "  texture: \"/main/atlas.atlas\"\n"
+  "}\n"
+  ""
+}

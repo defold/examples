@@ -1,0 +1,77 @@
+name: "scroll"
+instances {
+  id: "red_object"
+  prototype: "/main/scroll_manager/red_object.go"
+  position {
+    x: -386.0
+  }
+}
+instances {
+  id: "red_object1"
+  prototype: "/main/scroll_manager/red_object.go"
+  position {
+    x: -170.0
+  }
+  scale3 {
+    x: 0.609204
+    y: 0.593882
+  }
+}
+instances {
+  id: "red_object2"
+  prototype: "/main/scroll_manager/red_object.go"
+  position {
+    x: 53.0
+  }
+}
+instances {
+  id: "red_object3"
+  prototype: "/main/scroll_manager/red_object.go"
+  position {
+    x: 410.0
+  }
+  scale3 {
+    x: 1.578199
+    y: 1.621207
+  }
+}
+instances {
+  id: "red_object4"
+  prototype: "/main/scroll_manager/red_object.go"
+  position {
+    x: 230.0
+  }
+  scale3 {
+    x: 0.482741
+    y: 0.458382
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "root"
+  children: "red_object"
+  children: "red_object1"
+  children: "red_object2"
+  children: "red_object3"
+  children: "red_object4"
+  data: "components {\n"
+  "  id: \"scroll_controller\"\n"
+  "  component: \"/main/scroll_manager/scroll_controller.script\"\n"
+  "  properties {\n"
+  "    id: \"LEFT_BOUND\"\n"
+  "    value: \"-544.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"RIGHT_BOUND\"\n"
+  "    value: \"544.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"COUNT_OBJECTS\"\n"
+  "    value: \"5.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "}\n"
+  ""
+}

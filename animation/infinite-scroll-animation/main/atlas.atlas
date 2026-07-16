@@ -1,0 +1,20 @@
+images {
+  image: "/main/images/tile_grey.png"
+}
+images {
+  image: "/main/images/blue_body_square.png"
+  pivot_y: 1.0
+}
+images {
+  image: "/main/images/green_body_square.png"
+  pivot_y: 1.0
+}
+images {
+  image: "/main/images/purple_body_square.png"
+  pivot_y: 1.0
+}
+images {
+  image: "/main/images/red_body_square.png"
+  pivot_y: 1.0
+}
+extrude_borders: 2

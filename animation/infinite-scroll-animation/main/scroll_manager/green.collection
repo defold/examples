@@ -1,0 +1,57 @@
+name: "scroll"
+instances {
+  id: "green_object"
+  prototype: "/main/scroll_manager/green_object.go"
+  position {
+    x: -289.0
+  }
+}
+instances {
+  id: "green_object1"
+  prototype: "/main/scroll_manager/green_object.go"
+  position {
+    x: -42.0
+  }
+}
+instances {
+  id: "green_object2"
+  prototype: "/main/scroll_manager/green_object.go"
+  position {
+    x: 155.0
+  }
+}
+instances {
+  id: "green_object3"
+  prototype: "/main/scroll_manager/green_object.go"
+  position {
+    x: 482.0
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "root"
+  children: "green_object"
+  children: "green_object1"
+  children: "green_object2"
+  children: "green_object3"
+  data: "components {\n"
+  "  id: \"scroll_controller\"\n"
+  "  component: \"/main/scroll_manager/scroll_controller.script\"\n"
+  "  properties {\n"
+  "    id: \"LEFT_BOUND\"\n"
+  "    value: \"-544.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"RIGHT_BOUND\"\n"
+  "    value: \"544.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"COUNT_OBJECTS\"\n"
+  "    value: \"4.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "}\n"
+  ""
+}

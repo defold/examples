@@ -1,0 +1,46 @@
+name: "scroll"
+instances {
+  id: "purple_object"
+  prototype: "/main/scroll_manager/purple_object.go"
+  position {
+    x: -267.0
+  }
+}
+instances {
+  id: "purple_object1"
+  prototype: "/main/scroll_manager/purple_object.go"
+  position {
+    x: 225.0
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "root"
+  children: "purple_object"
+  children: "purple_object1"
+  data: "components {\n"
+  "  id: \"scroll_controller\"\n"
+  "  component: \"/main/scroll_manager/scroll_controller.script\"\n"
+  "  properties {\n"
+  "    id: \"SPEED\"\n"
+  "    value: \"45.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"LEFT_BOUND\"\n"
+  "    value: \"-544.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"RIGHT_BOUND\"\n"
+  "    value: \"544.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"COUNT_OBJECTS\"\n"
+  "    value: \"2.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "}\n"
+  ""
+}
