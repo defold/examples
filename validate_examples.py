@@ -6,7 +6,7 @@ import argparse
 import os
 import subprocess
 import sys
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 
 SCRIPT_EXTENSIONS = {
@@ -18,6 +18,16 @@ SCRIPT_EXTENSIONS = {
 	".cp",
 	".glsl",
 	".render_script",
+}
+
+IGNORED_SCRIPT_DIRS = {
+	".deps",
+	".git",
+	".internal",
+	"build",
+	"builtins",
+	"js-web",
+	"node_modules",
 }
 
 
@@ -90,17 +100,48 @@ def split_scripts(value: str | None) -> list[str]:
 	return [script.strip().strip("\"'") for script in value.split(",") if script.strip()]
 
 
-def example_scripts(example_dir: Path) -> set[str]:
-	scripts: set[str] = set()
-	source_dir = example_dir / "example"
-	if not source_dir.exists():
+def example_scripts(example_dir: Path) -> list[str]:
+	scripts: list[str] = []
+	if not example_dir.exists():
 		return scripts
 
-	for path in source_dir.rglob("*"):
-		if path.is_file() and path.suffix in SCRIPT_EXTENSIONS:
-			scripts.add(path.name)
+	for root, dirnames, filenames in os.walk(example_dir):
+		dirnames[:] = [dirname for dirname in dirnames if dirname not in IGNORED_SCRIPT_DIRS]
+		root_path = Path(root)
+		for filename in filenames:
+			path = root_path / filename
+			if path.suffix in SCRIPT_EXTENSIONS:
+				scripts.append(path.relative_to(example_dir).as_posix())
 
-	return scripts
+	return sorted(scripts)
+
+
+def resolve_script_reference(script: str, available_scripts: list[str]) -> str:
+	path = PurePosixPath(script)
+	if (
+		not script
+		or "\\" in script
+		or path.is_absolute()
+		or str(path) != script
+		or any(part in {"", ".", ".."} for part in path.parts)
+	):
+		raise ValueError(
+			f"scripts entry must be a file name or normalized project-relative path, got '{script}'"
+		)
+
+	if len(path.parts) > 1:
+		if script not in available_scripts:
+			raise ValueError(f"scripts entry '{script}' does not exist in the project")
+		return script
+
+	matches = [candidate for candidate in available_scripts if PurePosixPath(candidate).name == script]
+	if not matches:
+		raise ValueError(f"scripts entry '{script}' does not exist in the project")
+	if len(matches) > 1:
+		raise ValueError(
+			f"scripts entry '{script}' is ambiguous; use an exact project-relative path: {', '.join(matches)}"
+		)
+	return matches[0]
 
 
 def parse_args() -> argparse.Namespace:
@@ -130,10 +171,10 @@ def validate() -> int:
 		available_scripts = example_scripts(example_dir)
 
 		for script in split_scripts(frontmatter_value(markdown_file, "scripts")):
-			if script != os.path.basename(script):
-				errors.append(f"{markdown_file}: scripts entry must be a file name, got '{script}'")
-			elif script not in available_scripts:
-				errors.append(f"{markdown_file}: scripts entry '{script}' does not exist in {example_dir / 'example'}")
+			try:
+				resolve_script_reference(script, available_scripts)
+			except ValueError as error:
+				errors.append(f"{markdown_file}: {error}")
 
 	if errors:
 		print("Example validation failed:")

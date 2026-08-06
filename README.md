@@ -23,5 +23,5 @@ thumbnail: myimage.png
 
 * Use the `authors` array for one or more contributors. The older single `author` field is still supported for existing examples.
 * Examples use the repository-wide CC0-1.0 licence by default. Add a `license` field only when an example needs a different licence.
-* List any scripts your example uses in the `scripts` field of the file header
+* List any scripts your example uses in the `scripts` field of the file header. A file name is enough when it is unique in the project. If multiple scripts have the same file name, use the exact path relative to the example project root (for example, `main/player/player.script`).
 * The thumbnail image will be used on https://defold.com/examples 

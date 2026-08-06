@@ -5,7 +5,7 @@ brief: Shows how to use a Time shader constant to achieve a moving wave effect
 authors:
   - JuLongZhiLu(巨龙之路)
   - Brian Kramer
-scripts: wave_background.fp
+scripts: example/wave_background.fp
 thumbnail: thumbnail.png
 ---
 
