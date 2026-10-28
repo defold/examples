@@ -4,7 +4,7 @@ in highp vec4 var_position;
 in mediump vec3 var_normal;
 in mediump vec2 var_texcoord0;
 
-// Required by /builtins/materials/lighting.glsl. Its helper functions use this
+// Passed to /builtins/materials/lighting.glsl. Its helper functions use this
 // matrix to transform light positions and directions from world to view space.
 in highp mat4 var_view;
 
@@ -40,7 +40,7 @@ uniform fs_uniforms
 #include "/example/materials/shadows.glsl"
 
 
-// Equivalent to Defold's diffuse_lambert(view_normal, view_position),
+// Equivalent to Defold's diffuse_lambert(view_normal, view_position, var_view),
 // except that directional-light contributions are multiplied by shadow visibility.
 // Point and spot lights are not affected by this directional shadow map.
 vec3 shadowed_diffuse_lambert(vec3 view_normal, vec3 view_position)
@@ -58,14 +58,14 @@ vec3 shadowed_diffuse_lambert(vec3 view_normal, vec3 view_position)
 		}
 
 		// Calculate the light contribution for the current light.
-		vec3 light_contribution = diffuse_lambert(i, view_normal, view_position);
+		vec3 light_contribution = diffuse_lambert(i, view_normal, view_position, var_view);
 
 		// If the light is directional, calculate the shadow visibility.
 		if (int(lights[i].params.x) == LIGHT_DIRECTIONAL)
 		{
 			// This is the same normalized direction convention used internally
 			// by Defold's directional branch in diffuse_lambert().
-			highp vec3 direction_to_light = -world_to_view_dir(lights[i].direction_range.xyz);
+			highp vec3 direction_to_light = -world_to_view_dir(lights[i].direction_range.xyz, var_view);
 
 			// Calculate the shadow visibility for the current light.
 			light_contribution *= directional_shadow_visibility(

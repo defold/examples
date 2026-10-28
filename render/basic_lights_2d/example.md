@@ -90,7 +90,7 @@ Passing `mtx_view` also keeps the material correct if the scene would later use 
 The include declares the engine-owned light buffer and provides two helpers used here:
 
 - `ambient_light()` returns the accumulated Ambient Light contribution.
-- `diffuse_lambert(normal, position)` evaluates the active Directional, Point, and Spot lights up to `MAX_LIGHT_COUNT`.
+- `diffuse_lambert(normal, position, var_view)` evaluates the active Directional, Point, and Spot lights up to `MAX_LIGHT_COUNT`, using the view matrix to transform the lights into view space.
 
 Sprites have positions and texture coordinates, but no normal vertex attribute.
 This example treats every sprite as a flat surface facing positive Z
