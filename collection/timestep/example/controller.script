@@ -5,7 +5,11 @@ function init(self)
 	-- acquire input for this script
 	msg.post(".", "acquire_input_focus")
 	-- load the collection proxy
-	msg.post("#gameproxy", "async_load")
+	collectionproxy.load("#gameproxy", nil, function(self, message_id, message, sender)
+		if message_id == hash("proxy_ready") then
+			msg.post(sender, "enable")
+		end
+	end)
 end
 
 function update(self, dt)
@@ -15,9 +19,7 @@ function update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("proxy_loaded") then
-		msg.post(sender, "enable")
-	elseif message_id == hash("animate_speed") then
+	if message_id == hash("animate_speed") then
 		-- cancel any current animation of the speed property
 		go.cancel_animations("#", "speed")
 		-- start animation of the speed property

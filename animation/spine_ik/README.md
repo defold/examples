@@ -7,7 +7,9 @@ scripts: area.script, cursor.script, manipulator.script
 thumbnail: thumbnail.webp
 tags: animation
 ---
-This example demonstrates how to control Spine IK constraints in Defold by assigning a game object as the IK target.
+This example demonstrates how to control Spine Inverse Kinematics (IK) constraints in Defold by assigning a game object as the IK target.
+
+Move the mouse or touch in the active area (white rectangle in the background) to move the robot's arm with IK constraints.
 
 
 ## Project Structure
