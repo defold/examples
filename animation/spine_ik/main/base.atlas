@@ -1,0 +1,25 @@
+images {
+  image: "/main/images/base_bot.png"
+}
+images {
+  image: "/main/images/base_top.png"
+}
+images {
+  image: "/main/images/blue_pin_min_bot.png"
+}
+images {
+  image: "/main/images/blue_pin_min_top.png"
+}
+images {
+  image: "/main/images/blue_pin_top.png"
+}
+images {
+  image: "/main/images/circle_pin_front.png"
+}
+images {
+  image: "/main/images/red_stick_bot.png"
+}
+images {
+  image: "/main/images/rect.png"
+}
+extrude_borders: 2
