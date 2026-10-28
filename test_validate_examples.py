@@ -1,8 +1,13 @@
 import tempfile
 import unittest
+from unittest import mock
+import argparse
+import contextlib
+import io
 from pathlib import Path
 
 from validate_examples import example_scripts, resolve_script_reference, validate_author_ids
+from validate_examples import validate
 
 
 class ExampleScriptResolutionTests(unittest.TestCase):
@@ -17,6 +22,17 @@ class ExampleScriptResolutionTests(unittest.TestCase):
 		path = self.project_dir / relative_path
 		path.parent.mkdir(parents=True, exist_ok=True)
 		path.write_text("function init(self) end\n", encoding="utf-8")
+
+	def test_rejects_project_without_example_documentation(self):
+		(self.project_dir / "game.project").write_text("[project]\n", encoding="utf-8")
+		output = io.StringIO()
+		with mock.patch("validate_examples.parse_args", return_value=argparse.Namespace(changed_from="", changed_to="")), mock.patch("validate_examples.tracked_example_dirs", return_value=[self.project_dir]), contextlib.redirect_stdout(output):
+			self.assertEqual(1, validate())
+		self.assertIn("missing required example documentation", output.getvalue())
+
+	def test_ignores_removed_example_directory(self):
+		with mock.patch("validate_examples.parse_args", return_value=argparse.Namespace(changed_from="before", changed_to="after")), mock.patch("validate_examples.touched_example_dirs", return_value=[self.project_dir / "removed"]), contextlib.redirect_stdout(io.StringIO()):
+			self.assertEqual(0, validate())
 
 	def write_frontmatter(self, content: str) -> Path:
 		path = self.project_dir / "example.md"

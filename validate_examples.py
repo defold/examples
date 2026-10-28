@@ -215,6 +215,8 @@ def validate() -> int:
 	for example_dir in example_dirs:
 		markdown_file = example_dir / "example.md"
 		if not markdown_file.is_file():
+			if (example_dir / "game.project").is_file():
+				errors.append(f"{markdown_file}: missing required example documentation")
 			continue
 		available_scripts = example_scripts(example_dir)
 		for error in validate_author_ids(markdown_file):
