@@ -5,8 +5,8 @@ main_collection = /main/main.collectionc
 shared_state = 1
 
 [display]
-width = 960
-height = 640
+width = 720
+height = 720
 high_dpi = 1
 
 [android]
@@ -17,7 +17,7 @@ gravity_y = -1000.0
 scale = 0.01
 
 [html5]
-scale_mode = stretch
+scale_mode = no_scale
 
 [project]
 title = spine_ik
