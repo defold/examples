@@ -25,8 +25,7 @@ This example demonstrates how to rotate a 3D object towards the mouse cursor.
 ```
 
 ## How It Works
-First, the script that controls the rotation needs a reference to the active
-camera. This is done by sending a message in `init`:
+First, the script that controls the rotation needs a reference to the active camera. This is done by sending a message in `init`:
 
 ```lua
 	msg.post("/turret#turret_controller", "register_camera", {
@@ -34,12 +33,10 @@ camera. This is done by sending a message in `init`:
 	})
 ```
 
-In turret_controller.script we use the camera to build a picking ray —
-a line that starts at the camera and goes through the cursor position in the
-world:
+In turret_controller.script we use the camera to build a picking ray - a line that starts at the camera and goes through the cursor position in the world:
 
 ```lua
--- z = 0 -> near plane, z = 1 -> far plane (normalized depth, not world units)
+-- z = 0 -> near plane, z = 1 -> far plane (normalized depth)
 local p0 = camera.screen_to_world(
 	vmath.vector3(self.mouse_x, self.mouse_y, 0),
 	self.camera_url
@@ -53,8 +50,7 @@ local p1 = camera.screen_to_world(
 local ray = p1 - p0
 ```
 
-Then we intersect this ray with the horizontal plane at the turret's height
-(y = gun_pos.y):
+Then we intersect this ray with the horizontal plane at the turret's height (y = gun_pos.y):
 ```lua
 go.update_world_transform()
 local gun_pos = go.get_world_position()
@@ -68,9 +64,7 @@ local t = (gun_pos.y - p0.y) / ray.y
 local target = p0 + ray * t
 ```
 
-Finally, we compute the yaw angle from the turret to the target and rotate
-the object around the Y axis. atan2(dx, dz) assumes the model faces +Z
-at angle 0:
+Finally, we compute the yaw angle from the turret to the target and rotate the object around the Y axis. atan2(dx, dz) assumes the model faces +Z at angle 0:
 ```lua
 local dx = target.x - gun_pos.x
 local dz = target.z - gun_pos.z
