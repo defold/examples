@@ -27,7 +27,7 @@ jobs:
     if: "github.event_name != 'push' || !contains(github.event.head_commit.message, 'skip-ci')"
     steps: [
       { name: 'Checkout', uses: actions/checkout@v4, with: { fetch-depth: 0 } },
-      { name: 'Install Python', uses: actions/setup-python@v4, with: { python-version: 3.10.5, architecture: x64 } },
+      { name: 'Install Python', uses: actions/setup-python@v4, with: { python-version: 3.10.22, architecture: x64 } },
       {
         name: 'Test example validation',
         run: 'python -m unittest test_validate_examples.py'
@@ -52,7 +52,7 @@ jobs:
       changed_examples: ${{ steps.count.outputs.changed_examples }}
     steps: [
       { name: 'Checkout', uses: actions/checkout@v4, with: { fetch-depth: 0 } },
-      { name: 'Install Python', uses: actions/setup-python@v4, with: { python-version: 3.10.5, architecture: x64 } },
+      { name: 'Install Python', uses: actions/setup-python@v4, with: { python-version: 3.10.22, architecture: x64 } },
       {
         name: 'Install Java',
         uses: actions/setup-java@v4,
@@ -90,7 +90,7 @@ jobs:
     if: "needs.build.outputs.example_count != '0' && (github.event_name != 'push' || !contains(github.event.head_commit.message, 'skip-ci'))"
     steps: [
       { name: 'Checkout', uses: actions/checkout@v4, with: { fetch-depth: 1 } },
-      { name: 'Install Python', uses: actions/setup-python@v4, with: { python-version: 3.10.5, architecture: x64 } },
+      { name: 'Install Python', uses: actions/setup-python@v4, with: { python-version: 3.10.22, architecture: x64 } },
       {
         name: 'Create archives',
         run: 'python create_archives.py'
