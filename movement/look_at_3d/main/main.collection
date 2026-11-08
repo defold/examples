@@ -1,0 +1,107 @@
+name: "main"
+scale_along_z: 0
+embedded_instances {
+  id: "root"
+  children: "turret"
+  data: "embedded_components {\n"
+  "  id: \"base\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/main/models/base.glb\\\"\\n"
+  "skeleton: \\\"/main/models/base.glb\\\"\\n"
+  "animations: \\\"/main/models/base.glb\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"default\\\"\\n"
+  "  material: \\\"/main/materials/static/unlit.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/main/images/colormap.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "camera"
+  data: "components {\n"
+  "  id: \"camera_controller\"\n"
+  "  component: \"/main/camera_controller.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.0\\n"
+  "fov: 1.047\\n"
+  "near_z: 2.1\\n"
+  "far_z: 30.0\\n"
+  "auto_aspect_ratio: 1\\n"
+  "orthographic_zoom: 116.0\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    y: 5.0
+    z: 6.0
+  }
+  rotation {
+    x: -0.34202015
+    w: 0.9396926
+  }
+}
+embedded_instances {
+  id: "turret"
+  data: "components {\n"
+  "  id: \"turret_controller\"\n"
+  "  component: \"/main/turret_controller.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"turret\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/main/models/turret.glb\\\"\\n"
+  "skeleton: \\\"/main/models/turret.glb\\\"\\n"
+  "animations: \\\"/main/models/turret.glb\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"default\\\"\\n"
+  "  material: \\\"/main/materials/skinned/unlit_skinned.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/main/images/colormap.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "floor"
+  data: "components {\n"
+  "  id: \"floor_uv_scale\"\n"
+  "  component: \"/main/floor_uv_scale.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"floor\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/builtins/assets/gltf/quad.gltf\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"default\\\"\\n"
+  "  material: \\\"/main/materials/static/unlit.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/main/images/texture_02.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  rotation {
+    x: -0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 100.0
+    y: 100.0
+  }
+}
