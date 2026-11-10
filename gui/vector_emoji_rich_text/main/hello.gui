@@ -1,0 +1,23 @@
+script: "/main/hello.gui_script"
+fonts {
+  name: "hello"
+  font: "/fonts/hello.font"
+}
+nodes {
+  position {
+    x: 360.0
+    y: 360.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Hello <color=#61DAFB><wave>World</wave></color>! \360\237\232\200"
+  font: "hello"
+  id: "text"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
+max_nodes: 1

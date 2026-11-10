@@ -1,0 +1,7 @@
+Emoji are derived from Twemoji Mozilla color-font assets.
+Twemoji graphics: CC BY 4.0 (Twitter/Twemoji contributors).
+Source: https://github.com/mozilla/twemoji-colr
+Attribution: Graphics from Twemoji, copyright contributors, licensed CC BY 4.0.
+This copy has its COLR table converted from version 0 to COLRv1 Paint glyphs.
+See https://creativecommons.org/licenses/by/4.0/
+Please verify license obligations before distribution.

@@ -1,0 +1,22 @@
+[project]
+title = Vector Font Rich Text and Emoji
+version = 1.0
+custom_resources = /fonts/Twemoji-COLRv1.ttf
+
+[bootstrap]
+main_collection = /main/main.collectionc
+
+[display]
+width = 720
+height = 720
+high_dpi = 1
+
+[input]
+game_binding = /input/game.input_bindingc
+
+[shader]
+exclude_gles_sm100 = 1
+
+[native_extension]
+app_manifest = /appmanifest.appmanifest
+
