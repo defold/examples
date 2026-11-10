@@ -1,0 +1,25 @@
+name: "textured_flag_3d"
+tags: "model"
+vertex_program: "/example/flag.vp"
+fragment_program: "/example/flag.fp"
+vertex_space: VERTEX_SPACE_LOCAL
+vertex_constants {
+  name: "mtx_proj"
+  type: CONSTANT_TYPE_PROJECTION
+}
+vertex_constants {
+  name: "mtx_worldview"
+  type: CONSTANT_TYPE_WORLDVIEW
+}
+vertex_constants {
+  name: "mtx_normal"
+  type: CONSTANT_TYPE_NORMAL
+}
+samplers {
+  name: "tex0"
+  wrap_u: WRAP_MODE_CLAMP_TO_EDGE
+  wrap_v: WRAP_MODE_CLAMP_TO_EDGE
+  filter_min: FILTER_MODE_MIN_LINEAR
+  filter_mag: FILTER_MODE_MAG_LINEAR
+  max_anisotropy: 0.0
+}
