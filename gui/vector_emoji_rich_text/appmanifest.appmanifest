@@ -1,0 +1,73 @@
+platforms:
+  arm64-ios:
+    context:
+      excludeLibs: [font, physics, LinearMath, BulletDynamics, BulletCollision, script_bullet3d, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig]
+      excludeSymbols: [ScriptBullet3DExt, ScriptBox2DExt, ScriptModelExt]
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi, physics_null, gamesys_rig_null, gamesys_model_null, rig_null]
+  arm64_sim-ios:
+    context:
+      excludeLibs: [font, physics, LinearMath, BulletDynamics, BulletCollision, script_bullet3d, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig]
+      excludeSymbols: [ScriptBullet3DExt, ScriptBox2DExt, ScriptModelExt]
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi, physics_null, gamesys_rig_null, gamesys_model_null, rig_null]
+  armv7-android:
+    context:
+      excludeLibs: [font, physics, LinearMath, BulletDynamics, BulletCollision, script_bullet3d, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig]
+      excludeSymbols: [ScriptBullet3DExt, ScriptBox2DExt, ScriptModelExt]
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi, physics_null, gamesys_rig_null, gamesys_model_null, rig_null]
+  arm64-android:
+    context:
+      excludeLibs: [font, physics, LinearMath, BulletDynamics, BulletCollision, script_bullet3d, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig]
+      excludeSymbols: [ScriptBullet3DExt, ScriptBox2DExt, ScriptModelExt]
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi, physics_null, gamesys_rig_null, gamesys_model_null, rig_null]
+  x86_64-android:
+    context:
+      excludeLibs: [font, physics, LinearMath, BulletDynamics, BulletCollision, script_bullet3d, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig]
+      excludeSymbols: [ScriptBullet3DExt, ScriptBox2DExt, ScriptModelExt]
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi, physics_null, gamesys_rig_null, gamesys_model_null, rig_null]
+  arm64-osx:
+    context:
+      excludeLibs: [font, physics, LinearMath, BulletDynamics, BulletCollision, script_bullet3d, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig]
+      excludeSymbols: [ScriptBullet3DExt, ScriptBox2DExt, ScriptModelExt]
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi, physics_null, gamesys_rig_null, gamesys_model_null, rig_null]
+  x86_64-osx:
+    context:
+      excludeLibs: [font, physics, LinearMath, BulletDynamics, BulletCollision, script_bullet3d, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig]
+      excludeSymbols: [ScriptBullet3DExt, ScriptBox2DExt, ScriptModelExt]
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi, physics_null, gamesys_rig_null, gamesys_model_null, rig_null]
+  x86_64-linux:
+    context:
+      excludeLibs: [font, physics, LinearMath, BulletDynamics, BulletCollision, script_bullet3d, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig]
+      excludeSymbols: [ScriptBullet3DExt, ScriptBox2DExt, ScriptModelExt]
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi, physics_null, gamesys_rig_null, gamesys_model_null, rig_null]
+  arm64-linux:
+    context:
+      excludeLibs: [font, physics, LinearMath, BulletDynamics, BulletCollision, script_bullet3d, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig]
+      excludeSymbols: [ScriptBullet3DExt, ScriptBox2DExt, ScriptModelExt]
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi, physics_null, gamesys_rig_null, gamesys_model_null, rig_null]
+  x86_64-win32:
+    context:
+      excludeLibs: [font, physics, libLinearMath, libBulletDynamics, libBulletCollision, script_bullet3d, libbox2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig]
+      excludeSymbols: [ScriptBullet3DExt, ScriptBox2DExt, ScriptModelExt]
+      symbols: []
+      libs: [font_skribidi, libharfbuzz, libsheenbidi, libunibreak, libskribidi, physics_null, gamesys_rig_null, gamesys_model_null, rig_null]
+  wasm-web:
+    context:
+      excludeLibs: [font, physics, LinearMath, BulletDynamics, BulletCollision, script_bullet3d, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig]
+      excludeSymbols: [ScriptBullet3DExt, ScriptBox2DExt, ScriptModelExt]
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi, physics_null, gamesys_rig_null, gamesys_model_null, rig_null]
+  wasm_pthread-web:
+    context:
+      excludeLibs: [font, physics, LinearMath, BulletDynamics, BulletCollision, script_bullet3d, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig]
+      excludeSymbols: [ScriptBullet3DExt, ScriptBox2DExt, ScriptModelExt]
+      symbols: []
+      libs: [font_skribidi, harfbuzz, sheenbidi, unibreak, skribidi, physics_null, gamesys_rig_null, gamesys_model_null, rig_null]

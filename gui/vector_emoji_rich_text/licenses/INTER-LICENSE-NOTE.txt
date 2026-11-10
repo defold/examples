@@ -1,0 +1,4 @@
+Inter font files are distributed under the SIL Open Font License 1.1.
+Copyright (c) Rasmus Andersson and the Inter project contributors.
+The official license text: https://openfontlicense.org/open-font-license-official-text/
+Source: https://github.com/rsms/inter
