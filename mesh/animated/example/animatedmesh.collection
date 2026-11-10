@@ -1,0 +1,50 @@
+name: "animatedmesh"
+scale_along_z: 0
+embedded_instances {
+  id: "camera"
+  data: "components {\n"
+  "  id: \"orbit_camera\"\n"
+  "  component: \"/example/orbit_camera.script\"\n"
+  "  properties {\n"
+  "    id: \"zoom\"\n"
+  "    value: \"7.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.0\\n"
+  "fov: 0.7854\\n"
+  "near_z: 0.01\\n"
+  "far_z: 30.0\\n"
+  "auto_aspect_ratio: 1\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    z: 10.0
+  }
+}
+embedded_instances {
+  id: "flag"
+  data: "components {\n"
+  "  id: \"flag\"\n"
+  "  component: \"/example/flag.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"mesh\"\n"
+  "  type: \"mesh\"\n"
+  "  data: \"material: \\\"/example/flag.material\\\"\\n"
+  "vertices: \\\"/example/flag.buffer\\\"\\n"
+  "textures: \\\"/example/defold_flag.png\\\"\\n"
+  "position_stream: \\\"position\\\"\\n"
+  "normal_stream: \\\"normal\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: -2.25
+    y: -1.25
+  }
+}
