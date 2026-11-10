@@ -5,6 +5,7 @@ brief: This example shows how to create and animate a textured mesh component in
 author_ids:
   - defold-foundation
 scripts: flag.script, flag.fp, flag.vp
+thumbnail: thumbnail.webp
 ---
 
 This is a small Defold example showing how to create and animate textured meshes to create a waving flag. It shows how to animate an existing textured mesh without creating new buffers or using a physics simulation.
