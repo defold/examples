@@ -1,0 +1,36 @@
+animations {
+  id: "walk"
+  images {
+    image: "/assets/free knight images/__Run/frame_0000.png"
+  }
+  images {
+    image: "/assets/free knight images/__Run/frame_0001.png"
+  }
+  images {
+    image: "/assets/free knight images/__Run/frame_0002.png"
+  }
+  images {
+    image: "/assets/free knight images/__Run/frame_0003.png"
+  }
+  images {
+    image: "/assets/free knight images/__Run/frame_0004.png"
+  }
+  images {
+    image: "/assets/free knight images/__Run/frame_0005.png"
+  }
+  images {
+    image: "/assets/free knight images/__Run/frame_0006.png"
+  }
+  images {
+    image: "/assets/free knight images/__Run/frame_0007.png"
+  }
+  images {
+    image: "/assets/free knight images/__Run/frame_0008.png"
+  }
+  images {
+    image: "/assets/free knight images/__Run/frame_0009.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+}
+extrude_borders: 2
