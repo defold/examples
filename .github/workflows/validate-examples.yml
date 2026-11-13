@@ -8,6 +8,9 @@ on:
       - '.github/workflows/trigger-site-rebuild.yml'
       - 'validate_examples.py'
       - 'test_validate_examples.py'
+      - 'test_build_examples.py'
+      - 'test_build_snapshot.py'
+      - 'build_snapshot.py'
       - 'build_examples.py'
       - 'download_bob.py'
 
@@ -19,7 +22,7 @@ jobs:
       { name: 'Install Python', uses: actions/setup-python@v4, with: { python-version: 3.10.22, architecture: x64 } },
       {
         name: 'Test example validation',
-        run: 'python -m unittest test_validate_examples.py'
+        run: 'python -m unittest test_validate_examples.py test_build_examples.py test_build_snapshot.py'
       },
       {
         name: 'Validate examples',
@@ -32,7 +35,7 @@ jobs:
       },
       {
         name: 'Download Bob',
-        run: 'python download_bob.py --channel alpha --output bob.jar'
+        run: 'python download_bob.py --channel beta --output bob.jar'
       },
       {
         name: 'Build touched examples',

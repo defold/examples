@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import urllib.request
 from pathlib import Path
 
@@ -14,7 +15,7 @@ BOB_URL_TEMPLATE = "https://d.defold.com/archive/{sha1}/bob/bob.jar"
 
 def parse_args() -> argparse.Namespace:
 	parser = argparse.ArgumentParser()
-	parser.add_argument("--channel", default="alpha")
+	parser.add_argument("--channel", default="beta")
 	parser.add_argument("--output", default="bob.jar")
 	return parser.parse_args()
 
@@ -48,6 +49,7 @@ def download_asset(url: str, output: Path) -> None:
 def main() -> int:
 	args = parse_args()
 	sha1 = fetch_sha1(args.channel)
+	print(f"Defold {args.channel} SHA: {sha1}", file=sys.stderr)
 	download_asset(BOB_URL_TEMPLATE.format(sha1=sha1), Path(args.output))
 	print(args.output)
 	return 0

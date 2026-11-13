@@ -1,6 +1,8 @@
 name: Trigger site rebuild
 
 on:
+  schedule:
+    - cron: '0 2 1 * *'
   workflow_dispatch:
     inputs:
       full_rebuild:
@@ -8,6 +10,12 @@ on:
         required: false
         default: true
         type: boolean
+      engine_channel:
+        description: 'Defold channel for the build'
+        required: true
+        default: beta
+        type: choice
+        options: [beta, stable]
   push:
     branches:
       - 'master'
@@ -17,9 +25,20 @@ on:
       - '.github/workflows/trigger-site-rebuild.yml'
       - 'validate_examples.py'
       - 'test_validate_examples.py'
+      - 'test_build_examples.py'
+      - 'test_build_snapshot.py'
       - 'build_examples.py'
+      - 'build_snapshot.py'
       - 'download_bob.py'
       - 'create_archives.py'
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: examples-publish
+  cancel-in-progress: false
 
 jobs:
   validate:
@@ -30,7 +49,7 @@ jobs:
       { name: 'Install Python', uses: actions/setup-python@v4, with: { python-version: 3.10.22, architecture: x64 } },
       {
         name: 'Test example validation',
-        run: 'python -m unittest test_validate_examples.py'
+        run: 'python -m unittest test_validate_examples.py test_build_examples.py test_build_snapshot.py'
       },
       {
         name: 'Validate examples',
@@ -39,7 +58,7 @@ jobs:
           AFTER_SHA: '${{ github.sha }}',
           FULL_REBUILD: '${{ github.event_name == ''workflow_dispatch'' && inputs.full_rebuild }}'
         },
-        run: 'if [ "$FULL_REBUILD" = "true" ]; then python validate_examples.py; else python validate_examples.py --changed-from "$BEFORE_SHA" --changed-to "$AFTER_SHA"; fi'
+        run: 'python validate_examples.py'
       }
     ]
 
@@ -47,47 +66,55 @@ jobs:
     runs-on: ubuntu-latest
     needs: validate
     if: "github.event_name != 'push' || !contains(github.event.head_commit.message, 'skip-ci')"
-    outputs:
-      example_count: ${{ steps.count.outputs.example_count }}
-      changed_examples: ${{ steps.count.outputs.changed_examples }}
-    steps: [
-      { name: 'Checkout', uses: actions/checkout@v4, with: { fetch-depth: 0 } },
-      { name: 'Install Python', uses: actions/setup-python@v4, with: { python-version: 3.10.22, architecture: x64 } },
-      {
-        name: 'Install Java',
-        uses: actions/setup-java@v4,
-        with: { distribution: 'temurin', java-version: '25' }
-      },
-      {
-        name: 'Download Bob',
-        run: 'python download_bob.py --channel alpha --output bob.jar'
-      },
-      {
-        id: 'count',
-        name: 'Count touched examples',
-        env: {
-          BEFORE_SHA: '${{ github.event.before }}',
-          AFTER_SHA: '${{ github.sha }}',
-          FULL_REBUILD: '${{ github.event_name == ''workflow_dispatch'' && inputs.full_rebuild }}'
-        },
-        run: 'if [ "$FULL_REBUILD" = "true" ]; then echo "example_count=$(python build_examples.py --dry-run)" >> "$GITHUB_OUTPUT"; echo "changed_examples=$(python build_examples.py --list-json)" >> "$GITHUB_OUTPUT"; else echo "example_count=$(python build_examples.py --changed-from "$BEFORE_SHA" --changed-to "$AFTER_SHA" --dry-run)" >> "$GITHUB_OUTPUT"; echo "changed_examples=$(python build_examples.py --changed-from "$BEFORE_SHA" --changed-to "$AFTER_SHA" --list-json)" >> "$GITHUB_OUTPUT"; fi'
-      },
-      {
-        name: 'Build touched examples',
-        if: steps.count.outputs.example_count != '0',
-        env: {
-          BEFORE_SHA: '${{ github.event.before }}',
-          AFTER_SHA: '${{ github.sha }}',
-          FULL_REBUILD: '${{ github.event_name == ''workflow_dispatch'' && inputs.full_rebuild }}'
-        },
-        run: 'if [ "$FULL_REBUILD" = "true" ]; then python build_examples.py --bob-jar bob.jar; else python build_examples.py --bob-jar bob.jar --changed-from "$BEFORE_SHA" --changed-to "$AFTER_SHA"; fi'
-      }
-    ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v4
+        with: { python-version: '3.10.22', architecture: x64 }
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: '25' }
+      - name: Download Bob
+        env:
+          ENGINE_CHANNEL: ${{ github.event_name == 'schedule' && 'stable' || inputs.engine_channel || 'beta' }}
+        run: python download_bob.py --channel "$ENGINE_CHANNEL" --output bob.jar
+      - name: Restore latest successful snapshot
+        if: github.event_name != 'schedule' && !(github.event_name == 'workflow_dispatch' && inputs.full_rebuild)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p previous
+          gh run list --workflow trigger-site-rebuild.yml --branch master --status success --limit 50 --json databaseId --jq '.[].databaseId' > previous/runs.txt
+          while read -r run_id; do
+            artifact_id=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}/artifacts" --jq '.artifacts[] | select(.name == "examples-bundles" and .expired == false) | .id')
+            if [ -n "$artifact_id" ]; then
+              gh run download "$run_id" --name examples-bundles --dir previous
+              break
+            fi
+          done < previous/runs.txt
+      - name: Build complete bundle snapshot
+        env:
+          FULL_REBUILD: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.full_rebuild) }}
+          KEEP_GOING: ${{ github.event_name == 'schedule' }}
+        run: |
+          args=()
+          if [ "$FULL_REBUILD" = true ]; then args+=(--full); elif [ -f previous/examples-bundles.zip ]; then args+=(--baseline previous/examples-bundles.zip); fi
+          if [ "$KEEP_GOING" = true ]; then args+=(--keep-going); fi
+          python build_snapshot.py --bob-jar bob.jar "${args[@]}"
+      - name: Upload bundle snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: examples-bundles
+          path: examples-bundles.zip
+          retention-days: 30
+          compression-level: 0
+          if-no-files-found: error
 
   publish:
     runs-on: ubuntu-latest
     needs: build
-    if: "needs.build.outputs.example_count != '0' && (github.event_name != 'push' || !contains(github.event.head_commit.message, 'skip-ci'))"
+    if: "github.event_name != 'push' || !contains(github.event.head_commit.message, 'skip-ci')"
     steps: [
       { name: 'Checkout', uses: actions/checkout@v4, with: { fetch-depth: 1 } },
       { name: 'Install Python', uses: actions/setup-python@v4, with: { python-version: 3.10.22, architecture: x64 } },
@@ -97,7 +124,7 @@ jobs:
       },
       {
         name: "Create tag",
-        run: 'git tag v${{ github.sha }}'
+        run: 'git rev-parse v${{ github.sha }} >/dev/null 2>&1 || git tag v${{ github.sha }}'
       },
       {
         name: "Push to tag",
@@ -112,8 +139,8 @@ jobs:
         name: 'Repository dispatch',
         env: {
           DISPATCH_TOKEN: '${{ secrets.SERVICES_GITHUB_TOKEN }}',
-          CHANGED_EXAMPLES: '${{ needs.build.outputs.changed_examples }}'
+          EXAMPLES_RUN_ID: '${{ github.run_id }}'
         },
-        run: 'python -c ''import json, os; print(json.dumps({"event_type":"examples","client_payload":{"examples_sha":os.environ["GITHUB_SHA"],"changed_examples":json.loads(os.environ.get("CHANGED_EXAMPLES") or "[]")}}))'' > dispatch.json && curl --fail --request POST --url https://api.github.com/repos/defold/defold.github.io/dispatches --header "Accept: application/vnd.github+json" --header "Authorization: Bearer ${DISPATCH_TOKEN}" --header "X-GitHub-Api-Version: 2022-11-28" --data @dispatch.json'
+        run: 'python -c ''import json, os; print(json.dumps({"event_type":"examples","client_payload":{"examples_sha":os.environ["GITHUB_SHA"],"examples_run_id":os.environ["EXAMPLES_RUN_ID"]}}))'' > dispatch.json && curl --fail --request POST --url https://api.github.com/repos/defold/defold.github.io/dispatches --header "Accept: application/vnd.github+json" --header "Authorization: Bearer ${DISPATCH_TOKEN}" --header "X-GitHub-Api-Version: 2022-11-28" --data @dispatch.json'
       }
     ]
