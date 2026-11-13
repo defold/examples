@@ -2,6 +2,12 @@
 
 This repository includes the Defold examples used in the examples section on https://defold.com/examples
 
+## CI and website publication
+
+Pull requests build changed examples using the latest Defold beta. Changes to master build the examples changed since the latest successful bundle snapshot and produce a complete snapshot for the website. If there is no usable previous snapshot, all examples are built. A failed build never dispatches a site update. The snapshot is a GitHub Actions artifact retained for 30 days; expired snapshots are automatically removed and the next publication starts with a full build.
+
+The website workflow downloads the snapshot for the dispatched run and imports its matching source revision. It can be retried manually with the `examples` action, which uses the latest successful available snapshot. A separate scheduled workflow builds every example against the latest stable release on the first day of each month without publishing. It can also be run manually.
+
 ## Adding more examples
 Examples are grouped by category, for instance "physics", "sprite" or "collection". Each group of examples has a folder in /examples. Here's how to add a new example named "foobar" to the "sprite" category:
 

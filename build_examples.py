@@ -73,6 +73,8 @@ def parse_args() -> argparse.Namespace:
 	parser.add_argument("--changed-to", default="")
 	parser.add_argument("--dry-run", action="store_true")
 	parser.add_argument("--list-json", action="store_true")
+	parser.add_argument("--keep-going", action="store_true", help="Build remaining examples after a failure")
+	parser.add_argument("--bundle-dir", type=Path, help="Copy successful web bundles into this directory")
 	return parser.parse_args()
 
 
@@ -98,7 +100,7 @@ def prepare_project_copy(project_dir: Path) -> Path:
 	return project_copy
 
 
-def build_project(bob_jar: str, project_dir: Path) -> None:
+def build_project(bob_jar: str, project_dir: Path, bundle_dir: Path | None = None) -> None:
 	print(f"Building {project_dir}")
 	bob_jar_path = Path(bob_jar).resolve()
 	project_copy = prepare_project_copy(project_dir)
@@ -124,6 +126,15 @@ def build_project(bob_jar: str, project_dir: Path) -> None:
 			check=True,
 			cwd=project_copy,
 		)
+		if bundle_dir is not None:
+			indexes = list((project_copy / "build" / "default").rglob("index.html"))
+			if len(indexes) != 1:
+				raise RuntimeError(f"Expected one bundle index for {project_dir}, found {len(indexes)}")
+			destination = bundle_dir / project_dir
+			destination.parent.mkdir(parents=True, exist_ok=True)
+			if destination.exists():
+				shutil.rmtree(destination)
+			shutil.copytree(indexes[0].parent, destination)
 	finally:
 		shutil.rmtree(project_copy.parent)
 
@@ -147,9 +158,21 @@ def main() -> int:
 		print(json.dumps([str(project) for project in projects]))
 		return 0
 
+	failed = []
 	for project_dir in projects:
 		if (project_dir / "game.project").is_file():
-			build_project(args.bob_jar, project_dir)
+			try:
+				build_project(args.bob_jar, project_dir, args.bundle_dir)
+			except (subprocess.CalledProcessError, RuntimeError):
+				if not args.keep_going:
+					raise
+				failed.append(project_dir)
+
+	if failed:
+		print("Failed example builds:", file=sys.stderr)
+		for project_dir in failed:
+			print(f"  {project_dir}", file=sys.stderr)
+		return 1
 
 	print("Example builds passed.")
 	return 0
