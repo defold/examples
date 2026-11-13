@@ -1,6 +1,8 @@
 name: Trigger site rebuild
 
 on:
+  schedule:
+    - cron: '0 2 1 * *'
   workflow_dispatch:
     inputs:
       full_rebuild:
@@ -8,6 +10,12 @@ on:
         required: false
         default: true
         type: boolean
+      engine_channel:
+        description: 'Defold channel for the build'
+        required: true
+        default: beta
+        type: choice
+        options: [beta, stable]
   push:
     branches:
       - 'master'
@@ -66,9 +74,12 @@ jobs:
         with: { python-version: '3.10.22', architecture: x64 }
       - uses: actions/setup-java@v4
         with: { distribution: temurin, java-version: '25' }
-      - name: Download beta Bob
-        run: python download_bob.py --channel beta --output bob.jar
+      - name: Download Bob
+        env:
+          ENGINE_CHANNEL: ${{ github.event_name == 'schedule' && 'stable' || inputs.engine_channel || 'beta' }}
+        run: python download_bob.py --channel "$ENGINE_CHANNEL" --output bob.jar
       - name: Restore latest successful snapshot
+        if: github.event_name != 'schedule' && !(github.event_name == 'workflow_dispatch' && inputs.full_rebuild)
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -84,10 +95,12 @@ jobs:
           done < previous/runs.txt
       - name: Build complete bundle snapshot
         env:
-          FULL_REBUILD: ${{ github.event_name == 'workflow_dispatch' && inputs.full_rebuild }}
+          FULL_REBUILD: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.full_rebuild) }}
+          KEEP_GOING: ${{ github.event_name == 'schedule' }}
         run: |
           args=()
           if [ "$FULL_REBUILD" = true ]; then args+=(--full); elif [ -f previous/examples-bundles.zip ]; then args+=(--baseline previous/examples-bundles.zip); fi
+          if [ "$KEEP_GOING" = true ]; then args+=(--keep-going); fi
           python build_snapshot.py --bob-jar bob.jar "${args[@]}"
       - name: Upload bundle snapshot
         uses: actions/upload-artifact@v4
