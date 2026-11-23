@@ -1,0 +1,29 @@
+[project]
+title = Sprite Stack Car
+
+[bootstrap]
+main_collection = /example/drive.collectionc
+
+[input]
+game_binding = /example/drive.input_bindingc
+
+[display]
+width = 720
+height = 720
+high_dpi = 1
+
+[graphics]
+default_texture_min_filter = nearest
+default_texture_mag_filter = nearest
+
+[render]
+clear_color_red = 0.74
+clear_color_green = 0.76
+clear_color_blue = 0.79
+
+[html5]
+show_fullscreen_button = 0
+show_made_with_defold = 0
+scale_mode = no_scale
+heap_size = 64
+
