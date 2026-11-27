@@ -1,7 +1,9 @@
 ---
+name: Text on Curves
 title: Text on Curves
-brief: This example shows how to render Rich Text along circular arcs and Bezier curves.
-author: Defold Foundation
+brief: Shows how to render Rich Text along circular arcs and Bezier curves.
+author_ids:
+  - defold-foundation
 scripts: text.gui_script
 thumbnail: thumbnail.webp
 tags: gui, text, fonts
