@@ -1,0 +1,43 @@
+script: "/example/text.gui_script"
+fonts {
+  name: "text"
+  font: "/fonts/text.font"
+}
+nodes {
+  position {
+    x: 360.0
+    y: 450.0
+  }
+  size {
+    x: 400.0
+    y: 80.0
+  }
+  type: TYPE_TEXT
+  text: "<gradient left=#FFD313 right=#FD6623>BEND THE RULES</gradient>"
+  font: "text"
+  id: "arc"
+  outline_alpha: 0.0
+  shadow_alpha: 0.0
+  font_size: 44.0
+}
+nodes {
+  position {
+    x: 160.0
+    y: 250.0
+  }
+  size {
+    x: 400.0
+    y: 80.0
+  }
+  type: TYPE_TEXT
+  text: "<gradient left=#61DAFB right=#00E6E1>FOLLOW THE FLOW</gradient>"
+  font: "text"
+  id: "bezier"
+  pivot: PIVOT_W
+  outline_alpha: 0.0
+  shadow_alpha: 0.0
+  font_size: 44.0
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
+max_nodes: 8

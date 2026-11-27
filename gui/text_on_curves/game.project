@@ -1,0 +1,32 @@
+[project]
+title = Text on Curves
+version = 0.1
+
+[bootstrap]
+main_collection = /example/main.collectionc
+
+[display]
+width = 720
+height = 720
+high_dpi = 1
+
+[html5]
+show_fullscreen_button = 0
+show_made_with_defold = 0
+scale_mode = no_scale
+heap_size = 64
+
+[render]
+clear_color_red = 0.160156
+clear_color_green = 0.164063
+clear_color_blue = 0.183594
+
+[native_extension]
+app_manifest = /example.appmanifest
+
+[shader]
+exclude_gles2 = 1
+
+[input]
+game_binding = /builtins/input/all.input_bindingc
+
