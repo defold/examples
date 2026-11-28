@@ -1,0 +1,43 @@
+image: "/assets/GreenBigCar.png"
+tile_width: 16
+tile_height: 16
+animations {
+  id: "layer_1"
+  frames: 1
+}
+animations {
+  id: "layer_10"
+  frames: 10
+}
+animations {
+  id: "layer_2"
+  frames: 2
+}
+animations {
+  id: "layer_3"
+  frames: 3
+}
+animations {
+  id: "layer_4"
+  frames: 4
+}
+animations {
+  id: "layer_5"
+  frames: 5
+}
+animations {
+  id: "layer_6"
+  frames: 6
+}
+animations {
+  id: "layer_7"
+  frames: 7
+}
+animations {
+  id: "layer_8"
+  frames: 8
+}
+animations {
+  id: "layer_9"
+  frames: 9
+}

@@ -1,0 +1,212 @@
+-- Speed constants, in world units per second:
+local MAX_SPEED = 42 -- Forward top speed 
+local REVERSE_SPEED = MAX_SPEED * 0.35 -- Backward top speed
+
+-- Acceleration/deceleration constants, in world units per second:
+local ACCELERATION = 24 -- Rate of increasing speed when holding forward input
+local COAST_DECELERATION = 12 -- Rate of decreasing speed when forward input is released
+local BRAKE_DECELERATION = 36 -- Rate of decreasing speed when holding brake input
+
+local FULL_STEERING_SPEED = 10 -- Reach the full turning rate at this absolute speed
+local MAX_TURN_RATE = 100 -- Degrees per second at full steering
+
+-- Camera angles are elevations above the XZ ground plane, in degrees:
+local STOPPED_CAMERA_ELEVATION = 50 -- Increase to this angle when the car is stopped
+local DRIVING_CAMERA_ELEVATION = 40 -- Lower the view to this angle at maximum speed
+local STOPPED_CAMERA_DISTANCE = 100 -- Camera distance (zoom) when stopped
+local DRIVING_CAMERA_DISTANCE = 140 -- Camera distance (zoom) for top speed
+
+local CAMERA_LOOK_AHEAD = 15 -- Offset where camera looks at
+local IDLE_ORBIT_SPEED = 10 -- Rotate camera around car when stopped, in degrees per second
+local CAMERA_SMOOTHING = 4 -- Larger values make camera more snappier
+
+-- Car tilting and rolling constants:
+local PITCH_PER_ACCELERATION = 0.2 -- Degrees per unit of acceleration
+local MAX_ROLL = 7 -- Degrees at full steering and maximum forward speed
+local TILT_SMOOTHING = 9 -- Control how quickly body tilt approaches its target
+local POINTER_STEERING_DISTANCE = 100 -- Drag distance for full steering, in screen units
+local POINTER_REVERSE_DISTANCE = 65 -- Downward drag distance to brake and reverse
+
+-- Constants for limiting space:
+local TILE_HALF_SIZE = 8 -- A 16-pixel tile at half scale
+local CAR_RADIUS = 4 -- Covers the corners of the car at any heading
+
+local FORWARD = vmath.vector3(0, 0, -1) -- Use world negative Z as the car’s initial forward direction
+
+local STACK = "/stack_axis" -- Address of the child object that holds the stacked car sprites
+local CAMERA = "/camera" -- Address of the separate camera object that follows the car
+
+-- Cached input action IDs:
+local GAS = hash("gas")
+local BRAKE = hash("brake")
+local LEFT = hash("left")
+local RIGHT = hash("right")
+local DRIVE = hash("drive")
+
+-- Helper function to make camera follow the car
+---@param self { speed: number, camera_pace: number, heading: number, camera_yaw: number } Car and camera state
+---@param position vector3 Car position in world space
+---@param forward vector3 Car travel direction in world space
+---@param dt number Time since the previous frame in seconds
+local function follow(self, position, forward, dt)
+	-- Smoothing depends on dt, so it behaves similarly at different frame rates
+	local smoothing = 1 - math.exp(-CAMERA_SMOOTHING * dt)
+
+	-- The absolute speed relative to the maximum gives a value from 0 to 1, including when reversing
+	local speed_fraction = math.abs(self.speed) / MAX_SPEED
+
+	-- self.camera_pace smoothly follows the actual car speed using linear interpolation
+	self.camera_pace = vmath.lerp(smoothing, self.camera_pace --[[@as number]], speed_fraction) --[[@as number]]
+
+	-- The chase value ranges from 0 to 1, where 0 means orbiting and 1 means turning behind the car
+	-- Pace is a fraction of maximum speed, so pace * MAX_SPEED represents smoothed speed (avoiding sudden changes when changing direction)
+	-- The math.min function limits chase to 1
+	local chase = math.min(self.camera_pace * MAX_SPEED, 1)
+
+	-- The angle difference determines how far the camera must turn toward the car heading
+	local yaw_difference = self.heading - self.camera_yaw
+
+	-- The math.atan2 function with sine and cosine wraps the difference to [-pi, pi], choosing the shorter rotation
+	local shortest_turn = math.atan2(math.sin(yaw_difference), math.cos(yaw_difference))
+
+	-- The camera orbits the car when stopped and transitions to a view behind it while moving
+	-- The first term orbits the camera, and the second smoothly positions it behind the car
+	self.camera_yaw = self.camera_yaw + math.rad(IDLE_ORBIT_SPEED) * dt * (1 - chase)
+		+ shortest_turn * (1 - math.exp(-CAMERA_SMOOTHING * chase * dt))
+
+	-- Calculate camera elevation. When stopped, the camera angle is slightly higher than while moving
+	local elevation = vmath.lerp(self.camera_pace, STOPPED_CAMERA_ELEVATION, DRIVING_CAMERA_ELEVATION) --[[@as number]]
+
+	-- Calculate the camera distance from its target (zoom)
+	local distance = vmath.lerp(self.camera_pace, STOPPED_CAMERA_DISTANCE, DRIVING_CAMERA_DISTANCE) --[[@as number]]
+
+	-- Rotation around Y sets the camera direction, and a negative X angle tilts it downward.
+	local rotation = vmath.quat_rotation_y(self.camera_yaw) * vmath.quat_rotation_x(math.rad(-elevation))
+
+	-- The target moves ahead of the car while driving forward and behind it while reversing.
+	-- The offset distance is proportional to speed.
+	local target = position + forward * (CAMERA_LOOK_AHEAD * self.speed / MAX_SPEED)
+
+	-- Set the camera position
+	-- The camera looks along local -Z, so an offset along +Z places it behind the target.
+	go.set_position(target + vmath.rotate(rotation, vmath.vector3(0, 0, distance)), CAMERA)
+
+	-- Set the camera rotation
+	go.set_rotation(rotation, CAMERA)
+end
+
+-- Init sets the initial state of the car, camera, and driving area.
+function init(self)
+	-- Acquire input focus. Without it, the script would not receive actions from the input bindings.
+	msg.post(".", "acquire_input_focus")
+
+	-- Initialize variables
+	self.keys = { [GAS] = 0, [BRAKE] = 0, [LEFT] = 0, [RIGHT] = 0 }
+	self.drag_steer, self.drag_pedal = 0, 0
+	self.speed, self.heading = 0, 0
+	self.tilt = vmath.quat()	-- The identity quaternion means there is no additional body pitch or roll
+	self.camera_yaw = math.rad(0)	-- The camera starts at an angle of 0 radians around the Y axis.
+	self.camera_pace = 0
+
+	follow(self, go.get_position(), FORWARD, 0)
+end
+
+-- Update calculates the car movement, tilt, and camera based on the frame time dt.
+function update(self, dt)
+	-- When dt = 0, dividing the speed change by dt would cause an error, so skip this frame.	
+	if dt == 0 then return end
+
+	-- Combine keyboard input with mouse or touch input and limit the result to [-1, 1].
+	local pedal = vmath.clamp(self.keys[GAS] - self.keys[BRAKE] + self.drag_pedal, -1, 1)
+	local steer = vmath.clamp(self.keys[LEFT] - self.keys[RIGHT] + self.drag_steer, -1, 1)
+
+	-- The previous speed is needed to determine braking and the subsequent body pitch.
+	local old_speed = self.speed
+
+	-- Calculate the target speed based on the direction of movement
+	local target = pedal < 0 and -REVERSE_SPEED or MAX_SPEED * pedal
+
+	-- Calculate acceleration based on input
+	-- By default, speed changes at the ACCELERATION rate.
+	local acceleration = ACCELERATION
+	-- Without gas or brake input, speed gradually decreases (coasting) at COAST_DECELERATION
+	if pedal == 0 then
+		acceleration = COAST_DECELERATION
+		-- A negative product of pedal and speed means the chosen direction opposes the motion, so use BRAKE_DECELERATION
+	elseif pedal * old_speed < 0 then
+		acceleration = BRAKE_DECELERATION
+	end
+
+	-- Calculate speed moving toward the target by at most acceleration * dt, without overshooting.
+	self.speed = old_speed + vmath.clamp(target - old_speed, -acceleration * dt, acceleration * dt)
+
+	-- Steering is weaker at low speed, so negative speed reverses it while backing up.
+	local turning = steer * vmath.clamp(self.speed / FULL_STEERING_SPEED, -1, 1)
+
+	-- Heading stores the direction in radians and changes by the turn rate multiplied by dt.
+	self.heading = self.heading + math.rad(MAX_TURN_RATE) * turning * dt
+
+	-- The yaw quaternion describes the car rotation around the vertical world Y axis.
+	local yaw = vmath.quat_rotation_y(self.heading)
+
+	-- Rotating FORWARD by yaw gives the direction vector for the car’s current orientation.
+	local forward = vmath.rotate(yaw, FORWARD)
+
+	-- The position changes by the direction multiplied by signed speed and frame time.
+	local position = go.get_position() + forward * (self.speed * dt)
+
+	-- Moving the car object also moves its shadow sprite and the stack_axis child object.
+	go.set_position(position)
+
+	-- Yaw rotates the car and shadow around Y. The additional tilt affects only stack_axis.
+	go.set_rotation(yaw)
+
+	-- The actual speed change per second determines pitch during acceleration and braking.
+	local actual_acceleration = (self.speed - old_speed) / dt
+
+	-- Pitch converts acceleration into a rotation around local X, tilting the front of the body.
+	local pitch = vmath.quat_rotation_x(math.rad(actual_acceleration * PITCH_PER_ACCELERATION))
+
+	-- Roll depends on steering and speed, so the car leans more when turning at higher speed.
+	local roll = vmath.quat_rotation_y(math.rad(MAX_ROLL * turning * self.speed / MAX_SPEED))
+
+	-- Calculate tilt using spherical interpolation, smoothly moving the previous tilt toward the combined pitch and roll.
+	self.tilt = vmath.slerp(1 - math.exp(-TILT_SMOOTHING * dt), self.tilt, pitch * roll)
+
+	-- A rotation of minus 90 degrees around X places the layers above the ground, then the smoothed tilt is applied.
+	go.set_rotation(vmath.quat_rotation_x(-math.pi / 2) * self.tilt, STACK)
+
+	-- The camera receives the new position, direction, and frame time after movement is calculated.
+	follow(self, position, forward, dt)
+end
+
+-- On_input stores keyboard actions and handles a mouse or single-touch gesture.
+function on_input(self, action_id, action)
+	-- The drive action represents mouse and touch input, and we handle touch or click and drag as gestures
+	if action_id == DRIVE or (not action_id and self.touch_x) then
+		-- The press point is the reference for the subsequent drag distance.
+		if action.pressed then self.touch_x, self.touch_y = action.x, action.y end
+
+		-- Releasing ends the gesture and removes its effect on the controls.
+		if action.released then
+			-- Clearing touch_x means subsequent movements no longer belong to this gesture.
+			self.touch_x = nil
+
+			-- Resetting both values releases the virtual pedal and steering.
+			self.drag_steer, self.drag_pedal = 0, 0
+
+		-- During an active gesture, control values depend on the offset from the press point.
+		elseif self.touch_x then
+			-- The horizontal offset divided by POINTER_STEERING_DISTANCE gives steering limited to [-1, 1].
+			self.drag_steer = vmath.clamp((self.touch_x - action.x) / POINTER_STEERING_DISTANCE, -1, 1)
+
+			-- Holding applies gas. Dragging down beyond the threshold selects braking and reversing.
+			self.drag_pedal = action.y < self.touch_y - POINTER_REVERSE_DISTANCE and -1 or 1
+		end
+
+	-- The remaining bound actions are stored as keyboard state.
+	elseif action_id then
+		-- Action.value contains the current value of the action used in update.
+		self.keys[action_id] = action.value
+	end
+end
